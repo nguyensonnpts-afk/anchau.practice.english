@@ -178,7 +178,12 @@ pre.help{background:var(--bg);border:1px solid var(--line);border-radius:10px;pa
 <header class="top" id="hdr"></header>
 <main><div class="wrap" id="app"></div></main>
 <div id="modal"></div>
-
+<!--IELTS-DATA-->
+<script src="data/ielts/vol07-listening.js"></script>
+<script src="data/ielts/vol07-reading.js"></script>
+<script src="data/ielts/vol08-listening.js"></script>
+<script src="data/ielts/vol08-reading.js"></script>
+<!--/IELTS-DATA-->
 <script>
 /* =========================================================
    DỮ LIỆU MẪU (có sẵn, không xóa được; giáo viên có thể thêm bộ từ/đề riêng)
@@ -324,6 +329,7 @@ Experts suggest that teenagers should set daily time limits and turn off notific
    {t:'mc',q:'The word "They" in paragraph 3 refers to ______.',o:['teenagers','experts','schools','notifications'],a:1,e:'"Experts suggest… They also recommend…" → They = experts.'}
   ]}]}
 ];
+SAMPLE_TESTS.push(...(window.IELTS_DATA||[])); /* đề IELTS theo Vol: data/ielts/*.js */
 
 /* =========================================================
    LƯU TRỮ
@@ -674,7 +680,7 @@ VIEWS.test=()=>{
  return `<div class="exam-head"><div class="row between"><b style="flex:1;min-width:0">${h(t.title)}</b><span class="timer" id="timer"></span><button class="btn pri" onclick="submitTest()">Nộp bài</button></div>
  <div class="qnav mt" id="qnav">${qs.map(q=>`<span id="nav${q.n}" onclick="document.getElementById('q${q.n}').scrollIntoView({behavior:'smooth',block:'center'})">${q.n}</span>`).join('')}</div></div>
  ${t.sections.map((s,si)=>`<h2 class="mt2">${h(s.title||('Phần '+(si+1)))}</h2>
-  ${s.audioSrc?`<div class="card mb"><audio controls preload="none" src="${h(s.audioSrc)}" style="width:100%"></audio></div>`:''}${s.audio?`<div class="card mb row"><button class="btn acc" onclick="playAudio(${si})">▶ Phát bài nghe</button><button class="btn" onclick="speechSynthesis.cancel()">■ Dừng</button><span class="small muted" id="plays${si}">Đã phát ${EX.plays[si]||0} lần</span></div>`:''}
+  ${s.audioSrc?audioBox(s.audioSrc):''}${s.audio?`<div class="card mb row"><button class="btn acc" onclick="playAudio(${si})">▶ Phát bài nghe</button><button class="btn" onclick="speechSynthesis.cancel()">■ Dừng</button><span class="small muted" id="plays${si}">Đã phát ${EX.plays[si]||0} lần</span></div>`:''}
   ${s.passage?`<div class="passage mb">${fmt(s.passage).replace(/<br>/g,'\n')}</div>`:''}
   <div class="card">${s.questions.map(q=>{n++;const k=n;
    if(q.t==='mc')return `<div class="q" id="q${k}"><div><span class="qn">${k}</span>${fmt(q.q)}</div><div class="opts">${q.o.map((o,i)=>`<button class="opt" data-q="${k}" data-i="${i}" onclick="ansMC(${k},${i})"><span class="k">${'ABCDEFG'[i]}</span><span>${fmt(o)}</span></button>`).join('')}</div></div>`;
@@ -686,6 +692,7 @@ VIEWS.test=()=>{
 const wc=s=>(s.trim().match(/\S+/g)||[]).length;
 function startTest(){const t=testById(R.id);EX={id:t.id,ans:{},t0:Date.now(),end:Date.now()+t.minutes*60000,plays:{}};R.running=true;render()}
 AFTER.test=()=>{if(!R.running)return;clearInterval(timerH);const tick=()=>{const left=Math.max(0,EX.end-Date.now());const el=$('#timer');if(!el){clearInterval(timerH);return}const m=Math.floor(left/60000),s=Math.floor(left%60000/1000);el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;el.classList.toggle('low',left<60000);if(left<=0){clearInterval(timerH);toast('Hết giờ! Bài đã được nộp.');submitTest(true)}};tick();timerH=setInterval(tick,1000)};
+function audioBox(src){const m=/drive\.google\.com\/(?:file\/d\/|uc\?[^"]*id=|open\?id=)([\w-]+)/.exec(src);if(m)return `<div class="card mb"><iframe src="https://drive.google.com/file/d/${h(m[1])}/preview" style="width:100%;height:120px;border:0;border-radius:8px" allow="autoplay" loading="lazy" title="Bài nghe"></iframe><p class="small muted">Bài nghe phát từ Google Drive. Nếu không phát được, <a href="https://drive.google.com/file/d/${h(m[1])}/view" target="_blank" rel="noopener">mở trong tab mới</a>.</p></div>`;return `<div class="card mb"><audio controls preload="none" src="${h(src)}" style="width:100%"></audio></div>`}
 function playAudio(si){const t=testById(EX.id);EX.plays[si]=(EX.plays[si]||0)+1;$('#plays'+si).textContent=`Đã phát ${EX.plays[si]} lần`;speak(t.sections[si].audio,0.88)}
 function ansMC(k,i){EX.ans[k]=i;document.querySelectorAll(`.opt[data-q="${k}"]`).forEach(b=>b.classList.toggle('sel',+b.dataset.i===i));$('#nav'+k).classList.add('done')}
 function ansFill(k,v){EX.ans[k]=v;$('#nav'+k).classList.toggle('done',!!v.trim())}
@@ -830,6 +837,16 @@ VIEWS.speaking=()=>{
  const done=P().speaking||[];const cnt=id=>done.filter(x=>x.topic===id).length;
  return `<h1>Luyện Speaking</h1><p class="sub">Nghe câu hỏi, bấm ghi âm và trả lời. Máy chép lại lời bạn nói và đưa nhận xét nhanh, giáo viên chấm band sau.</p>
  ${SR?'':'<div class="explain mb">Trình duyệt này không hỗ trợ chép lời tự động. Hãy dùng Chrome hoặc Edge để có đầy đủ tính năng. Bạn vẫn ghi âm được.</div>'}
+ <details class="card mb"><summary><b>Hướng dẫn luyện tập Speaking mỗi ngày (luyennoi.com)</b></summary>
+  <ol class="small mt" style="line-height:1.8;padding-left:20px">
+   <li>Truy cập <a href="https://luyennoi.com" target="_blank" rel="noopener">luyennoi.com</a>.</li>
+   <li>Chọn <b>“Luyện theo câu”</b> → luyện <b>Part 1 / Part 2 / Part 3</b>.</li>
+   <li>Chọn chủ đề bất kỳ để luyện. Mỗi ngày luyện <b>ít nhất 1 topic</b>.</li>
+   <li>Chọn <b>“Luyện tập lại”</b> ở mỗi câu hỏi.</li>
+   <li>Dùng các công cụ hỗ trợ (Shadowing cả câu, Đổi thành câu, Nâng cấp câu) để cải thiện câu trả lời.</li>
+   <li>Luyện đến khi đạt mức điểm mong muốn.</li>
+   <li>Sau khi luyện, <b>nộp ảnh minh chứng</b> (ảnh chụp màn hình kết quả) là hoàn thành.</li>
+  </ol></details>
  <div class="card mb row between" style="background:var(--brand-soft)"><div><h3 style="margin:0">Thi thử Speaking đầy đủ</h3><div class="small muted">Part 1 (4 câu), Part 2 (1 phút chuẩn bị, 2 phút nói), Part 3 (3 câu). Khoảng 12 phút.</div></div><button class="btn pri" onclick="skMock()">Bắt đầu thi thử</button></div>
  <div class="seg mb"><button class="${spkTab==='p1'?'on':''}" onclick="spkTab='p1';render()">Part 1</button><button class="${spkTab==='p2'?'on':''}" onclick="spkTab='p2';render()">Part 2 & 3</button><button class="${spkTab==='mine'?'on':''}" onclick="spkTab='mine';render()">Bài đã nói (${done.length})</button></div>
  ${spkTab==='p1'?`<div class="grid g3">${allP1().map(t=>`<div class="card"><span class="tag">Part 1</span><h3 class="mt">${h(t.title)}</h3><p class="small muted">${t.qs.length} câu hỏi${cnt(t.id)?` · đã luyện ${cnt(t.id)} lần`:''}</p><button class="btn pri" onclick="skStart('${t.id}')">Luyện</button></div>`).join('')}</div>`:''}
