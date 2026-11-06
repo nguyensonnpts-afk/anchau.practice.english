@@ -447,3 +447,58 @@ f 37 | Find food using their sense of ___, their fingers, and their lateral line
 f 38 | Take food into their mouths using their front legs and a ___ system | pump
 f 39 | In some US states they are identified as a ___ | pest
 f 40 | Mucus from the skin was found to have ___ properties | antibiotic
+=== Listening | Vol 7 | Test 10 | 40
+## Section 1
+@audio https://drive.google.com/file/d/1_LV5fH5G8HeHoxWBU4Et_BJpr48IEbVC/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+
+Building Work. Address: 15 Hill Street. Phone: 027 584 6613.
+> Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Name: Sally ___ | keyworth
+f 2 | Kitchen: the kitchen is too hot – fit a ___ | fan
+f 3 | Bathroom: put in a ___ on the back wall | shower
+f 4 | decide the ___ of the small tiles later | colour / color
+f 5 | Outside: put a higher ___ in the garden | gate
+f 6 | put a new ___ on the garage door | lock
+f 7 | fix the roof – it was damaged by a ___ | storm
+f 8 | fit a new rain gutter made of ___ | plastic
+f 9 | Start date: ___ | may 8th / 8 may / may 8
+f 10 | Security code: ___ | ag4176
+## Section 2 · The McFaddin hiking and nature trail
+> Questions 11–14: Choose the correct answer.
+m 11 | All entry points along the trail | provide secure parking facilities for cars. ;; are within easy access from public roads. ;; have a regular shuttle bus service. | B
+m 12 | Which facility at the trail rest stations has been added as a result of a user survey? | electric recharge points ;; picnic areas ;; maps and other information | C
+m 13 | On the Red Rock Walk, hikers are easily able to | see many different plants. ;; enjoy spectacular scenic views. ;; identify a wide range of birds. | A
+m 14 | What does the speaker say about the River Walk in wintertime? | There are not many other walkers in the area. ;; The area does not get much ice and snow. ;; It may not be possible to use this section of the trail. | C
+> Questions 15–20: Which information is given about each facility at the Halfway Hostel? A. only at weekends · B. voluntary donation expected · C. not yet available · D. help from guests requested · E. provided free · F. advance booking required · G. new equipment · H. available on a first-come-first-served basis · I. special rate for children
+L 15 | dormitory beds | ABCDEFGHI | H
+L 16 | family rooms | ABCDEFGHI | F
+L 17 | clothes washing | ABCDEFGHI | G
+L 18 | meals | ABCDEFGHI | D
+L 19 | hot showers | ABCDEFGHI | E
+L 20 | bicycle rental | ABCDEFGHI | C
+## Section 3 · A marketing project on food packaging
+> Questions 21–25: Choose the correct answer.
+m 21 | What do Pam and Jason primarily hope to learn more about from their project? | maximizing profits ;; minimizing environmental damage ;; meeting legal requirements | A
+m 22 | Which issue about packaging do Pam and Jason feel is most important to food shoppers today? | providing information about contents ;; extending the useful life of products ;; reducing excess waste from packaging | B
+m 23 | Why have Pam and Jason decided to concentrate specifically on large supermarkets? | They are the subjects of previously published studies. ;; They are the most profitable food retail businesses. ;; They will offer good opportunities for interviews. | C
+m 24 | The professor says that the local population has unusual food-shopping habits because of | its range of nationalities ;; its high education level ;; its young age | A
+m 25 | According to the literature, what influences food shoppers most? | taste ;; price ;; health benefits | A
+> Questions 26–30: What action do Pam and Jason agree to take for each aspect of their experiment? A. refer to course notes · B. widen the choice · C. use more colours · D. allow for more time · E. ask for help · F. design a questionnaire · G. plan for oral interviews
+L 26 | the number of different designs offered | ABCDEFG | B
+L 27 | the sample size of students | ABCDEFG | E
+L 28 | how to display the packages | ABCDEFG | A
+L 29 | finding the reasons for students' choices | ABCDEFG | F
+L 30 | analysis of data collected | ABCDEFG | D
+## Section 4 · Science in the Future
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
+f 31 | Computer science: the invention of computers is as significant as the discovery of how to create and use ___ | fire
+f 32 | Computers will be seen as being ___ | intelligent
+f 33 | Psychology: research will become much more ___ | varied
+f 34 | and also more practical since more ___ will be working in the field | women
+f 35 | Imaging devices will give information about the behaviour of the ___ | brain
+f 36 | Genetics: with increased life expectancy, it is important to consider the ___ of elderly people's lives | quality
+f 37 | Knowledge of a person's genome will indicate whether they are likely to be affected by a ___ | disease
+f 38 | The approach to treatment will be on an increasingly ___ basis | personal
+f 39 | Zoology: it is possible to see the effects of the destruction of ___ in East Africa | forests
+f 40 | Such increased awareness should enable us to do more to look after the ___ | planet
