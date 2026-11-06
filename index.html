@@ -178,6 +178,8 @@ pre.help{background:var(--bg);border:1px solid var(--line);border-radius:10px;pa
 <header class="top" id="hdr"></header>
 <main><div class="wrap" id="app"></div></main>
 <div id="modal"></div>
+<script src="data/extra/writing.js"></script>
+<script src="data/extra/speaking.js"></script>
 <!--IELTS-DATA-->
 <script src="data/ielts/vol07-listening.js"></script>
 <script src="data/ielts/vol07-reading.js"></script>
@@ -759,6 +761,9 @@ const WPROMPTS=[
 ];
 const allP1=()=>[...SP1,...(D.sp1||[])];
 const allP2=()=>[...SP2,...(D.sp2||[])];
+if(window.IELTS_W)WPROMPTS.push(...window.IELTS_W);
+if(window.IELTS_SP1)SP1.push(...window.IELTS_SP1);
+if(window.IELTS_SP2)SP2.push(...window.IELTS_SP2);
 const allW=()=>[...WPROMPTS,...(D.wprompts||[])];
 const wById=id=>allW().find(x=>x.id===id);
 const spTopicById=id=>allP1().find(x=>x.id===id)||allP2().find(x=>x.id===id);
@@ -901,6 +906,7 @@ function reviewView(){
  return `<div class="crumb" onclick="${back}">← Quay lại</div><h1>Writing Task ${w?w.task:''} · ${h(w?w.title:'(đề đã xóa)')}</h1><p class="sub">${isT?h((stuById(sid)||{}).name||'')+' · ':''}${fdt(x.date)} · ${wc(x.text)} từ · làm trong ${Math.round(x.dur/60)} phút</p>
  ${gradeBox('writing',sid,x,[w&&w.task===1?'Task Achievement':'Task Response','Coherence & Cohesion','Lexical Resource','Grammar Range & Accuracy'],['tr','cc','lr','gra'])}
  ${w?`<details class="card mt"><summary><b>Xem đề bài</b></summary><p>${fmt(w.prompt)}</p>${w.chart?chartSVG(w.chart):''}${w.img?`<img src="${h(w.img)}" style="max-width:100%">`:''}</details>`:''}
+ ${w&&w.model?`<details class="card mt"><summary><b>Xem bài mẫu (band 8.0+)</b></summary><p class="small muted">Bài mẫu để tham khảo cách triển khai ý, không phải đáp án duy nhất.</p><p>${fmt(w.model)}</p></details>`:''}
  <div class="card mt"><h3>Bài viết</h3><div class="passage" style="background:var(--bg)">${h(x.text)}</div>${statsHTML(textStats(x.text),{writing:true,task:w?w.task:2,min:w?w.min:0})}</div>`;
 }
 AFTER.skres=AFTER['t-review']=()=>{if(R.kind!=='speaking')return;const x=(P(R.sid).speaking||[]).find(a=>a.id===R.rid);if(!x)return;x.items.forEach(async(it,i)=>{if(!it.audio)return;const b=await IDB.get(x.id+'_'+i);const el=$(`#au_${x.id}_${i}`);if(el){if(b)el.src=URL.createObjectURL(b);else el.replaceWith(Object.assign(document.createElement('div'),{className:'small muted',textContent:'(File ghi âm chỉ nghe được trên máy học viên đã ghi)'}))}})};
