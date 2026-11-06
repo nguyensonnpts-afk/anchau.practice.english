@@ -830,6 +830,16 @@ VIEWS.speaking=()=>{
  const done=P().speaking||[];const cnt=id=>done.filter(x=>x.topic===id).length;
  return `<h1>Luyện Speaking</h1><p class="sub">Nghe câu hỏi, bấm ghi âm và trả lời. Máy chép lại lời bạn nói và đưa nhận xét nhanh, giáo viên chấm band sau.</p>
  ${SR?'':'<div class="explain mb">Trình duyệt này không hỗ trợ chép lời tự động. Hãy dùng Chrome hoặc Edge để có đầy đủ tính năng. Bạn vẫn ghi âm được.</div>'}
+ <details class="card mb"><summary><b>Hướng dẫn luyện tập Speaking mỗi ngày (luyennoi.com)</b></summary>
+  <ol class="small mt" style="line-height:1.8;padding-left:20px">
+   <li>Truy cập <a href="https://luyennoi.com" target="_blank" rel="noopener">luyennoi.com</a>.</li>
+   <li>Chọn <b>“Luyện theo câu”</b> → luyện <b>Part 1 / Part 2 / Part 3</b>.</li>
+   <li>Chọn chủ đề bất kỳ để luyện. Mỗi ngày luyện <b>ít nhất 1 topic</b>.</li>
+   <li>Chọn <b>“Luyện tập lại”</b> ở mỗi câu hỏi.</li>
+   <li>Dùng các công cụ hỗ trợ (Shadowing cả câu, Đổi thành câu, Nâng cấp câu) để cải thiện câu trả lời.</li>
+   <li>Luyện đến khi đạt mức điểm mong muốn.</li>
+   <li>Sau khi luyện, <b>nộp ảnh minh chứng</b> (ảnh chụp màn hình kết quả) là hoàn thành.</li>
+  </ol></details>
  <div class="card mb row between" style="background:var(--brand-soft)"><div><h3 style="margin:0">Thi thử Speaking đầy đủ</h3><div class="small muted">Part 1 (4 câu), Part 2 (1 phút chuẩn bị, 2 phút nói), Part 3 (3 câu). Khoảng 12 phút.</div></div><button class="btn pri" onclick="skMock()">Bắt đầu thi thử</button></div>
  <div class="seg mb"><button class="${spkTab==='p1'?'on':''}" onclick="spkTab='p1';render()">Part 1</button><button class="${spkTab==='p2'?'on':''}" onclick="spkTab='p2';render()">Part 2 & 3</button><button class="${spkTab==='mine'?'on':''}" onclick="spkTab='mine';render()">Bài đã nói (${done.length})</button></div>
  ${spkTab==='p1'?`<div class="grid g3">${allP1().map(t=>`<div class="card"><span class="tag">Part 1</span><h3 class="mt">${h(t.title)}</h3><p class="small muted">${t.qs.length} câu hỏi${cnt(t.id)?` · đã luyện ${cnt(t.id)} lần`:''}</p><button class="btn pri" onclick="skStart('${t.id}')">Luyện</button></div>`).join('')}</div>`:''}
