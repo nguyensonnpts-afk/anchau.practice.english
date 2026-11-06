@@ -502,3 +502,60 @@ f 37 | Knowledge of a person's genome will indicate whether they are likely to b
 f 38 | The approach to treatment will be on an increasingly ___ basis | personal
 f 39 | Zoology: it is possible to see the effects of the destruction of ___ in East Africa | forests
 f 40 | Such increased awareness should enable us to do more to look after the ___ | planet
+=== Listening | Vol 7 | Test 9 | 40
+## Section 1
+@audio https://drive.google.com/file/d/1MpsjvDDeS0F9m67u7zREao6xiWWIYJbf/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+
+Homecare Cleaning Agency – Home Details. Customers referred by: friend. Type of cleaning: regular.
+> Questions 1–4: Complete the form. Write NO MORE THAN TWO WORDS for each answer.
+f 1 | Location: in the ___ | southwest / south west
+f 2 | Rooms: two ___ bedrooms | double
+f 3 | (third bedroom used as ___) | an office / office
+f 4 | kitchen/diner, ___, family room, two bathrooms | lounge
+> Questions 5–7: Choose the correct answer.
+m 5 | Which extra service does the agency agree to provide? | changing the bed linen ;; washing the windows ;; cleaning the fridge | A
+m 6 | What will be cleaned more thoroughly every three months? | the children's room ;; the carpet ;; the bathroom | B
+m 7 | The woman would like the cleaners to | do the washing ;; iron the clothes ;; put the clothes away | B
+> Questions 8–10: Complete the form. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
+f 8 | Address: 48 ___ Road, Mount Eden | amyes
+f 9 | Day of job: ___ | thursday
+f 10 | Maximum length of job: ___ | 3 hours / three hours
+## Section 2 · Museum tour
+> Questions 11–16: Choose the correct answer.
+m 11 | What does the tour guide advise the visitors to do in the museum today? | see the most popular exhibits first ;; pay a brief visit to each gallery ;; go to the photography gallery last | A
+m 12 | The museum was designed by William Craven, who also designed | a textile factory ;; a town hall ;; a railway station | B
+m 13 | The museum won an award for the preservation of the | staircase ;; floor ;; windows | A
+m 14 | Most of the money for the project came from | the public ;; the government ;; local business | C
+m 15 | Over the next five years, the museum will invest mainly in | restoring existing collections. ;; developing educational programmes. ;; purchasing new objects for display. | A
+m 16 | Visitors who are interested in learning more about the exhibits should | visit the museum's website ;; read the leaflet on display ;; attend the monthly lecture | C
+> Questions 17–20: What information does the guide give about each collection? A. has been shown in different museums · B. consists of work by a local resident · C. has exhibits from various countries · D. is only on temporary display · E. shows things that are no longer common · F. is on loan from a foreign museum
+L 17 | 18th-century paintings | ABCDEF | C
+L 18 | Farnley collection | ABCDEF | B
+L 19 | Kitchen appliances | ABCDEF | E
+L 20 | Fashion gallery | ABCDEF | D
+## Section 3 · Business analysis methods
+> Questions 21–25: What are the characteristics of the following analysis methods? A. it will save a lot of business time and effort · B. it is visualized · C. it does not fit our company · D. it will take too long · E. it is easy to use · F. it is difficult to apply · G. it is suitable to almost all sized companies
+L 21 | PEST | ABCDEFG | C
+L 22 | Drill Down | ABCDEFG | D
+L 23 | PMI | ABCDEFG | E
+L 24 | Pareto | ABCDEFG | A
+L 25 | SWOT | ABCDEFG | G
+> Questions 26–30: Choose the correct answer.
+m 26 | What does Frances consider as the best strength of the company? | reputation ;; experienced employees ;; management | B
+m 27 | What factor did Sam overlook for the future growth of the company? | seek cheaper suppliers ;; set up an overseas office ;; compete with major competitors | B
+m 28 | Which of the following can be a threat to a company? | increasing competition ;; outdated technology ;; new legislation | C
+m 29 | What has Sam learned from the research? | using better tools ;; cost of a successful business ;; gap between reality and theory | C
+m 30 | What is the professor's suggestion for the report? | give a final determination ;; reorganize a clear structure ;; add more detailed information | A
+## Section 4 · Employment Survey on Graduates
+> Questions 31–40: Complete the notes. Write NO MORE THAN TWO WORDS for each answer.
+f 31 | Interviews from which subject: ___ | business management
+f 32 | Two research methods: email questionnaires and ___ | phone interviews
+f 33 | 32% of students tended to acquire another ___ | qualification
+f 34 | Most of the students work in the ___ sector | public
+f 35 | The majority are happy with: ___ | expectations
+f 36 | Useful skills learned in college: working as a ___ member | team
+f 37 | personal organization and ___ ability | problem solving / problem-solving
+f 38 | Useless skills: ___ (lack of training) | presentations
+f 39 | advice on ___ (unnecessary) | essay writing
+f 40 | advice on finding a ___ (not enough) | job
