@@ -374,3 +374,58 @@ f 37 | gardens with a ___ were particularly popular | fountain
 f 38 | 'Behavioural maps' studies showed gardens need easily moved ___ | furniture
 f 39 | landscaping that attracts ___ | birds
 f 40 | elderly patients want to feel a part of ___ | society
+=== Listening | Vol 8 | Test 8 | 40
+## Section 1 · Problems with a flat
+@audio https://drive.google.com/file/d/1x3-_i1ruV85G9-xp67yC1L2eTPehEhuQ/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+> Questions 1–6: Complete the sentences. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Elinor has been in the flat for 3 months.
+f 1 | Elinor shares the flat with her ___ | cousin
+f 2 | Elinor must contact the landlord's ___ about the repairs. | service manager
+f 3 | Elinor may have to pay £___ towards some repairs. | 50
+f 4 | The agent suggests that Elinor should contact a ___ for urgent repairs. | private company
+f 5 | Elinor can be contacted on her ___ number. | mobile
+f 6 | Elinor will need to sign the ___ after the repairs are completed. | agreement
+> Questions 7–10: Choose the correct letter, A, B or C.
+m 7 | According to the agent, what may be the problem with the bathroom window? | The lock may be broken. ;; The glass may be cracked. ;; The frame may need repainting. | A
+m 8 | The agent says that the electricity should be checked | after the washing machine is examined. ;; when the lights are being repaired. ;; before the main switch is renewed. | A
+m 9 | The agent thinks the central heating system should be | checked. ;; repaired. ;; renewed. | A
+m 10 | What was the problem in the hall? | the paintwork ;; the glue ;; the carpet | C
+## Section 2 · The Queensland Festival
+> Questions 11–16: Choose the correct letter, A, B or C.
+m 11 | Why does Jane recommend visiting the Music Tent on Tuesday? | There will be free entry. ;; There will be fewer people. ;; There will be special classes. | B
+m 12 | When do the educational workshops take place in the Music Tent? | weekends only ;; every evening ;; every afternoon | C
+m 13 | Why does Jane recommend going to the library to buy a ticket? | The tickets will be cheaper there. ;; You can get tickets in advance there. ;; It's easier to get tickets there than in the city. | A
+m 14 | What will history lovers find interesting about Macquarie House? | its gardens ;; its architecture ;; its location | C
+m 15 | The Big Barbecue is different this year because | it will be much larger than before. ;; there will be free entertainment. ;; the food will be cooked by international chefs. | B
+m 16 | What can you do at the Railway Museum? | see a steam engine working ;; dress up in a railway worker's uniform ;; have a meal inside an old train | C
+> Questions 17–18: Which TWO free things does the family ticket on the steam train include? A. an educational talk · B. a children's book · C. a short film · D. a flag · E. a tour of the Ipswich Museum. (Gõ một chữ cái mỗi ô.)
+f 17 | Answer 1: ___ | b / d
+f 18 | Answer 2: ___ | d / b
+> Questions 19–20: Which TWO things apply when voting for Our Favourite Place? A. People of any age may vote. B. You may send in your vote by email. C. Only local residents may vote. D. You may vote several times. E. Voting ends at midnight on Saturday. (Gõ một chữ cái mỗi ô.)
+f 19 | Answer 1: ___ | a / d
+f 20 | Answer 2: ___ | d / a
+## Section 3 · Presentation and feedback
+> Questions 21–30: Complete the notes. Write NO MORE THAN THREE WORDS. Likely period for presentation: 14th–24th June.
+f 21 | Time of day: ___ | early evening
+f 22 | First part: 40-minute presentation to the ___ | seminar group
+f 23 | Must bring to discussion: material used in presentation, a ___ | list of objectives
+f 24 | a ___ | project outline
+f 25 | Feedback: students will receive a ___ and 'thinking questions' | checklist
+f 26 | Good projects will show the student has done ___ | wide reading
+f 27 | has ability to ___ | design research
+f 28 | has ability to present ___ | a clear argument / clear argument
+f 29 | Stage Two: produce ___ and do data analysis | theory chapters
+f 30 | Further information from website: www.___.com | studentlink / student link
+## Section 4 · Research in child psychology
+> Questions 31–39: Complete the table (Past / Present). Write NO MORE THAN TWO WORDS.
+f 31 | The three aspects of development are now regarded as being ___ | connected
+f 32 | Behaviour was studied in artificial contexts. Example: ___ | learning
+f 33 | (was related to behaviour of animals in ___) | laboratories / the laboratory / laboratory
+f 34 | Awareness that a child's behaviour is influenced by his/her ___ and the situation he/she is in. | background
+f 35 | Child was seen as being ___ | passive
+f 36 | No direct link between early influences and child's ___ | personality
+f 37 | Influence of Piaget: young children were believed to be ___ | self-centred / self-centered
+f 38 | Psychologists did not take culture into account. Example: importance of ___ for babies. | stimulation
+f 39 | Guatemalan study – babies are kept in the ___ for the first year | house
+> Question 40: Choose the correct letter, A, B or C.
+m 40 | The speaker thinks that one topic which will be examined closely in future is | the influence of the mother. ;; early speech patterns. ;; development before birth. | C
