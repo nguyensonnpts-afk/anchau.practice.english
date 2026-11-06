@@ -222,3 +222,61 @@ f 37 | Ancient Crete: as a dye for ___ | clothes
 f 38 | Roman Empire: in oil used for the production of ___ | cosmetics
 f 39 | as a ___ in public baths | perfume
 f 40 | Persia (Iran): as a dye used in the making of ___ | carpets
+=== Listening | Vol 7 | Test 5 | 40
+## Section 1
+@audio https://drive.google.com/file/d/1G5y4cb2BQmwPfL2BNC98AnXVaEe6RMoH/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+
+Library services. Example: Area of living: in the west of Perth. Best option – Minack Library.
+> Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Located in ___ Street | skellarn
+f 2 | next to the ___ | park
+f 3 | Saturdays: open until ___ p.m. | 4.30 / 4:30
+f 4 | Children's activities: a ___ club (5–13 year olds) | drama
+f 5 | a ___ club (every other Saturday) | singing
+f 6 | Adult activities: can meet local ___ (about one a year) | artists
+f 7 | Services: can borrow ___ | films
+f 8 | various ___ are available | magazines
+f 9 | can drop off books, etc. via the letter box (must give card ___) | number
+f 10 | Library shop sells postcards (small selection) and ___ (wide range) | maps
+## Section 2
+> Questions 11–16: Label the map (bản đề gốc có bản đồ A–H; hãy nghe và chọn chữ cái vị trí).
+L 11 | Toilet block | ABCDEFGH | A
+L 12 | Shower block | ABCDEFGH | C
+L 13 | Tent site | ABCDEFGH | G
+L 14 | Cabins | ABCDEFGH | D
+L 15 | Barbecue area | ABCDEFGH | F
+L 16 | Bike trail | ABCDEFGH | H
+> Questions 17–18: Which TWO items is it recommended that campers bring? A. earplugs B. sunscreen C. swimming toy D. torch E. boots (Gõ một chữ cái mỗi ô.)
+f 17 | Answer 1: ___ | a / e
+f 18 | Answer 2: ___ | e / a
+> Questions 19–20: Which does the organiser suggest are the TWO most popular concert items? A. acting B. dancing C. poetry recital D. singing E. storytelling (Gõ một chữ cái mỗi ô.)
+f 19 | Answer 1: ___ | b / d
+f 20 | Answer 2: ___ | d / b
+## Section 3
+> Questions 21–22: Which TWO points did students most frequently make about their musical background before starting a music degree? A. They had already composed music. B. They had several music qualifications. C. They could play more than one instrument. D. They had performed in public. E. They had had piano lessons. (Gõ một chữ cái mỗi ô.)
+f 21 | Answer 1: ___ | c / d
+f 22 | Answer 2: ___ | d / c
+> Questions 23–24: Which TWO points did students most frequently make about music practice? A. They prefer to practise alone. B. They try to practise every day. C. They are motivated to practise by fear. D. They feel they don't do enough practice. E. They enjoy the challenge of a difficult piece. (Gõ một chữ cái mỗi ô.)
+f 23 | Answer 1: ___ | c / e
+f 24 | Answer 2: ___ | e / c
+> Questions 25–26: Which TWO points were most frequently made by students about the pieces they select for assessed performances? A. They like to hear others performing the same pieces. B. They like to choose little-known pieces. C. They like to play pieces from memory. D. They like their tutor to choose their pieces. E. They like to choose technically demanding pieces. (Gõ một chữ cái mỗi ô.)
+f 25 | Answer 1: ___ | a / c
+f 26 | Answer 2: ___ | c / a
+> Questions 27–30: Which comment did most students make about each aspect of performance? A. This is very beneficial · B. This is difficult but enjoyable · C. This can affect relationships · D. This makes them very nervous · E. This is time-consuming · F. This is easy · G. This happens infrequently
+L 27 | Performing solo | ABCDEFG | B
+L 28 | Deciding which pieces to perform | ABCDEFG | E
+L 29 | Performing with musicians from a different genre | ABCDEFG | G
+L 30 | Performing with musicians who play the same instrument | ABCDEFG | A
+## Section 4 · Ethics in Engineering
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
+f 31 | At first, engineers saw ethics as a ___ issue | personal
+f 32 | Attitudes changed because of three disasters involving the collapse of ___ | bridges
+f 33 | 1879 – Scotland (the impact of ___ on the structure was miscalculated) | wind
+f 34 | 1907 – Canada (the structure could not support its own ___) | weight
+f 35 | At the time, molasses was the main ___ used in the USA | sweetener
+f 36 | Boston company: collapse of a ___ released 8 million litres of molasses | tank
+f 37 | Local residents insisted on a ___ of the molasses company | trial
+f 38 | Causes of the accident: insufficient ___ check | safety
+f 39 | the fermentation caused the rising of ___ | pressure
+f 40 | Now, every engineer has to have a ___ | license / licence
