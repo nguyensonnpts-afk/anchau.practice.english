@@ -51,3 +51,57 @@ f 37 | Researchers would like to find a ___ with language learning difficulties 
 f 38 | Children are likely to have some problems with ___ | concentration
 f 39 | With this approach, children no longer need ___ training | additional
 f 40 | The mathematics disorder affects ___ and families of children | teachers
+=== Listening | Vol 8 | Test 2 | 40
+## Section 1 · Lifeguard application
+@audio https://drive.google.com/file/d/19OTVuiQ72HLhTeU9K0le7hXO-Yk8imQw/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+> Questions 1–10: Complete the form (Fearnley Sports Center – Lifeguard Application Form). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Name: Peter Smith.
+f 1 | Home address: 130 South Main Street, Lake ___ | elsinore
+f 2 | Contact number: ___ (cell phone) | 077896245 / 0778 96245 / 077 896 245
+f 3 | has temporary job as a part-time ___ | waiter
+f 4 | wants to be a high school ___ coach | baseball
+f 5 | Water safety certificate expires in: ___ | october
+f 6 | Lifeguard at: the ___ in Fearnley | beach
+f 7 | Additional relevant skills: ___ | diving
+f 8 | is happy to work on ___ mornings | saturday / saturdays
+f 9 | is happy to start at ___ o'clock | six / 6
+f 10 | How did the applicant find out about this job? On the ___ | radio
+## Section 2 · Becoming a millionaire
+> Questions 11–16: Choose the correct letter, A, B or C.
+m 11 | Arthur feels that when starting a business, mistakes should be | seen as an opportunity to learn. ;; predicted and minimised. ;; avoided at all costs. | A
+m 12 | Recent American studies found that confidence will | sometimes reduce people's chances of success. ;; be increased by reading self-help books. ;; ensure good results on business courses. | A
+m 13 | The American studies recommended that new entrepreneurs | listen to their colleagues' advice. ;; get professional help when things go wrong. ;; remain concentrated on their aims. | C
+m 14 | What does Arthur say about his own experience of marketing? | He relied on what he already knew. ;; He hired an expert to take care of it. ;; He realised its importance too late. | B
+m 15 | What does Arthur think is an important quality shared by good leaders? | They are ambitious for their company. ;; They can deal with difficult people. ;; They earn the respect of their workforce. | C
+m 16 | What does Arthur say about taking risks? | He advises being cautious. ;; He favours a long-term view. ;; He believes it is financially advantageous. | A
+> Questions 17–18: Which TWO things does Arthur say people should focus on when developing their business idea? A. making sure the idea is original · B. offering a better deal than competitors · C. being committed to it · D. paying attention to detail · E. fixing realistic prices. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+f 17 | Answer 1: ___ | b / c
+f 18 | Answer 2: ___ | c / b
+> Questions 19–20: Which TWO things does Arthur say helped him get his business started? A. family support · B. getting a loan from a bank · C. good business advice · D. a favourable economic climate · E. an effective approach to business. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+f 19 | Answer 1: ___ | a / e
+f 20 | Answer 2: ___ | e / a
+## Section 3 · Feedback on the Performance Arts course
+> Questions 21–26: Choose the correct letter, A, B or C.
+m 21 | Gina chose to study performance arts at this university because the course | has a very good reputation. ;; has links with various theatres. ;; has an international flavour. | B
+m 22 | Which of the options they chose have Gina and Charlie both found useful? | Movement Analysis ;; Dance and Drama ;; The Body in Dance | A
+m 23 | What did Charlie do during his work experience? | He worked in a costume department. ;; He performed with a ballet company. ;; He helped out at a dance school for children. | A
+m 24 | What does Gina say she learnt from her work experience? | how to organise her time better ;; how to work better in a team ;; how to cope when under pressure | B
+m 25 | What does Charlie say about his dissertation topic? | He wanted it to be different from those of other students. ;; He had already done an assignment in this area. ;; He was inspired to choose it by a performance he saw. | C
+m 26 | Which aspect of writing a dissertation is Gina worried about? | finding enough to say ;; doing the background reading ;; presenting it in an appropriate way | B
+> Questions 27–30: What do the students say about each type of career in performance arts? Choose A–F.
+m 27 | Performance | The pay can be low. ;; There is a lot of competition. ;; An additional qualification is required. ;; Good communication skills are required. ;; People with experience feel very positive about it. ;; It is a relatively unpopular choice. | E
+m 28 | Education | The pay can be low. ;; There is a lot of competition. ;; An additional qualification is required. ;; Good communication skills are required. ;; People with experience feel very positive about it. ;; It is a relatively unpopular choice. | C
+m 29 | Theatre management | The pay can be low. ;; There is a lot of competition. ;; An additional qualification is required. ;; Good communication skills are required. ;; People with experience feel very positive about it. ;; It is a relatively unpopular choice. | A
+m 30 | Marketing | The pay can be low. ;; There is a lot of competition. ;; An additional qualification is required. ;; Good communication skills are required. ;; People with experience feel very positive about it. ;; It is a relatively unpopular choice. | F
+## Section 4 · Sea lion tracking study (Western Australia)
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY.
+f 31 | Sea lions are now affected by nets used to control ___ | sharks
+f 32 | Considerations when choosing a tracking method include ___ and ease of use. | cost
+f 33 | Plastic tags: the animal must be easy to ___ | catch
+f 34 | GPS tracking will not work in the ___ | ocean
+f 35 | In isolated regions, some animals are tracked by ___ (e.g. the polar bear) | helicopter
+f 36 | Perth study: the sea lions lost their tags. They rubbed against ___ to remove them. | rocks
+f 37 | Californian researchers used ___ to identify sea lions. | paint
+f 38 | Aim ii) to create a ___ to use as a guide | diagram
+f 39 | Method i) contacting ___ in Australia for photographs | zoos
+f 40 | Method ii) asking the ___ to get involved | public
