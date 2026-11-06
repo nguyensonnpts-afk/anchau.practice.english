@@ -11,6 +11,7 @@ tf <n> | <statement> | T|F|NG
 yn <n> | <statement> | Y|N|NG
 m <n> | <question> | opt A ;; opt B ;; ... | <letter>
 L <n> | <statement> | <letters e.g. ABCD> | <letter>
+o <n> | <question> | opt ;; opt ;; ... | <option text or its first token>
 """
 import json, re, sys, glob, os
 SRC = os.path.join(os.path.dirname(__file__), "ielts_src")
@@ -43,7 +44,7 @@ def parse(text):
             sec["audioSrc"] = line[7:].strip(); continue
         if line.startswith("> "):
             instr = (instr + "\n" if instr else "") + line[2:]; continue
-        m = re.match(r"^(f|tf|yn|m|L) (\d+) \| (.*)$", line)
+        m = re.match(r"^(f|tf|yn|m|L|o) (\d+) \| (.*)$", line)
         if m:
             kind, n, rest = m.group(1), m.group(2), m.group(3)
             parts = [p.strip() for p in rest.split(" | ")]
@@ -58,6 +59,11 @@ def parse(text):
                 opts = [o.strip() for o in parts[1].split(";;")]
                 addq({"t": "mc", "q": q, "o": [f"{chr(65+i)}. {o}" for i, o in enumerate(opts)],
                       "a": ord(parts[2].strip()) - 65})
+            elif kind == "o":
+                opts = [o.strip() for o in parts[1].split(";;")]
+                key = parts[2].strip()
+                idx = next(i for i, o in enumerate(opts) if o == key or o.startswith(key + " "))
+                addq({"t": "mc", "q": q, "o": opts, "a": idx})
             elif kind == "L":
                 letters = list(parts[1].replace(" ", ""))
                 addq({"t": "mc", "q": q, "o": letters, "a": letters.index(parts[2].strip())})
