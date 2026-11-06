@@ -978,3 +978,121 @@ f 38 | ___ which allows them to perceive bitter compounds. | taste buds
 > Questions 39–40: Choose the correct answer.
 m 39 | What is the main feature of AMP according to this passage? | offset bitter flavour in food ;; only exist in 304 cup ;; tastes like citrus ;; chemical reaction when meets biscuit | A
 m 40 | What is the main function of G protein? | collecting taste molecules ;; identifying different flavour elements ;; resolving large molecules ;; transmitting bitter signals to the brain | D
+=== Reading | Vol 7 | Test 10 | 60
+## Passage 1 · Wood: a valuable resource in New Zealand's economy
+Wood: a valuable resource in New Zealand's economy
+
+During the settlement of New Zealand by European immigrants, natural timbers played a major role. Wood was easily accessible and relatively cheap. A tradition of wooden houses arose, supported by the recognition that they were less likely to collapse suddenly during earthquakes, a not infrequent event in this part of the world. But in addition to demand from the domestic market, there was also a demand for forest products from overseas. Early explorers recognised the suitability of the tall, straight trunks of the kauri for constructing sailing vessels. The kauri is a species of coniferous tree found only in small areas of the southern hemisphere. So from the early 1800s, huge amounts of this type of wood were sold to Australia and the UK for that purpose. For a period, the forestry industry was the country's major export earner, but the rate of harvest was unsustainable and, by the beginning of the 20th century, indigenous timber exports were rapidly declining.
+
+From the 1940s, newly established plantations of an imported species of tree called radiata pine supplied timber and other wood products in increasing quantities. By the 1960s, plantation-grown timber was providing most of the country's sawn timber needs, especially for construction. Today, less than two percent of timber is cut from indigenous forests, and almost all of that is used for higher-value end uses, such as furniture and fittings.
+
+As the pine industry developed, it became apparent that this type of wood was also well suited for many uses. It makes excellent pulp*, and is frequently used for posts, poles, furnishings and mouldings, particleboard, fibreboard, and for plywood and 'engineered' wood products. Pine by-products are used in the chemical and pharmaceutical industries and residues are consumed for fuel. This amazing versatility has encouraged the development of an integrated forest-products industry which is almost unique in the world.
+
+Exporters of wood products have largely targeted the rapidly growing markets of South and East Asia and Australia; 80 percent of exports by value go to only five markets: Japan, Korea, China, the United States and Australia. The product mix remains heavily based on raw materials, with logs, sawn wood, pulp and paper comprising 75 percent of export value. However, finished wood products such as panels and furniture components are exported to more than 50 countries.
+
+In New Zealand itself, the construction industry is the principal user of solid wood products, servicing around 20,000 new house starts annually. However, the small size of New Zealand's population (just over four million), plus its small manufacturing and remanufacturing base, limit the forestry industry's domestic opportunities. For the last few years local wood consumption has been around only four million cubic metres. Accordingly, the development of the export market is the key to the industry's growth and contribution to the national economy in decades to come.
+
+In 2004, forestry export receipts were about 11 percent of the country's total export income, their value having increased steadily for ten years, until affected by the exchange fluctuations and shipping costs of recent years. The forestry industry is New Zealand's third largest export sector, generating around $3.3 billion annually from logs and processed wood products. But it is generally agreed that it is operating well below its capacity and, with the domestic market already at its peak, almost all of the extra wood produced in future will have to be marketed overseas. That presents a major marketing challenge for the industry.
+
+Although the export of logs will continue to provide valuable earnings for forest owners, there is broad acceptance that the industry must be based on value-added products in future. So the industry is investigating various processing, infrastructure and investment strategies with a view to increasing the level of local manufacturing before export. The keys to future success will depend on a variety of factors: better international marketing, product innovation, internationally competitive processing, better infrastructure and a suitable political, regulatory and investment environment. The industry claims that, given the right conditions, by 2025 the forestry sector could be the country's biggest export earner, generating $20 billion a year and employing 60,000 people.
+
+One competitive advantage that New Zealand has is its ability to source large quantities of softwood from renewable forests. Consumers in several key wood markets are becoming more worried about sustainability, and the industry is supporting the development of national standards as well as the recognition of these internationally.
+
+However, New Zealand is not the only country with a plantation-style forestry industry. Chile, Brazil, Argentina, South Africa and Australia all have extensive plantings of fast-growing species (hardwood and softwood), and in the northern hemisphere, Scandinavian countries have all expanded their forests or controlled their use in the interests of future production.
+
+Finally, in addition to competition from other wood producers, New Zealand faces competition from goods such as wood substitutes. These include steel framing for houses. This further underlines the necessity for globally competitive production and marketing strategies.
+
+* pulp: wood which is crushed until soft enough to form the basis of paper.
+> Questions 1–6: TRUE / FALSE / NOT GIVEN
+tf 1 | Settlers realised that wooden houses were more dangerous than other types of structure. | F
+tf 2 | During the 1800s, New Zealand exported wood for use in boat-building. | T
+tf 3 | Plantation-grown wood is generally better for construction than indigenous wood. | NG
+tf 4 | Compared to other types of wood, pine has a narrow range of uses. | F
+tf 5 | Demand for housing in New Zealand is predicted to fall in the next few years. | NG
+tf 6 | In future, the expansion of New Zealand's wood industry will depend on its exports. | T
+> Questions 7–13: Answer the questions. Write NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage.
+f 7 | Apart from exchange rates, which factor has had a negative impact on New Zealand's forestry exports? ___ | shipping costs
+f 8 | Which part of New Zealand's economy does the forestry industry rank third in? ___ | export sector
+f 9 | According to the New Zealand forestry industry, what could be the size of its workforce by 2025? ___ | 60,000 / 60000
+f 10 | What kind of timber product is available in large amounts from renewable forests in New Zealand? ___ | softwood
+f 11 | Which aspect of timber production are New Zealand's main customers increasingly concerned about? ___ | sustainability
+f 12 | Outside the southern hemisphere, who are New Zealand forestry's main competitors? ___ | scandinavian / scandinavian countries
+f 13 | Which group of products is New Zealand's forestry industry now having to compete with? ___ | wood substitutes
+## Passage 2 · Intelligent behaviour in birds
+Intelligent behaviour in birds
+Many people are aware of the intelligence of chimpanzees and other mammals. However, birds also demonstrate intelligent behaviour.
+
+[Đoạn 14] For centuries, many scholars maintained that humans were the only intelligent organism on Earth. Many traits were considered to be exclusively human examples of acumen – for example, language, tool use, deception, awareness of self and others. However, exciting new research on a number of animals, particularly birds, has called into question the uniqueness of these traits, forcing us to reconsider this opinion. In 1964, people were amazed when naturalist Jane Goodall first discovered chimpanzees making and using tools. But ornithologists, people who study birds, were not overly surprised. Almost 20 years earlier, a renowned ornithologist had shown that tool use was commonplace in populations of woodpecker finches residing on the Galápagos Islands. These tiny birds routinely used twigs to extract grubs from under bark.
+
+[Đoạn 15] Since then, the catalogue of tool-using animals has grown. At least three Australian bird species make tools similar to those of the woodpecker finch, and when white-winged choughs come across shellfish they have been known to use rocks as hammers to crack open the recalcitrant shells. Other birds show a more sophisticated level of insight. For example, black kites have been reported dropping bait into lakes to bring fish to the surface of the water, thereby making them easier to catch. A kite may also pick up a smouldering stick from an area recently burned by a bushfire and drop the stick on a patch of unburned grass. The bird then feasts on the small animals that flee from the subsequent fire.
+
+[Đoạn 16] Most tool-using behaviours are a means of extracting food, which may provide a clue as to how the mental abilities needed for tool use evolved. The predominant explanation is based on the proverb that 'necessity is the mother of invention'. Essentially, brain tissue is energetically expensive, so animals should have evolved only the necessary intellectual capabilities required to overcome the challenges they face in their environment. Consider a hypothetical duck grazing on a seemingly endless supply of grass. Being particularly intelligent will not help the duck eat more grass. In contrast, other species, such as birds of prey, live in a more challenging environment, where food may be distributed erratically, hidden from view or highly mobile. The food itself may be quite intelligent. So, if there are not enough resources to feed all individuals, then only the smartest in each generation will live and reproduce.
+
+[Đoạn 17] New Caledonian crows boast many different tools in their tool kit. They use a hooked tool made by removing all but one of the side branches from a twig. They fashion serrated rakes (using their beaks as scissors) from stiff, leathery pandanus leaves. They also make probes by modifying their own moulted feathers. Each tool is used in slightly different ways to pull grubs from deep within tree trunks. The crows carry their favourite tool from one foraging site to the next. They also store their tools for later re-use in a secure place on their perch. Problem-solving abilities have traditionally been thought to be beyond the reach of animals. Nevertheless, birds are coming up with innovative solutions all the time. Recently, New Caledonian crows were observed moulding a piece of wire, something they had never seen before, into a hook and then using it to retrieve food.
+
+[Đoạn 18] Literally hundreds of such reports have accumulated in back copies of scientific journals. Recently, a team of biologists from McGill University in Canada collated them and compared the frequency and size of innovations with the size of the birds' forebrain (the brain-area responsible for higher-order information processing) relative to the hindbrain. The team uncovered a clear relationship: birds with relatively large forebrains are able to invent fresh solutions to ecological challenges, and to exploit the discoveries and inventions of others, more often than birds with relatively small forebrains.
+
+[Đoạn 19] Intelligence in birds may also arise as a result of selection to overcome the dynamic challenges of communal living. Since this involves competition between group members, to be successful, a social animal may need to be able to reflect on its own intentions, as well as those of others. The consequence of being part of a community may be the evolution of a distinctly 'political' brain.
+
+[Đoạn 20] What better way to exercise a political brain than to be deceitful! Perhaps the best example of deception among birds comes from the white-winged choughs. Choughs are cooperative breeders – that is, they form a communal group consisting of one breeding-pair and up to 15 non-breeding 'helpers'. However, because young choughs have so little enthusiasm for foraging, or gathering food, they are often too hungry to help. And because it is socially unacceptable to be part of a group and provide little help, young choughs often act deceptively. For example, when an adult is watching, a young chough will place some food in the mouth of a hungry chick – but it does not release the food. Instead, it waits until the adult departs and then eats it. A chough can also help the group by preening* the chicks. Interestingly, it is more likely to preen the chicks if another bird can see it do so. A chough that has been sitting totally still on the nest while the rest of the group is foraging out of sight will comically spring up and frantically start to preen the chicks as soon as some of its group members come into view. It is likely that these young choughs are only motivated to help when others are watching because they are concerned about their social status. Choughs need other choughs to like them as they cannot breed without them.
+
+* preening: cleaning and arranging feathers on birds
+> Questions 14–20: Choose the correct heading for each paragraph. i. The theory linking capacity for tool use in birds and survival · ii. The influence of humans on tool use · iii. The theory linking cognitive ability and living in a society · iv. Reviewing long-held beliefs · v. Intelligence helps birds to remember · vi. How some birds trick each other · vii. Physiological evidence of birds' intelligence · viii. Several examples of birds who use tools · ix. One species' multiple tool-using techniques
+f 14 | Đoạn 14: ___ | iv
+f 15 | Đoạn 15: ___ | viii
+f 16 | Đoạn 16: ___ | i
+f 17 | Đoạn 17: ___ | ix
+f 18 | Đoạn 18: ___ | vii
+f 19 | Đoạn 19: ___ | iii
+f 20 | Đoạn 20: ___ | vi
+> Questions 21–26: Match each characteristic with the correct bird: A. white-winged choughs · B. black kites · C. New Caledonian crows. NB You may use any letter more than once.
+L 21 | keeping tools that they like to use | ABC | C
+L 22 | drawing out their prey by frightening it | ABC | B
+L 23 | the use of tools to remove the outer covering from food | ABC | A
+L 24 | using food to attract their prey | ABC | B
+L 25 | the use of unfamiliar materials to make tools | ABC | C
+L 26 | engaging in certain activities for the benefit of observers | ABC | A
+## Passage 3 · Jean Piaget 1896–1980
+Jean Piaget 1896 – 1980
+Seymour Papert looks at the work of pioneering Swiss philosopher and psychologist
+
+Jean Piaget spent much of his professional life listening to children, watching children and poring over reports of researchers around the world who were doing the same. He found, to put it most succinctly, that children don't think like grown-ups. After thousands of interactions with young people often barely old enough to talk, Piaget began to suspect that behind their cute and seemingly irrational utterances were thought processes that had their own kind of order and their own special logic. Einstein called it a discovery 'so simple that only a genius could have thought of it.'
+
+Although not an educational reformer, Piaget championed a way of thinking about children that provided the foundation for today's education-reform movements. It was a shift comparable to the way modern anthropology displaced stories of primitive tribes being 'noble savages' and 'cannibals'. One might say that Piaget was the first to take children's thinking seriously. He has been revered by generations of teachers inspired by the belief that children are not empty vessels to be filled with knowledge (as traditional pedagogical theory had it) but active builders of knowledge – little scientists who are constantly creating and testing their own hypotheses about the world. And though he may not be as famous as Sigmund Freud or even B F Skinner, his influence on psychology may be longer lasting.
+
+In 1920, while doing research in a child-psychology laboratory in Paris, Piaget noticed that children of the same age made similar errors on intelligence tests. Fascinated by their reasoning processes, he began to suspect that the key to human knowledge might be discovered by observing how the child's mind develops. On his return to Switzerland he began watching children play, scrupulously recording their words and actions as their minds raced to find reasons for why things are the way they are.
+
+In one of his most famous experiments, Piaget asked children, 'What makes the wind?'. A typical dialogue would be:
+Piaget: What makes the wind?
+Julia: The trees.
+Piaget: How do you know?
+Julia: I saw them waving their arms.
+Piaget: How does that make the wind?
+Julia: (waving her hand in front of his face): Like this. Only they are bigger. And there are lots of trees.
+
+Piaget recognized that five-year-old Julia's beliefs, while not correct by any adult criterion, are not 'incorrect' either. They are entirely sensible and coherent within the framework of the child's way of knowing. Classifying them as 'true' or 'false' misses the point and shows a lack of respect for the child. What Piaget was after was a theory that the wind dialogue demonstrated coherence, ingenuity and the practice of a kind of explanatory principle (in this case by referring to body actions) that stands young children in very good stead when they don't know enough or don't have enough skill to handle the kind of explanation that grown-ups prefer.
+
+Piaget was not an educator and never laid down rules about how to intervene in such situations. But his work strongly suggests that the automatic reaction of putting the child right may well be counter-productive. If their theories are always greeted by 'Nice try, but this is how it really is...' they might give up after a while on making theories. As Piaget put it, 'children have real understanding only of that which they invent themselves, and each time that we try to teach them something too quickly, we keep them from inventing it themselves.'
+
+Disciples of Piaget have tolerance for – indeed a fascination with – children's primitive laws of physics: that things disappear when they are out of sight; that the moon and the sun follow you around; that big things float and small things sink. Einstein was intrigued by Piaget's finding, especially by the idea that seven-year-olds insist that going faster can take more time – perhaps because this, like Einstein's own theories of relativity, runs so contrary to common sense.
+
+Although every teacher in training still memorises Piaget's successive stages of childhood development, the greater part of Piaget's work is less well known, perhaps because schools of education regard it as 'too deep' for teachers. Piaget never thought of himself as a child psychologist. His real interest was epistemology – the theory of knowledge – which, like physics, was considered a branch of philosophy until Piaget came along and made it a science. Through epistemology, Piaget explored multiple ways of knowing. He acknowledged them and examined them non-judgementally, yet with a philosopher's analytic rigour. Since Piaget, the territory has been widely colonised by those who write about women's ways of knowing, Afrocentric ways of knowing, even the computer's ways of knowing. Indeed, artificial intelligence and the information-processing model of the mind owe more to Piaget than its proponents may realise.
+
+The core of Piaget is his belief that looking carefully at how knowledge develops in children will elucidate the nature of knowledge in general. Whether this has in fact led to deeper understanding remains, like everything about Piaget, controversial. In the past decade, Piaget has been vigorously challenged by the current fashion of viewing knowledge as an intrinsic property of the brain. Ingenious experiments have demonstrated that newborn infants already have some of the knowledge that Piaget believed children constructed. But for those, like me, who still see Piaget as the giant in the field of cognitive theory, the difference between what the baby brings and what the adult has is so immense that the new discoveries do not significantly reduce the gap, but only increase the mystery.
+> Questions 27–31: Choose the correct answer.
+m 27 | In the second paragraph the writer mentions the example of modern anthropology to illustrate | the universality of Piaget's insights into the workings of the mind. ;; the similarity between children's thought processing in different cultures. ;; how Piaget's work represents a crucial turning-point in our approach to education. ;; how Piaget's work has aided our understanding of man's evolution from primitive origins. | C
+m 28 | According to the writer, what point is illustrated by the dialogue about the wind? | The factual accuracy of what children say is of minor significance. ;; Children want to learn about scientific principles. ;; Children's reasoning processes can be amusing to adults. ;; Children often pretend that they know the answers to questions. | A
+m 29 | Piaget believed in the importance of | preventing children from making false assumptions. ;; giving children honest feedback on their hypotheses. ;; showing children how to formulate their own ideas about the world. ;; maintaining children's confidence in their ability to interpret the world. | D
+m 30 | What does the writer suggest in the seventh paragraph? | Children's sense of their surroundings changes as they get older. ;; Children are able to grasp certain complex ideas as well as adults are. ;; Even apparently irrational ideas can be worthy of interest. ;; Sometimes the simplest explanations are the best. | C
+m 31 | The writer's main purpose is to | outline Piaget's contribution to a range of scientific fields. ;; summarise how education has benefited from Piaget's findings. ;; discuss Piaget's role in the development of 20th-century psychology. ;; express doubts about a number of Piaget's theories. | C
+> Questions 32–36: Complete the summary using the list A–I: A. correct · B. theories · C. brain · D. simple · E. teachers · F. psychology · G. logical · H. thought · I. philosophers. Type the letter or the word.
+f 32 | Piaget maintained that children's mental processes were far more ___ than they might appear. | g / logical
+f 33 | He encouraged the view that a child regularly tries out his or her own ___ about the world. | b / theories
+f 34 | Piaget's impact on the area of ___ could well outlast that of more celebrated pioneers of this discipline. | f / psychology
+f 35 | Despite doubts cast over his ideas by the current view associating knowledge exclusively with the ___, the effects of his work are still strong today. | c / brain
+f 36 | His principles are still widely used in the professional development of ___. | e / teachers
+> Questions 37–40: YES / NO / NOT GIVEN
+yn 37 | Piaget's early work in Paris involved innovative research techniques. | NG
+yn 38 | Piaget gave clear guidelines as to how adults should give information to children. | N
+yn 39 | Piaget made a significant contribution to the field of epistemology. | Y
+yn 40 | We still have much to learn about the nature of knowledge. | Y
