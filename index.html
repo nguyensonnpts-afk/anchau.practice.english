@@ -178,7 +178,9 @@ pre.help{background:var(--bg);border:1px solid var(--line);border-radius:10px;pa
 <header class="top" id="hdr"></header>
 <main><div class="wrap" id="app"></div></main>
 <div id="modal"></div>
-
+<!--IELTS-DATA-->
+<script src="data/ielts/vol08-reading.js"></script>
+<!--/IELTS-DATA-->
 <script>
 /* =========================================================
    DỮ LIỆU MẪU (có sẵn, không xóa được; giáo viên có thể thêm bộ từ/đề riêng)
@@ -324,6 +326,7 @@ Experts suggest that teenagers should set daily time limits and turn off notific
    {t:'mc',q:'The word "They" in paragraph 3 refers to ______.',o:['teenagers','experts','schools','notifications'],a:1,e:'"Experts suggest… They also recommend…" → They = experts.'}
   ]}]}
 ];
+SAMPLE_TESTS.push(...(window.IELTS_DATA||[])); /* đề IELTS theo Vol: data/ielts/*.js */
 
 /* =========================================================
    LƯU TRỮ
