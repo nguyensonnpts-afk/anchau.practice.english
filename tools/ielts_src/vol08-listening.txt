@@ -264,3 +264,58 @@ f 37 | Each word of Bruce Goldie's language was based on a ___ | picture
 f 38 | Children in a Canadian ___ learned to read using his language. | hospital
 f 39 | Why have invented languages failed? They cannot express ___ | emotions
 f 40 | They are now invented by ___, just for entertainment. | writers
+=== Listening | Vol 8 | Test 6 | 40
+## Section 1 · Shipping of personal belongings
+@audio https://drive.google.com/file/d/1a2r7mX36kuecCrzL1nbcGJlXiO1jEk4e/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+> Questions 1–10: Complete the notes (Shipping of personal belongings). Write ONE WORD AND/OR A NUMBER. Ví dụ: special boxes for packing are provided free of charge.
+f 1 | The company will transport some electrical goods, e.g. a computer, and a ___ | bicycle / bike
+f 2 | The company will not transport any single item weighing more than ___ kg | 40
+f 3 | any ___ (for security reasons) or foods | liquids
+f 4 | anything in containers made of ___ | plastic
+f 5 | Additional services: special deliveries – delivery on ___ | saturdays / saturday
+f 6 | organisation of ___ | storage
+f 7 | For fifteen boxes and one violin sent from the UK to ___, | sweden
+f 8 | the cost would be about £___ | 575
+f 9 | Payment: on the phone by debit or credit card, or in cash to the ___ | driver
+f 10 | Documentation needed: photocopy of ___ and insurance papers | passport
+## Section 2 · Cooking school
+> Questions 11–16: Which special feature does each cooking tour or class have? Choose A–H.
+m 11 | Northern California | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | C
+m 12 | Italy | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | H
+m 13 | New Orleans | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | F
+m 14 | Budget Feasts | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | G
+m 15 | Cooking for Two | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | E
+m 16 | Variations on a Theme | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | A
+> Questions 17–20: Label the plan of the kitchen. Choose the correct letter, A–J. (Bản đề gốc có sơ đồ; hãy nghe mô tả vị trí.)
+L 17 | Oven | ABCDEFGHIJ | H
+L 18 | Refrigerator | ABCDEFGHIJ | F
+L 19 | Demonstration kitchen | ABCDEFGHIJ | D
+L 20 | Utensil cabinet | ABCDEFGHIJ | B
+## Section 3 · Bricks made from waste
+> Questions 21–26: Choose the correct letter, A, B or C.
+m 21 | Adele read the article about Bitublocks because | it'll help her write an assignment. ;; she has to present it at a seminar. ;; it's on her dissertation topic. | B
+m 22 | What does Adele think is the most innovative aspect of the manufacture of Bitublocks? | It uses entirely recycled materials. ;; It does not involve a chemical reaction. ;; It is such a simple process. | B
+m 23 | Ray was surprised to read that the Bitublocks are so | stable. ;; light. ;; absorbent. | C
+m 24 | What do both Adele and Ray say about the manufacture of Bitublocks? | Existing methods are used. ;; Cheap materials are used. ;; Only local materials are used. | A
+m 25 | What insight did Ray get from reading about the hospital building? | how quickly UK building projects are growing ;; how poor UK construction materials are ;; how much material the UK construction industry uses | C
+m 26 | Adele thinks the research into the hospital was included in the article to show | how much recycled material is currently used. ;; ways to improve the levels of recycling. ;; problems caused when using recycled materials. | A
+> Questions 27–28: Which TWO things make Veggieblocks different from Bitublocks? A. They are cheaper to produce. B. They have a more acceptable colour. C. They are simpler to manufacture. D. They have problems with their smell. E. They can be more easily covered. (Gõ một chữ cái mỗi ô.)
+f 27 | Answer 1: ___ | b / d
+f 28 | Answer 2: ___ | d / b
+> Questions 29–30: Which TWO things about the future of the construction industry do Adele and Ray agree on? A. Architects will be willing to use new materials. B. Bitublocks will have a major impact. C. The industry will change very fast. D. Veggieblocks will become very popular. E. Financial incentives will be an important influence. (Gõ một chữ cái mỗi ô.)
+f 29 | Answer 1: ___ | a / e
+f 30 | Answer 2: ___ | e / a
+## Section 4 · The archaeological site of Trimera
+> Questions 31–36: Complete the notes. Write NO MORE THAN TWO WORDS.
+f 31 | 100 BC: invaded by Romans – trade in grain, olives and ___ | pottery
+f 32 | 1706: French explorer believed the site was the remains of a ___ | castle
+f 33 | 1982: a complete ___ was made | survey
+f 34 | The ___ was the first place to be excavated | market
+f 35 | a number of ___ were discovered | silver coins / coins
+f 36 | evidence of a ___ industry was found | textile / textile production
+> Questions 37–40: Complete the table (Important buildings). Write ONE WORD ONLY.
+f 37 | Doric House (eastern area): inhabitants came here to collect ___ | water
+f 38 | Theatre: next to a stone ___, capacity of 5,000 | bridge
+f 39 | Stairway (south-western area): has sculptures of ___ | lions
+f 40 | Roman Baths (central area): a statue of a Roman ___ was found | emperor
