@@ -58,3 +58,63 @@ f 37 | Words such as "from" may have more ___ in Bislama | meanings
 f 38 | Less than 10% of words are of ___ origin | french
 f 39 | Pacific words describe the natural world and also local ___ | culture
 f 40 | The word "long" acts as an important ___ in Bislama | preposition
+
+=== Listening | Vol 1 | Test 2 | 40
+## Section 1 · Rental Property Application Form
+@audio https://drive.google.com/file/d/18zIrzXrQcWvOi1SQZrO7hUoJrt7A1Yle/view
+Section 1: Susan gọi cho công ty bất động sản để tìm nhà thuê ở Auckland. Ví dụ – Name: Susan Smith.
+
+Current address: 234 Becketts Road, Brisbane 4054. New Zealand employer: Auckland Hospital. Rental start date: 8th February. Bedrooms: two.
+> Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Phone number (mobile): ___ | 614381997 / 61438197
+f 2 | Email address: susansmith@ ___ | post.com
+f 3 | Occupation: a ___ | chemist
+f 4 | Preferred property – first preference: a house with a ___ | garden
+f 5 | second preference: an apartment with a big ___ | balcony
+f 6 | Furnishings: a ___ is required | fridge
+f 7 | Maximum rent: $ ___ per week | 400
+f 8 | Preferred location: near the ___ | beach
+f 9 | Other requirements: must have ___ nearby | parking
+f 10 | would like ___ included in the rent | electricity
+## Section 2 · The Pre-school Family Centre
+@audio https://drive.google.com/file/d/1BfOedvouYsk-7oT4Dl-H4CVLEht2TS2I/view
+> Questions 11–20: Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer. Sessions run 9.30–12.30 each morning.
+f 11 | for children from ___ to 5 years old | 3 months / three months
+f 12 | run as a ___ by parents, who attend with their children | cooperative / co-operative
+f 13 | parents receive special ___ from the centre | training
+f 14 | children's activities organised in ___ age groups | mixed
+f 15 | one afternoon session to help prepare older children for ___ at school | reading
+f 16 | parents must make several ___ before they enrol their child | visits
+f 17 | each centre is officially recognised and receives ___ funding | government
+f 18 | Parents' commitments: take on responsibility for a special ___ | job
+f 19 | attend one ___ | meeting
+f 20 | Practical advice: attend regularly to help your child gain ___ | confidence
+## Section 3 · Presentation on foot injuries among sports players
+@audio https://drive.google.com/file/d/1BqEKWR7PFqstdu8YDyXBTbUPJGGClxH-/view
+> Questions 21–26: Choose the correct letter A, B or C.
+m 21 | John and Cath's presentation plans are different in | the examples used. ;; the order of information. ;; the main points made. | A
+m 22 | What do the students agree about the anatomy section of their presentation? | It would be better if Cath spoke about it. ;; It should be kept quite short. ;; It should be based on information from the internet. | B
+m 23 | What do the students agree to include in the last section? | visuals of injuries ;; demonstrations of treatment ;; interviews with patients | B
+m 24 | What is said about the different types of heel injury? | Diagnosis is straightforward. ;; They are expensive to treat. ;; Some are more serious than others. | C
+m 25 | On the subject of causes of heel injuries, the students agree to | focus on a single reason. ;; reject certain approaches. ;; use a source written by their professor. | A
+m 26 | What does Cath say about stretching as a treatment? | It is potentially risky. ;; It is commonly confused with strengthening. ;; It is the least effective part of treatment. | A
+> Questions 27–28: Which TWO treatment techniques did the female runner find useful for her swollen heel? A massage · B ultrasound · C rest · D balancing exercises · E ice. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 27 | Technique 1 ___ | a / c
+f 28 | Technique 2 ___ | c / a
+> Questions 29–30: Which TWO sports did the male sprinter find most effective during his rehabilitation programme? A swimming · B weight-training · C running on grass · D jumping · E cycling. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 29 | Sport 1 ___ | b / e
+f 30 | Sport 2 ___ | e / b
+## Section 4 · Different Types of Supermarket Layout
+@audio https://drive.google.com/file/d/1pkPAWLcv8qvd3jldfFEO6bnzfDZ8cZSr/view
+> Questions 31–36: Complete the table. Write NO MORE THAN THREE WORDS for each answer. Grid layout: parallel aisles; advantages – efficient use of floor space; disadvantage – uninteresting layout.
+f 31 | Grid – advantage: controls ___ | traffic flow
+f 32 | Grid – disadvantage: shoppers can ___ their shopping | rush
+f 33 | Free-form – description: ___ organisation | random
+f 34 | Free-form – disadvantage: customers need more ___ to find products | time
+f 35 | Free-form – poor use of space, so less ___ | cost-effective / cost effective
+f 36 | Boutique – displays arranged around a food speciality; separates space into ___ | smaller areas
+> Questions 37–40: Which types of products are placed in each location in supermarkets? A more expensive products · B most profitable products · C products reduced in price · D products aimed at children · E products requiring careful selection · F slow-moving products
+L 37 | quieter areas | ABCDEF | E
+L 38 | end of aisles | ABCDEF | F
+L 39 | middle shelves | ABCDEF | A
+L 40 | near the entrance | ABCDEF | B
