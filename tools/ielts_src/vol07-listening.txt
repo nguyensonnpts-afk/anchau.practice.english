@@ -109,3 +109,61 @@ f 37 | Section three: the ___ for building the monument | reason
 f 38 | the monument's ___ effect on members of the public | emotional
 f 39 | how well the monument suits its ___ | environment
 f 40 | Remember! Credit given for good ___ | analysis
+=== Listening | Vol 7 | Test 3 | 40
+## Section 1
+@audio https://drive.google.com/file/d/1oaLCODeGsBx3uyX-61mxM_nFVOweOa7m/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+
+Planning a party. Example: Reason for event: wife's promotion. Event option: large surprise party. Day of week: Friday. Time: 6–10 p.m. Reservation fee paid: $100. Credit card type: Mastercard.
+> Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Number of people: ___ | 80
+f 2 | Date: ___ | 26 september / 26th september / september 26
+f 3 | Location: the ___ Room | king
+f 4 | Type of music: ___ | jazz
+f 5 | Service option: ___ | table
+f 6 | Flavour of cake: ___ | lemon
+f 7 | Message on cake: ___ | congratulations
+f 8 | Credit card number: ___ | 5544120043268887
+f 9 | Name: Brian ___ Troy | sebastian
+f 10 | Additional fees: extra charge for ___ | service
+## Section 2
+> Questions 11–12: Choose the correct answer.
+m 11 | Joan normally gets up at | 5.30 a.m. ;; 6.30 a.m. ;; 7.30 a.m. | B
+m 12 | Joan's first task of the day is to | clean the horses. ;; organise her son. ;; do farm work. | B
+> Questions 13–14: Complete the summary. Write ONE WORD AND/OR A NUMBER for each answer.
+f 13 | In her local district there are at present twenty-two riders and ___ helpers on the volunteer list, | 40 / forty
+f 14 | out of whom ___ come regularly. | 25 / twenty-five
+> Questions 15–18: How much does Joan like doing each of the following activities? A. She really likes it. · B. She doesn't mind it. · C. She hates it.
+L 15 | correspondence | ABC | B
+L 16 | fund-raising | ABC | C
+L 17 | calling riders | ABC | A
+L 18 | organising accounts | ABC | C
+> Questions 19–20: Joan says the TWO ways the RDA needs to improve are by A. giving special training. B. making fund-raising more effective. C. opening more RDA centres. D. providing more helpers. E. recognising difficulties of disabled riders. (Gõ một chữ cái mỗi ô.)
+f 19 | Answer 1: ___ | b / e
+f 20 | Answer 2: ___ | e / b
+## Section 3
+> Questions 21–22: Which TWO topics were the aims of the geography lesson related to? A. global interdependency B. manufacturing method C. the environmental impact of trade D. transport systems E. the development of writing tools (Gõ một chữ cái mỗi ô.)
+f 21 | Answer 1: ___ | a / d
+f 22 | Answer 2: ___ | d / a
+> Questions 23–24: Which TWO problems do Dean and Hannah identify in their lesson? A. the materials B. the student grouping C. the lesson structure D. the teacher coordination E. the timing (Gõ một chữ cái mỗi ô.)
+f 23 | Answer 1: ___ | b / e
+f 24 | Answer 2: ___ | e / b
+> Questions 25–30: Complete the flow-chart (Geography lesson plan: student activities). A. export routes · B. future · C. talk · D. homework · E. worksheet · F. history · G. producers · H. methods of transport
+L 25 | Locate the top ___ on a world map | ABCDEFGH | G
+L 26 | Discuss the pros and cons of different ___ | ABCDEFGH | H
+L 27 | In groups, discuss countries' possible ___ to the USA | ABCDEFGH | A
+L 28 | Complete a ___ about pencil distribution within the USA | ABCDEFGH | E
+L 29 | Share ideas about the ___ of pencils | ABCDEFGH | B
+L 30 | Prepare a ___ | ABCDEFGH | C
+## Section 4 · The Antikythera mechanism
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
+f 31 | It was part of a ship's ___, found in the sea near Antikythera, in Greece. | cargo
+f 32 | It was wrongly thought to be a piece of ___. | rock
+f 33 | 'Dome' – produces photographs which make the ___ clearer | inscriptions
+f 34 | 'BladeRunner' – produces X-rays, originally used to identify ___ in engines | cracks
+f 35 | The mechanism consisted of 30 or more gear wheels made of ___ | metal
+f 36 | a framework made of ___ | wood
+f 37 | The operator turned a ___ to move the gear wheels. | handle
+f 38 | Most surprisingly, the mechanism could calculate when an ___ would occur. | eclipse
+f 39 | It may have been used as a ___ when planning festivals. | calendar
+f 40 | 13th–14th centuries: used for making ___ in Western Europe. | clocks
