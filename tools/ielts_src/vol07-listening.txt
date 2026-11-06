@@ -392,3 +392,58 @@ f 37 | The concert piece was finished in 1979 and written in memory of a ___ | f
 f 38 | It starts with a noise that sounds like ___, | thunder
 f 39 | produced by two people moving large pieces of ___ | metal
 f 40 | Although the music is unusual, it has a traditional ___ | structure
+=== Listening | Vol 7 | Test 8 | 40
+## Section 1
+@audio https://drive.google.com/file/d/1FN4zSKbSPzZJZ12Eifgp3YNLnAw6bRUS/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+> Questions 1–8: Choose the correct answer.
+m 1 | The centre has enough accommodation for | 18 people. ;; 20 people. ;; 38 people. | C
+m 2 | The meeting room is currently | unavailable. ;; flooded. ;; booked. | A
+m 3 | Visitors must tell the centre in advance if they want to | use the centre's kitchen. ;; have meals cooked for them. ;; eat at restaurants outside. | B
+m 4 | All visitors on the farm can | get information about organic farming. ;; help to feed the animals. ;; watch a tractor demonstration. | A
+m 5 | On the survival course people have to | learn to use a map. ;; find their own food. ;; run through woodland. | B
+m 6 | From the centre it is easy to walk to | Exmoor National Park. ;; the beach. ;; a cycling route. | C
+m 7 | If the weather is bad visitors can go to a | cinema. ;; theatre. ;; museum. | C
+m 8 | Groups who wish to stay at the centre must pay | part of the cost in advance. ;; all the cost in advance. ;; all of the cost on arrival. | A
+> Questions 9–10: Complete the notes. Write ONE WORD AND/OR NUMBERS for each answer.
+f 9 | Address: Winsham Farm, ___ Road | cotehele
+f 10 | Near Sherborne, ___ | sh121lq / sh12 1lq
+## Section 2 · Vacation jobs
+> Questions 11–16: Complete the table. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
+f 11 | Stocktaking – main advantage: ___ | travelling / traveling
+f 12 | Stocktaking – recommendation: ___ | get good shoes / good shoes
+f 13 | Office work – main disadvantage: ___ | wearing formal clothes / formal clothes / wearing formal
+f 14 | Office work – recommendation: choose a ___ | large office
+f 15 | Theme park attendant – main advantage: ___ | good pay
+f 16 | Theme park attendant – recommendation: ___ | live nearby
+> Questions 17–20: Choose the correct answer.
+m 17 | Peter learned about the job | from a college friend. ;; on the computer. ;; from a student job centre. | B
+m 18 | Peter mainly enjoyed the job because it was | easy. ;; challenging. ;; unusual. | C
+m 19 | The job's most interesting aspect was | learning about the environment. ;; working with children. ;; caring for the animals. | B
+m 20 | Peter has decided that next vacation he | won't take a job. ;; will work at the zoo. ;; will work elsewhere. | A
+## Section 3 · Study syndicate
+> Questions 21–22: Complete the notes (Reasons for having study syndicates). Write NO MORE THAN THREE WORDS for each answer.
+f 21 | It gives the opportunity to ___ | share ideas
+f 22 | You can do ___ | deeper research
+> Questions 23–25: Complete the table (Plan for study syndicate). Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
+f 23 | 9th May – topic presented by Bob: ___ | mountain building
+f 24 | Date for 'Glaciated areas' (Andy): ___ | 17 may / 17th may
+f 25 | Date for 'Volcanoes' (John): ___ | 29 may / 29th may
+> Questions 26–30: Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
+f 26 | Presentation should last for ___ | 30-40 minutes / 30–40 minutes / 30 to 40 minutes
+f 27 | (plan time for ___) | questions and discussion
+f 28 | Sources of information: bibliography, library books, ___ | articles
+f 29 | and ___ | internet / the internet
+f 30 | For the presentations, use: overhead projector, whiteboard, ___ | photocopies
+## Section 4 · The African clawed frog (Xenopus laevis)
+> Questions 31–40: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 31 | Skin is ___ and can vary in colour | smooth
+f 32 | Skin is coated with a slippery film for ___ | protection
+f 33 | Males are ___ the size of females | half
+f 34 | Live in fresh water – prefer water that is ___ | still
+f 35 | Can survive high levels of ___ in water | salt
+f 36 | In drought conditions, may live in ___ for up to a year | mud
+f 37 | Find food using their sense of ___, their fingers, and their lateral lines | smell
+f 38 | Take food into their mouths using their front legs and a ___ system | pump
+f 39 | In some US states they are identified as a ___ | pest
+f 40 | Mucus from the skin was found to have ___ properties | antibiotic
