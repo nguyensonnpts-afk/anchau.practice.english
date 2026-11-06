@@ -211,3 +211,56 @@ m 37 | Which part of the vinaigrette was made of gold? | the inside ;; the outsi
 m 38 | Perfume bottles used in the mid-19th century | were imports from outside Europe. ;; could be bought by large numbers of people. ;; were usually made of horn. | B
 m 39 | Tiffany bottles | were produced by a number of companies. ;; could only be bought from catalogues. ;; showed skilled use of crystal. | C
 m 40 | The 'Vanity' was | used for storing cosmetics. ;; the smallest perfume ornament ever made. ;; developed in the 1950s. | A
+=== Listening | Vol 8 | Test 5 | 40
+## Section 1 · Arizona travel advice
+@audio https://drive.google.com/file/d/1T_zTvkW_eojp3kjV7EsbtlZnew4XD9Z6/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+> Questions 1–10: Complete the notes (Arizona – travel advice). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Ví dụ: the temperature will probably be about 40 degrees centigrade during the day.
+f 1 | pack a ___ | jacket
+f 2 | drive from Tucson along the ___ trails | desert
+f 3 | go to the ___ (highly recommended) | space museum
+f 4 | there is the possibility of playing ___ | golf
+f 5 | Susie's parents' address: 6073 ___ Drive | fearnleigh / fearnley
+f 6 | Town history: destroyed by fire in ___ (rebuilt later) | 1901
+f 7 | 4th July – Independence Day: there will be ___ in the evening | fireworks
+f 8 | Susie's parents' phone number: ___ | 9286352271 / 928 635 2271 / 928-635-2271
+f 9 | Grand Canyon: tour by ___ (1½ hrs; 7 trips a day) | helicopter
+f 10 | canoe (all day; important to take ___) | sun cream / suncream
+## Section 2 · The bookshop
+> Questions 11–16: Label the map of the store. Choose the correct letter, A–I. (Bản đề gốc có sơ đồ; hãy nghe mô tả vị trí.)
+L 11 | Art books | ABCDEFGHI | I
+L 12 | Gardening books | ABCDEFGHI | H
+L 13 | History books | ABCDEFGHI | D
+L 14 | Children's books | ABCDEFGHI | G
+L 15 | Reading area | ABCDEFGHI | E
+L 16 | Self-help books | ABCDEFGHI | A
+> Questions 17–20: What does the speaker say about each new book? Choose A–F.
+m 17 | Penny Pinchers | a first-time author ;; an award-winning book ;; a true story ;; has a sad ending ;; has good illustrations ;; part of a series | E
+m 18 | The Running Boy | a first-time author ;; an award-winning book ;; a true story ;; has a sad ending ;; has good illustrations ;; part of a series | A
+m 19 | The Hidden Code | a first-time author ;; an award-winning book ;; a true story ;; has a sad ending ;; has good illustrations ;; part of a series | B
+m 20 | The Orange Moon | a first-time author ;; an award-winning book ;; a true story ;; has a sad ending ;; has good illustrations ;; part of a series | F
+## Section 3 · Writing essays
+> Questions 21–25: Choose the correct letter, A, B or C.
+m 21 | Katy thinks it might be inappropriate for academic essays to | give both sides of an argument. ;; express personal opinions. ;; present a range of views. | B
+m 22 | The tutor says that in one type of conclusion students should | withhold their own views. ;; avoid too much repetition. ;; refer to the title. | C
+m 23 | What does the tutor say about the bibliography? | There is a standard format for references. ;; Presentation is not assessed at this level. ;; Book titles should be underlined. | A
+m 24 | What advice does the tutor give about quotations? | They provide evidence of how widely a student has read. ;; They are useful for defining difficult concepts. ;; There is a tendency to use too few of them. | B
+m 25 | John suggests that the writer of the first essay should have | done more thorough research. ;; analysed his data more carefully. ;; given his views more clearly. | A
+> Questions 26–30: Complete the sentences. Write ONE WORD ONLY.
+f 26 | Katy thinks the writer separates different ___ very clearly. | subtopics / sub-topics
+f 27 | John feels that bullet points and sub-headings might be more appropriate for ___ than for essays. | reports
+f 28 | John particularly admires the way the writer backs up his statements with ___. | examples
+f 29 | Katy likes the writer's use of language to link his ___. | ideas
+f 30 | The tutor thinks that wide ___ helps to develop writing ability. | reading
+## Section 4 · Inventing a Universal Language
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY.
+f 31 | Early invented languages were used for religious purposes or for ___ | trade
+f 32 | William Spencer wrote books about ___ so he needed an accurate language. | science
+f 33 | At first he tried to base his language on ___ | numbers
+f 34 | Ludwig Zamenhof wrote ___ to help develop his new language. | songs
+f 35 | He wanted simplicity, e.g. one prefix to make words ___ | negative
+f 36 | He sent a ___ to his friends to publicise his language. | letter
+f 37 | Each word of Bruce Goldie's language was based on a ___ | picture
+f 38 | Children in a Canadian ___ learned to read using his language. | hospital
+f 39 | Why have invented languages failed? They cannot express ___ | emotions
+f 40 | They are now invented by ___, just for entertainment. | writers
