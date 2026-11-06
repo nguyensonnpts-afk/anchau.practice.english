@@ -336,3 +336,59 @@ f 37 | In the Taiga there are not many types of ___, but a good range of wildlif
 f 38 | The area known as Muskeg is dangerous as it has hidden ___ | pools
 f 39 | Photographs of birds should be taken for future ___ | documentation
 f 40 | Water samples will be checked for ___ | pollution
+=== Listening | Vol 7 | Test 7 | 40
+## Section 1
+@audio https://drive.google.com/file/d/1tb6p19AZmYg_HoS7c_DDhU-rSjMrmC0B/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+
+Places to visit with children
+> Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Alma Park: a family ticket to the zoo is $ ___ | 65
+f 2 | The fastest bus takes about ___ minutes. | 40 / forty
+f 3 | You can hold some animals and have a ___ for a small fee. | photo
+f 4 | The Entertainment Room: John ___ is performing. | rosie
+f 5 | Performances run from Tuesday to ___ | saturday
+f 6 | There is a ___ on tickets for Monday night's preview. | discount
+f 7 | The City: go to the city centre ___ to see a special exhibition. | museum
+f 8 | Do origami – we'll need to take a small ___ | box
+f 9 | Bunyabbie Island: go snorkelling at Salty Lake – it's on the ___ side of the island. | ocean
+f 10 | You're not allowed to ___ on the island. | camp
+## Section 2 · School fair
+> Questions 11–14: What does the speaker say about each volunteer role at the school fair? A. An office will be provided for this role. · B. More than one person is needed for this role. · C. This is a new role for this year's fair. · D. This role will start next month. · E. This role will mainly involve evening work. · F. To do this role you need your own transport.
+L 11 | Entertainment co-ordinator | ABCDEF | E
+L 12 | Advertising and promotion co-ordinator | ABCDEF | B
+L 13 | Technical co-ordinator | ABCDEF | F
+L 14 | Staffing co-ordinator | ABCDEF | C
+> Questions 15–20: Label the map (bản đề gốc có bản đồ A–I; hãy nghe và chọn chữ cái vị trí).
+L 15 | Fairground rides | ABCDEFGHI | I
+L 16 | Entertainment stage | ABCDEFGHI | D
+L 17 | Café | ABCDEFGHI | A
+L 18 | First aid tent | ABCDEFGHI | H
+L 19 | Market stalls | ABCDEFGHI | E
+L 20 | Pony rides | ABCDEFGHI | B
+## Section 3 · Environmental Science modules
+> Questions 21–26: What is the student's opinion on each module? A. was surprisingly interesting · B. covered too many topics · C. included out-of-date materials · D. involved practical applications · E. supplied useful technical information · F. was too basic to be useful · G. provided unnecessary detail · H. was relevant to a topic in the news · I. seemed too limited geographically
+L 21 | Statistics for environmental research | ABCDEFGHI | F
+L 22 | Sewage and drainage systems | ABCDEFGHI | A
+L 23 | Agriculture and food security | ABCDEFGHI | C
+L 24 | Sustainable energy | ABCDEFGHI | D
+L 25 | Government policy | ABCDEFGHI | I
+L 26 | Water management | ABCDEFGHI | G
+> Questions 27–28: Which TWO aspects of the course organisation did both Jamie and Martha like? A. the amount of reading B. the flexibility in the length of the course C. the convenience of choosing when to take modules D. the range of different modules offered E. the relevance of the module content (Gõ một chữ cái mỗi ô.)
+f 27 | Answer 1: ___ | d / e
+f 28 | Answer 2: ___ | e / d
+> Questions 29–30: Which TWO suggestions for written assignments do Jamie and Martha agree to recommend to Dr Brown? A. The time for choosing a topic should be changed. B. The permitted word limit should be increased. C. Discussions with fellow students should be arranged. D. Face-to-face feedback sessions with the tutor should be scheduled. E. Tutors should give more help in topic selection. (Gõ một chữ cái mỗi ô.)
+f 29 | Answer 1: ___ | a / c
+f 30 | Answer 2: ___ | c / a
+## Section 4 · The Music of Salvatore Sciarrino
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
+f 31 | As well as music, he has written many ___ | essays
+f 32 | He has won many awards – including one in 2011 for ___ in music. | originality
+f 33 | Surprisingly, his music often features ___ and very soft sounds. | silence
+f 34 | His music uses unusual instrument techniques, e.g. violins often produce sounds which resemble those found in ___ | nature
+f 35 | He is seen as a ___ of music. | pioneer
+f 36 | Sciarrino compares his music to a distant ___ | volcano
+f 37 | The concert piece was finished in 1979 and written in memory of a ___ | friend
+f 38 | It starts with a noise that sounds like ___, | thunder
+f 39 | produced by two people moving large pieces of ___ | metal
+f 40 | Although the music is unusual, it has a traditional ___ | structure
