@@ -559,3 +559,60 @@ f 37 | personal organization and ___ ability | problem solving / problem-solving
 f 38 | Useless skills: ___ (lack of training) | presentations
 f 39 | advice on ___ (unnecessary) | essay writing
 f 40 | advice on finding a ___ (not enough) | job
+
+=== Listening | Vol 7 | Test 11 | 40
+## Section 1 · A walking holiday
+@audio https://drive.google.com/file/d/1EKN6QKm6_0s-LfGSZzNtiuiqRYqP1Ygl/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+
+Length of trip: two days. Best month to go: September.
+> Questions 1–10: Complete the notes. Write NO MORE THAN TWO WORDS for each answer.
+f 1 | Might see large numbers of ___ | birds
+f 2 | Type of accommodation: a ___ | tent
+f 3 | Day one – final destination: ___ | mountains
+f 4 | Evening activity: chance to have a ___ | swim
+f 5 | Day two – explore the valley and have lunch by a ___ | waterfall
+f 6 | Afternoon trip to a ___ | cave
+f 7 | Tips: unsuitable if you have ___ problems | back
+f 8 | rocky paths so take ___ | walking boots
+f 9 | Booking: book online to get a ___ | discount
+f 10 | Inform your ___ company about the type of holiday booked | insurance
+## Section 2 · Working at a summer camp
+> Questions 11–16: Choose the correct answer A, B or C.
+m 11 | The speaker says that he is happy to answer questions during his talk about | the general operation of the camp ;; the children who attend ;; the job responsibilities | A
+m 12 | Why do parents send their children to the camp again and again? | They like the fact that it is cheaper than other camps. ;; They are pleased with the wide range of facilities on offer. ;; They know their children will be looked after at the camp. | C
+m 13 | One special thing about this summer camp is | the number of international students ;; the preparation for professional sports ;; the inclusion of non-sports activities | B
+m 14 | The speaker says that this year, the camp particularly needs people | who would like to work in the office ;; who have experience of cooking ;; who young children can talk to | C
+m 15 | What should the new cameraperson have? | artistic talents ;; good camera equipment ;; a qualification in photography | A
+m 16 | What does the speaker say about working conditions? | Sports coaches earn the most. ;; Kitchen staff work the longest hours. ;; Cleaners work in the mornings and evenings. | A
+> Questions 17–18: Which TWO benefits are provided free of charge to camp workers? A a sports bag · B a T-shirt · C use of sports facilities · D meals · E internet access. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 17 | Benefit 1 ___ | b / c
+f 18 | Benefit 2 ___ | c / b
+> Questions 19–20: Which TWO things do applicants need in order to get a job at the camp? A experience of working with children · B an ability to make decisions on their own · C a friendly personality · D relevant qualifications · E to be over a certain age. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 19 | Requirement 1 ___ | c / e
+f 20 | Requirement 2 ___ | e / c
+## Section 3 · An oral history project
+> Questions 21–25: Choose the correct answer A, B or C.
+m 21 | What source did Mike use for his definition? | a history textbook ;; an academic article ;; a lecture handout | C
+m 22 | According to Mike and his tutor, what is the most important contribution of the internet to oral history? | the permanent preservation of recordings ;; an increase in student interest ;; wide access to the interviews by the public | A
+m 23 | Mike says he chose his particular topic because | he is a football fan. ;; his father loves football. ;; his friends encouraged him. | B
+m 24 | What does Mike say was his best source of information about the team? | doing research in the local newspaper archives ;; speaking to the team manager ;; looking at materials in the local library | A
+m 25 | How did Mike find the former players he has arranged to interview? | on the internet ;; in the team records ;; in the phone book | C
+> Questions 26–30: What problems with the following aspects of the proposed interviews do the speakers identify? Chọn một chữ cái A–H cho mỗi mục. A too unreliable · B too short · C too noisy · D too long · E too formal · F too factual · G too complicated · H too vague
+L 26 | Questions drafted | ABCDEFGH | G
+L 27 | Time allotted | ABCDEFGH | D
+L 28 | Recording equipment used | ABCDEFGH | A
+L 29 | Subjects chosen | ABCDEFGH | H
+L 30 | Proposed report | ABCDEFGH | F
+## Section 4 · Improving the local hospital services
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
+f 31 | Main reasons for choosing a hospital: convenient ___ services | transport
+f 32 | the hospital building should be ___ | clean
+f 33 | staff providing ___ prior to hospital treatment | information
+f 34 | Intended action: develop web pages for local ___ and for hospital staff | doctors
+f 35 | a ___ may be given as a reward to some staff for success and effort | bonus
+f 36 | ___ will be asked to give their opinions of the hospital | visitors
+f 37 | effectiveness of ___ will be assessed at all levels | communication
+f 38 | Recommendations: new units for patients that suffer from ___ disturbance | sleep
+f 39 | or who need ___ surgery | plastic
+f 40 | the hospital has adequate equipment and space but needs improved ___ to maximize use of its facilities | planning
