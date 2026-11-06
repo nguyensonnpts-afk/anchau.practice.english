@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lớp Tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f5f1; --card:#ffffff; --ink:#1d2330; --muted:#667085; --line:#e4e2db;
+  --brand:#1f6f5c; --brand-ink:#ffffff; --brand-soft:#e3f1ec;
+  --accent:#e0913a; --accent-soft:#fbeedd;
+  --ok:#2e8b57; --ok-soft:#e2f3e8; --bad:#c2423b; --bad-soft:#f8e3e1; --warn:#b7791f; --warn-soft:#fbf0d9;
+  --shadow:0 1px 2px rgba(20,25,35,.06),0 4px 14px rgba(20,25,35,.05);
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171c; --card:#1d2128; --ink:#e8eaee; --muted:#9aa3b2; --line:#2e333c;
+    --brand:#4fb394; --brand-ink:#0d1a15; --brand-soft:#1f3530;
+    --accent:#eba65a; --accent-soft:#3a2c1c;
+    --ok:#5ec48a; --ok-soft:#1c3326; --bad:#ec7a73; --bad-soft:#3b2120; --warn:#e3b55a; --warn-soft:#3a3020;
+    --shadow:0 1px 2px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171c; --card:#1d2128; --ink:#e8eaee; --muted:#9aa3b2; --line:#2e333c;
+  --brand:#4fb394; --brand-ink:#0d1a15; --brand-soft:#1f3530;
+  --accent:#eba65a; --accent-soft:#3a2c1c;
+  --ok:#5ec48a; --ok-soft:#1c3326; --bad:#ec7a73; --bad-soft:#3b2120; --warn:#e3b55a; --warn-soft:#3a3020;
+  --shadow:0 1px 2px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.55}
+a{color:var(--brand)}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;gap:12px;min-height:58px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:17px;display:flex;align-items:center;gap:8px;cursor:pointer}
+.logo b{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--brand-ink);font-size:15px}
+nav.tabs{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav.tabs button{border:0;background:none;padding:8px 12px;border-radius:9px;cursor:pointer;color:var(--muted);font-weight:500}
+nav.tabs button.on{background:var(--brand-soft);color:var(--brand)}
+nav.tabs button:hover{color:var(--ink)}
+.who{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+main{padding:22px 0 60px}
+h1{font-size:24px;margin:0 0 4px}
+h2{font-size:19px;margin:0 0 10px}
+h3{font-size:16px;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.stat{padding:14px 16px}
+.stat .n{font-size:26px;font-weight:700}
+.stat .l{color:var(--muted);font-size:13px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--line);background:var(--card);padding:9px 14px;border-radius:10px;cursor:pointer;font-weight:500;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--brand)}
+.btn.pri{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn.pri:hover{filter:brightness(1.07)}
+.btn.acc{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.ghost{background:none;border-color:transparent;color:var(--muted)}
+.btn.ghost:hover{color:var(--ink)}
+.btn.danger{color:var(--bad)}
+.btn.sm{padding:5px 10px;font-size:13px;border-radius:8px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.between{justify-content:space-between}
+.mt{margin-top:14px}.mt2{margin-top:24px}.mb{margin-bottom:14px}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;background:var(--brand-soft);color:var(--brand);font-weight:600}
+.tag.acc{background:var(--accent-soft);color:var(--accent)}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tag.gray{background:var(--line);color:var(--muted)}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+input[type=text],input[type=password],input[type=number],input[type=date],select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--brand)}
+textarea{min-height:120px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+textarea.prose{font-family:inherit;font-size:15px;min-height:280px}
+label.f{display:block;font-size:13px;font-weight:600;margin:12px 0 5px}
+.seg{display:inline-flex;background:var(--line);padding:3px;border-radius:11px;gap:2px}
+.seg button{border:0;background:none;padding:7px 16px;border-radius:9px;cursor:pointer;font-weight:600;color:var(--muted)}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--brand);border-radius:99px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+.tbl{overflow-x:auto}
+/* login */
+.login{max-width:440px;margin:6vh auto 0}
+.login .hero{text-align:center;margin-bottom:18px}
+.login .hero b{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:16px;background:var(--brand);color:var(--brand-ink);font-size:26px;margin-bottom:10px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:5px 12px;cursor:pointer;font-size:13px}
+.chip:hover{border-color:var(--brand)}
+/* flashcard */
+.fc-wrap{max-width:560px;margin:0 auto}
+.flash{perspective:1200px;cursor:pointer;height:300px}
+.flash .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.flash.flip .in{transform:rotateY(180deg)}
+.flash .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
+.flash .back{transform:rotateY(180deg);background:var(--brand-soft)}
+.flash .word{font-size:34px;font-weight:700}
+.flash .ipa{color:var(--muted);margin-top:4px}
+.flash .vi{font-size:24px;font-weight:600;color:var(--brand)}
+.flash .ex{margin-top:12px;font-style:italic;color:var(--ink);max-width:440px}
+.rate{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.rate button{padding:12px 6px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-weight:600}
+.rate button small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.rate .r1{color:var(--bad)}.rate .r2{color:var(--warn)}.rate .r3{color:var(--brand)}.rate .r4{color:var(--ok)}
+.spk{border:0;background:var(--brand-soft);color:var(--brand);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:17px;display:inline-grid;place-items:center}
+/* quiz */
+.opts{display:grid;gap:8px;margin-top:12px}
+.opt{text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:var(--card);cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+.opt:hover{border-color:var(--brand)}
+.opt .k{flex:none;width:24px;height:24px;border-radius:7px;background:var(--line);display:grid;place-items:center;font-size:12px;font-weight:700}
+.opt.sel{border-color:var(--brand);background:var(--brand-soft)}
+.opt.sel .k{background:var(--brand);color:var(--brand-ink)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.qbig{font-size:22px;font-weight:700}
+/* match */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mi{padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--card);cursor:pointer;text-align:center;font-weight:500;min-height:54px}
+.mi.sel{border-color:var(--brand);background:var(--brand-soft)}
+.mi.done{visibility:hidden}
+.mi.err{border-color:var(--bad);background:var(--bad-soft)}
+/* exam */
+.exam-head{position:sticky;top:58px;z-index:10;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:14px}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:18px;padding:5px 12px;border-radius:10px;background:var(--card);border:1px solid var(--line)}
+.timer.low{color:var(--bad);border-color:var(--bad)}
+.passage{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;white-space:pre-wrap;line-height:1.75}
+.q{padding:14px 0;border-bottom:1px dashed var(--line)}
+.q:last-child{border-bottom:0}
+.qn{display:inline-grid;place-items:center;min-width:26px;height:26px;border-radius:8px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:13px;margin-right:8px;padding:0 6px}
+.q .opts{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.fill{max-width:280px;margin-top:8px}
+.qnav{display:flex;flex-wrap:wrap;gap:4px}
+.qnav span{width:28px;height:28px;display:grid;place-items:center;border-radius:7px;font-size:12px;font-weight:600;background:var(--line);color:var(--muted);cursor:pointer}
+.qnav span.done{background:var(--brand);color:var(--brand-ink)}
+.review .ok{color:var(--ok);font-weight:600}.review .bad{color:var(--bad);font-weight:600}
+.explain{margin-top:6px;padding:8px 12px;background:var(--warn-soft);border-radius:9px;font-size:14px}
+.big-score{font-size:48px;font-weight:700;color:var(--brand);line-height:1}
+.empty{text-align:center;color:var(--muted);padding:30px 10px}
+.heat{display:grid;grid-template-columns:repeat(14,1fr);gap:4px}
+.heat i{aspect-ratio:1;border-radius:4px;background:var(--line)}
+.heat i.l1{background:color-mix(in srgb,var(--brand) 35%,var(--line))}
+.heat i.l2{background:color-mix(in srgb,var(--brand) 65%,var(--line))}
+.heat i.l3{background:var(--brand)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:12px;z-index:99;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:50;display:grid;place-items:center;padding:16px}
+.modal{background:var(--card);border-radius:16px;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:20px}
+.list-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.list-item:last-child{border-bottom:0}
+.crumb{color:var(--muted);font-size:14px;margin-bottom:8px;cursor:pointer}
+.crumb:hover{color:var(--brand)}
+pre.help{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12.5px;white-space:pre-wrap;margin:8px 0 0}
+@media (max-width:640px){
+  header.top .wrap{padding-top:6px;padding-bottom:6px}
+  nav.tabs{order:3;flex-basis:100%;overflow-x:auto;flex-wrap:nowrap}
+  nav.tabs button{white-space:nowrap}
+  .flash{height:260px}.flash .word{font-size:28px}
+  .rate{grid-template-columns:repeat(2,1fr)}
+  .exam-head{top:96px}
+  h1{font-size:21px}
+}
+</style>
+</head>
+<body>
+<header class="top" id="hdr"></header>
+<main><div class="wrap" id="app"></div></main>
+<div id="modal"></div>
+
+<script>
+/* =========================================================
+   DỮ LIỆU MẪU (có sẵn, không xóa được; giáo viên có thể thêm bộ từ/đề riêng)
+   ========================================================= */
+const SAMPLE_SETS = [
+ {id:'s-edu',title:'IELTS · Education',cat:'IELTS',level:'B2',builtin:true,words:[
+  {w:'curriculum',ipa:'/kəˈrɪkjələm/',pos:'n',vi:'chương trình giảng dạy',ex:'The school updated its curriculum to include coding.'},
+  {w:'tuition',ipa:'/tjuˈɪʃn/',pos:'n',vi:'học phí; sự giảng dạy',ex:'Tuition fees have risen sharply in recent years.'},
+  {w:'literacy',ipa:'/ˈlɪtərəsi/',pos:'n',vi:'khả năng đọc viết',ex:'Adult literacy programmes help people find better jobs.'},
+  {w:'compulsory',ipa:'/kəmˈpʌlsəri/',pos:'adj',vi:'bắt buộc',ex:'Education is compulsory until the age of 16.'},
+  {w:'academic',ipa:'/ˌækəˈdemɪk/',pos:'adj',vi:'thuộc về học thuật',ex:'She has an excellent academic record.'},
+  {w:'assessment',ipa:'/əˈsesmənt/',pos:'n',vi:'sự đánh giá',ex:'Continuous assessment can reduce exam stress.'},
+  {w:'scholarship',ipa:'/ˈskɒləʃɪp/',pos:'n',vi:'học bổng',ex:'He won a scholarship to study abroad.'},
+  {w:'vocational',ipa:'/vəʊˈkeɪʃənl/',pos:'adj',vi:'thuộc về dạy nghề',ex:'Vocational courses prepare students for specific careers.'},
+  {w:'discipline',ipa:'/ˈdɪsəplɪn/',pos:'n',vi:'kỷ luật; ngành học',ex:'Teachers need to maintain discipline in class.'},
+  {w:'enrol',ipa:'/ɪnˈrəʊl/',pos:'v',vi:'ghi danh, đăng ký học',ex:'Thousands of students enrol in online courses every year.'},
+  {w:'graduate',ipa:'/ˈɡrædʒueɪt/',pos:'v',vi:'tốt nghiệp',ex:'She graduated from university with honours.'},
+  {w:'motivation',ipa:'/ˌməʊtɪˈveɪʃn/',pos:'n',vi:'động lực',ex:'Motivation is the key to learning a language.'}
+ ]},
+ {id:'s-env',title:'IELTS · Environment',cat:'IELTS',level:'B2',builtin:true,words:[
+  {w:'pollution',ipa:'/pəˈluːʃn/',pos:'n',vi:'sự ô nhiễm',ex:'Air pollution is a serious problem in big cities.'},
+  {w:'emission',ipa:'/iˈmɪʃn/',pos:'n',vi:'khí thải, sự phát thải',ex:'Carbon emissions must be cut by half.'},
+  {w:'renewable',ipa:'/rɪˈnjuːəbl/',pos:'adj',vi:'có thể tái tạo',ex:'Solar power is a renewable source of energy.'},
+  {w:'deforestation',ipa:'/ˌdiːˌfɒrɪˈsteɪʃn/',pos:'n',vi:'nạn phá rừng',ex:'Deforestation destroys the homes of many animals.'},
+  {w:'biodiversity',ipa:'/ˌbaɪəʊdaɪˈvɜːsəti/',pos:'n',vi:'đa dạng sinh học',ex:'Coral reefs have extremely high biodiversity.'},
+  {w:'sustainable',ipa:'/səˈsteɪnəbl/',pos:'adj',vi:'bền vững',ex:'We need more sustainable ways of producing food.'},
+  {w:'conservation',ipa:'/ˌkɒnsəˈveɪʃn/',pos:'n',vi:'sự bảo tồn',ex:'Wildlife conservation projects need long-term funding.'},
+  {w:'endangered',ipa:'/ɪnˈdeɪndʒəd/',pos:'adj',vi:'có nguy cơ tuyệt chủng',ex:'The tiger is an endangered species.'},
+  {w:'drought',ipa:'/draʊt/',pos:'n',vi:'hạn hán',ex:'The long drought ruined the harvest.'},
+  {w:'habitat',ipa:'/ˈhæbɪtæt/',pos:'n',vi:'môi trường sống',ex:'Many birds lose their natural habitat every year.'},
+  {w:'recycle',ipa:'/ˌriːˈsaɪkl/',pos:'v',vi:'tái chế',ex:'Most plastic bottles can be recycled.'},
+  {w:'contaminate',ipa:'/kənˈtæmɪneɪt/',pos:'v',vi:'làm nhiễm bẩn',ex:'Chemicals from the factory contaminated the river.'}
+ ]},
+ {id:'s-fam',title:'THPT · Family life',cat:'THPT',level:'Lớp 10',builtin:true,words:[
+  {w:'household chores',ipa:'/ˈhaʊshəʊld tʃɔːz/',pos:'n',vi:'việc nhà',ex:'We share the household chores equally.'},
+  {w:'breadwinner',ipa:'/ˈbredwɪnə(r)/',pos:'n',vi:'trụ cột kinh tế gia đình',ex:'My mother is the main breadwinner in our family.'},
+  {w:'homemaker',ipa:'/ˈhəʊmmeɪkə(r)/',pos:'n',vi:'người nội trợ',ex:'Being a homemaker is a full-time job.'},
+  {w:'responsibility',ipa:'/rɪˌspɒnsəˈbɪləti/',pos:'n',vi:'trách nhiệm',ex:'Children should learn to take responsibility.'},
+  {w:'grocery',ipa:'/ˈɡrəʊsəri/',pos:'n',vi:'hàng tạp hóa, thực phẩm',ex:'Dad does the grocery shopping on Sundays.'},
+  {w:'laundry',ipa:'/ˈlɔːndri/',pos:'n',vi:'việc giặt giũ; quần áo cần giặt',ex:'I do the laundry twice a week.'},
+  {w:'heavy lifting',ipa:'/ˌhevi ˈlɪftɪŋ/',pos:'n',vi:'việc nặng nhọc',ex:'My brother does the heavy lifting at home.'},
+  {w:'gratitude',ipa:'/ˈɡrætɪtjuːd/',pos:'n',vi:'lòng biết ơn',ex:'She wrote a letter to express her gratitude.'},
+  {w:'strengthen',ipa:'/ˈstreŋθn/',pos:'v',vi:'củng cố, làm bền chặt',ex:'Doing chores together strengthens family bonds.'},
+  {w:'bond',ipa:'/bɒnd/',pos:'n',vi:'sự gắn kết',ex:'There is a strong bond between the two sisters.'}
+ ]},
+ {id:'s-tech',title:'THPT · Technology & Inventions',cat:'THPT',level:'Lớp 10–11',builtin:true,words:[
+  {w:'invention',ipa:'/ɪnˈvenʃn/',pos:'n',vi:'phát minh',ex:'The telephone was an important invention.'},
+  {w:'device',ipa:'/dɪˈvaɪs/',pos:'n',vi:'thiết bị',ex:'Smartphones are useful devices for learning.'},
+  {w:'innovative',ipa:'/ˈɪnəveɪtɪv/',pos:'adj',vi:'đổi mới, sáng tạo',ex:'The company is famous for its innovative products.'},
+  {w:'artificial intelligence',ipa:'/ˌɑːtɪfɪʃl ɪnˈtelɪdʒəns/',pos:'n',vi:'trí tuệ nhân tạo',ex:'Artificial intelligence is changing many industries.'},
+  {w:'convenient',ipa:'/kənˈviːniənt/',pos:'adj',vi:'tiện lợi',ex:'Online shopping is very convenient.'},
+  {w:'digital',ipa:'/ˈdɪdʒɪtl/',pos:'adj',vi:'kỹ thuật số',ex:'Many libraries now offer digital books.'},
+  {w:'benefit',ipa:'/ˈbenɪfɪt/',pos:'n',vi:'lợi ích',ex:'One benefit of the Internet is fast communication.'},
+  {w:'portable',ipa:'/ˈpɔːtəbl/',pos:'adj',vi:'có thể mang theo, xách tay',ex:'A laptop is a portable computer.'},
+  {w:'addicted',ipa:'/əˈdɪktɪd/',pos:'adj',vi:'nghiện',ex:'Some teenagers are addicted to video games.'},
+  {w:'application',ipa:'/ˌæplɪˈkeɪʃn/',pos:'n',vi:'ứng dụng; đơn xin',ex:'This application helps you learn new words.'}
+ ]}
+];
+
+/* Từ vựng IELTS Reading do giáo viên cung cấp (2 file Excel) */
+const READING_SETS=[{"id":"r-s1","title":"Reading 7 mùa · Season 1","cat":"IELTS Reading","level":"Mùa 1","builtin":true,"words":[{"w":"Abstemious","vi":"Điều độ (chế độ ăn uống)","pos":"adj"},{"w":"Meager","vi":"Ít ỏi, nghèo nàn, đạm bạc","pos":"adj"},{"w":"Accelerate","vi":"Làm cái gì xảy ra nhanh, thúc dục làm nhanh","pos":"v"},{"w":"Mediocre","vi":"Trung bình, xoàng, tầm thường","pos":"adj"},{"w":"Acme","vi":"Đỉnh cao nhất","pos":"n"},{"w":"Mortgage","vi":"Khoản vay ngân hàng/Tài sản thế chấp","pos":"n"},{"w":"Adamant","vi":"Kiên quyết, cứng rắn trong ý định, khó bị thuyết phục","pos":"adj"},{"w":"Mundane","vi":"Buồn chán, tầm thường (not interesting ỏ exciting)","pos":"adj"},{"w":"Adept","vi":"Giỏi (làm việc khó)","pos":"adj"},{"w":"Mutable","vi":"Có thể thay đổi","pos":"adj"},{"w":"Adjacent","vi":"Gần kề, ngay sát","pos":"adj"},{"w":"Myriad","vi":"Vô số/số lượng cực kỳ lớn","pos":"n"},{"w":"Advesity","vi":"Nghịch cảnh","pos":"n"},{"w":"Nebulous","vi":"Không rõ ràng (not clear)","pos":"adj"},{"w":"Aesthetic","vi":"Óc thẩm mỹ, có tính nghệ thuật","pos":"adj"},{"w":"Nocturnal","vi":"Thuộc về đêm, hoạt động về đêm (đông vật)","pos":"adj"},{"w":"Allure","vi":"Sức lôi cuốn, quyến rũ, sức cám dỗ","pos":"n"},{"w":"Notorious","vi":"Tai tiếng, két tiếng, có tiếng xấu","pos":"adj"},{"w":"Appalling","vi":"Làm kinh hãi, cực kỳ tệ hại","pos":"adj"},{"w":"Novice","vi":"Người mới học việc, mới vào nghề, chưa có kinh nghiệm","pos":"n"},{"w":"Apprehensive","vi":"Lo lắng, sợ hãi (về tương lai)","pos":"adj"},{"w":"Oblige","vi":"Bắt buộc, cưỡng ép (vì đó là trách nhiệm tuân theo luật)","pos":"v"},{"w":"Arduous","vi":"Khó nhọc, gian khổ, miệt mài","pos":"adj"},{"w":"Oblivious","vi":"Không nhận ra được, không ý thức được","pos":"adj"},{"w":"Artful","vi":"Xảo quyệt, tinh ranh, ma mãnh (đôi khi nói sai sự thật để đạt mục đích)","pos":"adj"},{"w":"Obscure","vi":"Làm cái gì bị khó nhìn, nghe, hiểu","pos":"v"},{"w":"Assault","vi":"Cuộc tấn công/sự hành hung người khác (vật lý)","pos":"n"},{"w":"Obsession","vi":"Sự ám ảnh, điều ám ảnh (về thứ muốn có được)","pos":"n"},{"w":"Assimilate","vi":"Hòa nhập (ra nước ngoài -> hòa nhập và trở thành 1 phần của đất nước đó)","pos":"v"},{"w":"Obsolete","vi":"Lỗi thời","pos":"adj"},{"w":"Attainment","vi":"Sự đạt được","pos":"n"},{"w":"Obtrusive","vi":"nổi bật 1 cách quấy rầy/làm phiền","pos":"adj"},{"w":"Avert","vi":"Ngăn ngừa, ngăn chặn điều xấu/nguy hiểm xảy ra","pos":"v"},{"w":"Odour","vi":"Mùi hương khó chịu","pos":"n"},{"w":"Baffle","vi":"Hoàn toàn làm bối rối/rối (ai đó)","pos":"v"},{"w":"Ominous","vi":"Điềm báo, xấu đáng ngại","pos":"adj"},{"w":"Belittle","vi":"Coi nhẹ, xem thường","pos":"v"},{"w":"Onset","vi":"Sự bắt đầu 1 cái gì khó khăn","pos":"n"},{"w":"Bizarre","vi":"Kỳ lạ, kỳ dị","pos":"adj"},{"w":"Ornament","vi":"Vật trang trí","pos":"n"},{"w":"Bolster","vi":"Củng cố","pos":"v"},{"w":"Paragon","vi":"Người hoàn hảo/tấm gương mẫu mực","pos":"n"},{"w":"Cease","vi":"Dừng, ngừng (điều gì đang xảy ra/đang tồn tại)","pos":"v"},{"w":"Particle","vi":"Một phần nhỏ, một mẩu, một mảnh nhỏ","pos":"n"},{"w":"Chronic","vi":"Kinh niên, ăn sâu bám chặt","pos":"adj"},{"w":"Perennial","vi":"Kéo dài quanh năm suốt tháng/xảy ra thường xuyên liên tục","pos":"adj"},{"w":"Cling","vi":"Bám vào, dính vào (ai/cái gì)","pos":"v"},{"w":"Peril","vi":"Sự nguy hiểm, hiểm họa","pos":"n"},{"w":"Coalition","vi":"Sự liên minh, sự liên kết","pos":"n"},{"w":"Pervasive","vi":"Lan tỏa, phổ biến, trải khắp","pos":"adj"},{"w":"Collide","vi":"Va chạm, xung đột, đụng độ, đâm vào nhau (đặc biệt với chuyển động)","pos":"v"},{"w":"Perverse","vi":"Cố ý làm điều xấu","pos":"adj"},{"w":"Collusion","vi":"Sự thông đồng, cấu kết (để làm việc xấu, lừa người)","pos":"n"},{"w":"Petrify","vi":"Làm sững sờ, sợ hãi","pos":"v"},{"w":"Compatible","vi":"Hòa hợp (sống/làm việc/thực phẩm), tương thích","pos":"adj"},{"w":"Pitfall","vi":"Cạm bẫy","pos":"n"},{"w":"Complacent","vi":"Tự mãn, tự bằng lòng với mình/công việc","pos":"adj"},{"w":"Plague","vi":"Bệnh dịch","pos":"n"},{"w":"Condemn","vi":"Phản đối (thường vì lý do liên quan đến đạo đức)","pos":"v"},{"w":"Platitude","vi":"Lời nói nhàm chán, lời nói sáo rỗng","pos":"n"},{"w":"Condole","vi":"Chia buồn (với ai về việc gì)","pos":"v"},{"w":"Potable","vi":"Uống được","pos":"adj"},{"w":"Consensus","vi":"Sự nhất trí, đồng lòng","pos":"n"},{"w":"Constraint","vi":"Sự hạn chế, sự giới hạn, sự ràng buộc","pos":"n"},{"w":"Pragmatic","vi":"Giải quyết vấn đề theo hướng khôn ngoan, khéo léo","pos":"adj"},{"w":"Curtail","vi":"Cắt giảm, hạn chế, rút ngắn (thời gian)","pos":"v"},{"w":"Predecessor","vi":"Người đảm nhiệm trước/người tiền nhiệm","pos":"n"},{"w":"Decoy","vi":"Mồi nhử (vật/người)","pos":"n"},{"w":"Prelude","vi":"Hành động/sự kiện mở đầu, phần giới thiệu đầu","pos":"n"},{"w":"Denounce","vi":"Lên án, phản đối kịch liệt (do bạn nghĩ nó sai hoặc bất hợp pháp)","pos":"v"},{"w":"Prestige","vi":"Thanh thế, uy tín, thanh danh","pos":"n"},{"w":"Deplete","vi":"Cạn kiệt, dùng nhiều đến cạn","pos":"v"},{"w":"Presumption","vi":"Giả thuyết, nhận định được cho là đúng hoặc có khả năng xảy ra","pos":"n"},{"w":"Dexterity","vi":"Sự khéo léo (tay/đầu óc)","pos":"n"},{"w":"Prevail","vi":"Thịnh hành, phổ biến","pos":"v"},{"w":"Dilapidated","vi":"Tồi tàn, cũ nát (nhà/nội thất)","pos":"adj"},{"w":"Primitive","vi":"Nguyên thủy, cổ xưa","pos":"adj"},{"w":"Dilemma","vi":"Tình trạng khó xử, tiến thoái lưỡng nan (đưa lựa chọn giữa nhiều thứ)","pos":"n"},{"w":"Proclivity","vi":"Xu hướng tự nhiên, khuynh hướng (thường là xấu)","pos":"n"},{"w":"Diligent","vi":"Cẩn thận, siêng năng","pos":"adj"},{"w":"Procrastinate","vi":"Trì hoãn, để chậm lại (vì không thoải mái hoặc nhàm chán)","pos":"v"},{"w":"Discrete","vi":"Riêng biệt, riêng rẽ, rời rạc (với những thứ cùng loại)","pos":"adj"},{"w":"Prognosticate","vi":"Dự đoán, dự báo","pos":"v"},{"w":"Diverse","vi":"Đa dạng","pos":"adj"},{"w":"Promulgate","vi":"Ban hành, công bố (đạo luật, chính sách)","pos":"v"},{"w":"Divulge","vi":"Tiết lộ (thông tin, bí mật)","pos":"v"},{"w":"Provisional","vi":"Tạm thời, lâm thời","pos":"adj"},{"w":"Dominant","vi":"Có ưu thế hơn vượt trội, có vị trí quan trọng/lấn át hơn","pos":"adj"},{"w":"Proximity","vi":"Sự gần, lân cận (khoảng cách & thời gian)","pos":"n"},{"w":"Edible","vi":"Có thể ăn được","pos":"adj"},{"w":"Prudent","vi":"Thận trọng, khôn ngoan","pos":"adj"},{"w":"Elaborate","vi":"Giải thích/mô tả một cách tỉ mỉ, kĩ lưỡng","pos":"v"},{"w":"Quest","vi":"Sự truy tìm/tìm kiếm","pos":"n"},{"w":"Elusive","vi":"Khó tìm, khó đạt được, khó định nghĩa được","pos":"adj"},{"w":"Radical","vi":"Quan trọng, cơ bản, từ gốc rễ vấn đề","pos":"adj"},{"w":"Enviable","vi":"Đáng ngưỡng mộ, khiến người khác thèm muốn/ganh tỵ","pos":"adj"},{"w":"Ramble","vi":"Nói lan man, khó hiểu","pos":"v"},{"w":"Erratic","vi":"Không thường xuyên, thất thường, không dự đoán được","pos":"adj"},{"w":"Receptive","vi":"Sẵn sàng lắng nghe, tiếp thu","pos":"adj"},{"w":"Exorbitant","vi":"Rất đắt đỏ","pos":"adj"},{"w":"Recession","vi":"Thời kì kinh tế suy thoái","pos":"n"},{"w":"Exotic","vi":"Ngoại lai, có nguồn gốc từ nước ngoài, đẹp kỳ lạ","pos":"adj"},{"w":"Reckless","vi":"coi thường, thiếu thận trọng, hấp tấp, khinh suất, liều lĩnh, táo bạo","pos":"adj"},{"w":"Expedition","vi":"Cuộc thám hiểm","pos":"n"},{"w":"Refute","vi":"Chứng tỏ sth sai/ bác bỏ (ý kiến/lý lẽ)","pos":"v"},{"w":"Extemporise","vi":"Ứng biến, nói không cần chuẩn bị","pos":"v"},{"w":"Reminisce","vi":"Nhớ lại, hồi tưởng, ôn lại quá khứ (với thái độ thoải mái)","pos":"v"},{"w":"Extinct","vi":"Tuyệt chủng","pos":"adj"},{"w":"Repository","vi":"Kho, chỗ chứa","pos":"n"},{"w":"Facade","vi":"Mặt tiền","pos":"n"},{"w":"Resilient","vi":"Khả năng hồi phục nhanh","pos":"adj"},{"w":"Feasible","vi":"Có thể đạt/thực hiện được, khả thi","pos":"adj"},{"w":"Resolution","vi":"Quyết định chắc chắn","pos":"n"},{"w":"Flatter","vi":"Nịnh bợ, tâng bốc","pos":"v"},{"w":"Respite","vi":"Giờ nghỉ, giải lao","pos":"n"},{"w":"Flaunt","vi":"Khoe khoang, phô trương","pos":"v"},{"w":"Restrain","vi":"Cản trở, ngăn cản","pos":"v"},{"w":"Flawed","vi":"Có lỗi, không hoàn hảo","pos":"adj"},{"w":"Retention","vi":"Sự duy trì, gìn giữ","pos":"n"},{"w":"Fleeting","vi":"Nhanh, chớp nhoáng, lướt qua, thoáng qua","pos":"adj"},{"w":"Retrieve","vi":"Lấy lại, tìm được (vật đã mất)","pos":"v"},{"w":"Forage","vi":"Tìm thức ăn","pos":"v"},{"w":"Rife","vi":"Đầy rẫy, phổ biến (nhất là những cái xấu)","pos":"adj"},{"w":"Frugal","vi":"Thanh đạm, tiết kiệm (sử dụng đồ rẻ và có xu hướng thích tiết kiệm hơn)","pos":"adj"},{"w":"Rigid","vi":"Cứng rắn, cứng nhắc, khắt khe, tàn nhẫn","pos":"adj"},{"w":"Futile","vi":"Vô ích","pos":"adj"},{"w":"Rigorous","vi":"Tỉ mỉ, chi tiết","pos":"adj"},{"w":"Gregarious","vi":"Hòa đồng, thích giao lưu (=sociable)","pos":"adj"},{"w":"Roam","vi":"Đi lang thang","pos":"v"},{"w":"Grudge","vi":"Mối ác cảm (do quá khứ)","pos":"n"},{"w":"Ruin","vi":"Phá hủy, hủy hoại","pos":"v"},{"w":"Harmony","vi":"Sự hài hòa, hòa thuận, hòa hợp","pos":"n"},{"w":"Sanction","vi":"Cho phép, phê chuẩn","pos":"v"},{"w":"Hasten","vi":"Vội vàng, thúc ép làm nhanh","pos":"v"},{"w":"Scarce","vi":"Khó tìm, ít có, khan hiếm","pos":"adj"},{"w":"Heterodox","vi":"Không tuân theo quy tắc thông thường/niềm tin/ý kiến đã được chấp nhận","pos":"adj"},{"w":"Shelter","vi":"Nhà ở, chỗ nương thân","pos":"n"},{"w":"Hoax","vi":"Trò chơi khăm đánh lừa","pos":"n"},{"w":"Shrink","vi":"Co lại, thu nhỏ, co (vải)","pos":"v"},{"w":"Illuminate","vi":"Chiếu sáng","pos":"n"},{"w":"Shun","vi":"Tránh, xa lánh","pos":"v"},{"w":"Immaculate","vi":"Rất sạch sẽ, gọn gàng","pos":"adj"},{"w":"Skeptical","vi":"Hoài nghi, nghi ngờ","pos":"adj"},{"w":"Immune","vi":"Miễn dịch, miễn khỏi","pos":"adj"},{"w":"Slender","vi":"Mảnh khảnh, mong manh","pos":"adj"},{"w":"Impair","vi":"Phá hủy, hủy hoại (destroy, damage)","pos":"v"},{"w":"Sordid","vi":"Bẩn thỉu, đê tiện","pos":"adj"},{"w":"Impeccable","vi":"Hoàn hảo, không có sai khuyết","pos":"adj"},{"w":"Spiral","vi":"Tăng nhanh","pos":"v"},{"w":"Impervious","vi":"Không bị ảnh hưởng bởi cái gì","pos":"adj"},{"w":"Sporadic","vi":"Không đều đặn, lâu lâu xảy ra 1 lần, không thường xuyên xảy ra","pos":"adj"},{"w":"Implicit","vi":"Ám chỉ, ẩn ý, ngầm chỉ (không trực tiếp)","pos":"adj"},{"w":"Spurn","vi":"Từ chối, cự tuyệt (in a proud way)","pos":"v"},{"w":"Incarcerate","vi":"Bỏ tù, tống giam","pos":"v"},{"w":"Stringent","vi":"Rất nghiêm ngặt, nghiêm khắc, khắt khe","pos":"adj"},{"w":"Increment","vi":"Sự tăng lên (của số hoặc số lượng)","pos":"n"},{"w":"Subservient","vi":"Sẵn lòng tuân theo người khác","pos":"adj"},{"w":"Indigenous","vi":"bản xứ, thuộc về bản địa (= native)","pos":"adj"},{"w":"Subsistence","vi":"Trạng thái đủ sống","pos":"n"},{"w":"Ingenious","vi":"Sáng tạo, phát minh","pos":"adj"},{"w":"Subtle","vi":"Không rõ ràng, tinh vi, khó nhận biết, khó phân biệt","pos":"adj"},{"w":"Inhibit","vi":"Ngăn cản, kiềm chế (sự phát triển)","pos":"v"},{"w":"Suppress","vi":"Kìm nén, kiềm chế cảm xúc/biểu cảm","pos":"v"},{"w":"Initiative","vi":"Sáng kiến, óc sáng tạo","pos":"adj"},{"w":"Sway","vi":"Thuyết phục","pos":"v"},{"w":"Innate","vi":"Bẩm sinh","pos":"adj"},{"w":"Tangible","vi":"Rõ ràng, hiển nhiên, hữu hình","pos":"adj"},{"w":"Insatiable","vi":"Không thể thỏa mãn, luôn muốn nhiều hơn","pos":"adj"},{"w":"Tantamount","vi":"Có ảnh hưởng xấu tương đương với","pos":"adj"},{"w":"Integrity","vi":"Sự chính trực","pos":"n"},{"w":"Teeming","vi":"Đông đúc, lúc nhúc","pos":"adj"},{"w":"Intensify","vi":"Làm mạnh lên, tăng cường/dữ dội","pos":"v"},{"w":"Tenacious","vi":"Nắm chặt, không từ bỏ, ngoan cường","pos":"adj"},{"w":"Intuitive","vi":"Thuộc về cảm nhận/trực giác, thiên về cảm xúc","pos":"adj"},{"w":"Tentative","vi":"Tạm thời, không chắc chắn (vì bạn có thể sẽ muốn thay đổi sau)","pos":"adj"},{"w":"Inundate","vi":"Tràn ngập","pos":"v"},{"w":"Tenuous","vi":"Rất yếu, không xác định, mỏng manh, mảnh","pos":"adj"},{"w":"Jargon","vi":"Thuật ngữ chuyên ngành","pos":"n"},{"w":"Territory","vi":"Lãnh thổ","pos":"n"},{"w":"Jeopardy","vi":"Nguy cơ, cảnh nguy hiểm, cảnh hiểm nghèo","pos":"n"},{"w":"Trivial","vi":"Không quan trọng/nghiêm trọng, không đáng quan tâm","pos":"adj"},{"w":"Judicious","vi":"Cẩn trọng, kĩ lưỡng","pos":"adj"},{"w":"Underpin","vi":"Hỗ trợ/củng cố/làm vững chắc thêm (kiến trúc & lý lẽ/quan điểm)","pos":"v"},{"w":"Latent","vi":"Tiềm ẩn, chớm nở","pos":"adj"},{"w":"Unprecedented","vi":"Chưa từng thấy, chưa từng có tiền lệ","pos":"adj"},{"w":"Laze","vi":"Thư giãn, xả hơi, làm việc ít (= relax)","pos":"v"},{"w":"Untangle","vi":"Gỡ rối (vấn đề,...)","pos":"adj"},{"w":"Lethal","vi":"Có khả năng gây chết người","pos":"adj"},{"w":"Vanish","vi":"Đột nhiên biến mất 1 cách khó hiểu","pos":"v"},{"w":"Ludicrous","vi":"Lố lăng, nực cười, lố bịch","pos":"adj"},{"w":"Versatile","vi":"Có khả năng làm nhiều thứ","pos":"adj"},{"w":"Malady","vi":"Vấn đề nghiêm trọng","pos":"n"},{"w":"Viable","vi":"Có thể thành công (= feasible)","pos":"adj"},{"w":"Malicious","vi":"Hiểm độc, ác tâm, có ý hãm hại","pos":"adj"},{"w":"Vicinity","vi":"Vùng lân cận/khu vực xung quanh (ai/cái gì)","pos":"n"},{"w":"Manipulate","vi":"thao túng, điều khiển, mê hoặc người/vật","pos":"v"},{"w":"Volatile","vi":"Dễ thay đổi đột ngột, hay thay đổi","pos":"adj"},{"w":"Masculine","vi":"Nam tính","pos":"adj"},{"w":"Whim","vi":"Mong muốn bộc phát (thường không hay xảy ra/không cần thiết lắm)","pos":"n"}]},{"id":"r-s2","title":"Reading 7 mùa · Season 2","cat":"IELTS Reading","level":"Mùa 2","builtin":true,"words":[{"w":"acquisition","vi":"sự giành được"},{"w":"discrepancy","vi":"sự khác biệt"},{"w":"acute","vi":"very serious or severe"},{"w":"diversion","vi":"sự chuyển hướng"},{"w":"advocate","vi":"người ủng hộ"},{"w":"dubious","vi":"đáng ngờ"},{"w":"affinity","vi":"đồng cảm"},{"w":"dwindle","vi":"giảm bớt"},{"w":"allegiance","vi":"lòng trung thành"},{"w":"eccentric","vi":"lập dị"},{"w":"alleviate","vi":"làm nhẹ bớt, làm giảm bớt"},{"w":"exacerbate","vi":"làm trầm trọng thêm"},{"w":"allocate","vi":"phân bổ"},{"w":"famine","vi":"nạn đói"},{"w":"ambiguous","vi":"Mơ hồ, không rõ ràng"},{"w":"finite","vi":"có hạn"},{"w":"analogy","vi":"phép loại suy"},{"w":"forge","vi":"rèn"},{"w":"apprentice","vi":"người học việc"},{"w":"formidable","vi":"đáng gờm"},{"w":"arbitrary","vi":"chuyên quyền, độc đoán"},{"w":"hierarchy","vi":"hệ thống cấp bậc"},{"w":"arouse","vi":"đánh thức"},{"w":"humble","vi":"khiêm tốn"},{"w":"articulate","vi":"ăn nói lưu loát"},{"w":"hypothesis","vi":"giả thuyết"},{"w":"aspiration","vi":"khát vọng"},{"w":"implicate","vi":"dính líu"},{"w":"assay","vi":"sự thí nghiệm, sự xét nghiệm"},{"w":"legion","vi":"quân đoàn"},{"w":"assert","vi":"khẳng định"},{"w":"magnitude","vi":"tầm quan trọng"},{"w":"bias","vi":"thiên vị, thành kiến"},{"w":"maxim","vi":"châm ngôn"},{"w":"bourgeois","vi":"thuộc giai cấp tư sản"},{"w":"medieval","vi":"thuộc thời trung cổ"},{"w":"breach","vi":"sự vi phạm"},{"w":"menace","vi":"mối đe dọa"},{"w":"catalyst","vi":"chất xúc tác"},{"w":"metaphor","vi":"phép ẩn dụ"},{"w":"coherent","vi":"mạch lạc"},{"w":"methodology","vi":"phương pháp luận"},{"w":"commend","vi":"khen ngợi"},{"w":"monarch","vi":"quốc vương"},{"w":"commodity","vi":"hàng hóa"},{"w":"obscure","vi":"khó hiểu"},{"w":"competent","vi":"có năng lực"},{"w":"orthodox","vi":"chính thống"},{"w":"compliance","vi":"sự tuân thủ"},{"w":"paradigm","vi":"mẫu, mô hình"},{"w":"comprehensive","vi":"bao hàm toàn diện"},{"w":"paradox","vi":"nghịch lý, ngược đời"},{"w":"comprise","vi":"bao gồm"},{"w":"paramount","vi":"tối cao, quan trọng nhất"},{"w":"concession","vi":"sự nhượng bộ"},{"w":"peripheral","vi":"ngoại biên"},{"w":"Conjunction","vi":"sự kết hợp"},{"w":"preside","vi":"chủ trì"},{"w":"constituent","vi":"thành phần"},{"w":"prose","vi":"văn xuôi"},{"w":"conventional","vi":"theo phong tục tập quán"},{"w":"ratify","vi":"phê chuẩn"},{"w":"convey","vi":"truyền đạt"},{"w":"repellent","vi":"sự xuy đuổi"},{"w":"conviction","vi":"a strong belief"},{"w":"sacred","vi":"thần thánh, thiêng liêng"},{"w":"coronation","vi":"lễ đăng quang"},{"w":"sinister","vi":"độc ác, nham hiểm"},{"w":"coup","vi":"cuộc đảo chính"},{"w":"static","vi":"tĩnh, không di chuyển"},{"w":"critique","vi":"bài phê bình"},{"w":"submission","vi":"sự khuất phục"},{"w":"cultivate","vi":"nuôi dưỡng"},{"w":"suffice","vi":"đủ"},{"w":"cumulative","vi":"tích lũy"},{"w":"temporal","vi":"thuộc thời gian"},{"w":"curator","vi":"người phụ trách"},{"w":"tempt","vi":"cám dỗ"},{"w":"cynical","vi":"hoài nghi"},{"w":"turmoil","vi":"sự rối loạn"},{"w":"decisive","vi":"tính quyết định"},{"w":"unification","vi":"sự thống nhất, hợp nhất"},{"w":"delegate","vi":"người đại diện"},{"w":"unity","vi":"sự thống nhất, đoàn kết"},{"w":"demise","vi":"cái chết"},{"w":"unquenchable","vi":"không thể thỏa mãn"},{"w":"devastate","vi":"tàn phá, phá hủy"},{"w":"wary","vi":"cảnh giác, đề phòng"}]},{"id":"r-s3","title":"Reading 7 mùa · Season 3","cat":"IELTS Reading","level":"Mùa 3","builtin":true,"words":[{"w":"cerebral","vi":"thuộc về trí óc","pos":"adj"},{"w":"Abide","vi":"sống/ở"},{"w":"heroine","vi":"nữ anh hùng"},{"w":"vanguard","vi":"đội tiên phong","pos":"n"},{"w":"adorn","vi":"tô điểm"},{"w":"hindsight","vi":"sự nhận thức muộn"},{"w":"contentious","vi":"hay gây gổ","pos":"adj"},{"w":"adversary","vi":"đối thủ"},{"w":"homogeneous","vi":"tính đồng nhất"},{"w":"pathology","vi":"bệnh học","pos":"n"},{"w":"afflict","vi":"gây đau đớn"},{"w":"hue","vi":"sắc thái, màu sắc"},{"w":"bolster","vi":"củng cố","pos":"v"},{"w":"affluent","vi":"giàu có"},{"w":"hybrid","vi":"lai"},{"w":"amenable","vi":"dễ nghe theo","pos":"adj"},{"w":"alloy","vi":"hợp kim"},{"w":"hypocrisy","vi":"thói đạo đức giả"},{"w":"relegate","vi":"hạ bậc","pos":"v"},{"w":"immaculate","vi":"sạch boong"},{"w":"anecdote","vi":"giai thoại"},{"w":"impart","vi":"truyền đạt"},{"w":"vengeance","vi":"trả thù","pos":"n"},{"w":"arid","vi":"khô cằn"},{"w":"impede","vi":"cản trở"},{"w":"incumbent","vi":"là phận sự của","pos":"adj"},{"w":"artisan","vi":"thợ thủ công"},{"w":"yearn","vi":"khát khao, nóng lòng","pos":"v"},{"w":"assimilate","vi":"đồng hóa"},{"w":"indignation","vi":"sự phẫn nộ"},{"w":"myriad","vi":"rất nhiều, vô số","pos":"n"},{"w":"atrocity","vi":"sự tàn bạo"},{"w":"indispensable","vi":"thiết yếu"},{"w":"conspire","vi":"cùng âm mưu","pos":"v"},{"w":"augment","vi":"tăng lên"},{"w":"innate","vi":"bẩm sinh"},{"w":"remand","vi":"tạm giam","pos":"v"},{"w":"ballad","vi":"khúc hát ballad"},{"w":"liturgy","vi":"nghi thức tế lễ"},{"w":"deference","vi":"tôn trọng, chiều theo","pos":"n"},{"w":"barrage","vi":"loạt dồn dập"},{"w":"malignant","vi":"ác tính, ác tâm"},{"w":"peril","vi":"sự nguy hiểm","pos":"n"},{"w":"barren","vi":"cằn cỗi"},{"w":"witty","vi":"dí dỏm","pos":"adj"},{"w":"benign","vi":"nhân từ, tốt lành"},{"w":"nostalgia","vi":"luyến tiếc điều đã qua"},{"w":"defiance","vi":"sự thách thức, bất chấp","pos":"n"},{"w":"blatant","vi":"trắng trợn"},{"w":"obsolete","vi":"lỗi thời"},{"w":"ominous","vi":"điềm gở"},{"w":"combustion","vi":"sự cháy","pos":"n"},{"w":"cadet","vi":"học viên trường cảnh sát"},{"w":"ornate","vi":"hoa mỹ, trang trí công phu"},{"w":"caption","vi":"đầu đề, thuyết minh, chú thích"},{"w":"pantomime","vi":"kịch"},{"w":"catastrophe","vi":"thảm họa"},{"w":"treacherous","vi":"phản trác","pos":"adj"},{"w":"hegemony","vi":"quyền bá chủ","pos":"n"},{"w":"postulate","vi":"tuyên bố tìm ra phương pháp mới"},{"w":"eradicate","vi":"trừ diệt","pos":"v"},{"w":"conformity","vi":"sự tuân theo"},{"w":"procure","vi":"kiếm/mua cái gì"},{"w":"stringent","vi":"nghiêm ngặt","pos":"adj"},{"w":"compelling","vi":"hấp dẫn"},{"w":"prolific","vi":"viết nhiều tác phẩm, sinh sản nhiều"},{"w":"complacency","vi":"sự tự mãn","pos":"n"},{"w":"propagate","vi":"nhân giống, truyền bá"},{"w":"compulsion","vi":"sự ép buộc"},{"w":"provocative","vi":"khiêu khích, khích động"},{"w":"cunning","vi":"xảo trá","pos":"adj"},{"w":"relinguish","vi":"từ bỏ"},{"w":"covert","vi":"ngầm, trộm"},{"w":"salient","vi":"nổi bật","pos":"adj"},{"w":"remedial","vi":"sửa chữa"},{"w":"ubiquitous","vi":"có mặt khắp nơi","pos":"adj"},{"w":"defer","vi":"hoãn"},{"w":"remuneration","vi":"trả công, thù lao"},{"w":"discern","vi":"thấy rõ","pos":"v"},{"w":"rogue","vi":"thằng đểu, xỏ lá"},{"w":"soluble","vi":"hòa tan được"},{"w":"dogma","vi":"giáo điều","pos":"n"},{"w":"dissident","vi":"người bất đồng quan điểm"},{"w":"sporadic","vi":"lác đác"},{"w":"divergence","vi":"sự khác nhau"},{"w":"zeal","vi":"nhiệt huyết","pos":"n"},{"w":"terrestrial","vi":"thuộc trái đất"},{"w":"eminent","vi":"nổi tiếng, nổi bật","pos":"adj"},{"w":"efficacy","vi":"công hiệu"},{"w":"transcend","vi":"vượt qua, hơn"},{"w":"engender","vi":"gây ra","pos":"v"},{"w":"emulate","vi":"bắt chước"},{"w":"endow","vi":"phú cho"},{"w":"haste","vi":"sự vội vàng","pos":"n"},{"w":"volatile","vi":"không ổn định, hay thay đổi"},{"w":"expatriate","vi":"người sống tha hương"},{"w":"fraught","vi":"lo âu, sự thôi thúc mãnh liệt"},{"w":"wrath","vi":"sự phẫn nộ"},{"w":"futile","vi":"vô tích sự"},{"w":"wrench","vi":"giật mạnh"}]},{"id":"r-s4","title":"Reading 7 mùa · Season 4","cat":"IELTS Reading","level":"Mùa 4","builtin":true,"words":[{"w":"abduction","vi":"bắt cóc"},{"w":"Euphoria","vi":"Hưng phấn"},{"w":"absurdity","vi":"vô lý"},{"w":"exemplary","vi":"gương mẫu"},{"w":"acclaim","vi":"hoan hô"},{"w":"extant","vi":"còn"},{"w":"Aggregation","vi":"tập hợp"},{"w":"Heed","vi":"chú ý"},{"w":"Allude","vi":"bóng gió, ám chỉ"},{"w":"impeccable","vi":"hoàn hảo"},{"w":"Amalgamate","vi":"hỗn hợp"},{"w":"impinge","vi":"tác động, ảnh hưởng"},{"w":"ambivalence","vi":"mâu thuẫn"},{"w":"improvise","vi":"ứng biến"},{"w":"amiable","vi":"tử tế, tốt bụng"},{"w":"intelligible","vi":"dễ hiểu"},{"w":"anarchy","vi":"tình trạng vô chính phủ, hỗn loạn"},{"w":"intractable","vi":"khó bảo"},{"w":"animosity","vi":"thù oán"},{"w":"kernel","vi":"nhân, hạt"},{"w":"Anomalous","vi":"bất thường"},{"w":"Lament","vi":"than vãn"},{"w":"anthology","vi":"tuyển tập"},{"w":"mercenary","vi":"hám lợi, vụ lợi"},{"w":"appraise","vi":"đánh giá, định giá"},{"w":"meticulous","vi":"tỉ mỉ"},{"w":"arduous","vi":"Gian khổ"},{"w":"Mitigate","vi":"giảm thiểu"},{"w":"Aromatic","vi":"thơm"},{"w":"mythical","vi":"thần thoại, hoang đường"},{"w":"Astute","vi":"tinh khôn"},{"w":"nuance","vi":"sắc thái"},{"w":"austere","vi":"đơn giản, không cầu kỳ"},{"w":"obliterate","vi":"xoá sạch, phá huỷ sạch"},{"w":"bask","vi":"tắm nắng"},{"w":"onerous","vi":"nặng nề, khó nhọc"},{"w":"Bequeath","vi":"để lại, truyền lại"},{"w":"parody","vi":"nhái lại"},{"w":"Boon","vi":"lợi ích"},{"w":"pervade","vi":"lan tỏa"},{"w":"Bovine","vi":"Ngu như bò"},{"w":"piety","vi":"Hiếu thảo"},{"w":"buttress","vi":"trụ cột"},{"w":"Poignant","vi":"Xót xa"},{"w":"chassis","vi":"khung gầm (ô tô)"},{"w":"Punitive","vi":"trừng phạt"},{"w":"circumvent","vi":"né tránh"},{"w":"Quell","vi":"trấn áp"},{"w":"Collusion","vi":"cấu kết, thông đồng"},{"w":"rasp","vi":"rít lên"},{"w":"computation","vi":"tính toán"},{"w":"reprieve","vi":"hoãn lại"},{"w":"concise","vi":"ngắn gọn"},{"w":"Sardonic","vi":"mỉa mai"},{"w":"Confiscate","vi":"tịch thu"},{"w":"shroud","vi":"màn"},{"w":"contemptuous","vi":"khinh thường"},{"w":"Signatory","vi":"Bên ký kết"},{"w":"contentment","vi":"mãn nguyện, thỏa mãn"},{"w":"spurious","vi":"giả mạo"},{"w":"Craven","vi":"nhát gan"},{"w":"stigma","vi":"kỳ thị"},{"w":"Culmination","vi":"cực điểm"},{"w":"Stint","vi":"hạn chế"},{"w":"defuse","vi":"xoa dịu"},{"w":"superfluous","vi":"thừa, không cần thiết"},{"w":"degenerate","vi":"suy thoái"},{"w":"tenet","vi":"giáo lý"},{"w":"Devious","vi":"quanh co"},{"w":"Tenuous","vi":"mỏng manh"},{"w":"discursive","vi":"Lan man, rời rạc"},{"w":"throng","vi":"đám đông"},{"w":"disparate","vi":"khác hẳn nhau, khác loại"},{"w":"tranquil","vi":"yên lặng"},{"w":"Distraught","vi":"điên loạn"},{"w":"translucent","vi":"mờ"},{"w":"Dormant","vi":"không hoạt động"},{"w":"tyranny","vi":"bạo ngược"},{"w":"eccentricity","vi":"kỳ quặc, lập dị"},{"w":"uncanny","vi":"kỳ lạ"},{"w":"Embodiment","vi":"hiện thân"},{"w":"unequivocal","vi":"rõ rệt"},{"w":"empathy","vi":"đồng cảm"},{"w":"Unscrupulous","vi":"vô lương tâm"},{"w":"Endemic","vi":"địa phương"},{"w":"utilitarian","vi":"thực dụng"},{"w":"Enigma","vi":"điều bí ẩn"},{"w":"utopia","vi":"điều không tưởng"},{"w":"Enigmatic","vi":"bí ẩn"},{"w":"veer","vi":"xoay chuyển"},{"w":"erroneous","vi":"sai lầm"},{"w":"vestige","vi":"di tích"},{"w":"eschew","vi":"né tránh"},{"w":"Vocation","vi":"khuynh hướng"},{"w":"esoteric","vi":"bí truyền, huyền bí"},{"w":"Waning","vi":"Suy tàn"},{"w":"espionage","vi":"gián điệp"},{"w":"Wither","vi":"khô héo"},{"w":"espouse","vi":"ủng hộ, tán thành"},{"w":"zenith","vi":"tột đỉnh"}]},{"id":"r-s5","title":"Reading 7 mùa · Season 5","cat":"IELTS Reading","level":"Mùa 5","builtin":true,"words":[{"w":"Abate","vi":"làm dịu"},{"w":"Aberration","vi":"lầm lạc, khác thường"},{"w":"abstinence","vi":"nhịn, kiêng"},{"w":"adjunct","vi":"bổ ngữ"},{"w":"amble","vi":"thong thả"},{"w":"amicable","vi":"thân thiện"},{"w":"anathema","vi":"Lời nguyền rủa, người bị nguyền rủa"},{"w":"Antidote","vi":"thuốc giải"},{"w":"antipathy","vi":"ác cảm"},{"w":"appease","vi":"an ủi, làm dịu"},{"w":"assail","vi":"tấn công"},{"w":"avid","vi":"khao khát"},{"w":"banal","vi":"tầm thường"},{"w":"belated","vi":"đến muộn, đến chậm"},{"w":"callous","vi":"nhẫn tâm"},{"w":"catapult","vi":"súng cao su"},{"w":"Caustic","vi":"chất ăn vào da"},{"w":"clandestine","vi":"lén lút, giấu giếm, bí mật"},{"w":"cliche","vi":"Sáo rỗng, rập khuôn"},{"w":"coerce","vi":"ép buộc"},{"w":"conciliatory","vi":"hòa giải"},{"w":"conduit","vi":"ống dẫn"},{"w":"consecrate","vi":"tôn phong"},{"w":"consternation","vi":"rụng rời"},{"w":"copious","vi":"dồi dào, phong phú"},{"w":"countenance","vi":"sắc mặt, vẻ mặt"},{"w":"credence","vi":"lòng tin, tin cậy"},{"w":"cryptic","vi":"bí ẩn"},{"w":"decipher","vi":"giải mã"},{"w":"delineate","vi":"mô tả, phác họa"},{"w":"Din","vi":"ầm ĩ, òm sòm"},{"w":"dogmatic","vi":"độc đoán"},{"w":"duress","vi":"ép buộc"},{"w":"eclectic","vi":"đa dạng"},{"w":"embellish","vi":"tô điểm"},{"w":"emissary","vi":"Phái viên, sứ thần"},{"w":"encroach","vi":"xâm lấn, xâm phạm"},{"w":"epitome","vi":"bản tóm tắt, hình ảnh thu nhỏ"},{"w":"exasperate","vi":"Làm bực tức"},{"w":"exhort","vi":"cổ vũ"},{"w":"extrapolate","vi":"suy luận, suy ra"},{"w":"fervent","vi":"nồng nhiệt"},{"w":"fissure","vi":"vết nứt"},{"w":"flout","vi":"coi thường"},{"w":"Forage","vi":"đi săn"},{"w":"forlorn","vi":"cô đơn, bị bỏ rơi"},{"w":"forthright","vi":"thẳng thắn"},{"w":"Fortify","vi":"củng cố, bồi dưỡng"},{"w":"frieze","vi":"dải trang trí của mái nhà"},{"w":"genial","vi":"thân thiện, vui tính"},{"w":"Grouse","vi":"phàn nàn, kêu ca"},{"w":"hapless","vi":"rủi ro, không may"},{"w":"incipient","vi":"chớm nở, mới bắt đầu"},{"w":"incongruous","vi":"phi lý"},{"w":"incursion","vi":"đột nhập, xâm nhập"},{"w":"Indiscriminate","vi":"phân biệt đối xử"},{"w":"Inexorable","vi":"không lay chuyển được"},{"w":"innocuous","vi":"vô hại"},{"w":"insidious","vi":"âm ỉ, ngấm ngầm"},{"w":"kinetic","vi":"động lực"},{"w":"limerick","vi":"bài thơ 5 dòng vô nghĩa"},{"w":"litigant","vi":"người kiện"},{"w":"Lucid","vi":"sáng suốt"},{"w":"maverick","vi":"độc lập, hoạt động không theo khuôn mẫu"},{"w":"monolithic","vi":"nguyên khối"},{"w":"Negate","vi":"phủ nhận"},{"w":"nomad","vi":"dân du mục"},{"w":"obviate","vi":"phòng ngừa"},{"w":"occult","vi":"huyền bí, bí ẩn"},{"w":"pecuniary","vi":"thuộc về tiền"},{"w":"penchant","vi":"thiên hướng"},{"w":"pernicious","vi":"độc hại"},{"w":"placate","vi":"xoa dịu"},{"w":"Plethora","vi":"quá nhiều, thừa thãi"},{"w":"prodigious","vi":"phi thường"},{"w":"Proliferate","vi":"sinh sôi nảy nở"},{"w":"Propriety","vi":"thích hợp, đúng đắn"},{"w":"Prudence","vi":"khôn ngoan, thận trọng"},{"w":"Pundit","vi":"bình luận viên"},{"w":"pungent","vi":"hăng, cay"},{"w":"recalcitrant","vi":"cứng đầu, ngoan cố"},{"w":"reciprocate","vi":"đáp lại, đền đáp"},{"w":"reparation","vi":"bồi thường, chuộc lỗi"},{"w":"requiem","vi":"Lễ cầu siêu"},{"w":"restitution","vi":"bồi thường"},{"w":"salutary","vi":"bổ ích, có lợi"},{"w":"Seminal","vi":"ảnh hưởng đến sự phát triển về sau"},{"w":"serene","vi":"Thanh bình, tĩnh lặng"},{"w":"stealth","vi":"rón rén, lén lút"},{"w":"Treachery","vi":"phản bội"},{"w":"undulating","vi":"gợn sóng, nhấp nhô"},{"w":"vagrant","vi":"kẻ lang thang"},{"w":"valiant","vi":"can đảm"},{"w":"venerable","vi":"đáng kính"},{"w":"veritable","vi":"thực sự"},{"w":"viscous","vi":"nhớt, dính"},{"w":"vociferous","vi":"om sòm, ầm ĩ"},{"w":"Waft","vi":"Thoảng qua"}]},{"id":"r-s6","title":"Reading 7 mùa · Season 6","cat":"IELTS Reading","level":"Mùa 6","builtin":true,"words":[{"w":"Absolve","vi":"xá tội"},{"w":"hone","vi":"trau dồi, mài sắc, nâng cao"},{"w":"Abyss","vi":"vực thẳm"},{"w":"idealist","vi":"người duy tâm"},{"w":"accretion","vi":"bồi chất, tăng trưởng do bồi chất"},{"w":"idiosyncrasy","vi":"đặc tính, phong cách riêng"},{"w":"Ambient","vi":"bao quanh"},{"w":"Impervious","vi":"không thấm, trơ ra"},{"w":"ameliorate","vi":"cải thiện"},{"w":"implacable","vi":"không thể nguôi, không thể chịu được"},{"w":"annexation","vi":"thêm vào, phần phụ thêm"},{"w":"Incessant","vi":"không ngừng, liên miên"},{"w":"assuage","vi":"làm dịu bớt, làm khuây"},{"w":"Incisive","vi":"sắc bén"},{"w":"astound","vi":"làm kinh ngạc"},{"w":"Indemnify","vi":"bồi thường"},{"w":"Attenuation","vi":"làm yếu đi"},{"w":"Indignity","vi":"sự sỉ nhục"},{"w":"benevolent","vi":"nhân từ"},{"w":"Infallible","vi":"không thể sai được"},{"w":"boisterous","vi":"ồn ào, náo nhiệt"},{"w":"jettison","vi":"vứt bỏ"},{"w":"brevity","vi":"ngắn gọn"},{"w":"juxtapose","vi":"Đặt cạnh nhau"},{"w":"calamity","vi":"thiên tai"},{"w":"Languid","vi":"uể oải, lờ đờ"},{"w":"candid","vi":"ngay thẳng, thành thật"},{"w":"livid","vi":"tái nhợt, tái mét"},{"w":"capricious","vi":"thất thường"},{"w":"morose","vi":"buồn rầu"},{"w":"castigate","vi":"trừng phạt, khiển trách"},{"w":"nadir","vi":"điểm tồi tệ nhất, điểm thấp nhất"},{"w":"Chide","vi":"mắng chửi, rầy la, trách mắng"},{"w":"nexus","vi":"mối liên hệ"},{"w":"circumscribe","vi":"giới hạn, hạn chế"},{"w":"Notoriety","vi":"xấu khét tiếng"},{"w":"cleave","vi":"chẻ, bổ"},{"w":"obstinate","vi":"ngang ngạnh, bướng bỉnh"},{"w":"coalesce","vi":"hợp nhất, hợp lại, kết hợp"},{"w":"opulent","vi":"giàu có, phong phú"},{"w":"commensurate","vi":"tương ứng, tương xứng"},{"w":"orator","vi":"người diễn thuyết, nhà hùng biện"},{"w":"compliant","vi":"tuân thủ"},{"w":"Oscillating","vi":"dao động"},{"w":"concoct","vi":"pha chế"},{"w":"palpable","vi":"rõ ràng, hiển nhiên"},{"w":"condolence","vi":"lời chia buồn"},{"w":"paucity","vi":"khan hiếm, số lượng nhỏ"},{"w":"cursory","vi":"vội, nhanh, lướt qua"},{"w":"philistine","vi":"kẻ phàm tục, không có học"},{"w":"dearth","vi":"khan hiếm"},{"w":"Polemic","vi":"cuộc luận chiến, bút chiến"},{"w":"Debacle","vi":"thất bại, sụp đổ"},{"w":"predilection","vi":"ưa chuộng"},{"w":"decimate","vi":"tàn sát"},{"w":"prosaic","vi":"tầm thường"},{"w":"defunct","vi":"chết, mất, quá cố, mất, không còn tồn tại nữa"},{"w":"quiescent","vi":"yên lặng"},{"w":"denigrate","vi":"phỉ báng, chê bai"},{"w":"raucous","vi":"ồn ào, náo loạn"},{"w":"derision","vi":"chế nhạo"},{"w":"sanguine","vi":"lạc quan"},{"w":"destitute","vi":"thiếu thốn"},{"w":"scrupulous","vi":"tỷ mỉ"},{"w":"detonate","vi":"làm nổ"},{"w":"solace","vi":"khuây khỏa, an ủi"},{"w":"Diminutive","vi":"nhỏ xíu, bé tí"},{"w":"squalid","vi":"bẩn thỉu"},{"w":"disaffection","vi":"bất bình, bất nhã"},{"w":"Tactile","vi":"xúc giác"},{"w":"discord","vi":"bất đồng, bất hòa"},{"w":"dissonance","vi":"bất hòa, không hòa hợp"},{"w":"tedium","vi":"chán ngắt"},{"w":"enumerate","vi":"đếm, liệt kê"},{"w":"Tenacity","vi":"bền bỉ"},{"w":"Ephereral","vi":"chóng tàn, phù du"},{"w":"tome","vi":"quyển, tập"},{"w":"epithet","vi":"Tính ngữ"},{"w":"Tortuous","vi":"quanh co"},{"w":"Evocation","vi":"tạo nên"},{"w":"transcendent","vi":"siêu việt"},{"w":"Extol","vi":"tán dương, ca tụng"},{"w":"Trepidation","vi":"hoảng hốt, náo động"},{"w":"exuberance","vi":"hồ hởi, vui nhộn"},{"w":"untenable","vi":"Không bào chữa, bảo vệ được"},{"w":"florid","vi":"cầu kỳ, hoa mỹ"},{"w":"untoward","vi":"bất lợi, không may"},{"w":"fortuitous","vi":"tình cờ, ngẫu nhiên"},{"w":"variegated","vi":"lẫn màu"},{"w":"germinate","vi":"nảy mầm"},{"w":"voluminous","vi":"rộng, lùng thùng"},{"w":"Goad","vi":"kích thích, thúc giục"},{"w":"wanton","vi":"vui nhộn"},{"w":"gratuitous","vi":"vô cớ"},{"w":"zealot","vi":"người cuồng tín"}]},{"id":"r-s7","title":"Reading 7 mùa · Season 7","cat":"IELTS Reading","level":"Mùa 7","builtin":true,"words":[{"w":"conviction","vi":"sự tin chắc"},{"w":"unequivocal","vi":"rõ ràng"},{"w":"veracity","vi":"sự chân thực, xác thực"},{"w":"dormant","vi":"không hoạt động"},{"w":"endure","vi":"chịu đựng"},{"w":"espouse","vi":"ủng hộ"},{"w":"exclusive","vi":"độc quyền"},{"w":"cerbral","vi":"thuộc về trí tuệ"},{"w":"prototype","vi":"nguyên mẫu"},{"w":"benign","vi":"tốt bụng, tử tế"},{"w":"ruminate","vi":"ngẫm nghĩ"},{"w":"vanguard","vi":"đội quân tiên phong"},{"w":"evaporate","vi":"bay hơi"},{"w":"famine","vi":"nạn đói"},{"w":"deviate","vi":"trệch đi"},{"w":"peripheral","vi":"biên, ngoại vi"},{"w":"empirical","vi":"dựa vào kinh nghiệm"},{"w":"articulate","vi":"diễn đạt suy nghĩ rõ ràng"},{"w":"inextricable","vi":"không gỡ ra được"},{"w":"defunct","vi":"không còn sử dụng, vận hành"},{"w":"conceive","vi":"tưởng tượng"},{"w":"ameliorate","vi":"cải thiện"},{"w":"rage","vi":"cơn thịnh nộ"},{"w":"incessant","vi":"không dứt"},{"w":"contingent (on)","vi":"tùy thuộc vào"},{"w":"assail","vi":"tấn công"},{"w":"deprecate","vi":"phản đối"},{"w":"intricate","vi":"phức tạp"},{"w":"incentive","vi":"sự khích lệ"},{"w":"disparage","vi":"coi nhẹ, chê bai"},{"w":"tenet","vi":"giáo lý"},{"w":"contemplate","vi":"suy ngẫm, dự tính"},{"w":"retain","vi":"giữ lại"},{"w":"cripple","vi":"hỏng nặng, què"},{"w":"constituent","vi":"yếu tố hợp thành"},{"w":"entail","vi":"đòi hỏi"},{"w":"pertain","vi":"gắn với"},{"w":"berate","vi":"quở mắng, nhiếc móc"},{"w":"hostile","vi":"thù địch, chống đối"},{"w":"impending","vi":"sắp xảy đến"},{"w":"patrol","vi":"đi tuần tra"},{"w":"enthralling","vi":"làm say đắm"},{"w":"drastic","vi":"mạnh mẽ, nghiêm trọng"},{"w":"loath","vi":"miễn cưỡng"},{"w":"erroneous","vi":"sai"},{"w":"lure","vi":"cám dỗ"},{"w":"proliferate","vi":"sinh sôi nảy nở"},{"w":"meld","vi":"kết hợp"},{"w":"intrigue","vi":"gây tò mò"},{"w":"climax","vi":"tột đỉnh"},{"w":"amorphous","vi":"không có hình dạng cụ thể"},{"w":"unravel","vi":"làm sáng tỏ, gỡ ra"},{"w":"penchant","vi":"sở thích đặc biệt"},{"w":"aloof","vi":"lạnh lùng, hờ hững"},{"w":"fervent","vi":"nồng nhiệt, sôi sục"},{"w":"dogma","vi":"giáo điều"},{"w":"conceal","vi":"giấu giếm"},{"w":"pliant","vi":"mềm dẻo"},{"w":"duress","vi":"sự ép buộc"},{"w":"retort","vi":"bẻ lại"},{"w":"spot","vi":"nhận ra, phát hiện ra"},{"w":"delusion","vi":"ảo tưởng"},{"w":"treachery","vi":"phản bội"},{"w":"clandestine","vi":"bií mật"},{"w":"distill","vi":"rút ra hoặc thu được cái gì"},{"w":"tacit","vi":"ngầm"},{"w":"ravages","vi":"sự tàn phá"},{"w":"abet","vi":"tiếp tay"},{"w":"pungent","vi":"hăng, nồng"},{"w":"impetuous","vi":"bốc đồng"},{"w":"stealth","vi":"lén lút"},{"w":"assuage","vi":"làm khuây"},{"w":"pernicious","vi":"độc hại, ác tính"},{"w":"cursory","vi":"qua loa"},{"w":"extrapolate","vi":"suy ra"},{"w":"vacillate","vi":"dao động"},{"w":"fortify","vi":"củng cố"},{"w":"reconcile","vi":"dung hòa"},{"w":"kinetic","vi":"thuộc về chuyển động"},{"w":"lethargy","vi":"bơ phờ, đờ đẫn"},{"w":"anomalous","vi":"khác thường"},{"w":"loathe","vi":"ghét"},{"w":"extant","vi":"vẫn còn tồn tại"},{"w":"juxtapose","vi":"đặt cạnh nhau"},{"w":"prosaic","vi":"buồn tẻ, tầm thường"},{"w":"castigate","vi":"trừng phạt, khiển trách"},{"w":"appraise","vi":"đánh giá"},{"w":"goad","vi":"thúc giục"},{"w":"abduction","vi":"bắt cóc"},{"w":"imperative","vi":"cấp bách"},{"w":"astute","vi":"tinh khôn"},{"w":"clog","vi":"tắc"},{"w":"mercenary","vi":"vụ lợi, vì tiền"},{"w":"improvise","vi":"ứng biến"},{"w":"meticulous","vi":"cẩn thận, tỉ mỉ"},{"w":"reservoir","vi":"kho, bể chứa"},{"w":"utopia","vi":"điều không tưởng"},{"w":"carnal","vi":"xác thịt"}]},{"id":"r-t-health","title":"Reading chủ đề · Health","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"afflict","vi":"hành hạ"},{"w":"aging","vi":"lão hóa"},{"w":"allergy","vi":"dị ứng"},{"w":"antibiotics","vi":"kháng sinh"},{"w":"arthritis","vi":"viêm khớp"},{"w":"asthma","vi":"hen suyễn"},{"w":"autistic","vi":"tự kỷ"},{"w":"bacteria","vi":"vi khuẩn"},{"w":"cardiovascular","vi":"tim mạch"},{"w":"chronic","vi":"mãn tính"},{"w":"counter-productive","vi":"phản tác dụng"},{"w":"deficit","vi":"thiếu hụt"},{"w":"dementia","vi":"suy giảm trí nhớ"},{"w":"diabetes","vi":"tiểu đường"},{"w":"disorder","vi":"rối loạn"},{"w":"distress","vi":"đau khổ"},{"w":"drug","vi":"thuốc"},{"w":"dysentery","vi":"tả lị"},{"w":"epidemic","vi":"bệnh dịch"},{"w":"eyesight","vi":"tầm nhìn"},{"w":"fatigue","vi":"kiệt sức"},{"w":"genetic","vi":"gen"},{"w":"immortality","vi":"bất tử"},{"w":"immune","vi":"miễn dịch"},{"w":"infection","vi":"lây nhiễm"},{"w":"inject","vi":"tiêm"},{"w":"intake","vi":"nạp vào"},{"w":"lifespan","vi":"tuổi thọ"},{"w":"longevity","vi":"tuổi thọ"},{"w":"malaria","vi":"sốt rét"},{"w":"medical","vi":"y tế"},{"w":"metabolism","vi":"quá trình trao đổi chất"},{"w":"mutation","vi":"đột biến"},{"w":"nutrition","vi":"dinh dưỡng"},{"w":"obesity","vi":"béo phì"},{"w":"pharmaceutical","vi":"dược phẩm"},{"w":"physician","vi":"bác sĩ"},{"w":"pill","vi":"thuốc"},{"w":"polio","vi":"bại liệt"},{"w":"prescribe","vi":"kê đơn"},{"w":"reemerging","vi":"tái phát"},{"w":"respiratory","vi":"hô hấp"},{"w":"sanitation","vi":"vệ sinh"},{"w":"surgery","vi":"phẫu thuật"},{"w":"symptom","vi":"triệu chứng"},{"w":"prone to","vi":"dễ mắc"},{"w":"treatment","vi":"điều trị"},{"w":"vaccinate","vi":"tiêm chủng"},{"w":"welfare","vi":"phúc lợi"},{"w":"well-being","vi":"khỏe mạnh"}]},{"id":"r-t-environment","title":"Reading chủ đề · Environment","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"adaptation","vi":"thích nghi"},{"w":"algae","vi":"tảo"},{"w":"biodiversity","vi":"đa dạng sinh học"},{"w":"capricious","vi":"dễ thay đổi"},{"w":"emission","vi":"khí thải"},{"w":"climatic regime","vi":"kiểu khí hậu"},{"w":"contaminate","vi":"làm ô nhiễm"},{"w":"deforestation","vi":"phá rừng"},{"w":"drought","vi":"hạn hán"},{"w":"extinction","vi":"tuyệt chủng"},{"w":"ecosystem","vi":"hệ sinh thái"},{"w":"fossil fuel","vi":"nhiên liệu hóa thạch"},{"w":"genetic diversity","vi":"đa dạng di truyền"},{"w":"greenhouse gas","vi":"khí nhà kính"},{"w":"hemisphere","vi":"bán cầu"},{"w":"natural resources","vi":"tài nguyên thiên nhiên"},{"w":"photosynthesis","vi":"quang hợp"},{"w":"precipitation","vi":"lượng mưa"},{"w":"radiation","vi":"bức xạ"},{"w":"rainfall","vi":"lượng mưa"},{"w":"rural","vi":"nông thôn"},{"w":"sea level","vi":"mực nước biển"},{"w":"sustainable","vi":"bền vững"},{"w":"soil deterioration","vi":"suy giảm chất lượng đất"},{"w":"synthetic chemical","vi":"chất hóa học tổng hợp"},{"w":"terrain","vi":"địa hình"},{"w":"thaw","vi":"làm tan chảy"},{"w":"tropics","vi":"vùng nhiệt đới"},{"w":"volcanic explosion","vi":"phun trào núi lửa"},{"w":"wildlife species","vi":"loài tự nhiên"}]},{"id":"r-t-agriculture","title":"Reading chủ đề · Agriculture","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"agricultural practice","vi":"canh tác"},{"w":"aqueduct","vi":"cống"},{"w":"arable","vi":"có thể trồng trọt"},{"w":"arid","vi":"khô cằn"},{"w":"breed","vi":"loài"},{"w":"crop","vi":"mùa màng"},{"w":"dam","vi":"đập"},{"w":"disperse","vi":"phân tán"},{"w":"edible","vi":"có thể ăn được"},{"w":"erode","vi":"làm xói mòn"},{"w":"fertile","vi":"màu mỡ"},{"w":"fertiliser","vi":"phân bón"},{"w":"food security","vi":"an ninh lương thực"},{"w":"genetic engineering","vi":"công nghệ gen"},{"w":"havoc","vi":"phá hoại"},{"w":"herbicibe","vi":"thuốc diệt cỏ"},{"w":"insecticide","vi":"thuốc diệt côn trùng"},{"w":"intensive farming","vi":"chăn nuôi tập trung"},{"w":"irrigation","vi":"tưới tiêu"},{"w":"livelihood","vi":"sinh kế"},{"w":"livestock","vi":"gia súc"},{"w":"monsoon","vi":"mùa mưa"},{"w":"parasite","vi":"ký sinh trùng"},{"w":"peasant","vi":"tá điền"},{"w":"pesticide","vi":"thuốc trừ sâu"},{"w":"pest","vi":"sâu bọ"},{"w":"plough","vi":"cày bừa"},{"w":"preservation","vi":"bảo tồn"},{"w":"produce","vi":"nông sản"},{"w":"seasonal","vi":"theo mùa"},{"w":"tractor","vi":"máy cày"},{"w":"verdant","vi":"tươi tốt"},{"w":"weed","vi":"cỏ dại"},{"w":"weevil","vi":"mọt"},{"w":"yield","vi":"sản lượng"}]},{"id":"r-t-psychology","title":"Reading chủ đề · Psychology","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"abstract","vi":"trừu tượng"},{"w":"arousal","vi":"khơi dậy"},{"w":"bluz","vi":"mờ"},{"w":"fuzzy","vi":"mờ"},{"w":"cognitive","vi":"nhận thức"},{"w":"conjecture","vi":"phỏng đoán"},{"w":"deception","vi":"lừa dối"},{"w":"delusion","vi":"ảo tưởng"},{"w":"distinct","vi":"khác biệt"},{"w":"dopamine","vi":"hooc môn hạnh phúc"},{"w":"fluid","vi":"chất lỏng"},{"w":"hard-wired","vi":"khắc sâu vào"},{"w":"hypnosis","vi":"thôi miên"},{"w":"hypothesis","vi":"giải thiết"},{"w":"inherent","vi":"cố hữu"},{"w":"instinct","vi":"bản năng"},{"w":"innovative","vi":"cách tân đổi mới"},{"w":"intertwine","vi":"bền chặt"},{"w":"intimidate","vi":"hăm dọa"},{"w":"introvert","vi":"hướng nội"},{"w":"extrovert","vi":"hướng ngoại"},{"w":"intuitive","vi":"trực giác"},{"w":"invoke","vi":"kích thích"},{"w":"mechanism","vi":"cơ chế"},{"w":"meditation","vi":"thiền"},{"w":"mesmerise","vi":"lôi cuốn"},{"w":"mimic","vi":"bắt chước"},{"w":"molecular","vi":"thuộc phân tử"},{"w":"the nervous system","vi":"hệ thần kinh"},{"w":"neuron","vi":"nơ ron"},{"w":"novelty","vi":"tính mới lạ"},{"w":"perceive","vi":"nhận thức"},{"w":"perception","vi":"nhận thức"},{"w":"phobia","vi":"ám ảnh"},{"w":"placebo","vi":"giả dược"},{"w":"psychic","vi":"ngoại cảm"},{"w":"sensory","vi":"thuộc về giác quan"},{"w":"spontaneous","vi":"tự phát"},{"w":"stimuli","vi":"kích thích"},{"w":"theoretical","vi":"lý thuyết"},{"w":"trigger","vi":"kích hoạt"}]},{"id":"r-t-economics","title":"Reading chủ đề · Economics","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"asset","vi":"tài sản"},{"w":"bankrupt","vi":"phá sản"},{"w":"barter","vi":"trao đổi hàng hóa"},{"w":"bonds","vi":"trái phiếu"},{"w":"capital investment","vi":"vốn đầu tư"},{"w":"capitalism","vi":"chủ nghĩa tư bản"},{"w":"collateral","vi":"tài sản thế chấp"},{"w":"commodity","vi":"hàng hóa"},{"w":"commercial","vi":"thương mại"},{"w":"consumer goods","vi":"hàng tiêu dùng"},{"w":"debt","vi":"nợ"},{"w":"deposit","vi":"khoản đặt cọc"},{"w":"domestic market","vi":"thị trường nội địa"},{"w":"enterprise","vi":"doanh nghiệp"},{"w":"ex-vessel value","vi":"giá xuất xưởng"},{"w":"fiscal","vi":"tài chính"},{"w":"freight","vi":"hàng hóa"},{"w":"gross output","vi":"tổng giá trị sản xuất"},{"w":"import quotas","vi":"hạn ngạch nhập khẩu"},{"w":"inflation","vi":"lạm phát"},{"w":"interest","vi":"lãi suất"},{"w":"labour intensive","vi":"công việc nặng"},{"w":"monopoly","vi":"độc quyền"},{"w":"poverty","vi":"đói nghèo"},{"w":"profit margin","vi":"biên lợi nhuận"},{"w":"recession","vi":"suy thoái"},{"w":"share","vi":"cổ phần"},{"w":"stock market","vi":"thị trường chứng khoán"},{"w":"subsidy","vi":"trợ cấp"},{"w":"trade barrier","vi":"rào cản thương mại"},{"w":"transaction","vi":"giao dịch"}]},{"id":"r-t-technology","title":"Reading chủ đề · Technology","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"gadget","vi":"thiết bị"},{"w":"mechanical","vi":"thuộc về cơ khí"},{"w":"capacity","vi":"dung tích"},{"w":"ventilation","vi":"thông khí"},{"w":"airstream","vi":"dòng không khí"},{"w":"unconscious","vi":"vô thức"},{"w":"compound","vi":"hợp chất"},{"w":"shift","vi":"ca kíp/dịch chuyển"},{"w":"cell line","vi":"chuỗi tế bào"},{"w":"deprive","vi":"lấy đi/cướp đoạt"},{"w":"virtual","vi":"thế giới ảo"},{"w":"regulate","vi":"thuộc về nhận thức"},{"w":"theorist","vi":"nhà lý thuyết học"},{"w":"mass","vi":"khối lượng"},{"w":"constrain","vi":"hạn chế/ràng buộc"},{"w":"vertical","vi":"thẳng đứng"},{"w":"horizontal","vi":"nằm ngang"},{"w":"abrupt","vi":"đột ngột"},{"w":"unconvinced","vi":"không thuyết phục"},{"w":"harness","vi":"khai thác"},{"w":"bear","vi":"chống đỡ"},{"w":"sophistication","vi":"sự tinh vi"},{"w":"burst","vi":"bùng nổ"},{"w":"unpredictable","vi":"sự khơi dậy"},{"w":"fatigue","vi":"mệt mỏi"},{"w":"variable","vi":"biến số"},{"w":"transient","vi":"ngắn ngủi"},{"w":"distractible","vi":"dễ mất tập trung"},{"w":"revolutionary","vi":"mang tính cách mạng"},{"w":"natural substance","vi":"hợp chất tự nhiên"},{"w":"reshaped","vi":"định hình lại"},{"w":"patent","vi":"bản quyền"},{"w":"hollow","vi":"rỗng"},{"w":"mould","vi":"khuôn"},{"w":"breakthrough","vi":"đột phá"},{"w":"prototype","vi":"vật mẫu"},{"w":"materialise","vi":"vật chất hóa"}]},{"id":"r-t-language","title":"Reading chủ đề · Language","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"ambiguity","vi":"sự tối nghĩa"},{"w":"auditory","vi":"thính giác"},{"w":"bilingual","vi":"thông thạo hai thứ tiếng"},{"w":"chaos","vi":"hỗn loạn"},{"w":"codify","vi":"hệ thống hóa"},{"w":"concept","vi":"khái niệm"},{"w":"conjunction","vi":"sự liên kết"},{"w":"constituent","vi":"thành phần"},{"w":"critic","vi":"nhà phê bình"},{"w":"dialect","vi":"tiếng địa phương"},{"w":"eloquent","vi":"hùng biện"},{"w":"encode","vi":"mã hóa"},{"w":"encyclopaedia","vi":"từ điển bách khoa"},{"w":"etymology","vi":"nguồn gốc từ"},{"w":"exotic","vi":"ngoại lai"},{"w":"expression","vi":"sự diễn đạt"},{"w":"heyday","vi":"thời kỳ hoàng kim"},{"w":"idiolect","vi":"vốn từ vựng"},{"w":"interpret","vi":"biên dịch"},{"w":"invective","vi":"lời lăng mạ"},{"w":"lexical","vi":"từ vựng"},{"w":"linguistic","vi":"ngôn ngữ"},{"w":"metaphor","vi":"phép ẩn dụ"},{"w":"narrative","vi":"chuyện kể"},{"w":"paradigm","vi":"mô thức"},{"w":"perceptual","vi":"tri giác"},{"w":"poet","vi":"nhà thơ"},{"w":"polemic","vi":"cuộc luận chiến"},{"w":"polyglot","vi":"người biết nhiều ngôn ngữ"},{"w":"quotation","vi":"lời trích dẫn"},{"w":"subtle","vi":"tinh tế"},{"w":"taxonomic","vi":"thuộc sự phân loại"},{"w":"verbal","vi":"bằng lời"}]},{"id":"r-t-space","title":"Reading chủ đề · Space","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"acclimatise","vi":"thích nghi"},{"w":"astronomer","vi":"nhà thiên văn học"},{"w":"astronomy","vi":"thiên văn học"},{"w":"comet","vi":"sao chổi"},{"w":"constellation","vi":"chòm sao"},{"w":"cosmos","vi":"vũ trụ"},{"w":"crater","vi":"miệng (núi lửa)"},{"w":"crescent moon","vi":"trăng lưỡi liềm"},{"w":"debris","vi":"mảnh vỡ nhỏ"},{"w":"eclipse","vi":"che khuất"},{"w":"galaxy","vi":"ngân hà"},{"w":"gravity","vi":"trọng lực"},{"w":"inertia","vi":"quán tính"},{"w":"lunar","vi":"thuộc về mặt trăng"},{"w":"meteor","vi":"thiên thạch"},{"w":"missile","vi":"tên lửa"},{"w":"orbit","vi":"quỹ đạo"},{"w":"outer space","vi":"ngoài không gian"},{"w":"radiation","vi":"bức xạ"},{"w":"satellite","vi":"vệ tinh"},{"w":"spacecraft","vi":"tàu không gian"},{"w":"spaceship","vi":"tàu không gian"},{"w":"spectrum","vi":"quang phổ"},{"w":"supernova","vi":"siêu tân tinh"},{"w":"telescope","vi":"kính thiên văn"},{"w":"terrestrial","vi":"thuộc về trái đất"},{"w":"transit","vi":"đi ngang qua"},{"w":"uninhabitable","vi":"không thể sống được"},{"w":"unmanned","vi":"không có người"},{"w":"vernal equinox","vi":"xuân phân"},{"w":"wane","vi":"khuyết dần"},{"w":"wax","vi":"tròn dần"}]},{"id":"r-t-history","title":"Reading chủ đề · History","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"ancestor","vi":"tổ tiên"},{"w":"antique","vi":"đồ cổ"},{"w":"archaeologist","vi":"nhà khảo cổ học"},{"w":"artefact","vi":"tạo tác"},{"w":"ascent","vi":"sự đi lên"},{"w":"cannibalism","vi":"tục ăn thịt người"},{"w":"catastrophe","vi":"thảm họa"},{"w":"circuitous","vi":"loanh quanh"},{"w":"civilisation","vi":"nền văn minh"},{"w":"civil war","vi":"nội chiến"},{"w":"collapse","vi":"sụp đổ"},{"w":"commemoration","vi":"sự tưởng nhớ"},{"w":"conquer","vi":"chinh phục"},{"w":"date back to","vi":"đã tồn tại từ"},{"w":"descendant","vi":"hậu duệ"},{"w":"descend from","vi":"bắt nguồn từ"},{"w":"dimension","vi":"kích thước"},{"w":"dispute","vi":"tranh chấp"},{"w":"emperor","vi":"đức vua"},{"w":"entitle","vi":"trao quyền"},{"w":"excavation","vi":"khai quật"},{"w":"hindsight","vi":"nhận thức về sau"},{"w":"retrospect","vi":"nhận thức về sau"},{"w":"histrorian","vi":"nhà sử học"},{"w":"initiate","vi":"bắt đầu"},{"w":"legend","vi":"huyền thoại"},{"w":"merchant","vi":"thương nhân"},{"w":"millennium","vi":"thiên niên kỷ"},{"w":"noble","vi":"danh giá"},{"w":"origin","vi":"nguồn gốc"},{"w":"outdated","vi":"lỗi thời"},{"w":"overladen","vi":"chất quá đầy"},{"w":"pioneer","vi":"người tiên phong"},{"w":"plateau","vi":"cao nguyên"},{"w":"precede","vi":"đi trước"},{"w":"prehistoric","vi":"tiền sử"},{"w":"refractive","vi":"có tính khúc xạ"},{"w":"regeneration","vi":"sự tái sinh"},{"w":"reveal","vi":"lộ ra"},{"w":"revolution","vi":"cuộc cách mạng"},{"w":"salvage","vi":"cứu vớt"},{"w":"sediment","vi":"trầm tích"},{"w":"steward","vi":"người tùy tùng"}]},{"id":"r-t-education","title":"Reading chủ đề · Education","cat":"IELTS Reading","level":"Chủ đề","builtin":true,"words":[{"w":"accredited","vi":"được công nhận"},{"w":"acquisition","vi":"sự tiếp thu"},{"w":"algebra","vi":"đại số"},{"w":"apt","vi":"tài trí"},{"w":"arithmetic","vi":"số học"},{"w":"cite","vi":"viện dẫn"},{"w":"conmpetent","vi":"tài giỏi"},{"w":"conventional","vi":"truyền thống"},{"w":"curiosity","vi":"sự tò mò"},{"w":"dictate","vi":"đọc chép"},{"w":"disignate","vi":"phân công"},{"w":"distinction","vi":"sự khác biệt"},{"w":"elucidate","vi":"giải thích"},{"w":"emulate","vi":"bắt chước"},{"w":"endeavor","vi":"endeavor"},{"w":"ethical","vi":"ethical"},{"w":"evaluation","vi":"đánh giá"},{"w":"gifted","vi":"tài năng"},{"w":"hall of residence","vi":"kí túc xá"},{"w":"ignorance","vi":"sự kém hiểu biết"},{"w":"institution","vi":"tổ chức"},{"w":"interference","vi":"sự can thiệp"},{"w":"noble","vi":"danh giá"},{"w":"nurture","vi":"nuôi dưỡng"},{"w":"peer","vi":"bạn cùng trang lứa"},{"w":"perceptual","vi":"tri giác"},{"w":"peripheral","vi":"ngoại biên"},{"w":"philosophy","vi":"triết lý"},{"w":"prestigious","vi":"có danh tiếng"},{"w":"prodigy","vi":"thần đồng"},{"w":"scrutiny","vi":"xem xét kĩ lưỡng"},{"w":"sketch","vi":"phác họa"},{"w":"subconscious","vi":"tiềm thức"},{"w":"suspenseful","vi":"hồi hộp"},{"w":"tendency","vi":"thiên hướng"},{"w":"tuition","vi":"việc dạy học"},{"w":"upbringing","vi":"sự nuôi dạy"}]}];
+SAMPLE_SETS.push(...READING_SETS);
+
+const SAMPLE_TESTS = [
+ {id:'t-ielts-r1',type:'ielts',skill:'Reading',title:'IELTS Reading · Urban beekeeping',minutes:15,builtin:true,
+  desc:'Đọc hiểu: True/False/Not Given, trắc nghiệm, điền từ.',
+  sections:[{title:'Reading Passage',passage:`Urban beekeeping
+
+Over the past two decades, beekeeping has moved from the countryside into the heart of many cities. Rooftops in London, Paris and New York now host thousands of hives, many of them managed by amateurs who have taken short training courses. Supporters argue that cities can be surprisingly good places for bees. Parks, gardens and tree-lined streets offer a wide variety of flowers, and urban areas are often free from the pesticides used on large farms.
+
+However, some scientists have begun to question whether the trend is as beneficial as it seems. A study in one European capital found that the number of honeybee colonies had grown so quickly that there were no longer enough flowers to feed them. Honeybees, which live in large colonies, may compete with wild bees for nectar and pollen. Wild bees, which include hundreds of solitary species, are often more important pollinators of native plants than honeybees are.
+
+Researchers therefore recommend that city authorities focus less on adding hives and more on planting. Replacing short-cut lawns with meadows of native wildflowers, for example, would benefit all pollinating insects. Some cities have already started to leave road verges uncut during the summer months. Early results suggest that this simple change can double the number of insect species recorded in an area.
+
+For those who still wish to keep bees, experts advise registering hives with local authorities so that colony density can be monitored.`,
+  questions:[
+   {t:'mc',q:'Questions 1–3: Do the statements agree with the passage?\nCities may contain fewer pesticides than large farms.',o:['TRUE','FALSE','NOT GIVEN'],a:0,e:'Đoạn 1: "urban areas are often free from the pesticides used on large farms".'},
+   {t:'mc',q:'Honey produced in cities is more expensive than honey from the countryside.',o:['TRUE','FALSE','NOT GIVEN'],a:2,e:'Bài không nhắc tới giá mật ong.'},
+   {t:'mc',q:'Wild bees are always less effective pollinators than honeybees.',o:['TRUE','FALSE','NOT GIVEN'],a:1,e:'Đoạn 2: wild bees "are often more important pollinators of native plants than honeybees".'},
+   {t:'mc',q:'Questions 4–5: Choose the correct letter.\nAccording to the study, the main problem was that',o:['bees were affected by air pollution','there were too many colonies for the available flowers','amateur keepers lacked training','wild bees attacked honeybee hives'],a:1,e:'"...grown so quickly that there were no longer enough flowers to feed them".'},
+   {t:'mc',q:'What do researchers recommend city authorities do?',o:['ban beekeeping completely','add more hives on rooftops','plant more native flowers','use more pesticides'],a:2,e:'"focus less on adding hives and more on planting".'},
+   {t:'fill',q:'Questions 6–8: Complete the sentences. Write ONE WORD ONLY.\nSome cities leave road ______ uncut during the summer.',a:['verges'],e:'"leave road verges uncut during the summer months".'},
+   {t:'fill',q:'This change can ______ the number of insect species in an area.',a:['double'],e:'"can double the number of insect species".'},
+   {t:'fill',q:'Experts advise beekeepers to ______ their hives with local authorities.',a:['register'],e:'"advise registering hives with local authorities" → register.'}
+  ]}]},
+ {id:'t-ielts-l1',type:'ielts',skill:'Listening',title:'IELTS Listening · Course enrolment',minutes:10,builtin:true,
+  desc:'Nghe hội thoại (giọng đọc máy) và điền thông tin vào form.',
+  sections:[{title:'Section 1 – Form completion',audio:`Good morning, Riverside Language Centre. How can I help you? Hi, I'd like to enrol in an evening English course. Certainly. Can I have your name, please? Yes, it's Daniel Fraser. That's F, R, A, S, E, R. Thank you. And which course are you interested in? The intermediate conversation class. That runs on Tuesdays and Thursdays, from seven to nine p.m. The course lasts ten weeks. And how much does it cost? It's two hundred and forty pounds, but students get a fifteen percent discount. Great. I'm a student at the city college. Then you'll just need to bring your student card on the first day. Classes start on the twelfth of March in Room 4 B. Perfect. Thanks very much.`,
+  questions:[
+   {t:'fill',q:'Surname: ______',a:['fraser'],e:'"Daniel Fraser. That\'s F-R-A-S-E-R."'},
+   {t:'fill',q:'Course: ______ conversation',a:['intermediate'],e:'"The intermediate conversation class."'},
+   {t:'fill',q:'Days: Tuesdays and ______',a:['thursdays','thursday'],e:'"on Tuesdays and Thursdays".'},
+   {t:'fill',q:'Length of course: ______ weeks',a:['10','ten'],e:'"The course lasts ten weeks."'},
+   {t:'fill',q:'Fee: £ ______',a:['240','two hundred and forty'],e:'"two hundred and forty pounds".'},
+   {t:'fill',q:'Student discount: ______ %',a:['15','fifteen'],e:'"a fifteen percent discount".'},
+   {t:'mc',q:'What must Daniel bring on the first day?',o:['his passport','his student card','a photo','a payment receipt'],a:1,e:'"bring your student card on the first day".'},
+   {t:'fill',q:'Room: ______',a:['4b','4 b'],e:'"in Room 4B".'}
+  ]}]},
+ {id:'t-ielts-w1',type:'ielts',skill:'Writing',title:'IELTS Writing Task 2 · Free university',minutes:40,builtin:true,
+  desc:'Bài luận 250 từ. Giáo viên chấm band và nhận xét.',
+  sections:[{title:'Writing Task 2',questions:[
+   {t:'essay',q:'Some people believe that university education should be free for everyone. Others think students should pay for their own studies.\nDiscuss both views and give your own opinion.\n\nWrite at least 250 words.',min:250}
+  ]}]},
+ {id:'t-thpt-1',type:'thpt',skill:'Tổng hợp',title:'Đề thi thử THPT · Đề số 1',minutes:30,builtin:true,
+  desc:'Ngữ âm, trọng âm, ngữ pháp, từ vựng, tìm lỗi sai, giao tiếp, điền từ.',
+  sections:[
+   {title:'Ngữ âm & trọng âm',questions:[
+    {t:'mc',q:'Chọn từ có phần gạch chân phát âm khác các từ còn lại.',o:['h{{ou}}se','m{{ou}}se','c{{ou}}ntry','ab{{ou}}t'],a:2,e:'country: /ʌ/; các từ còn lại: /aʊ/.'},
+    {t:'mc',q:'Chọn từ có phần gạch chân phát âm khác các từ còn lại.',o:['want{{ed}}','need{{ed}}','play{{ed}}','decid{{ed}}'],a:2,e:'played: /d/; các từ còn lại: /ɪd/ (sau t, d).'},
+    {t:'mc',q:'Chọn từ có trọng âm khác các từ còn lại.',o:['teacher','student','money','begin'],a:3,e:'begin nhấn âm 2; các từ còn lại nhấn âm 1.'},
+    {t:'mc',q:'Chọn từ có trọng âm khác các từ còn lại.',o:['family','important','beautiful','different'],a:1,e:'important nhấn âm 2; các từ còn lại nhấn âm 1.'}
+   ]},
+   {title:'Ngữ pháp & từ vựng',questions:[
+    {t:'mc',q:'If I ______ you, I would accept the offer.',o:['am','was','were','be'],a:2,e:'Câu điều kiện loại 2: If + S + were (dùng cho mọi ngôi).'},
+    {t:'mc',q:'She has lived in Hanoi ______ 2015.',o:['for','since','in','from'],a:1,e:'since + mốc thời gian, dùng với thì hiện tại hoàn thành.'},
+    {t:'mc',q:'The book ______ by millions of people so far.',o:['has read','has been read','was reading','reads'],a:1,e:'"so far" → hiện tại hoàn thành; chủ ngữ là vật → bị động: has been read.'},
+    {t:'mc',q:'He is interested ______ learning foreign languages.',o:['on','at','in','with'],a:2,e:'be interested in + V-ing.'},
+    {t:'mc',q:'I\'m looking forward to ______ you soon.',o:['see','seeing','seen','to see'],a:1,e:'look forward to + V-ing.'},
+    {t:'mc',q:'The man ______ lives next door is a doctor.',o:['who','which','whom','whose'],a:0,e:'Đại từ quan hệ chỉ người, làm chủ ngữ → who.'},
+    {t:'mc',q:'Neither my brother nor my parents ______ at home now.',o:['is','are','was','be'],a:1,e:'Neither…nor: động từ chia theo chủ ngữ gần nhất (my parents → are).'},
+    {t:'mc',q:'By the time we arrived, the film ______.',o:['started','has started','had started','starts'],a:2,e:'By the time + quá khứ đơn, mệnh đề chính dùng quá khứ hoàn thành.'},
+    {t:'mc',q:'Chọn từ GẦN NGHĨA nhất với từ gạch chân: The new policy will {{benefit}} thousands of families.',o:['harm','help','ignore','punish'],a:1,e:'benefit = help (giúp ích, mang lại lợi ích).'},
+    {t:'mc',q:'Chọn từ TRÁI NGHĨA với từ gạch chân: He was {{reluctant}} to leave his hometown.',o:['unwilling','hesitant','eager','afraid'],a:2,e:'reluctant (miễn cưỡng) ↔ eager (háo hức).'},
+    {t:'mc',q:'Tìm lỗi sai: Each of the students {{(A) have}} {{(B) a}} laptop {{(C) for}} {{(D) studying}} online.',o:['have','a','for','studying'],a:0,e:'Each of + N số nhiều → động từ số ít: has.'},
+    {t:'mc',q:'Lan: "Thank you for helping me with my homework." – Nam: "______"',o:['You\'re welcome.','Yes, I do.','Of course not.','I\'m afraid not.'],a:0,e:'Đáp lại lời cảm ơn: You\'re welcome.'}
+   ]},
+   {title:'Đọc điền từ',passage:`Volunteering is becoming increasingly popular among young people in Viet Nam. Every summer, thousands of students (17) ______ part in programmes that help people in rural areas. They teach children, repair roads and build houses. (18) ______ these activities are hard work, most volunteers say they find them rewarding. Volunteering not only helps communities but also gives young people a chance to develop important (19) ______ such as teamwork and communication. Many students believe that the experience makes them more (20) ______ and confident.`,
+    questions:[
+     {t:'mc',q:'Chỗ trống (17)',o:['take','make','do','have'],a:0,e:'take part in: tham gia.'},
+     {t:'mc',q:'Chỗ trống (18)',o:['Because','Although','So','Despite'],a:1,e:'Although + mệnh đề: mặc dù (Despite + N/V-ing).'},
+     {t:'mc',q:'Chỗ trống (19)',o:['skills','habits','jobs','ideas'],a:0,e:'skills such as teamwork and communication: kỹ năng.'},
+     {t:'mc',q:'Chỗ trống (20)',o:['depend','dependent','independent','independence'],a:2,e:'more + tính từ; nghĩa tích cực đi với "confident" → independent.'}
+    ]}
+  ]},
+ {id:'t-thpt-2',type:'thpt',skill:'Đọc hiểu',title:'Đọc hiểu · Social media and teenagers',minutes:12,builtin:true,
+  desc:'Đọc đoạn văn và trả lời 6 câu hỏi.',
+  sections:[{title:'Reading comprehension',passage:`Social media has changed the way teenagers communicate. According to a recent survey of 2,000 secondary school students, more than 80 percent use at least one social media app every day. Many say it helps them stay in touch with friends and find information for their studies.
+
+However, teachers and parents are concerned about the amount of time young people spend online. Some students admit that they check their phones late at night, which affects their sleep and their concentration in class.
+
+Experts suggest that teenagers should set daily time limits and turn off notifications while studying. They also recommend that schools teach students how to recognise false information online, a skill that is becoming more important than ever.`,
+  questions:[
+   {t:'mc',q:'What is the passage mainly about?',o:['How to create a social media app','The effects of social media on teenagers','Why teachers use social media','The history of the Internet'],a:1,e:'Cả bài nói về lợi ích và tác hại của mạng xã hội với thanh thiếu niên.'},
+   {t:'mc',q:'According to the survey, more than 80 percent of students ______.',o:['do not use social media','use social media every day','study online at night','have their own phones'],a:1,e:'"more than 80 percent use at least one social media app every day".'},
+   {t:'mc',q:'The word "concerned" in paragraph 2 is closest in meaning to ______.',o:['worried','pleased','surprised','bored'],a:0,e:'concerned = worried (lo lắng).'},
+   {t:'mc',q:'What problem is caused by checking phones late at night?',o:['Poor eyesight','Lack of sleep and concentration','Losing friends','Spending too much money'],a:1,e:'"affects their sleep and their concentration in class".'},
+   {t:'mc',q:'Which is NOT mentioned as advice from experts?',o:['Setting daily time limits','Turning off notifications while studying','Learning to recognise false information','Deleting all social media apps'],a:3,e:'Bài không khuyên xóa hết ứng dụng.'},
+   {t:'mc',q:'The word "They" in paragraph 3 refers to ______.',o:['teenagers','experts','schools','notifications'],a:1,e:'"Experts suggest… They also recommend…" → They = experts.'}
+  ]}]}
+];
+
+/* =========================================================
+   LƯU TRỮ
+   ========================================================= */
+const KEY='lopta_data_v1', SKEY='lopta_session_v1';
+const DAY=86400000;
+function blank(){return {teacherPin:'1234',settings:{selfReg:true,className:'Lớp Tiếng Anh'},students:[],sets:[],tests:[],assignments:[],progress:{}}}
+let D=load();
+function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.students)return Object.assign(blank(),x)}catch(e){}return blank()}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){toast('Không lưu được dữ liệu trên trình duyệt này')}}
+function getSession(){try{return JSON.parse(localStorage.getItem(SKEY))}catch(e){return null}}
+function setSession(s){try{s?localStorage.setItem(SKEY,JSON.stringify(s)):localStorage.removeItem(SKEY)}catch(e){}}
+
+const allSets=()=>[...SAMPLE_SETS,...D.sets];
+const allTests=()=>[...SAMPLE_TESTS,...D.tests];
+const setById=id=>allSets().find(s=>s.id===id);
+const testById=id=>allTests().find(t=>t.id===id);
+const stuById=id=>D.students.find(s=>s.id===id);
+function P(sid){sid=sid||U.id;if(!D.progress[sid])D.progress[sid]={words:{},results:[],activity:{}};return D.progress[sid]}
+const uid=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const today=()=>new Date().toISOString().slice(0,10);
+const wkey=(setId,w)=>setId+'::'+w.toLowerCase();
+
+/* =========================================================
+   TIỆN ÍCH
+   ========================================================= */
+const h=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=s=>h(s).replace(/\{\{(.+?)\}\}/g,'<u>$1</u>').replace(/\n/g,'<br>');
+const $=s=>document.querySelector(s);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const norm=s=>String(s||'').toLowerCase().replace(/[’']/g,"'").replace(/[.,!?;:"]+$/,'').replace(/\s+/g,' ').trim();
+const fdate=t=>new Date(t).toLocaleDateString('vi-VN');
+const fdt=t=>new Date(t).toLocaleString('vi-VN',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric'});
+function toast(m){document.querySelectorAll('.toast').forEach(x=>x.remove());const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
+function modal(html){$('#modal').innerHTML=html?`<div class="modal-bg" onclick="if(event.target===this)modal('')"><div class="modal">${html}</div></div>`:''}
+let voice=null;
+function pickVoice(){const v=speechSynthesis.getVoices();voice=v.find(x=>/en[-_]GB/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null}
+if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
+function speak(t,rate=0.9){if(!('speechSynthesis' in window)){toast('Trình duyệt không hỗ trợ đọc');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';if(voice)u.voice=voice;u.rate=rate;speechSynthesis.speak(u)}
+function download(name,obj){const b=new Blob([JSON.stringify(obj,null,1)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+function pickFile(cb){const i=document.createElement('input');i.type='file';i.accept='.json,application/json';i.onchange=()=>{const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{cb(JSON.parse(r.result))}catch(e){toast('File không hợp lệ')}};r.readAsText(f)};i.click()}
+
+/* =========================================================
+   LẶP LẠI NGẮT QUÃNG (SM-2 rút gọn)
+   q: 1=Quên, 3=Khó, 4=Nhớ, 5=Dễ
+   ========================================================= */
+function grade(key,q){
+ const p=P();const now=Date.now();
+ const c=p.words[key]||{ef:2.5,iv:0,reps:0,due:0,lapses:0,seen:0};
+ c.seen=(c.seen||0)+1;
+ if(q<3){c.reps=0;c.iv=0;c.lapses++;c.due=now+10*60000}
+ else{c.reps++;c.iv=c.reps===1?(q===5?3:1):c.reps===2?(q===5?6:3):Math.round(c.iv*c.ef*(q===5?1.3:q===3?0.8:1));c.iv=Math.max(1,c.iv);c.due=now+c.iv*DAY}
+ c.ef=Math.max(1.3,Math.min(3,c.ef+(0.1-(5-q)*(0.08+(5-q)*0.02))));
+ c.last=now;p.words[key]=c;bump();save();
+}
+function bump(sid){const p=P(sid);const d=today();p.activity[d]=(p.activity[d]||0)+1}
+function wstatus(rec){if(!rec)return 'new';if(rec.iv>=7)return 'mastered';return 'learning'}
+function setStats(set,sid){const p=P(sid);let n=0,l=0,m=0,due=0;const now=Date.now();set.words.forEach(w=>{const r=p.words[wkey(set.id,w.w)];const s=wstatus(r);if(s==='new')n++;else if(s==='mastered')m++;else l++;if(r&&r.due<=now)due++});return{total:set.words.length,n,l,m,due,learned:l+m}}
+function dueList(sid){const p=P(sid),now=Date.now(),out=[];allSets().forEach(s=>s.words.forEach(w=>{const r=p.words[wkey(s.id,w.w)];if(r&&r.due<=now)out.push({set:s,w})}));return out}
+function streak(sid){const a=P(sid).activity;let n=0;let d=new Date();if(!a[today()])d=new Date(Date.now()-DAY);while(a[d.toISOString().slice(0,10)]){n++;d=new Date(d.getTime()-DAY)}return n}
+function stuSummary(sid){const p=P(sid);const vals=Object.values(p.words);return{learned:vals.length,mastered:vals.filter(r=>r.iv>=7).length,due:dueList(sid).length,tests:p.results.length,streak:streak(sid),last:Math.max(0,...vals.map(r=>r.last||0),...p.results.map(r=>r.date))}}
+
+/* =========================================================
+   CHẤM ĐIỂM
+   ========================================================= */
+function flatQs(t){const out=[];t.sections.forEach((s,si)=>s.questions.forEach((q,qi)=>out.push({...q,si,qi,n:out.length+1})));return out}
+function isRight(q,ans){if(ans==null||ans==='')return false;if(q.t==='mc')return ans===q.a;if(q.t==='fill')return q.a.map(norm).includes(norm(ans));return false}
+function ieltsBand(score,total){const r=Math.round(score/total*40);const m=[[39,9],[37,8.5],[35,8],[33,7.5],[30,7],[27,6.5],[23,6],[19,5.5],[15,5],[13,4.5],[10,4],[8,3.5],[6,3],[4,2.5]];for(const[k,b]of m)if(r>=k)return b;return 2}
+function resultLabel(t,r){
+ if(r.essay&&r.total===0){return r.essay.band!=null&&r.essay.band!==''?`Band ${r.essay.band}`:'Chờ chấm'}
+ if(t&&t.type==='ielts')return `${r.score}/${r.total} · Band ~${ieltsBand(r.score,r.total)}`;
+ return `${r.score}/${r.total} · ${(Math.round(r.score/r.total*10*100)/100)} điểm`;
+}
+function bestPct(sid,testId){const rs=P(sid).results.filter(r=>r.testId===testId&&r.total>0);if(!rs.length)return null;return Math.max(...rs.map(r=>r.score/r.total))}
+
+/* =========================================================
+   GIAO BÀI
+   ========================================================= */
+function myAssignments(sid){return D.assignments.filter(a=>a.to==='all'||(a.to||[]).includes(sid))}
+function assignDone(a,sid){
+ if(a.kind==='test')return P(sid).results.some(r=>r.testId===a.ref&&r.date>=a.created);
+ const s=setById(a.ref);if(!s)return false;const st=setStats(s,sid);return st.n===0;
+}
+
+/* =========================================================
+   TRẠNG THÁI & ĐIỀU HƯỚNG
+   ========================================================= */
+let U=null; // {role,id,name}
+let R={v:'home'}; // route
+let timerH=null;
+function go(v,extra){if(R.v==='test'&&R.running&&v!=='result'){if(!confirm('Bạn đang làm bài. Thoát sẽ mất bài làm. Vẫn thoát?'))return}clearInterval(timerH);if('speechSynthesis' in window)speechSynthesis.cancel();R=Object.assign({v},extra||{});render();window.scrollTo(0,0)}
+function logout(){if(R.v==='test'&&R.running&&!confirm('Thoát khi đang làm bài?'))return;R.running=false;U=null;loginTab='stu';setSession(null);go('login')}
+
+function header(){
+ const el=$('#hdr');
+ if(!U){el.innerHTML=`<div class="wrap"><div class="logo"><b>A</b>${h(D.settings.className)}</div></div>`;return}
+ const st=[['home','Trang chủ'],['vocab','Luyện từ'],['exam','Luyện đề'],['history','Kết quả']];
+ const tt=[['t-students','Học viên'],['t-sets','Bộ từ'],['t-tests','Đề thi'],['t-assign','Giao bài'],['t-data','Dữ liệu']];
+ const tabs=U.role==='teacher'?tt:st;
+ const cur=R.v;
+ const isOn=k=>cur===k||(k==='vocab'&&['set','flash','quiz','spell','match','review'].includes(cur))||(k==='exam'&&['test','result'].includes(cur))||(k==='t-students'&&cur==='t-student');
+ el.innerHTML=`<div class="wrap"><div class="logo" onclick="go('${tabs[0][0]}')"><b>A</b><span>${h(D.settings.className)}</span></div>
+ <nav class="tabs">${tabs.map(([k,l])=>`<button class="${isOn(k)?'on':''}" onclick="go('${k}')">${l}</button>`).join('')}</nav>
+ <div class="who">${U.role==='teacher'?'<span class="tag acc">Giáo viên</span>':`<span>${h(U.name)}</span><span class="tag gray">${h(U.code)}</span>`}<button class="btn sm ghost" onclick="logout()">Đăng xuất</button></div></div>`;
+}
+
+function render(){
+ if(!U&&R.v!=='login')R={v:'login'};
+ if(U&&U.role==='student'&&R.v.startsWith('t-'))R={v:'home'};
+ if(U&&U.role==='teacher'&&!R.v.startsWith('t-')&&!(R.v==='result'&&R.sid))R={v:'t-students'};
+ header();
+ const f=VIEWS[R.v]||VIEWS.home;
+ $('#app').innerHTML=f();
+ if(AFTER[R.v])AFTER[R.v]();
+}
+const VIEWS={},AFTER={};
+
+/* =========================================================
+   ĐĂNG NHẬP
+   ========================================================= */
+let loginTab='stu';
+VIEWS.login=()=>{
+ const recent=D.students.slice().sort((a,b)=>(b.lastLogin||0)-(a.lastLogin||0)).slice(0,8);
+ return `<div class="login"><div class="hero"><b>A</b><h1>${h(D.settings.className)}</h1><p class="sub">Luyện từ vựng và luyện đề IELTS, THPT</p></div>
+ <div class="card"><div class="row" style="justify-content:center"><div class="seg"><button class="${loginTab==='stu'?'on':''}" onclick="loginTab='stu';render()">Học viên</button><button class="${loginTab==='tea'?'on':''}" onclick="loginTab='tea';render()">Giáo viên</button></div></div>
+ ${loginTab==='stu'?`
+  <label class="f">Mã học viên</label><input type="text" id="lcode" placeholder="Ví dụ: HV1234" onkeydown="if(event.key==='Enter')stuLogin()">
+  <button class="btn pri mt" style="width:100%" onclick="stuLogin()">Vào học</button>
+  ${recent.length?`<p class="small muted mt">Hồ sơ đã dùng trên máy này:</p><div class="chips">${recent.map(s=>`<span class="chip" onclick="$('#lcode').value='${h(s.code)}';stuLogin()">${h(s.name)}</span>`).join('')}</div>`:''}
+  ${D.settings.selfReg?`<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+  <p class="small muted" style="margin:0">Chưa có mã? Tạo hồ sơ mới:</p>
+  <div class="row mt" style="flex-wrap:nowrap"><input type="text" id="lname" placeholder="Họ và tên" onkeydown="if(event.key==='Enter')stuRegister()"><button class="btn" onclick="stuRegister()">Tạo</button></div>`:'<p class="small muted mt">Chưa có mã? Hãy hỏi giáo viên của bạn.</p>'}
+  <p class="small muted mt">Giáo viên gửi file bài học? <a href="#" onclick="event.preventDefault();importPack()">Nhập file từ giáo viên</a></p>
+ `:`
+  <label class="f">Mã PIN giáo viên</label><input type="password" id="lpin" placeholder="••••" onkeydown="if(event.key==='Enter')teaLogin()">
+  <button class="btn pri mt" style="width:100%" onclick="teaLogin()">Vào trang giáo viên</button>
+  ${D.teacherPin==='1234'?'<p class="small muted mt">PIN mặc định là <b>1234</b>. Hãy đổi trong mục Dữ liệu sau khi vào.</p>':''}
+ `}</div></div>`;
+};
+function genCode(){let c;do{c='HV'+Math.floor(1000+Math.random()*9000)}while(D.students.some(s=>s.code===c));return c}
+function stuLogin(){const c=$('#lcode').value.trim().toUpperCase();const s=D.students.find(x=>x.code.toUpperCase()===c);if(!s){toast('Không tìm thấy mã học viên này');return}s.lastLogin=Date.now();save();U={role:'student',id:s.id,name:s.name,code:s.code};setSession({role:'student',id:s.id});go('home')}
+function stuRegister(){const n=$('#lname').value.trim();if(n.length<2){toast('Nhập họ tên');return}const s={id:uid('u'),name:n,code:genCode(),created:Date.now(),lastLogin:Date.now()};D.students.push(s);save();U={role:'student',id:s.id,name:s.name,code:s.code};setSession({role:'student',id:s.id});go('home');modal(`<h2>Chào ${h(n)}!</h2><p>Mã học viên của bạn là</p><div class="big-score" style="margin:6px 0 12px">${s.code}</div><p class="muted">Hãy ghi nhớ mã này để đăng nhập lần sau.</p><button class="btn pri" onclick="modal('')">Bắt đầu học</button>`)}
+function teaLogin(){if($('#lpin').value===D.teacherPin){U={role:'teacher',name:'Giáo viên'};setSession({role:'teacher'});go('t-students')}else toast('Sai mã PIN')}
+
+/* =========================================================
+   HỌC VIÊN · TRANG CHỦ
+   ========================================================= */
+VIEWS.home=()=>{
+ const s=stuSummary(U.id);const asg=myAssignments(U.id);
+ const p=P();const days=[];for(let i=27;i>=0;i--){const d=new Date(Date.now()-i*DAY).toISOString().slice(0,10);days.push(p.activity[d]||0)}
+ const lv=n=>n===0?'':n<10?'l1':n<30?'l2':'l3';
+ const lastRes=p.results.slice(-3).reverse();
+ return `<h1>Chào ${h(U.name)} 👋</h1><p class="sub">${s.due?`Hôm nay bạn có <b>${s.due}</b> từ cần ôn.`:'Bạn không có từ nào đến hạn ôn. Học thêm từ mới nhé!'}</p>
+ <div class="grid g4">
+  <div class="card stat"><div class="n">${s.learned}</div><div class="l">Từ đã học</div></div>
+  <div class="card stat"><div class="n">${s.mastered}</div><div class="l">Từ đã thuộc</div></div>
+  <div class="card stat"><div class="n" style="color:var(--accent)">${s.due}</div><div class="l">Cần ôn hôm nay</div></div>
+  <div class="card stat"><div class="n">${s.tests}</div><div class="l">Bài đã làm</div></div>
+  <div class="card stat"><div class="n">🔥 ${s.streak}</div><div class="l">Ngày học liên tiếp</div></div>
+ </div>
+ <div class="grid g2 mt2">
+  <div class="card"><h2>Bài được giao</h2>${asg.length?asg.map(a=>{const it=a.kind==='test'?testById(a.ref):setById(a.ref);if(!it)return'';const done=assignDone(a,U.id);const late=a.due&&!done&&a.due<today();
+   return `<div class="list-item"><div><div><b>${h(it.title)}</b></div><div class="small muted">${a.kind==='test'?'Đề thi':'Bộ từ'}${a.due?' · Hạn '+fdate(a.due):''}${a.note?' · '+h(a.note):''}</div></div>
+   <div class="row">${done?'<span class="tag ok">Đã xong</span>':late?'<span class="tag bad">Quá hạn</span>':'<span class="tag warn">Chưa làm</span>'}
+   <button class="btn sm ${done?'':'pri'}" onclick="${a.kind==='test'?`go('test',{id:'${a.ref}'})`:`go('set',{id:'${a.ref}'})`}">${a.kind==='test'?'Làm bài':'Học'}</button></div></div>`}).join(''):'<div class="empty">Chưa có bài nào được giao.</div>'}</div>
+  <div class="card"><h2>Học nhanh</h2>
+   <div class="grid" style="gap:8px">
+    <button class="btn ${s.due?'acc':''}" onclick="go('review')" ${s.due?'':'disabled'}>Ôn tập ${s.due} từ đến hạn</button>
+    <button class="btn" onclick="go('vocab')">Chọn bộ từ để học</button>
+    <button class="btn" onclick="go('exam')">Làm một đề luyện</button>
+   </div>
+   <h3 class="mt2">Hoạt động 4 tuần qua</h3><div class="heat">${days.map(n=>`<i class="${lv(n)}" title="${n} lượt"></i>`).join('')}</div>
+   ${lastRes.length?`<h3 class="mt2">Kết quả gần đây</h3>${lastRes.map(r=>{const t=testById(r.testId);return `<div class="list-item"><span class="small">${h(t?t.title:'(đề đã xóa)')}</span><span class="tag">${resultLabel(t,r)}</span></div>`}).join('')}`:''}
+  </div>
+ </div>`;
+};
+
+/* =========================================================
+   LUYỆN TỪ
+   ========================================================= */
+let vocabCat='all';
+VIEWS.vocab=()=>{
+ const sets=allSets().filter(s=>vocabCat==='all'||s.cat===vocabCat);
+ const cats=['all',...new Set(allSets().map(s=>s.cat))];
+ const due=dueList(U.id).length;
+ return `<div class="row between"><div><h1>Luyện từ</h1><p class="sub">Chọn bộ từ, học bằng thẻ, trắc nghiệm, nghe viết hoặc ghép từ.</p></div>
+ <button class="btn ${due?'acc':''}" onclick="go('review')" ${due?'':'disabled'}>Ôn tập hôm nay (${due})</button></div>
+ <div class="seg mb">${cats.map(c=>`<button class="${vocabCat===c?'on':''}" onclick="vocabCat='${h(c)}';render()">${c==='all'?'Tất cả':h(c)}</button>`).join('')}</div>
+ <div class="grid g3">${sets.map(s=>{const st=setStats(s,U.id);const pct=Math.round(st.learned/st.total*100)||0;
+  return `<div class="card" style="cursor:pointer" onclick="go('set',{id:'${s.id}'})"><div class="row between"><span class="tag">${h(s.cat)}</span><span class="small muted">${h(s.level||'')}</span></div>
+  <h3 class="mt">${h(s.title)}</h3><p class="small muted" style="margin:0 0 10px">${st.total} từ · ${st.m} đã thuộc${st.due?` · <b style="color:var(--accent)">${st.due} cần ôn</b>`:''}</p>
+  <div class="bar"><i style="width:${pct}%"></i></div><div class="small muted mt" style="margin-top:6px">Đã học ${pct}%</div></div>`}).join('')}</div>`;
+};
+VIEWS.set=()=>{
+ const s=setById(R.id);if(!s)return '<div class="empty">Không tìm thấy bộ từ.</div>';
+ const st=setStats(s,U.id);const p=P();
+ const lab={new:'<span class="tag gray">Mới</span>',learning:'<span class="tag warn">Đang học</span>',mastered:'<span class="tag ok">Đã thuộc</span>'};
+ return `<div class="crumb" onclick="go('vocab')">← Luyện từ</div><h1>${h(s.title)}</h1><p class="sub">${st.total} từ · ${st.n} mới · ${st.l} đang học · ${st.m} đã thuộc</p>
+ <div class="grid g4">
+  <button class="card" style="cursor:pointer;text-align:left" onclick="go('flash',{id:'${s.id}'})"><div style="font-size:24px">🃏</div><b>Thẻ ghi nhớ</b><div class="small muted">Lật thẻ, tự đánh giá</div></button>
+  <button class="card" style="cursor:pointer;text-align:left" onclick="go('quiz',{id:'${s.id}'})"><div style="font-size:24px">✅</div><b>Trắc nghiệm</b><div class="small muted">Chọn nghĩa đúng</div></button>
+  <button class="card" style="cursor:pointer;text-align:left" onclick="go('spell',{id:'${s.id}'})"><div style="font-size:24px">🎧</div><b>Nghe & viết</b><div class="small muted">Nghe rồi gõ lại từ</div></button>
+  <button class="card" style="cursor:pointer;text-align:left" onclick="go('match',{id:'${s.id}'})"><div style="font-size:24px">🧩</div><b>Ghép từ</b><div class="small muted">Nối từ với nghĩa</div></button>
+ </div>
+ <div class="card mt2 tbl"><table><thead><tr><th></th><th>Từ</th><th>Nghĩa</th><th>Trạng thái</th></tr></thead><tbody>
+ ${s.words.map(w=>{const r=p.words[wkey(s.id,w.w)];return `<tr><td><button class="spk" onclick="speak('${h(w.w).replace(/&#39;/g,"\\'")}')">🔊</button></td><td><b>${h(w.w)}</b> <span class="muted small">${h(w.pos||'')} ${h(w.ipa||'')}</span><div class="small muted"><i>${h(w.ex||'')}</i></div></td><td>${h(w.vi)}</td><td>${lab[wstatus(r)]}${r&&r.due>Date.now()?`<div class="small muted">ôn lại ${fdate(r.due)}</div>`:''}</td></tr>`}).join('')}
+ </tbody></table></div>`;
+};
+function jsq(s){return h(s).replace(/&#39;/g,"\\'")}
+
+/* --- Thẻ ghi nhớ --- */
+let FC=null;
+function buildFC(items,title,back,limit){
+ const p=P();const now=Date.now();
+ const sc=it=>{const r=p.words[wkey(it.set.id,it.w.w)];if(!r)return 1;if(r.due<=now)return 0;return 2};
+ items=shuffle(items).sort((a,b)=>sc(a)-sc(b));
+ if(limit)items=items.slice(0,limit);
+ FC={q:items,i:0,flip:false,title,back,done:0,more:!!limit};
+}
+VIEWS.flash=()=>{
+ if(!FC||FC.src!==R.id){const s=setById(R.id);buildFC(s.words.map(w=>({set:s,w})),s.title,`go('set',{id:'${s.id}'})`,20);FC.src=R.id}
+ return fcView();
+};
+VIEWS.review=()=>{
+ if(!FC||FC.src!=='__review'){buildFC(dueList(U.id),'Ôn tập hôm nay',`go('vocab')`);FC.src='__review'}
+ return fcView();
+};
+function fcView(){
+ const f=FC;
+ if(!f.q.length)return `<div class="crumb" onclick="${f.back}">← Quay lại</div><div class="card empty">Không có từ nào cần ôn. Tuyệt vời!</div>`;
+ if(f.i>=f.q.length){const t=f.done;FC=null;return `<div class="fc-wrap"><div class="card" style="text-align:center"><div style="font-size:44px">🎉</div><h2>Hoàn thành!</h2><p class="muted">Bạn vừa ôn ${t} lượt thẻ. Các từ sẽ được nhắc lại đúng lúc sắp quên.</p><div class="row" style="justify-content:center">${f.more?`<button class="btn" onclick="render()">Học tiếp 20 thẻ</button>`:''}<button class="btn pri" onclick="${f.back}">Xong</button></div></div></div>`}
+ const it=f.q[f.i];const w=it.w;
+ return `<div class="fc-wrap"><div class="crumb" onclick="FC=null;${f.back}">← ${h(f.title)}</div>
+ <div class="row between mb"><span class="small muted">Thẻ ${f.i+1}/${f.q.length}</span><span class="small muted">Dấu cách: lật · 1–4: đánh giá</span></div>
+ <div class="bar mb"><i style="width:${f.i/f.q.length*100}%"></i></div>
+ <div class="flash ${f.flip?'flip':''}" onclick="fcFlip()"><div class="in">
+  <div class="face"><div class="word">${h(w.w)}</div><div class="ipa">${h(w.pos||'')} ${h(w.ipa||'')}</div><div class="mt"><button class="spk" onclick="event.stopPropagation();speak('${jsq(w.w)}')">🔊</button></div><div class="small muted mt">Bấm vào thẻ để xem nghĩa</div></div>
+  <div class="face back"><div class="vi">${h(w.vi)}</div><div class="ipa">${h(w.w)} ${h(w.ipa||'')}</div>${w.ex?`<div class="ex">“${h(w.ex)}”</div>`:''}</div>
+ </div></div>
+ ${f.flip?`<div class="rate"><button class="r1" onclick="fcRate(1)">Quên<small>xem lại ngay</small></button><button class="r2" onclick="fcRate(3)">Khó<small>sớm hơn</small></button><button class="r3" onclick="fcRate(4)">Nhớ<small>bình thường</small></button><button class="r4" onclick="fcRate(5)">Dễ<small>giãn xa</small></button></div>`:`<button class="btn pri mt" style="width:100%" onclick="fcFlip()">Lật thẻ</button>`}
+ </div>`;
+}
+function fcFlip(){FC.flip=!FC.flip;if(FC.flip)speak(FC.q[FC.i].w.w);render()}
+function fcRate(q){const it=FC.q[FC.i];grade(wkey(it.set.id,it.w.w),q);FC.done++;if(q===1)FC.q.push(it);FC.i++;FC.flip=false;render()}
+document.addEventListener('keydown',e=>{
+ if(!FC||!['flash','review'].includes(R.v)||e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;
+ if(e.code==='Space'){e.preventDefault();fcFlip()}
+ else if(FC.flip&&['1','2','3','4'].includes(e.key))fcRate([1,3,4,5][+e.key-1]);
+});
+
+/* --- Trắc nghiệm từ --- */
+let QZ=null;
+function distractors(set,w,field){const pool=[...set.words,...allSets().filter(s=>s.id!==set.id).flatMap(s=>s.words)].filter(x=>x.w!==w.w);const seen=new Set([w[field]]);const out=[];for(const x of shuffle(pool)){if(!seen.has(x[field])){seen.add(x[field]);out.push(x[field])}if(out.length===3)break}return out}
+VIEWS.quiz=()=>{
+ const s=setById(R.id);
+ if(!QZ||QZ.src!==R.id){const ws=shuffle(s.words).slice(0,10);QZ={src:R.id,i:0,ok:0,items:ws.map(w=>{const dir=Math.random()<.6?'en':'vi';const f=dir==='en'?'vi':'w';const opts=shuffle([w[f],...distractors(s,w,f)]);return{w,dir,opts,ans:opts.indexOf(w[f]),pick:null}})}}
+ const q=QZ;
+ if(q.i>=q.items.length){const r=`<div class="fc-wrap"><div class="card" style="text-align:center"><div class="big-score">${q.ok}/${q.items.length}</div><p class="muted">câu đúng</p><div class="row" style="justify-content:center"><button class="btn" onclick="QZ=null;render()">Làm lại</button><button class="btn pri" onclick="QZ=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`;return r}
+ const it=q.items[q.i];
+ return `<div class="fc-wrap"><div class="crumb" onclick="QZ=null;go('set',{id:'${s.id}'})">← ${h(s.title)}</div>
+ <div class="row between mb"><span class="small muted">Câu ${q.i+1}/${q.items.length}</span><span class="small muted">Đúng: ${q.ok}</span></div><div class="bar mb"><i style="width:${q.i/q.items.length*100}%"></i></div>
+ <div class="card"><div class="small muted">${it.dir==='en'?'Nghĩa của từ này là gì?':'Từ tiếng Anh nào có nghĩa này?'}</div>
+ <div class="row mt"><div class="qbig">${h(it.dir==='en'?it.w.w:it.w.vi)}</div>${it.dir==='en'?`<button class="spk" onclick="speak('${jsq(it.w.w)}')">🔊</button>`:''}</div>
+ <div class="opts">${it.opts.map((o,i)=>{let c='';if(it.pick!=null){if(i===it.ans)c='right';else if(i===it.pick)c='wrong'}return `<button class="opt ${c}" onclick="qzPick(${i})" ${it.pick!=null?'disabled':''}><span class="k">${'ABCD'[i]}</span><span>${h(o)}</span></button>`}).join('')}</div>
+ ${it.pick!=null?`<div class="mt small">${it.pick===it.ans?'<b style="color:var(--ok)">Chính xác!</b>':'<b style="color:var(--bad)">Chưa đúng.</b>'} <b>${h(it.w.w)}</b> = ${h(it.w.vi)}${it.w.ex?` · <i>${h(it.w.ex)}</i>`:''}</div><button class="btn pri mt" onclick="QZ.i++;render()">Tiếp →</button>`:''}
+ </div></div>`;
+};
+function qzPick(i){const it=QZ.items[QZ.i];if(it.pick!=null)return;it.pick=i;const ok=i===it.ans;if(ok)QZ.ok++;grade(wkey(QZ.src,it.w.w),ok?4:1);if(it.dir==='vi'||ok)speak(it.w.w);render()}
+
+/* --- Nghe & viết --- */
+let SP=null;
+VIEWS.spell=()=>{
+ const s=setById(R.id);
+ if(!SP||SP.src!==R.id)SP={src:R.id,i:0,ok:0,items:shuffle(s.words).slice(0,10),res:null,hint:0};
+ const q=SP;
+ if(q.i>=q.items.length)return `<div class="fc-wrap"><div class="card" style="text-align:center"><div class="big-score">${q.ok}/${q.items.length}</div><p class="muted">từ viết đúng</p><div class="row" style="justify-content:center"><button class="btn" onclick="SP=null;render()">Làm lại</button><button class="btn pri" onclick="SP=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`;
+ const w=q.items[q.i];
+ const hint=w.w.split('').map((c,i)=>i<q.hint||c===' '?c:'_').join(' ');
+ return `<div class="fc-wrap"><div class="crumb" onclick="SP=null;go('set',{id:'${s.id}'})">← ${h(s.title)}</div>
+ <div class="row between mb"><span class="small muted">Từ ${q.i+1}/${q.items.length}</span><span class="small muted">Đúng: ${q.ok}</span></div><div class="bar mb"><i style="width:${q.i/q.items.length*100}%"></i></div>
+ <div class="card" style="text-align:center"><div class="row" style="justify-content:center"><button class="spk" style="width:64px;height:64px;font-size:26px" onclick="speak('${jsq(w.w)}')">🔊</button><button class="spk" title="Đọc chậm" onclick="speak('${jsq(w.w)}',0.55)">🐢</button></div>
+ <p class="mt"><b>Nghĩa:</b> ${h(w.vi)} <span class="muted small">(${h(w.pos||'')})</span></p>
+ <p class="muted" style="letter-spacing:2px;font-family:monospace">${h(hint)}</p>
+ <input type="text" id="spin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Gõ từ bạn nghe được" style="text-align:center;font-size:18px;max-width:340px" onkeydown="if(event.key==='Enter')${q.res?'spNext()':'spCheck()'}" ${q.res?'disabled':''} value="${q.res?h(q.res.v):''}">
+ ${q.res?`<div class="mt">${q.res.ok?'<b style="color:var(--ok)">Chính xác!</b>':`<b style="color:var(--bad)">Đáp án:</b> <b>${h(w.w)}</b>`}</div><button class="btn pri mt" onclick="spNext()">Tiếp →</button>`:`<div class="row mt" style="justify-content:center"><button class="btn" onclick="SP.hint++;render()">Gợi ý chữ cái</button><button class="btn pri" onclick="spCheck()">Kiểm tra</button></div>`}
+ </div></div>`;
+};
+AFTER.spell=()=>{if(SP&&SP.i<SP.items.length){if(!SP.res&&!SP.spoken){SP.spoken=true;setTimeout(()=>{if(SP&&R.v==='spell'&&SP.items[SP.i])speak(SP.items[SP.i].w)},250)}const el=$('#spin');if(el&&!SP.res)el.focus();if(SP.res)setTimeout(()=>window.addEventListener('keydown',spEnter,{once:true}),50)}};
+function spEnter(e){if(e.key==='Enter'&&R.v==='spell'&&SP&&SP.res)spNext()}
+function spCheck(){const v=$('#spin').value;if(!v.trim())return;const w=SP.items[SP.i];const ok=norm(v)===norm(w.w);if(ok)SP.ok++;SP.res={ok,v};grade(wkey(SP.src,w.w),ok?(SP.hint?3:4):1);render()}
+function spNext(){SP.i++;SP.res=null;SP.hint=0;SP.spoken=false;render()}
+
+/* --- Ghép từ --- */
+let MT=null;
+VIEWS.match=()=>{
+ const s=setById(R.id);
+ if(!MT||MT.src!==R.id){const ws=shuffle(s.words).slice(0,6);MT={src:R.id,ws,L:shuffle(ws.map((w,i)=>i)),Rr:shuffle(ws.map((w,i)=>i)),sl:null,sr:null,done:new Set(),err:0,t0:Date.now(),bad:null}}
+ const m=MT;
+ if(m.done.size===m.ws.length){const sec=Math.round((Date.now()-m.t0)/1000);return `<div class="fc-wrap"><div class="card" style="text-align:center"><div style="font-size:44px">🧩</div><h2>Ghép xong ${m.ws.length} cặp!</h2><p class="muted">Thời gian ${sec} giây · ${m.err} lần sai</p><div class="row" style="justify-content:center"><button class="btn" onclick="MT=null;render()">Chơi lại</button><button class="btn pri" onclick="MT=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`}
+ return `<div class="fc-wrap"><div class="crumb" onclick="MT=null;go('set',{id:'${s.id}'})">← ${h(s.title)}</div><p class="sub">Chọn một từ bên trái và nghĩa tương ứng bên phải.</p>
+ <div class="match"><div class="grid" style="gap:10px">${m.L.map(i=>`<div class="mi ${m.done.has(i)?'done':''} ${m.sl===i?'sel':''} ${m.bad&&m.bad[0]===i?'err':''}" onclick="mtPick('l',${i})">${h(m.ws[i].w)}</div>`).join('')}</div>
+ <div class="grid" style="gap:10px">${m.Rr.map(i=>`<div class="mi ${m.done.has(i)?'done':''} ${m.sr===i?'sel':''} ${m.bad&&m.bad[1]===i?'err':''}" onclick="mtPick('r',${i})">${h(m.ws[i].vi)}</div>`).join('')}</div></div>
+ <p class="small muted mt">Sai: ${m.err}</p></div>`;
+};
+function mtPick(side,i){const m=MT;if(m.done.has(i))return;m.bad=null;if(side==='l'){m.sl=i;speak(m.ws[i].w)}else m.sr=i;
+ if(m.sl!=null&&m.sr!=null){if(m.sl===m.sr){m.done.add(i);grade(wkey(m.src,m.ws[i].w),4)}else{m.err++;m.bad=[m.sl,m.sr];grade(wkey(m.src,m.ws[m.sl].w),1)}m.sl=m.sr=null}
+ render()}
+
+/* =========================================================
+   LUYỆN ĐỀ
+   ========================================================= */
+let examTab='ielts';
+VIEWS.exam=()=>{
+ const ts=allTests().filter(t=>t.type===examTab);
+ const asg=new Set(myAssignments(U.id).filter(a=>a.kind==='test').map(a=>a.ref));
+ return `<h1>Luyện đề</h1><p class="sub">Làm đề có tính giờ, chấm điểm ngay và xem giải thích từng câu.</p>
+ <div class="seg mb"><button class="${examTab==='ielts'?'on':''}" onclick="examTab='ielts';render()">IELTS</button><button class="${examTab==='thpt'?'on':''}" onclick="examTab='thpt';render()">Tiếng Anh phổ thông</button></div>
+ <div class="grid g2">${ts.length?ts.map(t=>{const n=flatQs(t).length;const b=bestPct(U.id,t.id);const tries=P().results.filter(r=>r.testId===t.id).length;
+  return `<div class="card"><div class="row between"><span class="tag ${t.type==='ielts'?'':'acc'}">${h(t.skill||(t.type==='ielts'?'IELTS':'THPT'))}</span>${asg.has(t.id)?'<span class="tag warn">Được giao</span>':''}</div>
+  <h3 class="mt">${h(t.title)}</h3><p class="small muted" style="margin:0">${h(t.desc||'')}</p>
+  <p class="small muted">${n} câu · ${t.minutes} phút${tries?` · đã làm ${tries} lần`:''}${b!=null?` · tốt nhất ${Math.round(b*100)}%`:''}</p>
+  <button class="btn pri" onclick="go('test',{id:'${t.id}'})">${tries?'Làm lại':'Bắt đầu'}</button></div>`}).join(''):'<div class="card empty">Chưa có đề nào trong mục này.</div>'}</div>`;
+};
+
+let EX=null;
+VIEWS.test=()=>{
+ const t=testById(R.id);if(!t)return '<div class="empty">Không tìm thấy đề.</div>';
+ if(!R.running){
+  const n=flatQs(t).length;
+  return `<div class="crumb" onclick="go('exam')">← Luyện đề</div><div class="card" style="max-width:560px"><span class="tag">${t.type==='ielts'?'IELTS':'THPT'} · ${h(t.skill||'')}</span><h1 class="mt">${h(t.title)}</h1><p class="muted">${h(t.desc||'')}</p>
+  <p>⏱ <b>${t.minutes} phút</b> · 📝 <b>${n} câu</b></p>${t.sections.some(s=>s.audio)?'<p class="small muted">Đề có phần nghe. Hãy bật loa hoặc đeo tai nghe. Trong bài thi thật bạn chỉ được nghe một lần.</p>':''}
+  <p class="small muted">Hết giờ hệ thống sẽ tự nộp bài.</p><button class="btn pri" onclick="startTest()">Bắt đầu làm bài</button></div>`;
+ }
+ const qs=flatQs(t);let n=0;
+ return `<div class="exam-head"><div class="row between"><b style="flex:1;min-width:0">${h(t.title)}</b><span class="timer" id="timer"></span><button class="btn pri" onclick="submitTest()">Nộp bài</button></div>
+ <div class="qnav mt" id="qnav">${qs.map(q=>`<span id="nav${q.n}" onclick="document.getElementById('q${q.n}').scrollIntoView({behavior:'smooth',block:'center'})">${q.n}</span>`).join('')}</div></div>
+ ${t.sections.map((s,si)=>`<h2 class="mt2">${h(s.title||('Phần '+(si+1)))}</h2>
+  ${s.audio?`<div class="card mb row"><button class="btn acc" onclick="playAudio(${si})">▶ Phát bài nghe</button><button class="btn" onclick="speechSynthesis.cancel()">■ Dừng</button><span class="small muted" id="plays${si}">Đã phát ${EX.plays[si]||0} lần</span></div>`:''}
+  ${s.passage?`<div class="passage mb">${fmt(s.passage).replace(/<br>/g,'\n')}</div>`:''}
+  <div class="card">${s.questions.map(q=>{n++;const k=n;
+   if(q.t==='mc')return `<div class="q" id="q${k}"><div><span class="qn">${k}</span>${fmt(q.q)}</div><div class="opts">${q.o.map((o,i)=>`<button class="opt" data-q="${k}" data-i="${i}" onclick="ansMC(${k},${i})"><span class="k">${'ABCDEFG'[i]}</span><span>${fmt(o)}</span></button>`).join('')}</div></div>`;
+   if(q.t==='fill')return `<div class="q" id="q${k}"><div><span class="qn">${k}</span>${fmt(q.q)}</div><input type="text" class="fill" autocomplete="off" spellcheck="false" placeholder="Câu trả lời" oninput="ansFill(${k},this.value)"></div>`;
+   return `<div class="q" id="q${k}"><div><span class="qn">${k}</span>${fmt(q.q)}</div><textarea class="prose mt" oninput="ansFill(${k},this.value);$('#wc${k}').textContent=wc(this.value)" placeholder="Viết bài của bạn ở đây..."></textarea><div class="small muted">Số từ: <b id="wc${k}">0</b>${q.min?` / tối thiểu ${q.min}`:''}</div></div>`;
+  }).join('')}</div>`).join('')}
+ <div class="row mt2" style="justify-content:flex-end"><button class="btn pri" onclick="submitTest()">Nộp bài</button></div>`;
+};
+const wc=s=>(s.trim().match(/\S+/g)||[]).length;
+function startTest(){const t=testById(R.id);EX={id:t.id,ans:{},t0:Date.now(),end:Date.now()+t.minutes*60000,plays:{}};R.running=true;render()}
+AFTER.test=()=>{if(!R.running)return;clearInterval(timerH);const tick=()=>{const left=Math.max(0,EX.end-Date.now());const el=$('#timer');if(!el){clearInterval(timerH);return}const m=Math.floor(left/60000),s=Math.floor(left%60000/1000);el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;el.classList.toggle('low',left<60000);if(left<=0){clearInterval(timerH);toast('Hết giờ! Bài đã được nộp.');submitTest(true)}};tick();timerH=setInterval(tick,1000)};
+function playAudio(si){const t=testById(EX.id);EX.plays[si]=(EX.plays[si]||0)+1;$('#plays'+si).textContent=`Đã phát ${EX.plays[si]} lần`;speak(t.sections[si].audio,0.88)}
+function ansMC(k,i){EX.ans[k]=i;document.querySelectorAll(`.opt[data-q="${k}"]`).forEach(b=>b.classList.toggle('sel',+b.dataset.i===i));$('#nav'+k).classList.add('done')}
+function ansFill(k,v){EX.ans[k]=v;$('#nav'+k).classList.toggle('done',!!v.trim())}
+function submitTest(auto){
+ const t=testById(EX.id);const qs=flatQs(t);
+ if(!auto){const miss=qs.filter(q=>EX.ans[q.n]==null||EX.ans[q.n]==='').length;if(!confirm(miss?`Bạn còn ${miss} câu chưa làm. Vẫn nộp bài?`:'Nộp bài?'))return}
+ let score=0,total=0;const essay=qs.find(q=>q.t==='essay');
+ qs.forEach(q=>{if(q.t==='essay')return;total++;if(isRight(q,EX.ans[q.n]))score++});
+ const r={id:uid('r'),testId:t.id,date:Date.now(),score,total,ans:EX.ans,dur:Math.round((Date.now()-EX.t0)/1000)};
+ if(essay)r.essay={text:EX.ans[essay.n]||'',band:null,comment:''};
+ P().results.push(r);bump();save();clearInterval(timerH);speechSynthesis&&speechSynthesis.cancel();
+ R.running=false;go('result',{rid:r.id});
+}
+VIEWS.result=()=>{
+ const sid=R.sid||U.id;const r=P(sid).results.find(x=>x.id===R.rid);if(!r)return '<div class="empty">Không tìm thấy kết quả.</div>';
+ const t=testById(r.testId);if(!t)return '<div class="empty">Đề thi này đã bị xóa.</div>';
+ const qs=flatQs(t);const pct=r.total?Math.round(r.score/r.total*100):0;
+ let big='';
+ if(r.total){big=t.type==='ielts'?`<div class="big-score">Band ~${ieltsBand(r.score,r.total)}</div><p class="muted">${r.score}/${r.total} câu đúng (${pct}%) · quy đổi ước tính theo thang 40 câu</p>`:`<div class="big-score">${(Math.round(r.score/r.total*10*100)/100)}<span style="font-size:22px">/10</span></div><p class="muted">${r.score}/${r.total} câu đúng (${pct}%)</p>`}
+ return `<div class="crumb" onclick="${U.role==='teacher'?`go('t-student',{id:'${sid}'})`:`go('exam')`}">← Quay lại</div><h1>${h(t.title)}</h1><p class="sub">Nộp lúc ${fdt(r.date)} · làm trong ${Math.floor(r.dur/60)} phút ${r.dur%60} giây</p>
+ <div class="card mb" style="text-align:center">${big}
+ ${r.essay?`<div style="text-align:left"><h3>Bài viết (${wc(r.essay.text)} từ)</h3><div class="passage" style="background:var(--bg)">${h(r.essay.text)||'<i class="muted">(trống)</i>'}</div>
+  ${U.role==='teacher'?`<div class="grid g2 mt"><div><label class="f">Band giáo viên chấm</label><input type="number" step="0.5" min="0" max="9" id="eband" value="${r.essay.band??''}"></div></div><label class="f">Nhận xét</label><textarea class="prose" style="min-height:120px" id="ecom">${h(r.essay.comment||'')}</textarea><button class="btn pri mt" onclick="saveGrade('${sid}','${r.id}')">Lưu điểm & nhận xét</button>`
+  :`<div class="mt">${r.essay.band!=null&&r.essay.band!==''?`<div class="big-score">Band ${h(r.essay.band)}</div>`:'<span class="tag warn">Đang chờ giáo viên chấm</span>'}${r.essay.comment?`<div class="explain mt"><b>Nhận xét của giáo viên:</b><br>${fmt(r.essay.comment)}</div>`:''}</div>`}</div>`:''}
+ ${U.role==='student'?`<div class="row mt" style="justify-content:center"><button class="btn" onclick="go('test',{id:'${t.id}'})">Làm lại</button><button class="btn pri" onclick="go('exam')">Đề khác</button></div>`:''}</div>
+ ${r.total?`<h2 class="mt2">Xem lại đáp án</h2><div class="card review">${qs.filter(q=>q.t!=='essay').map(q=>{const a=r.ans[q.n];const ok=isRight(q,a);
+  const your=q.t==='mc'?(a!=null?`${'ABCDEFG'[a]}. ${fmt(q.o[a])}`:'<i>bỏ trống</i>'):(a?h(a):'<i>bỏ trống</i>');
+  const right=q.t==='mc'?`${'ABCDEFG'[q.a]}. ${fmt(q.o[q.a])}`:h(q.a.join(' / '));
+  return `<div class="q"><div><span class="qn">${q.n}</span>${fmt(q.q)}</div><div class="mt small"><span class="${ok?'ok':'bad'}">${ok?'✓ Đúng':'✗ Sai'}</span> · Bạn chọn: ${your}${ok?'':` · Đáp án: <b>${right}</b>`}</div>${q.e?`<div class="explain">💡 ${fmt(q.e)}</div>`:''}</div>`}).join('')}</div>`:''}`;
+};
+function saveGrade(sid,rid){const r=P(sid).results.find(x=>x.id===rid);const b=$('#eband').value;r.essay.band=b===''?null:+b;r.essay.comment=$('#ecom').value;r.essay.gradedAt=Date.now();save();toast('Đã lưu. Gửi lại gói dữ liệu cho học viên để họ thấy nhận xét.')}
+
+/* --- Lịch sử --- */
+VIEWS.history=()=>{
+ const p=P();const rs=p.results.slice().reverse();
+ const sets=allSets().map(s=>({s,st:setStats(s,U.id)})).filter(x=>x.st.learned);
+ return `<h1>Kết quả của tôi</h1><p class="sub">Toàn bộ bài đã làm và tiến độ từ vựng.</p>
+ <div class="card"><h2>Bài đã làm</h2>${rs.length?`<div class="tbl"><table><thead><tr><th>Đề</th><th>Ngày</th><th>Kết quả</th><th></th></tr></thead><tbody>${rs.map(r=>{const t=testById(r.testId);return `<tr><td>${h(t?t.title:'(đề đã xóa)')}</td><td>${fdt(r.date)}</td><td><span class="tag">${resultLabel(t,r)}</span></td><td>${t?`<button class="btn sm" onclick="go('result',{rid:'${r.id}'})">Xem</button>`:''}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Chưa làm bài nào.</div>'}</div>
+ <div class="card mt"><h2>Tiến độ từ vựng</h2>${sets.length?sets.map(({s,st})=>`<div class="list-item"><div style="flex:1"><b>${h(s.title)}</b><div class="bar mt" style="margin-top:6px"><i style="width:${st.m/st.total*100}%"></i></div></div><span class="small muted">${st.m}/${st.total} thuộc · ${st.l} đang học</span></div>`).join(''):'<div class="empty">Chưa học từ nào.</div>'}</div>
+ <div class="card mt"><h2>Đồng bộ với giáo viên</h2><p class="small muted">Dữ liệu được lưu trên trình duyệt của máy này. Nếu học ở nhà, hãy xuất file kết quả và gửi cho giáo viên (Zalo, email…).</p>
+ <div class="row"><button class="btn pri" onclick="exportMine()">Xuất kết quả gửi giáo viên</button><button class="btn" onclick="importPack()">Nhập file từ giáo viên</button></div></div>`;
+};
+function exportMine(){const s=stuById(U.id);download(`ket-qua-${s.code}-${today()}.json`,{kind:'student-progress',app:'lopta',students:[s],progress:{[s.id]:P()}})}
+
+/* =========================================================
+   NHẬP / XUẤT & GỘP DỮ LIỆU
+   ========================================================= */
+function upsert(list,items){(items||[]).forEach(x=>{if(!x||!x.id||x.builtin)return;const i=list.findIndex(y=>y.id===x.id);if(i>=0)list[i]=x;else list.push(x)})}
+function mergeData(inc){
+ if(!inc||inc.app!=='lopta')throw new Error('bad');
+ let n={stu:0,res:0};
+ if(inc.students){inc.students.forEach(s=>{const ex=D.students.find(x=>x.id===s.id)||D.students.find(x=>x.code===s.code);if(ex){Object.assign(ex,{name:s.name,note:s.note??ex.note})}else{D.students.push(s);n.stu++}})}
+ upsert(D.sets,inc.sets);upsert(D.tests,inc.tests);upsert(D.assignments,inc.assignments);
+ if(inc.deleted){['sets','tests','assignments'].forEach(k=>(inc.deleted[k]||[]).forEach(id=>{D[k]=D[k].filter(x=>x.id!==id)}))}
+ if(inc.settings&&inc.kind==='class-pack'){D.settings.className=inc.settings.className||D.settings.className}
+ for(const sid in (inc.progress||{})){const a=P(sid),b=inc.progress[sid];
+  for(const k in (b.words||{})){if(!a.words[k]||(b.words[k].last||0)>(a.words[k].last||0))a.words[k]=b.words[k]}
+  (b.results||[]).forEach(r=>{const ex=a.results.find(x=>x.id===r.id);if(!ex){a.results.push(r);n.res++}else if(r.essay&&ex.essay&&(r.essay.gradedAt||0)>(ex.essay.gradedAt||0))ex.essay=r.essay});
+  a.results.sort((x,y)=>x.date-y.date);
+  for(const d in (b.activity||{}))a.activity[d]=Math.max(a.activity[d]||0,b.activity[d]);
+ }
+ save();return n;
+}
+function importPack(){pickFile(x=>{try{const n=mergeData(x);toast(`Đã nhập dữ liệu${n.stu?` · ${n.stu} học viên mới`:''}${n.res?` · ${n.res} kết quả mới`:''}`);render()}catch(e){toast('File không đúng định dạng của ứng dụng này')}})}
+function classPack(withProgress){return {kind:'class-pack',app:'lopta',date:Date.now(),settings:{className:D.settings.className},students:D.students,sets:D.sets,tests:D.tests,assignments:D.assignments,deleted:D.deleted||{},progress:withProgress?D.progress:undefined}}
+
+/* =========================================================
+   GIÁO VIÊN
+   ========================================================= */
+VIEWS['t-students']=()=>{
+ const rows=D.students.map(s=>({s,m:stuSummary(s.id),asg:myAssignments(s.id)}));
+ const pending=rows.reduce((a,r)=>a+P(r.s.id).results.filter(x=>x.essay&&(x.essay.band==null||x.essay.band==='')).length,0);
+ return `<div class="row between"><div><h1>Học viên</h1><p class="sub">${D.students.length} học viên${pending?` · <b style="color:var(--accent)">${pending} bài viết chờ chấm</b>`:''}</p></div>
+ <div class="row"><button class="btn" onclick="importPack()">Nhập kết quả học viên</button><button class="btn pri" onclick="addStudentModal()">+ Thêm học viên</button></div></div>
+ <div class="card tbl">${rows.length?`<table><thead><tr><th>Học viên</th><th>Mã</th><th>Từ đã học</th><th>Đã thuộc</th><th>Bài làm</th><th>Bài giao</th><th>Hoạt động gần nhất</th></tr></thead><tbody>
+ ${rows.map(({s,m,asg})=>{const done=asg.filter(a=>assignDone(a,s.id)).length;return `<tr style="cursor:pointer" onclick="go('t-student',{id:'${s.id}'})"><td><b>${h(s.name)}</b>${s.group?`<div class="small muted">${h(s.group)}</div>`:''}</td><td><span class="tag gray">${h(s.code)}</span></td><td>${m.learned}</td><td>${m.mastered}</td><td>${m.tests}</td><td>${asg.length?`${done}/${asg.length}`:'–'}</td><td class="small muted">${m.last?fdate(m.last):'Chưa học'}</td></tr>`}).join('')}
+ </tbody></table>`:'<div class="empty">Chưa có học viên. Bấm "Thêm học viên" để tạo mã cho từng em, hoặc để học viên tự tạo hồ sơ ở màn hình đăng nhập.</div>'}</div>`;
+};
+function addStudentModal(){modal(`<h2>Thêm học viên</h2><p class="small muted">Mỗi dòng một học viên. Có thể thêm nhóm/lớp sau dấu |, ví dụ: <code>Nguyễn Văn An | IELTS tối T3</code></p><textarea id="newstu" placeholder="Nguyễn Văn An&#10;Trần Thị Bình | Lớp 12A"></textarea><div class="row mt"><button class="btn pri" onclick="addStudents()">Tạo mã</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
+function addStudents(){const lines=$('#newstu').value.split('\n').map(x=>x.trim()).filter(Boolean);const made=[];lines.forEach(l=>{const[name,group]=l.split('|').map(x=>x.trim());const s={id:uid('u'),name,group:group||'',code:genCode(),created:Date.now()};D.students.push(s);made.push(s)});save();render();
+ modal(`<h2>Đã tạo ${made.length} học viên</h2><p class="small muted">Gửi mã cho từng học viên để đăng nhập:</p><table>${made.map(s=>`<tr><td>${h(s.name)}</td><td><b>${s.code}</b></td></tr>`).join('')}</table><div class="row mt"><button class="btn" onclick="navigator.clipboard&&navigator.clipboard.writeText(${h(JSON.stringify(made.map(s=>s.name+': '+s.code).join('\n')))}).then(()=>toast('Đã sao chép'))">Sao chép danh sách</button><button class="btn pri" onclick="modal('')">Xong</button></div>`)}
+VIEWS['t-student']=()=>{
+ const s=stuById(R.id);if(!s)return '<div class="empty">Không tìm thấy.</div>';
+ const m=stuSummary(s.id);const p=P(s.id);const asg=myAssignments(s.id);
+ const sets=allSets().map(x=>({x,st:setStats(x,s.id)})).filter(o=>o.st.learned);
+ const weak=Object.entries(p.words).filter(([k,r])=>r.lapses>=2).sort((a,b)=>b[1].lapses-a[1].lapses).slice(0,12);
+ return `<div class="crumb" onclick="go('t-students')">← Học viên</div>
+ <div class="row between"><div><h1>${h(s.name)}</h1><p class="sub">Mã <b>${h(s.code)}</b>${s.group?' · '+h(s.group):''} · tạo ngày ${fdate(s.created)}</p></div>
+ <div class="row"><button class="btn" onclick="editStudent('${s.id}')">Sửa</button><button class="btn" onclick="go('t-assign',{pre:'${s.id}'})">Giao bài</button><button class="btn danger" onclick="delStudent('${s.id}')">Xóa</button></div></div>
+ <div class="grid g4"><div class="card stat"><div class="n">${m.learned}</div><div class="l">Từ đã học</div></div><div class="card stat"><div class="n">${m.mastered}</div><div class="l">Đã thuộc</div></div><div class="card stat"><div class="n">${m.tests}</div><div class="l">Bài đã làm</div></div><div class="card stat"><div class="n">🔥 ${m.streak}</div><div class="l">Chuỗi ngày</div></div></div>
+ ${s.note?`<div class="explain mt">📌 ${fmt(s.note)}</div>`:''}
+ <div class="grid g2 mt">
+ <div class="card"><h2>Bài làm</h2>${p.results.length?p.results.slice().reverse().map(r=>{const t=testById(r.testId);return `<div class="list-item"><div><b class="small">${h(t?t.title:'(đề đã xóa)')}</b><div class="small muted">${fdt(r.date)}</div></div><div class="row"><span class="tag ${r.essay&&(r.essay.band==null||r.essay.band==='')?'warn':''}">${resultLabel(t,r)}</span>${t?`<button class="btn sm" onclick="go('result',{rid:'${r.id}',sid:'${s.id}'})">${r.essay?'Chấm/Xem':'Xem'}</button>`:''}</div></div>`}).join(''):'<div class="empty">Chưa làm bài.</div>'}</div>
+ <div class="card"><h2>Bài được giao</h2>${asg.length?asg.map(a=>{const it=a.kind==='test'?testById(a.ref):setById(a.ref);return it?`<div class="list-item"><span class="small">${h(it.title)}${a.due?` <span class="muted">· hạn ${fdate(a.due)}</span>`:''}</span>${assignDone(a,s.id)?'<span class="tag ok">Xong</span>':'<span class="tag warn">Chưa xong</span>'}</div>`:''}).join(''):'<div class="empty">Chưa giao bài.</div>'}
+ <h2 class="mt2">Từ vựng</h2>${sets.length?sets.map(({x,st})=>`<div class="list-item"><span class="small">${h(x.title)}</span><span class="small muted">${st.m}/${st.total} thuộc · ${st.l} đang học</span></div>`).join(''):'<div class="empty">Chưa học từ.</div>'}
+ ${weak.length?`<h3 class="mt2">Từ hay quên</h3><div class="chips">${weak.map(([k,r])=>`<span class="chip">${h(k.split('::')[1])} <span class="muted">×${r.lapses}</span></span>`).join('')}</div>`:''}
+ </div></div>`;
+};
+function editStudent(id){const s=stuById(id);modal(`<h2>Sửa học viên</h2><label class="f">Họ tên</label><input type="text" id="es-n" value="${h(s.name)}"><label class="f">Nhóm / lớp</label><input type="text" id="es-g" value="${h(s.group||'')}"><label class="f">Mã đăng nhập</label><input type="text" id="es-c" value="${h(s.code)}"><label class="f">Ghi chú (học viên không thấy)</label><textarea class="prose" style="min-height:90px" id="es-note">${h(s.note||'')}</textarea><div class="row mt"><button class="btn pri" onclick="saveStudent('${id}')">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
+function saveStudent(id){const s=stuById(id);const c=$('#es-c').value.trim().toUpperCase();if(!c){toast('Mã không được trống');return}if(D.students.some(x=>x.id!==id&&x.code.toUpperCase()===c)){toast('Mã đã có người dùng');return}s.name=$('#es-n').value.trim()||s.name;s.group=$('#es-g').value.trim();s.code=c;s.note=$('#es-note').value;save();modal('');render()}
+function delStudent(id){const s=stuById(id);if(!confirm(`Xóa học viên ${s.name} và toàn bộ kết quả?`))return;D.students=D.students.filter(x=>x.id!==id);delete D.progress[id];D.assignments.forEach(a=>{if(Array.isArray(a.to))a.to=a.to.filter(x=>x!==id)});save();go('t-students')}
+
+/* --- Bộ từ --- */
+VIEWS['t-sets']=()=>`<div class="row between"><div><h1>Bộ từ vựng</h1><p class="sub">Bộ từ mẫu có sẵn và bộ từ bạn tự soạn.</p></div><button class="btn pri" onclick="setEditor()">+ Tạo bộ từ</button></div>
+ <div class="card">${allSets().map(s=>`<div class="list-item"><div><b>${h(s.title)}</b> <span class="tag ${s.builtin?'gray':''}">${s.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${h(s.cat)} · ${h(s.level||'')} · ${s.words.length} từ</div></div>
+ <div class="row">${s.builtin?`<button class="btn sm" onclick="setEditor('${s.id}',true)">Nhân bản để sửa</button>`:`<button class="btn sm" onclick="setEditor('${s.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sets','${s.id}')">Xóa</button>`}</div></div>`).join('')}</div>`;
+function setEditor(id,clone){
+ const s=id?setById(id):null;
+ const txt=s?s.words.map(w=>[w.w,w.vi,w.ex||'',w.ipa||'',w.pos||''].join(' | ').replace(/( \| )+$/,'')).join('\n'):'';
+ modal(`<h2>${s&&!clone?'Sửa bộ từ':'Tạo bộ từ'}</h2>
+ <label class="f">Tên bộ từ</label><input type="text" id="se-t" value="${h(s?(clone?s.title+' (bản sao)':s.title):'')}" placeholder="Ví dụ: IELTS · Health">
+ <div class="grid g2" style="gap:10px"><div><label class="f">Nhóm</label><input type="text" id="se-c" value="${h(s?s.cat:'IELTS')}" placeholder="IELTS / THPT / Giao tiếp"></div><div><label class="f">Trình độ</label><input type="text" id="se-l" value="${h(s?s.level||'':'')}" placeholder="B1, Lớp 11…"></div></div>
+ <label class="f">Danh sách từ (mỗi dòng một từ)</label>
+ <textarea id="se-w" style="min-height:200px" placeholder="word | nghĩa | câu ví dụ | phiên âm | từ loại">${h(txt)}</textarea>
+ <pre class="help">Định dạng: từ | nghĩa | ví dụ | phiên âm | từ loại (chỉ 2 cột đầu là bắt buộc)
+Ví dụ:
+healthy | khỏe mạnh | Eat more vegetables to stay healthy. | /ˈhelθi/ | adj
+symptom | triệu chứng
+Có thể dán trực tiếp từ Excel (cột cách nhau bằng Tab).</pre>
+ <div class="row mt"><button class="btn pri" onclick="saveSet('${s&&!clone?s.id:''}')">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`);
+}
+function saveSet(id){
+ const title=$('#se-t').value.trim();if(!title){toast('Nhập tên bộ từ');return}
+ const words=[];const seen=new Set();
+ $('#se-w').value.split('\n').forEach(l=>{if(!l.trim())return;const c=(l.includes('|')?l.split('|'):l.split('\t')).map(x=>x.trim());if(!c[0]||!c[1])return;if(seen.has(c[0].toLowerCase()))return;seen.add(c[0].toLowerCase());words.push({w:c[0],vi:c[1],ex:c[2]||'',ipa:c[3]||'',pos:c[4]||''})});
+ if(words.length<2){toast('Cần ít nhất 2 từ có nghĩa');return}
+ const o={id:id||uid('s'),title,cat:$('#se-c').value.trim()||'Khác',level:$('#se-l').value.trim(),words,updated:Date.now()};
+ const i=D.sets.findIndex(x=>x.id===o.id);if(i>=0)D.sets[i]=o;else D.sets.push(o);save();modal('');render();toast(`Đã lưu ${words.length} từ`);
+}
+function delItem(k,id){if(!confirm('Xóa mục này?'))return;D[k]=D[k].filter(x=>x.id!==id);D.deleted=D.deleted||{};(D.deleted[k]=D.deleted[k]||[]).push(id);if(k!=='assignments')D.assignments=D.assignments.filter(a=>a.ref!==id);save();render()}
+
+/* --- Đề thi --- */
+VIEWS['t-tests']=()=>`<div class="row between"><div><h1>Đề thi</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự soạn.</p></div><button class="btn pri" onclick="go('t-testedit')">+ Soạn đề mới</button></div>
+ ${['ielts','thpt'].map(tp=>`<h2 class="mt2">${tp==='ielts'?'IELTS':'Tiếng Anh phổ thông'}</h2><div class="card">${allTests().filter(t=>t.type===tp).map(t=>`<div class="list-item"><div><b>${h(t.title)}</b> <span class="tag ${t.builtin?'gray':''}">${t.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${h(t.skill||'')} · ${flatQs(t).length} câu · ${t.minutes} phút</div></div>
+ <div class="row">${t.builtin?'':`<button class="btn sm" onclick="go('t-testedit',{id:'${t.id}'})">Sửa</button><button class="btn sm danger" onclick="delItem('tests','${t.id}')">Xóa</button>`}</div></div>`).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`).join('')}`;
+const TEST_HELP=`## Tên phần (tùy chọn, mở phần mới)
+>> Dòng bắt đầu bằng >> là đoạn văn đọc hiểu (nhiều dòng được)
+)) Dòng bắt đầu bằng )) là nội dung bài nghe (máy sẽ đọc)
+
+1. Câu hỏi trắc nghiệm ______ ?
+A. đáp án sai
+*B. đáp án đúng (đánh dấu * ở đầu)
+C. đáp án sai
+D. đáp án sai
+? Giải thích (tùy chọn)
+
+2. Câu điền từ: The capital of France is ______.
+= Paris
+? Nhiều đáp án chấp nhận thì cách nhau bằng /  ví dụ: = 10 / ten
+
+3. Đề bài viết luận...
+!essay 250
+
+Mẹo: viết {{từ}} để gạch chân (dùng cho câu ngữ âm).`;
+function parseTest(src){
+ const secs=[];let sec=null,q=null,last=null;const errs=[];
+ const newSec=t=>{sec={title:t||'',questions:[]};secs.push(sec);q=null};
+ src.split('\n').forEach((raw,ln)=>{const l=raw.trim();if(!l){if(last==='passage'&&sec)sec.passage+='\n';return}
+  let m;
+  if(l.startsWith('##')){newSec(l.slice(2).trim());last='sec';return}
+  if(l.startsWith('>>')){if(!sec||sec.questions.length)newSec('');sec.passage=(sec.passage?sec.passage+'\n':'')+l.slice(2).trim();last='passage';return}
+  if(l.startsWith('))')){if(!sec||sec.questions.length)newSec('');sec.audio=(sec.audio?sec.audio+' ':'')+l.slice(2).trim();last='audio';return}
+  if((m=l.match(/^\d+\s*[.)]\s*(.*)$/))){if(!sec)newSec('');q={t:'mc',q:m[1],o:[],a:-1};sec.questions.push(q);last='q';return}
+  if(q&&(m=l.match(/^(\*?)\s*([A-Ga-g])\s*[.)]\s*(.*)$/))&&q.t==='mc'){if(m[1])q.a=q.o.length;q.o.push(m[3]);last='o';return}
+  if(q&&(m=l.match(/^=\s*(.*)$/))){q.t='fill';q.a=m[1].split('/').map(x=>x.trim()).filter(Boolean);delete q.o;last='a';return}
+  if(q&&(m=l.match(/^!essay\s*(\d*)/i))){q.t='essay';q.min=+m[1]||0;delete q.o;delete q.a;last='a';return}
+  if(q&&l.startsWith('?')){q.e=l.slice(1).trim();last='e';return}
+  if(last==='passage'){sec.passage+='\n'+l;return}
+  if(last==='audio'){sec.audio+=' '+l;return}
+  if(q&&last==='q'){q.q+='\n'+l;return}
+  errs.push(`Dòng ${ln+1}: không hiểu "${l.slice(0,40)}"`);
+ });
+ let n=0;secs.forEach(s=>s.questions.forEach(q=>{n++;if(q.t==='mc'){if(q.o.length<2)errs.push(`Câu ${n}: cần ít nhất 2 phương án A, B…`);else if(q.a<0)errs.push(`Câu ${n}: chưa đánh dấu * cho đáp án đúng`)}if(q.t==='fill'&&!q.a.length)errs.push(`Câu ${n}: thiếu đáp án sau dấu =`)}));
+ if(!n)errs.push('Chưa có câu hỏi nào');
+ return {sections:secs.filter(s=>s.questions.length||s.passage),errs,n};
+}
+VIEWS['t-testedit']=()=>{
+ const t=R.id?testById(R.id):null;
+ return `<div class="crumb" onclick="go('t-tests')">← Đề thi</div><h1>${t?'Sửa đề':'Soạn đề mới'}</h1>
+ <div class="grid g2"><div class="card">
+  <label class="f">Tên đề</label><input type="text" id="te-t" value="${h(t?t.title:'')}" placeholder="Ví dụ: Kiểm tra 15 phút – Câu bị động">
+  <div class="grid g3" style="gap:10px;grid-template-columns:1fr 1fr 1fr"><div><label class="f">Mục</label><select id="te-ty"><option value="ielts" ${t&&t.type==='ielts'?'selected':''}>IELTS</option><option value="thpt" ${t&&t.type==='thpt'?'selected':''}>Phổ thông</option></select></div>
+  <div><label class="f">Kỹ năng</label><input type="text" id="te-sk" value="${h(t?t.skill||'':'')}" placeholder="Reading…"></div>
+  <div><label class="f">Số phút</label><input type="number" id="te-m" value="${t?t.minutes:15}" min="1"></div></div>
+  <label class="f">Mô tả ngắn</label><input type="text" id="te-d" value="${h(t?t.desc||'':'')}">
+  <label class="f">Nội dung đề</label><textarea id="te-src" style="min-height:360px" oninput="previewTest()">${h(t?t.src||'':'')}</textarea>
+  <div class="row mt"><button class="btn pri" onclick="saveTest('${t?t.id:''}')">Lưu đề</button><button class="btn ghost" onclick="go('t-tests')">Hủy</button></div>
+ </div>
+ <div><div class="card"><h3>Cách soạn đề</h3><pre class="help">${h(TEST_HELP)}</pre><button class="btn sm mt" onclick="if(!$('#te-src').value||confirm('Thay nội dung hiện tại bằng ví dụ?')){$('#te-src').value=EXAMPLE_SRC;previewTest()}">Chèn ví dụ</button></div>
+ <div class="card mt" id="te-prev"></div></div></div>`;
+};
+const EXAMPLE_SRC=`## Grammar
+1. She ______ to school every day.
+A. go
+*B. goes
+C. going
+D. gone
+? Chủ ngữ ngôi 3 số ít, hiện tại đơn → goes.
+
+2. Fill in: I have lived here ______ ten years.
+= for
+? for + khoảng thời gian.
+
+## Reading
+>> Tom wakes up at six o'clock every morning. He has breakfast with his family and then rides his bike to school.
+3. How does Tom go to school?
+A. by bus
+*B. by bike
+C. on foot
+D. by car`;
+AFTER['t-testedit']=()=>previewTest();
+function previewTest(){const el=$('#te-prev');if(!el)return;const src=$('#te-src').value;if(!src.trim()){el.innerHTML='<p class="muted small">Xem trước sẽ hiện ở đây.</p>';return}const r=parseTest(src);
+ el.innerHTML=`<h3>Xem trước</h3><p class="small">${r.n} câu · ${r.sections.length} phần</p>${r.errs.length?`<div class="explain" style="background:var(--bad-soft)">${r.errs.map(h).join('<br>')}</div>`:'<span class="tag ok">Hợp lệ</span>'}
+ <div class="small mt">${r.sections.map(s=>`<div class="mt"><b>${h(s.title||'Phần')}</b>${s.passage?' · có đoạn văn':''}${s.audio?' · có bài nghe':''}<br>${s.questions.map(q=>q.t==='mc'?`MC (${q.o.length} phương án)`:q.t==='fill'?`Điền: ${h(q.a.join('/'))}`:'Viết luận').join(' · ')}</div>`).join('')}</div>`}
+function saveTest(id){const title=$('#te-t').value.trim();if(!title){toast('Nhập tên đề');return}const src=$('#te-src').value;const r=parseTest(src);if(r.errs.length){toast('Đề còn lỗi, xem phần Xem trước');return}
+ const o={id:id||uid('t'),title,type:$('#te-ty').value,skill:$('#te-sk').value.trim(),minutes:Math.max(1,+$('#te-m').value||15),desc:$('#te-d').value.trim(),src,sections:r.sections,updated:Date.now()};
+ const i=D.tests.findIndex(x=>x.id===o.id);if(i>=0)D.tests[i]=o;else D.tests.push(o);save();toast('Đã lưu đề');go('t-tests')}
+
+/* --- Giao bài --- */
+VIEWS['t-assign']=()=>{
+ const pre=R.pre;
+ return `<h1>Giao bài</h1><p class="sub">Giao bộ từ hoặc đề thi cho cả lớp hoặc từng học viên.</p>
+ <div class="grid g2"><div class="card"><h2>Giao bài mới</h2>
+  <label class="f">Loại</label><div class="seg"><button id="ak-test" class="on" onclick="asgKind('test')">Đề thi</button><button id="ak-set" onclick="asgKind('set')">Bộ từ</button></div>
+  <label class="f">Chọn</label><select id="a-ref"></select>
+  <label class="f">Giao cho</label>
+  <label class="row small"><input type="checkbox" id="a-all" ${pre?'':'checked'} onchange="document.querySelectorAll('.a-stu').forEach(c=>{c.checked=false;c.disabled=this.checked})"> Cả lớp (kể cả học viên mới sau này)</label>
+  <div style="max-height:200px;overflow:auto;border:1px solid var(--line);border-radius:10px;padding:8px;margin-top:6px">${D.students.length?D.students.map(s=>`<label class="row small" style="padding:3px 0"><input type="checkbox" class="a-stu" value="${s.id}" ${pre===s.id?'checked':''} ${pre?'':'disabled'}> ${h(s.name)} <span class="muted">${h(s.group||'')}</span></label>`).join(''):'<span class="small muted">Chưa có học viên</span>'}</div>
+  <div class="grid g2" style="gap:10px;grid-template-columns:1fr 1fr"><div><label class="f">Hạn nộp</label><input type="date" id="a-due"></div><div><label class="f">Lời nhắn</label><input type="text" id="a-note" placeholder="Tùy chọn"></div></div>
+  <button class="btn pri mt" onclick="saveAssign()">Giao bài</button>
+ </div>
+ <div class="card"><h2>Đã giao</h2>${D.assignments.length?D.assignments.slice().reverse().map(a=>{const it=a.kind==='test'?testById(a.ref):setById(a.ref);const who=a.to==='all'?D.students:D.students.filter(s=>a.to.includes(s.id));const done=who.filter(s=>assignDone(a,s.id)).length;
+  return `<div class="list-item"><div><b class="small">${h(it?it.title:'(đã xóa)')}</b><div class="small muted">${a.kind==='test'?'Đề thi':'Bộ từ'} · ${a.to==='all'?'Cả lớp':who.map(s=>h(s.name)).join(', ')}${a.due?' · hạn '+fdate(a.due):''}</div></div><div class="row"><span class="tag ${done===who.length&&who.length?'ok':'warn'}">${done}/${who.length} xong</span><button class="btn sm danger" onclick="delItem('assignments','${a.id}')">Xóa</button></div></div>`}).join(''):'<div class="empty">Chưa giao bài nào.</div>'}</div></div>`;
+};
+let aKind='test';
+AFTER['t-assign']=()=>asgKind(aKind);
+function asgKind(k){aKind=k;$('#ak-test').classList.toggle('on',k==='test');$('#ak-set').classList.toggle('on',k==='set');const items=k==='test'?allTests():allSets();$('#a-ref').innerHTML=items.map(i=>`<option value="${i.id}">${k==='test'?(i.type==='ielts'?'[IELTS] ':'[THPT] '):'['+h(i.cat)+'] '}${h(i.title)}</option>`).join('')}
+function saveAssign(){const all=$('#a-all').checked;const to=all?'all':[...document.querySelectorAll('.a-stu:checked')].map(c=>c.value);if(!all&&!to.length){toast('Chọn ít nhất một học viên');return}
+ D.assignments.push({id:uid('a'),kind:aKind,ref:$('#a-ref').value,to,due:$('#a-due').value||'',note:$('#a-note').value.trim(),created:Date.now()});save();toast('Đã giao bài. Nhớ gửi gói bài học cho học viên nếu các em học trên máy khác.');R.pre=null;render()}
+
+/* --- Dữ liệu --- */
+VIEWS['t-data']=()=>`<h1>Dữ liệu & cài đặt</h1><p class="sub">Mọi dữ liệu được lưu ngay trong trình duyệt này. Dùng các nút dưới đây để chia sẻ giữa các máy.</p>
+ <div class="grid g2">
+ <div class="card"><h2>Gửi bài cho học viên</h2><p class="small muted">Xuất gói gồm danh sách học viên, bộ từ, đề thi, bài giao và điểm/nhận xét bài viết. Gửi file cho học viên, các em bấm "Nhập file từ giáo viên" ở màn hình đăng nhập.</p><button class="btn pri" onclick="download('goi-bai-hoc-'+today()+'.json',classPack(true))">Xuất gói bài học</button></div>
+ <div class="card"><h2>Nhận kết quả từ học viên</h2><p class="small muted">Học viên bấm "Xuất kết quả gửi giáo viên" trong mục Kết quả và gửi file cho bạn. Nhập vào đây để xem tiến độ. Có thể nhập nhiều file, dữ liệu sẽ được gộp.</p><button class="btn" onclick="importPack()">Nhập file kết quả</button></div>
+ <div class="card"><h2>Sao lưu</h2><p class="small muted">Tải toàn bộ dữ liệu (kể cả tiến độ học) để cất giữ hoặc chuyển sang máy khác.</p><div class="row"><button class="btn" onclick="download('sao-luu-'+today()+'.json',classPack(true))">Tải bản sao lưu</button><button class="btn" onclick="importPack()">Khôi phục / gộp</button></div></div>
+ <div class="card"><h2>Cài đặt</h2>
+  <label class="f">Tên lớp / trung tâm</label><input type="text" id="cfg-n" value="${h(D.settings.className)}">
+  <label class="row small mt"><input type="checkbox" id="cfg-r" ${D.settings.selfReg?'checked':''}> Cho phép học viên tự tạo hồ sơ</label>
+  <label class="f">Đổi PIN giáo viên</label><input type="password" id="cfg-p" placeholder="Để trống nếu không đổi">
+  <button class="btn pri mt" onclick="saveCfg()">Lưu cài đặt</button>
+ </div>
+ <div class="card"><h2 style="color:var(--bad)">Xóa toàn bộ</h2><p class="small muted">Xóa mọi học viên, kết quả, bộ từ và đề tự soạn trên máy này.</p><button class="btn danger" onclick="if(confirm('Chắc chắn xóa toàn bộ dữ liệu? Nên tải bản sao lưu trước.')&&prompt('Gõ XOA để xác nhận')==='XOA'){D=blank();save();logout()}">Xóa toàn bộ dữ liệu</button></div>
+ </div>`;
+function saveCfg(){D.settings.className=$('#cfg-n').value.trim()||'Lớp Tiếng Anh';D.settings.selfReg=$('#cfg-r').checked;const p=$('#cfg-p').value.trim();if(p){if(p.length<4){toast('PIN tối thiểu 4 ký tự');return}D.teacherPin=p}save();render();toast('Đã lưu cài đặt')}
+
+/* =========================================================
+   KHỞI ĐỘNG
+   ========================================================= */
+(function init(){
+ const s=getSession();
+ if(s&&s.role==='teacher')U={role:'teacher',name:'Giáo viên'};
+ else if(s&&s.role==='student'){const st=stuById(s.id);if(st)U={role:'student',id:st.id,name:st.name,code:st.code}}
+ R={v:U?(U.role==='teacher'?'t-students':'home'):'login'};
+ render();
+})();
+</script>
+</body>
+</html>
