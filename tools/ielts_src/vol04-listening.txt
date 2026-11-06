@@ -1,0 +1,61 @@
+=== Listening | Vol 4 | Test 1 | 40
+## Section 1 · Birthday party arrangements
+@audio https://drive.google.com/file/d/1Keci8Nan6v7PEkSsjNx99RTSfRkzeq3b/view
+You will hear a brother and sister talking on the phone about arrangements for their father's 80th birthday party.
+> Questions 1–6: Which hotel offers the following facilities? Write the correct letter A, B, C or D. A Royal Hotel · B Star Hotel · C Winchester Hotel · D all three hotels. Example: online booking = B.
+L 1 | sea view | ABCD | B
+L 2 | disabled access | ABCD | D
+L 3 | indoor play area | ABCD | C
+L 4 | choice of food | ABCD | A
+L 5 | private dining room | ABCD | A
+L 6 | group discount | ABCD | C
+> Questions 7–10: Complete the notes below. Write ONE WORD ONLY for each answer. Things to do immediately.
+f 7 | Send a ___ to the Winchester Hotel | deposit
+f 8 | Make the ___ | invitations
+> Things to do later.
+f 9 | Find out who needs help with ___ | transport
+f 10 | Tell people not to bring any ___ | presents
+## Section 2 · The game of curling
+@audio https://drive.google.com/file/d/1V_G8rI2qcOlmwe4ODhlW0uchdKzY0d35/view
+You will hear the director of a club giving a talk about an ancient game played on ice called curling.
+> Questions 11–16: Complete the sentences below. Write NO MORE THAN TWO WORDS for each answer.
+f 11 | The four players on the team are called the ___, the Second, the Third and the Skip. | lead
+f 12 | The length of ice on which curling is played is called the ___ | sheet
+f 13 | The target area is called the ___ | house
+f 14 | Scottish brushes are usually made from ___ | horsehair / horse hair
+f 15 | One shoe needs to have a sole made of ___ | rubber
+f 16 | The captain of the team often carries a ___ | stopwatch / stop watch
+> Questions 17–20: Choose the correct letter A, B or C.
+m 17 | Montreal Curling Club is famous as | the champion club of the local league. ;; the oldest sports club in the region. ;; the most influential club in winter sports. | B
+m 18 | The Caledonian Curling Club was formed in order to | attract interest in the sport. ;; train young players. ;; fix regulations for the game. | C
+m 19 | In the 16th century, curling avoided being banned because | it was already so popular. ;; it was good training for battle. ;; it was only played by children. | B
+m 20 | Early curling games in Canada used implements made of | local material. ;; imported stone. ;; cast iron. | C
+## Section 3 · Using scientific techniques to investigate works of art
+@audio https://drive.google.com/file/d/1XuwWWzgitIk1ilJw9yGcszbj1oDevs5f/view
+You will hear two students called Josh and Emily discussing an assignment on applying scientific techniques to art.
+> Questions 21–24: Choose the correct letter A, B or C.
+m 21 | What does Josh think about Jackson Pollock's paintings? | They are easy to copy. ;; They are complex. ;; They are childish. | B
+m 22 | The $5 painting was considered to be a fake because | it lacked documentation. ;; it was too cheap. ;; it featured the wrong colours. | A
+m 23 | What made the International Foundation for Art Research reject the $5 painting? | what was on the back of the painting ;; the type of paint used ;; how the paint was applied | B
+m 24 | What do Josh and Emily agree about art evaluation? | Only an experienced critic can evaluate a painting's authenticity. ;; Modern scientific methods have replaced the traditional approach. ;; Experts from the science and art worlds should work together. | C
+> Questions 25–30: Complete the flow-chart. Choose SIX answers from the box and write the correct letter A–H. A ultrasound · B gamma-ray technology · C stone · D a laser scanner · E a radar machine · F glass · G a thermographic camera · H brick. Seracini's search for Leonardo Da Vinci's Battle of Anghiari.
+L 25 | Seracini used ___ to help make a model of the building. | ABCDEFGH | D
+L 26 | Seracini used ___ to reveal different materials in the walls. He found the original architecture. | ABCDEFGH | G
+L 27 | Seracini guessed that Da Vinci painted his masterpiece on the east wall, in a space that used to hold ___ | ABCDEFGH | F
+L 28 | Seracini analysed the wall using ___ and discovered a second wall behind it. | ABCDEFGH | E
+L 29 | Seracini hypothesised that the Da Vinci painting is still there on the original ___ wall. | ABCDEFGH | C
+L 30 | Seracini is using ___ to prove his theory. | ABCDEFGH | B
+## Section 4 · Sustainability
+@audio https://drive.google.com/file/d/1MGiZ7UUL4bIBK6QURDNKcd-w3VbEvBvz/view
+You will hear a lecturer talking on the topic of sustainability.
+> Questions 31–40: Complete the notes below. Write ONE WORD ONLY for each answer. Sustainability — term first used in 1987 by the writers of a United Nations report.
+f 31 | Lecture aim: analysis of the ___ surrounding sustainability | confusion
+f 32 | Sustainable development: development that will meet the needs of both present and future ___ | generations
+f 33 | Myth 1: no mention of the ___ in the original definition | environment
+f 34 | Original focus: poorer nations should have the same ___ to natural resources as richer nations | rights / right
+f 35 | This would help them achieve better ___ conditions | living
+f 36 | Myth 2 'Green' vs Sustainable: for the sustainability lobby, the key problem is finding ___ to develop technology | time
+f 37 | Sustainability lobby is prepared to ___ nuclear energy | accept
+f 38 | Myth 3 Role of technology: introduction of battery stations on ___ is an example of new business thinking, not new technology | roads
+f 39 | Agriculture: some farmers plant crops like sunflowers which don't use much water, unlike ___ | corn
+f 40 | Greater use of water is a result of changes in our ___ | diet
