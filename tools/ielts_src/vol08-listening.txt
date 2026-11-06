@@ -319,3 +319,58 @@ f 37 | Doric House (eastern area): inhabitants came here to collect ___ | water
 f 38 | Theatre: next to a stone ___, capacity of 5,000 | bridge
 f 39 | Stairway (south-western area): has sculptures of ___ | lions
 f 40 | Roman Baths (central area): a statue of a Roman ___ was found | emperor
+=== Listening | Vol 8 | Test 7 | 40
+## Section 1 · Travel agency quotation
+@audio https://drive.google.com/file/d/1Lsv1v4r455SG20RW58a5X40KQnf-d6bM/view
+File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
+> Questions 1–4: Complete the form (Travel Agency – Client Quotation Form). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Country of destination: Australia. Month of travel: July.
+f 1 | Surname: ___ | thorn / thorne
+f 2 | Length of stay: ___ | five days / 5 days
+f 3 | Area of destination: the ___ (near Brisbane) | gold coast
+f 4 | Type of accommodation: ___ | apartment
+> Questions 5–7: Choose the correct letter, A, B or C.
+m 5 | According to the client, the children's favourite theme park will be | Movieworld. ;; Dreamworld. ;; Waterworld. | C
+m 6 | At the wildlife sanctuary they will be able to take close-up photographs of | the crocodiles. ;; the kangaroos. ;; the koalas. | A
+m 7 | The client wants the accommodation to be near the | beach. ;; nightclubs. ;; shopping facilities. | C
+> Questions 8–10: Which THREE facilities does the client want at her accommodation? A. childcare · B. playroom · C. parking · D. gym · E. laundry · F. cleaning · G. sauna/spa. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+f 8 | Answer 1: ___ | b / e / f
+f 9 | Answer 2: ___ | e / b / f
+f 10 | Answer 3: ___ | f / b / e
+## Section 2 · Reynolds Electrical
+> Questions 11–16: Complete the sentences. Write ONE WORD AND/OR A NUMBER.
+f 11 | Tony Reynolds' first business produced ___ | cars
+f 12 | Reynolds Electrical was started in the year ___ | 1928
+f 13 | There was previously a ___ where the company is now based. | cinema
+f 14 | The ___ of the products is an important factor for customers. | quality
+f 15 | The company is building a new ___ | factory
+f 16 | The company recently won an award for its success in reducing ___ | waste
+> Questions 17–20: Complete the table (Meetings). Write ONE WORD ONLY.
+f 17 | Monday: possible improvements in ___ | safety
+f 18 | Tuesday: ___ development | website
+f 19 | Wednesday: communication with ___ | customers
+f 20 | Friday: making sure the company has enough ___ | money
+## Section 3 · Art portfolios
+> Questions 21–26: Choose the correct letter, A, B or C.
+m 21 | According to Sandra, what is the most important thing to demonstrate in the portfolio? | creativity ;; development ;; quality | B
+m 22 | What is Charlie going to include to show his understanding of design? | some photos ;; a poster ;; a publicity flyer | B
+m 23 | Charlie and Sandra choose drawings of the human body to show their ability to | provide realistic detail. ;; portray everyday situations. ;; represent movement. | C
+m 24 | Why does Charlie advise Sandra not to include her work on deserts? | It needs explanation. ;; It will take up too much space. ;; It doesn't fit in with the rest of her work. | A
+m 25 | What did Sandra think was the best advice from their tutor? | Save the best for the end. ;; Make a strong first impression. ;; Organise work in groups. | C
+m 26 | Who is Sandra going to ask to look at her portfolio before she submits it? | her parents ;; an art critic ;; an artist | C
+> Questions 27–30: Which reason is given for including each piece in Charlie's portfolio? Choose A–F.
+m 27 | a design for a book cover | explanation of a personal relationship ;; communication of a mood ;; high degree of accuracy ;; evidence of originality ;; use of lettering ;; combination of different materials | E
+m 28 | designs for jewellery | explanation of a personal relationship ;; communication of a mood ;; high degree of accuracy ;; evidence of originality ;; use of lettering ;; combination of different materials | C
+m 29 | a wood carving | explanation of a personal relationship ;; communication of a mood ;; high degree of accuracy ;; evidence of originality ;; use of lettering ;; combination of different materials | D
+m 30 | an advertisement | explanation of a personal relationship ;; communication of a mood ;; high degree of accuracy ;; evidence of originality ;; use of lettering ;; combination of different materials | B
+## Section 4 · Hospital gardens
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY.
+f 31 | 1984 Schwartz study: looking at gardens may speed recovery from surgery and from ___ | infection
+f 32 | patients with views of nature recovered much faster than patients with views of a ___ | wall
+f 33 | European studies: hospitals were a source of ___ | stress
+f 34 | Looking at nature can affect electrical activity in the body, especially the ___ | heart
+f 35 | can be beneficial to the ___ system | immune
+f 36 | 1995 Cooper and Bennett study: research methods included analysis, observation and ___ | interviews
+f 37 | gardens with a ___ were particularly popular | fountain
+f 38 | 'Behavioural maps' studies showed gardens need easily moved ___ | furniture
+f 39 | landscaping that attracts ___ | birds
+f 40 | elderly patients want to feel a part of ___ | society
