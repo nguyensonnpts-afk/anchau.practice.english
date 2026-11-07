@@ -699,7 +699,7 @@ function assignDone(a,sid){
 let U=null; // {role,id,name}
 let R={v:'home'}; // route
 let timerH=null;
-function go(v,extra){if(typeof MIX!=='undefined'&&MIX&&!['quiz','spell','match'].includes(v))MIX=null;if(typeof REC!=='undefined'&&REC.on)recStop();if(v!=='speaking'&&typeof SK!=='undefined')SK=null;if(v!=='writing'&&typeof WR!=='undefined')WR=null;if(R.v==='test'&&R.running&&v!=='result'){if(!confirm('Bạn đang làm bài. Thoát sẽ mất bài làm. Vẫn thoát?'))return}clearInterval(timerH);if('speechSynthesis' in window)speechSynthesis.cancel();document.querySelectorAll('.player').forEach(o=>o._a&&o._a.pause());
+function go(v,extra){if(typeof REC!=='undefined'&&REC.on)recStop();if(v!=='speaking'&&typeof SK!=='undefined')SK=null;if(v!=='writing'&&typeof WR!=='undefined')WR=null;if(R.v==='test'&&R.running&&v!=='result'){if(!confirm('Bạn đang làm bài. Thoát sẽ mất bài làm. Vẫn thoát?'))return}clearInterval(timerH);if('speechSynthesis' in window)speechSynthesis.cancel();document.querySelectorAll('.player').forEach(o=>o._a&&o._a.pause());
  const upd=()=>{R=Object.assign({v},extra||{});render();window.scrollTo(0,0)};
  if(document.startViewTransition&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&U){
   const id=extra&&extra.id;if(id){const src=document.querySelector(`[data-vt="${CSS.escape(id)}"]`);if(src)src.style.viewTransitionName='hero'}
@@ -731,7 +731,7 @@ function header(){
  const tabs=U.role==='teacher'?tt:st;
  const cur=R.v;
  const fx=(typeof WR!=='undefined'&&WR&&WR.full)||(typeof SK!=='undefined'&&SK&&SK.full);
- const isOn=k=>(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student')||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review');
+ const isOn=k=>(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student')||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review');
  el.innerHTML=`<div class="wrap"><div class="logo" onclick="go('${tabs[0][0]}')"><b>A</b><span>${h(D.settings.className)}</span></div>
  <nav class="tabs">${tabs.map(([k,l])=>`<button class="${isOn(k)?'on':''}" data-sk="${k}" onclick="go('${k}')">${l}${isOn(k)?'<i class="tl"></i>':''}</button>`).join('')}</nav>
  <div class="who">${U.role==='teacher'?'<span class="tag acc">Giáo viên</span>':`<span class="nm">${h(U.name)}</span><span class="tag gray">${h(U.code)}</span>`}${THM_BTN()}<button class="thm" onclick="logout()" title="Đăng xuất" aria-label="Đăng xuất"><svg viewBox="0 0 24 24"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M14 8l4 4-4 4M18 12H8"/></svg></button></div></div>`;
@@ -922,7 +922,7 @@ VIEWS.set=()=>{
   <button class="card" style="cursor:pointer;text-align:left" onclick="go('quiz',{id:'${s.id}'})"><span class="mode-ico"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.2 2.4 2.4 4.8-5"/></svg></span><b>Trắc nghiệm</b><div class="small muted">Chọn nghĩa đúng</div></button>
   <button class="card" style="cursor:pointer;text-align:left" onclick="go('spell',{id:'${s.id}'})"><span class="mode-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3.5" y="14" width="4" height="6" rx="1.5"/><rect x="16.5" y="14" width="4" height="6" rx="1.5"/></svg></span><b>Nghe & viết</b><div class="small muted">Nghe rồi gõ lại từ</div></button>
   <button class="card" style="cursor:pointer;text-align:left" onclick="go('match',{id:'${s.id}'})"><span class="mode-ico"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4H4z"/></svg></span><b>Ghép từ</b><div class="small muted">Nối từ với nghĩa</div></button>
-  <button class="card mix-card" style="cursor:pointer;text-align:left" onclick="mixStart('${s.id}')"><span class="mode-ico"><svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="3.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="3.5"/><path d="M17 13.5v7M13.5 17h7"/></svg></span><b>Tổng hợp</b><div class="small muted">Trắc nghiệm, nghe viết, ghép từ liền mạch</div></button>
+  <button class="card mix-card" style="cursor:pointer;text-align:left" onclick="MX=null;go('mixed',{id:'${s.id}'})"><span class="mode-ico"><svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="3.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="3.5"/><path d="M17 13.5v7M13.5 17h7"/></svg></span><b>Tổng hợp</b><div class="small muted">Mỗi câu một dạng: trắc nghiệm, ghép từ, nghe viết</div></button>
  </div>
  <div class="card mt2 tbl"><table><thead><tr><th></th><th>Từ</th><th>Nghĩa</th><th>Trạng thái</th></tr></thead><tbody>
  ${s.words.map(w=>{const r=p.words[wkey(s.id,w.w)];return `<tr><td><button class="spk" onclick="speak('${h(w.w).replace(/&#39;/g,"\\'")}')"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button></td><td><b>${h(w.w)}</b> <span class="muted small">${h(w.pos||'')} ${h(w.ipa||'')}</span><div class="small muted"><i>${h(w.ex||'')}</i></div></td><td>${h(w.vi)}</td><td>${lab[wstatus(r)]}${r&&r.due>Date.now()?`<div class="small muted">ôn lại ${fdate(r.due)}</div>`:''}</td></tr>`}).join('')}
@@ -930,24 +930,59 @@ VIEWS.set=()=>{
 };
 function jsq(s){return h(s).replace(/&#39;/g,"\\'")}
 
-/* --- Tổng hợp: trắc nghiệm → nghe & viết → ghép từ --- */
-let MIX=null;
-const MIX_STEPS=[['quiz','Trắc nghiệm'],['spell','Nghe & viết'],['match','Ghép từ']];
-const mixOn=id=>!!(MIX&&MIX.src===id);
-const mixPill=id=>mixOn(id)?` <span class="tag acc" style="margin-left:8px">Tổng hợp · phần ${MIX.k+1}/${MIX_STEPS.length}</span>`:'';
-function mixStart(id){QZ=SP=MT=null;MIX={src:id,k:0,res:[]};go('quiz',{id})}
-function mixNext(){MIX.k++;QZ=SP=MT=null;go(MIX_STEPS[MIX.k][0],{id:MIX.src})}
-function mixBridge(s,ok,total,extra){
- const k=MIX.k;if(!MIX.res[k])MIX.res[k]={label:MIX_STEPS[k][1],ok,total,extra};
- if(k<MIX_STEPS.length-1){const nx=MIX_STEPS[k+1][1];
-  return `<div class="fc-wrap"><div class="crumb" onclick="MIX=null;QZ=SP=MT=null;go('set',{id:'${s.id}'})">← ${h(s.title)}${mixPill(s.id)}</div><div class="card" style="text-align:center"><p class="eyebrow" style="justify-content:center">Phần ${k+1}/${MIX_STEPS.length} · ${MIX_STEPS[k][1]}</p><div class="big-score">${ok}/${total}</div><p class="muted">${extra?h(extra):'câu đúng'}</p>
-  <div class="row" style="justify-content:center"><button class="btn ghost" onclick="MIX=null;QZ=SP=MT=null;go('set',{id:'${s.id}'})">Dừng</button><button class="btn pri" onclick="mixNext()">Tiếp: ${nx} →</button></div></div></div>`}
- const R0=MIX.res,ok2=R0.reduce((a,x)=>a+x.ok,0),tt=R0.reduce((a,x)=>a+x.total,0),pct=tt?Math.round(ok2/tt*100):0;
- if(!MIX.cele){MIX.cele=1;if(pct>=50)setTimeout(celebrate,250)}
- return `<div class="fc-wrap"><div class="card" style="text-align:center">${DONE_RING}<h2>Hoàn thành bài tổng hợp</h2><div class="big-score">${pct}%</div><p class="muted">${ok2}/${tt} câu đúng · ${h(s.title)}</p>
- <div class="mt" style="text-align:left">${R0.map(x=>`<div class="list-item"><span>${x.label}</span><span class="tag ${x.ok/x.total>=.7?'ok':x.ok/x.total>=.4?'warn':'bad'}">${x.ok}/${x.total}${x.extra?' · '+h(x.extra):''}</span></div>`).join('')}</div>
- <div class="row mt" style="justify-content:center"><button class="btn" onclick="mixStart('${s.id}')">Làm lại</button><button class="btn pri" onclick="MIX=null;QZ=SP=MT=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`;
+/* --- Tổng hợp: mỗi câu một dạng (trắc nghiệm / ghép từ / nghe viết) xen kẽ --- */
+let MX=null;
+const MXLAB={mc:'Trắc nghiệm',match:'Ghép từ',spell:'Nghe & viết'};
+function mxBuild(s){
+ let ws=shuffle(s.words).slice(0,Math.min(16,s.words.length));const steps=[];
+ const mc=w=>{const dir=Math.random()<.6?'en':'vi';const f=dir==='en'?'vi':'w';const opts=shuffle([w[f],...distractors(s,w,f)]);return{t:'mc',w,dir,opts,ans:opts.indexOf(w[f]),pick:null}};
+ const mt=g=>({t:'match',ws:g,L:shuffle(g.map((_,i)=>i)),Rr:shuffle(g.map((_,i)=>i)),sl:null,sr:null,done:new Set(),err:0,bad:null});
+ const sp=w=>({t:'spell',w,res:null,hint:0});
+ let order=shuffle(['mc','match','spell']),last=null;
+ while(ws.length){let t=order.length?order.shift():['mc','spell','match'][Math.floor(Math.random()*3)];
+  if(t===last){const o=['mc','spell','match'].filter(y=>y!==last);t=o[Math.floor(Math.random()*o.length)]}
+  if(t==='match'&&ws.length<4)t=last==='mc'?'spell':'mc';
+  if(t==='match'){const n=Math.min(ws.length,4+Math.floor(Math.random()*2));steps.push(mt(ws.splice(0,n)))}
+  else steps.push(t==='mc'?mc(ws.shift()):sp(ws.shift()));last=t}
+ return {src:s.id,steps,i:0,ok:0,total:steps.reduce((a,x)=>a+(x.t==='match'?x.ws.length:1),0),per:{mc:[0,0],match:[0,0],spell:[0,0]},spoken:-1};
 }
+function mxScore(t,ok,n){MX.ok+=ok;MX.per[t][0]+=ok;MX.per[t][1]+=n}
+VIEWS.mixed=()=>{
+ const s=setById(R.id);if(!s)return '<div class="empty">Không tìm thấy bộ từ.</div>';
+ if(!MX||MX.src!==s.id)MX=mxBuild(s);
+ const x=MX,back=`MX=null;go('set',{id:'${s.id}'})`;
+ if(x.i>=x.steps.length){const pct=x.total?Math.round(x.ok/x.total*100):0;if(!x.cele){x.cele=1;if(pct>=50)setTimeout(celebrate,250)}
+  return `<div class="fc-wrap"><div class="card" style="text-align:center">${DONE_RING}<h2>Hoàn thành bài tổng hợp</h2><div class="big-score">${x.ok}/${x.total}</div><p class="muted">${pct}% đúng · ${h(s.title)}</p>
+  <div class="mt" style="text-align:left">${Object.entries(x.per).filter(([k,v])=>v[1]).map(([k,v])=>`<div class="list-item"><span>${MXLAB[k]}</span><span class="tag ${v[0]/v[1]>=.7?'ok':v[0]/v[1]>=.4?'warn':'bad'}">${v[0]}/${v[1]}</span></div>`).join('')}</div>
+  <div class="row mt" style="justify-content:center"><button class="btn" onclick="MX=null;render()">Làm lại</button><button class="btn pri" onclick="${back}">Xong</button></div></div></div>`}
+ const st=x.steps[x.i];let body='';
+ if(st.t==='mc'){const it=st;
+  body=`<div class="small muted">${it.dir==='en'?'Nghĩa của từ này là gì?':'Từ tiếng Anh nào có nghĩa này?'}</div>
+  <div class="row mt"><div class="qbig">${h(it.dir==='en'?it.w.w:it.w.vi)}</div>${it.dir==='en'?`<button class="spk" onclick="speak('${jsq(it.w.w)}')"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button>`:''}</div>
+  <div class="opts">${it.opts.map((o,i)=>{let c='';if(it.pick!=null){if(i===it.ans)c='right';else if(i===it.pick)c='wrong'}return `<button class="opt ${c}" onclick="mxMC(${i})" ${it.pick!=null?'disabled':''}><span class="k">${'ABCD'[i]}</span><span>${h(o)}</span></button>`}).join('')}</div>
+  ${it.pick!=null?`<div class="mt small">${it.pick===it.ans?'<b style="color:var(--ok)">Chính xác!</b>':'<b style="color:var(--bad)">Chưa đúng.</b>'} <b>${h(it.w.w)}</b> = ${h(it.w.vi)}</div><button class="btn pri mt" onclick="mxNext()">Tiếp →</button>`:''}`}
+ else if(st.t==='spell'){const w=st.w;const hint=w.w.split('').map((c,i)=>i<st.hint||c===' '?c:'_').join(' ');
+  body=`<div style="text-align:center"><div class="small muted">Nghe rồi gõ lại từ</div><div class="row mt" style="justify-content:center"><button class="spk" style="width:64px;height:64px" onclick="speak('${jsq(w.w)}')"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button><button class="spk" title="Đọc chậm" onclick="speak('${jsq(w.w)}',0.55)">🐢</button></div>
+  <p class="mt"><b>Nghĩa:</b> ${h(w.vi)} <span class="muted small">(${h(w.pos||'')})</span></p><p class="muted" style="letter-spacing:2px;font-family:monospace">${h(hint)}</p>
+  <input type="text" id="mxin" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Gõ từ bạn nghe được" style="text-align:center;font-size:18px;max-width:340px" onkeydown="if(event.key==='Enter')${st.res?'mxNext()':'mxSpell()'}" ${st.res?'disabled':''} value="${st.res?h(st.res.v):''}">
+  ${st.res?`<div class="mt">${st.res.ok?'<b style="color:var(--ok)">Chính xác!</b>':`<b style="color:var(--bad)">Đáp án:</b> <b>${h(w.w)}</b>`}</div><button class="btn pri mt" onclick="mxNext()">Tiếp →</button>`:`<div class="row mt" style="justify-content:center"><button class="btn" onclick="MX.steps[MX.i].hint++;render()">Gợi ý chữ cái</button><button class="btn pri" onclick="mxSpell()">Kiểm tra</button></div>`}</div>`}
+ else{const m=st;const fin=m.done.size===m.ws.length;
+  body=`<div class="small muted mb">Chọn một từ bên trái và nghĩa tương ứng bên phải.</div><div class="match"><div class="grid" style="gap:10px">${m.L.map(i=>`<div class="mi ${m.done.has(i)?'done':''} ${m.sl===i?'sel':''} ${m.bad&&m.bad[0]===i?'err':''}" onclick="mxPick('l',${i})">${h(m.ws[i].w)}</div>`).join('')}</div>
+  <div class="grid" style="gap:10px">${m.Rr.map(i=>`<div class="mi ${m.done.has(i)?'done':''} ${m.sr===i?'sel':''} ${m.bad&&m.bad[1]===i?'err':''}" onclick="mxPick('r',${i})">${h(m.ws[i].vi)}</div>`).join('')}</div></div>
+  ${fin?`<div class="mt small"><b style="color:var(--ok)">Ghép xong!</b> ${m.err?`${m.err} lần ghép sai`:'Không sai lần nào'}</div><button class="btn pri mt" onclick="mxNext()">Tiếp →</button>`:''}`}
+ const done=x.steps.slice(0,x.i).reduce((a,y)=>a+(y.t==='match'?y.ws.length:1),0);
+ return `<div class="fc-wrap"><div class="crumb" onclick="${back}">← ${h(s.title)}</div>
+ <div class="row between mb"><span class="small muted">Câu ${x.i+1}/${x.steps.length} · <span class="tag ${st.t==='mc'?'':st.t==='match'?'acc':'sk'}">${MXLAB[st.t]}</span></span><span class="small muted">Đúng: ${x.ok}/${done+(st.t==='match'?st.done.size:0)}</span></div><div class="bar mb"><i style="width:${x.i/x.steps.length*100}%"></i></div>
+ <div class="card">${body}</div></div>`;
+};
+AFTER.mixed=()=>{const x=MX;if(!x||x.i>=x.steps.length)return;const st=x.steps[x.i];if(st.t==='spell'){if(x.spoken!==x.i){x.spoken=x.i;setTimeout(()=>{if(R.v==='mixed'&&MX===x&&x.steps[x.i]===st)speak(st.w.w)},250)}const el=$('#mxin');if(el&&!st.res)el.focus()}};
+function mxNext(){MX.i++;render()}
+function mxMC(i){const it=MX.steps[MX.i];if(it.pick!=null)return;it.pick=i;const ok=i===it.ans;mxScore('mc',ok?1:0,1);grade(wkey(MX.src,it.w.w),ok?4:1);if(it.dir==='vi'||ok)speak(it.w.w);render()}
+function mxSpell(){const el=$('#mxin');const v=el?el.value:'';if(!v.trim())return;const st=MX.steps[MX.i];const ok=norm(v)===norm(st.w.w);mxScore('spell',ok?1:0,1);st.res={ok,v};grade(wkey(MX.src,st.w.w),ok?(st.hint?3:4):1);render()}
+function mxPick(side,i){const m=MX.steps[MX.i];if(m.done.has(i))return;m.bad=null;if(side==='l'){m.sl=i;speak(m.ws[i].w)}else m.sr=i;
+ if(m.sl!=null&&m.sr!=null){if(m.sl===m.sr){m.done.add(i);grade(wkey(MX.src,m.ws[i].w),m.firstErr&&m.firstErr.has(i)?2:4)}else{m.err++;m.bad=[m.sl,m.sr];m.firstErr=m.firstErr||new Set();m.firstErr.add(m.sl);grade(wkey(MX.src,m.ws[m.sl].w),1)}m.sl=m.sr=null;
+  if(m.done.size===m.ws.length){const ok=m.ws.length-(m.firstErr?m.firstErr.size:0);mxScore('match',ok,m.ws.length)}}
+ render()}
 
 /* --- Thẻ ghi nhớ --- */
 let FC=null;
@@ -996,11 +1031,11 @@ let QZ=null;
 function distractors(set,w,field){const pool=[...set.words,...allSets().filter(s=>s.id!==set.id).flatMap(s=>s.words)].filter(x=>x.w!==w.w);const seen=new Set([w[field]]);const out=[];for(const x of shuffle(pool)){if(!seen.has(x[field])){seen.add(x[field]);out.push(x[field])}if(out.length===3)break}return out}
 VIEWS.quiz=()=>{
  const s=setById(R.id);
- if(!QZ||QZ.src!==R.id){const ws=shuffle(s.words).slice(0,mixOn(R.id)?8:10);QZ={src:R.id,i:0,ok:0,items:ws.map(w=>{const dir=Math.random()<.6?'en':'vi';const f=dir==='en'?'vi':'w';const opts=shuffle([w[f],...distractors(s,w,f)]);return{w,dir,opts,ans:opts.indexOf(w[f]),pick:null}})}}
+ if(!QZ||QZ.src!==R.id){const ws=shuffle(s.words).slice(0,10);QZ={src:R.id,i:0,ok:0,items:ws.map(w=>{const dir=Math.random()<.6?'en':'vi';const f=dir==='en'?'vi':'w';const opts=shuffle([w[f],...distractors(s,w,f)]);return{w,dir,opts,ans:opts.indexOf(w[f]),pick:null}})}}
  const q=QZ;
- if(q.i>=q.items.length){if(mixOn(s.id))return mixBridge(s,q.ok,q.items.length);const r=`<div class="fc-wrap"><div class="card" style="text-align:center"><div class="big-score">${q.ok}/${q.items.length}</div><p class="muted">câu đúng</p><div class="row" style="justify-content:center"><button class="btn" onclick="QZ=null;render()">Làm lại</button><button class="btn pri" onclick="QZ=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`;return r}
+ if(q.i>=q.items.length){const r=`<div class="fc-wrap"><div class="card" style="text-align:center"><div class="big-score">${q.ok}/${q.items.length}</div><p class="muted">câu đúng</p><div class="row" style="justify-content:center"><button class="btn" onclick="QZ=null;render()">Làm lại</button><button class="btn pri" onclick="QZ=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`;return r}
  const it=q.items[q.i];
- return `<div class="fc-wrap"><div class="crumb" onclick="QZ=null;MIX=null;go('set',{id:'${s.id}'})">← ${h(s.title)}${mixPill(s.id)}</div>
+ return `<div class="fc-wrap"><div class="crumb" onclick="QZ=null;go('set',{id:'${s.id}'})">← ${h(s.title)}</div>
  <div class="row between mb"><span class="small muted">Câu ${q.i+1}/${q.items.length}</span><span class="small muted">Đúng: ${q.ok}</span></div><div class="bar mb"><i style="width:${q.i/q.items.length*100}%"></i></div>
  <div class="card"><div class="small muted">${it.dir==='en'?'Nghĩa của từ này là gì?':'Từ tiếng Anh nào có nghĩa này?'}</div>
  <div class="row mt"><div class="qbig">${h(it.dir==='en'?it.w.w:it.w.vi)}</div>${it.dir==='en'?`<button class="spk" onclick="speak('${jsq(it.w.w)}')"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button>`:''}</div>
@@ -1014,13 +1049,12 @@ function qzPick(i){const it=QZ.items[QZ.i];if(it.pick!=null)return;it.pick=i;con
 let SP=null;
 VIEWS.spell=()=>{
  const s=setById(R.id);
- if(!SP||SP.src!==R.id)SP={src:R.id,i:0,ok:0,items:shuffle(s.words).slice(0,mixOn(R.id)?6:10),res:null,hint:0};
+ if(!SP||SP.src!==R.id)SP={src:R.id,i:0,ok:0,items:shuffle(s.words).slice(0,10),res:null,hint:0};
  const q=SP;
- if(q.i>=q.items.length){if(mixOn(s.id))return mixBridge(s,q.ok,q.items.length)}
  if(q.i>=q.items.length)return `<div class="fc-wrap"><div class="card" style="text-align:center"><div class="big-score">${q.ok}/${q.items.length}</div><p class="muted">từ viết đúng</p><div class="row" style="justify-content:center"><button class="btn" onclick="SP=null;render()">Làm lại</button><button class="btn pri" onclick="SP=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`;
  const w=q.items[q.i];
  const hint=w.w.split('').map((c,i)=>i<q.hint||c===' '?c:'_').join(' ');
- return `<div class="fc-wrap"><div class="crumb" onclick="SP=null;MIX=null;go('set',{id:'${s.id}'})">← ${h(s.title)}${mixPill(s.id)}</div>
+ return `<div class="fc-wrap"><div class="crumb" onclick="SP=null;go('set',{id:'${s.id}'})">← ${h(s.title)}</div>
  <div class="row between mb"><span class="small muted">Từ ${q.i+1}/${q.items.length}</span><span class="small muted">Đúng: ${q.ok}</span></div><div class="bar mb"><i style="width:${q.i/q.items.length*100}%"></i></div>
  <div class="card" style="text-align:center"><div class="row" style="justify-content:center"><button class="spk" style="width:64px;height:64px;font-size:26px" onclick="speak('${jsq(w.w)}')"><svg class="ico" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button><button class="spk" title="Đọc chậm" onclick="speak('${jsq(w.w)}',0.55)">🐢</button></div>
  <p class="mt"><b>Nghĩa:</b> ${h(w.vi)} <span class="muted small">(${h(w.pos||'')})</span></p>
@@ -1040,9 +1074,8 @@ VIEWS.match=()=>{
  const s=setById(R.id);
  if(!MT||MT.src!==R.id){const ws=shuffle(s.words).slice(0,6);MT={src:R.id,ws,L:shuffle(ws.map((w,i)=>i)),Rr:shuffle(ws.map((w,i)=>i)),sl:null,sr:null,done:new Set(),err:0,t0:Date.now(),bad:null}}
  const m=MT;
- if(m.done.size===m.ws.length&&mixOn(s.id))return mixBridge(s,Math.max(0,m.ws.length-m.err),m.ws.length,`${m.err} lần ghép sai`);
  if(m.done.size===m.ws.length){const sec=Math.round((Date.now()-m.t0)/1000);return `<div class="fc-wrap"><div class="card" style="text-align:center">${(setTimeout(celebrate,250),'')}${DONE_RING}<h2>Ghép xong ${m.ws.length} cặp!</h2><p class="muted">Thời gian ${sec} giây · ${m.err} lần sai</p><div class="row" style="justify-content:center"><button class="btn" onclick="MT=null;render()">Chơi lại</button><button class="btn pri" onclick="MT=null;go('set',{id:'${s.id}'})">Xong</button></div></div></div>`}
- return `<div class="fc-wrap"><div class="crumb" onclick="MT=null;MIX=null;go('set',{id:'${s.id}'})">← ${h(s.title)}${mixPill(s.id)}</div><p class="sub">Chọn một từ bên trái và nghĩa tương ứng bên phải.</p>
+ return `<div class="fc-wrap"><div class="crumb" onclick="MT=null;go('set',{id:'${s.id}'})">← ${h(s.title)}</div><p class="sub">Chọn một từ bên trái và nghĩa tương ứng bên phải.</p>
  <div class="match"><div class="grid" style="gap:10px">${m.L.map(i=>`<div class="mi ${m.done.has(i)?'done':''} ${m.sl===i?'sel':''} ${m.bad&&m.bad[0]===i?'err':''}" onclick="mtPick('l',${i})">${h(m.ws[i].w)}</div>`).join('')}</div>
  <div class="grid" style="gap:10px">${m.Rr.map(i=>`<div class="mi ${m.done.has(i)?'done':''} ${m.sr===i?'sel':''} ${m.bad&&m.bad[1]===i?'err':''}" onclick="mtPick('r',${i})">${h(m.ws[i].vi)}</div>`).join('')}</div></div>
  <p class="small muted mt">Sai: ${m.err}</p></div>`;
