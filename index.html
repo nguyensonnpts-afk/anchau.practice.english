@@ -1610,7 +1610,7 @@ VIEWS.fullrun=()=>{
  const sp=[pl.P1&&'Part 1: '+h((spTopicById(pl.P1)||{}).title||''),pl.P2&&'Part 2&3: '+h((spTopicById(pl.P2)||{}).title||'')].filter(Boolean).join('<br>');
  const pend=ks.length&&!next&&b.all==null;
  return `<div class="crumb" onclick="go('full')">← Thi 4 kỹ năng</div><p class="eyebrow">Bài thi IELTS 4 kỹ năng</p><h1>${h(r.title)}</h1><p class="sub">Làm lần lượt theo thứ tự thi thật: Listening, Reading, Writing, Speaking. Mỗi phần tính giờ riêng, bạn có thể nghỉ giữa các phần.</p>
- <div class="card mb"><div class="row between" style="margin-bottom:12px"><h2 style="margin:0">Bảng điểm</h2>${pend?'<span class="tag warn">Đã làm xong, chờ giáo viên chấm Writing và Speaking</span>':''}</div>${bandSheet(r,U.id)}</div>
+ <div class="card mb" style="text-align:center">${b.all!=null?`<p class="eyebrow" style="justify-content:center">Overall band</p><div class="big-score">${b.all}</div>`:pend?`<span class="tag warn">Đã làm xong, đang chờ giáo viên chấm Writing và Speaking</span>`:`<p class="muted" style="margin:0">Hoàn thành cả 4 phần để có band tổng. Listening và Reading được chấm ngay, Writing và Speaking do giáo viên chấm.</p>`}</div>
  <div class="fsteps">${card('L','Listening',((testById(pl.L)||{}).minutes||30)+' phút',tl('L'),['L'],!!r.parts.L)}${card('R','Reading',((testById(pl.R)||{}).minutes||60)+' phút',tl('R'),['R'],!!r.parts.R)}${wk.length?card('W','Writing','60 phút',wt,wk,wk.every(k=>r.parts[k])):''}${pl.P1||pl.P2?card('S','Speaking','11–14 phút',sp,['S'],!!r.parts.S):''}</div>`;
 };
 AFTER.fullrun=()=>{const r=runById(R.id);if(r&&fullDone(r)&&!r.cele){r.cele=1;save();setTimeout(celebrate,400)}};
