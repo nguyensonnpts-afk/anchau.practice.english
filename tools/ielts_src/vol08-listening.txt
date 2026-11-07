@@ -1,7 +1,6 @@
 === Listening | Vol 8 | Test 1 | 40
 ## Section 1 · Student travel enquiry
 @audio https://drive.google.com/file/d/1KK_SbkXN6QkUwbPYkOIGwQ3iZopUkGLD/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 > Questions 1–10: Complete the form (International Student Travel Agency Enquiry Form). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Name: Sarah Brown.
 f 1 | Date of birth: ___ | 13 march 1988 / 13 march / 13 march 1998 / 13/3/1988 / march 13
 f 2 | Contact tel. no.: ___ | 0903775115 / 0903 775 115
@@ -14,7 +13,7 @@ f 8 | given a ___ with accommodation details | booklet
 f 9 | agreed to take out ___ from the Agency | insurance
 f 10 | told to use an ___ for contacting people | internet cafe / internet café
 ## Section 2 · Bibliostack bookshop
-> Questions 11–15: Label the map of the ground floor. Choose the correct letter, A–H. (Bản đề gốc có sơ đồ; hãy nghe mô tả vị trí.)
+> Questions 11–15: Label the map of the ground floor. Choose the correct letter, A–H.
 L 11 | seating area | ABCDEFGH | C
 L 12 | cushions | ABCDEFGH | F
 L 13 | computer bench | ABCDEFGH | D
@@ -54,7 +53,6 @@ f 40 | The mathematics disorder affects ___ and families of children | teachers
 === Listening | Vol 8 | Test 2 | 40
 ## Section 1 · Lifeguard application
 @audio https://drive.google.com/file/d/19OTVuiQ72HLhTeU9K0le7hXO-Yk8imQw/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 > Questions 1–10: Complete the form (Fearnley Sports Center – Lifeguard Application Form). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Name: Peter Smith.
 f 1 | Home address: 130 South Main Street, Lake ___ | elsinore
 f 2 | Contact number: ___ (cell phone) | 077896245 / 0778 96245 / 077 896 245
@@ -74,10 +72,10 @@ m 13 | The American studies recommended that new entrepreneurs | listen to their
 m 14 | What does Arthur say about his own experience of marketing? | He relied on what he already knew. ;; He hired an expert to take care of it. ;; He realised its importance too late. | B
 m 15 | What does Arthur think is an important quality shared by good leaders? | They are ambitious for their company. ;; They can deal with difficult people. ;; They earn the respect of their workforce. | C
 m 16 | What does Arthur say about taking risks? | He advises being cautious. ;; He favours a long-term view. ;; He believes it is financially advantageous. | A
-> Questions 17–18: Which TWO things does Arthur say people should focus on when developing their business idea? A. making sure the idea is original · B. offering a better deal than competitors · C. being committed to it · D. paying attention to detail · E. fixing realistic prices. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+> Questions 17–18: Which TWO things does Arthur say people should focus on when developing their business idea? A. making sure the idea is original · B. offering a better deal than competitors · C. being committed to it · D. paying attention to detail · E. fixing realistic prices.
 f 17 | Answer 1: ___ | b / c
 f 18 | Answer 2: ___ | c / b
-> Questions 19–20: Which TWO things does Arthur say helped him get his business started? A. family support · B. getting a loan from a bank · C. good business advice · D. a favourable economic climate · E. an effective approach to business. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+> Questions 19–20: Which TWO things does Arthur say helped him get his business started? A. family support · B. getting a loan from a bank · C. good business advice · D. a favourable economic climate · E. an effective approach to business.
 f 19 | Answer 1: ___ | a / e
 f 20 | Answer 2: ___ | e / a
 ## Section 3 · Feedback on the Performance Arts course
@@ -108,7 +106,6 @@ f 40 | Method ii) asking the ___ to get involved | public
 === Listening | Vol 8 | Test 3 | 40
 ## Section 1 · Beach Heads Travel
 @audio https://drive.google.com/file/d/15IpkQsYvK_IIbZYodvGav5-uooGEd2Nk/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 > Questions 1–10: Complete the notes (Beach Heads Travel – Customer Request Sheet). Write ONE WORD AND/OR A NUMBER. Name: Duncan White. Group: three adults and two children.
 f 1 | Date of arrival: ___ (staying for 2 weeks) | 15 october / october 15 / 15th october / october 15th
 f 2 | Week One – Book a ___ on the beach | hotel
@@ -127,7 +124,7 @@ m 12 | Release the bike by using the ___ of your chosen bike | button ;; website
 m 13 | Remove the bike from the ___ (You have ten seconds.) | button ;; website ;; helmet ;; light ;; locker ;; password ;; rack ;; screen ;; sound | G
 m 14 | Make sure you have a ___ before setting off | button ;; website ;; helmet ;; light ;; locker ;; password ;; rack ;; screen ;; sound | C
 m 15 | A ___ will tell you the bike is locked correctly | button ;; website ;; helmet ;; light ;; locker ;; password ;; rack ;; screen ;; sound | D
-> Questions 16–20: Label the plan of the Bicycle Centre. Choose the correct letter, A–H. (Bản đề gốc có sơ đồ; hãy nghe mô tả vị trí.)
+> Questions 16–20: Label the plan of the Bicycle Centre. Choose the correct letter, A–H.
 L 16 | Coffee cart | ABCDEFGH | E
 L 17 | Workshop | ABCDEFGH | F
 L 18 | Lockers | ABCDEFGH | A
@@ -138,7 +135,7 @@ L 20 | Towels | ABCDEFGH | B
 f 21 | Kites produced by a German company can use wind power in any ___ | weather
 f 22 | Sports car produced by a US company uses ___ as a power source | electricity
 f 23 | Ethanol stoves produced in South Africa are safer than paraffin stoves as less likely to ___ | explode
-> Questions 24–25: Who will Sylvia and Greg ask to take part in the survey? A. companies · B. lecturers · C. local residents · D. schoolchildren · E. university students. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+> Questions 24–25: Who will Sylvia and Greg ask to take part in the survey? A. companies · B. lecturers · C. local residents · D. schoolchildren · E. university students.
 f 24 | Answer 1: ___ | c / e
 f 25 | Answer 2: ___ | e / c
 > Questions 26–30: Choose the correct letter, A, B or C.
@@ -162,7 +159,6 @@ f 40 | are less likely to ___ employees | dismiss
 === Listening | Vol 8 | Test 4 | 40
 ## Section 1 · AA Property Rentals
 @audio https://drive.google.com/file/d/1QtQuBoNnMnAwKMHWIS5Gm1z9qYM5B_P8/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 > Questions 1–10: Complete the form (AA Property Rentals). Write ONE WORD AND/OR A NUMBER. Where property required: Birmingham. Name: Kevin Walker.
 f 1 | Address: ___ Road, West Bromwich | 354 forest
 f 2 | Phone: ___ | 07817983602
@@ -214,8 +210,7 @@ m 40 | The 'Vanity' was | used for storing cosmetics. ;; the smallest perfume or
 === Listening | Vol 8 | Test 5 | 40
 ## Section 1 · Arizona travel advice
 @audio https://drive.google.com/file/d/1T_zTvkW_eojp3kjV7EsbtlZnew4XD9Z6/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
-> Questions 1–10: Complete the notes (Arizona – travel advice). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Ví dụ: the temperature will probably be about 40 degrees centigrade during the day.
+> Questions 1–10: Complete the notes (Arizona – travel advice). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Example: the temperature will probably be about 40 degrees centigrade during the day.
 f 1 | pack a ___ | jacket
 f 2 | drive from Tucson along the ___ trails | desert
 f 3 | go to the ___ (highly recommended) | space museum
@@ -227,7 +222,7 @@ f 8 | Susie's parents' phone number: ___ | 9286352271 / 928 635 2271 / 928-635-2
 f 9 | Grand Canyon: tour by ___ (1½ hrs; 7 trips a day) | helicopter
 f 10 | canoe (all day; important to take ___) | sun cream / suncream
 ## Section 2 · The bookshop
-> Questions 11–16: Label the map of the store. Choose the correct letter, A–I. (Bản đề gốc có sơ đồ; hãy nghe mô tả vị trí.)
+> Questions 11–16: Label the map of the store. Choose the correct letter, A–I.
 L 11 | Art books | ABCDEFGHI | I
 L 12 | Gardening books | ABCDEFGHI | H
 L 13 | History books | ABCDEFGHI | D
@@ -267,8 +262,7 @@ f 40 | They are now invented by ___, just for entertainment. | writers
 === Listening | Vol 8 | Test 6 | 40
 ## Section 1 · Shipping of personal belongings
 @audio https://drive.google.com/file/d/1a2r7mX36kuecCrzL1nbcGJlXiO1jEk4e/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
-> Questions 1–10: Complete the notes (Shipping of personal belongings). Write ONE WORD AND/OR A NUMBER. Ví dụ: special boxes for packing are provided free of charge.
+> Questions 1–10: Complete the notes (Shipping of personal belongings). Write ONE WORD AND/OR A NUMBER. Example: special boxes for packing are provided free of charge.
 f 1 | The company will transport some electrical goods, e.g. a computer, and a ___ | bicycle / bike
 f 2 | The company will not transport any single item weighing more than ___ kg | 40
 f 3 | any ___ (for security reasons) or foods | liquids
@@ -287,7 +281,7 @@ m 13 | New Orleans | cook with one particular ingredient ;; learn about food his
 m 14 | Budget Feasts | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | G
 m 15 | Cooking for Two | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | E
 m 16 | Variations on a Theme | cook with one particular ingredient ;; learn about food history ;; have individual cooking lessons ;; make meals for college students ;; prepare healthy meals ;; go on a guided walking tour ;; make time-saving meals ;; go on an afternoon bus tour | A
-> Questions 17–20: Label the plan of the kitchen. Choose the correct letter, A–J. (Bản đề gốc có sơ đồ; hãy nghe mô tả vị trí.)
+> Questions 17–20: Label the plan of the kitchen. Choose the correct letter, A–J.
 L 17 | Oven | ABCDEFGHIJ | H
 L 18 | Refrigerator | ABCDEFGHIJ | F
 L 19 | Demonstration kitchen | ABCDEFGHIJ | D
@@ -300,10 +294,10 @@ m 23 | Ray was surprised to read that the Bitublocks are so | stable. ;; light. 
 m 24 | What do both Adele and Ray say about the manufacture of Bitublocks? | Existing methods are used. ;; Cheap materials are used. ;; Only local materials are used. | A
 m 25 | What insight did Ray get from reading about the hospital building? | how quickly UK building projects are growing ;; how poor UK construction materials are ;; how much material the UK construction industry uses | C
 m 26 | Adele thinks the research into the hospital was included in the article to show | how much recycled material is currently used. ;; ways to improve the levels of recycling. ;; problems caused when using recycled materials. | A
-> Questions 27–28: Which TWO things make Veggieblocks different from Bitublocks? A. They are cheaper to produce. B. They have a more acceptable colour. C. They are simpler to manufacture. D. They have problems with their smell. E. They can be more easily covered. (Gõ một chữ cái mỗi ô.)
+> Questions 27–28: Which TWO things make Veggieblocks different from Bitublocks? A. They are cheaper to produce. B. They have a more acceptable colour. C. They are simpler to manufacture. D. They have problems with their smell. E. They can be more easily covered.
 f 27 | Answer 1: ___ | b / d
 f 28 | Answer 2: ___ | d / b
-> Questions 29–30: Which TWO things about the future of the construction industry do Adele and Ray agree on? A. Architects will be willing to use new materials. B. Bitublocks will have a major impact. C. The industry will change very fast. D. Veggieblocks will become very popular. E. Financial incentives will be an important influence. (Gõ một chữ cái mỗi ô.)
+> Questions 29–30: Which TWO things about the future of the construction industry do Adele and Ray agree on? A. Architects will be willing to use new materials. B. Bitublocks will have a major impact. C. The industry will change very fast. D. Veggieblocks will become very popular. E. Financial incentives will be an important influence.
 f 29 | Answer 1: ___ | a / e
 f 30 | Answer 2: ___ | e / a
 ## Section 4 · The archaeological site of Trimera
@@ -322,7 +316,6 @@ f 40 | Roman Baths (central area): a statue of a Roman ___ was found | emperor
 === Listening | Vol 8 | Test 7 | 40
 ## Section 1 · Travel agency quotation
 @audio https://drive.google.com/file/d/1Lsv1v4r455SG20RW58a5X40KQnf-d6bM/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 > Questions 1–4: Complete the form (Travel Agency – Client Quotation Form). Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Country of destination: Australia. Month of travel: July.
 f 1 | Surname: ___ | thorn / thorne
 f 2 | Length of stay: ___ | five days / 5 days
@@ -332,7 +325,7 @@ f 4 | Type of accommodation: ___ | apartment
 m 5 | According to the client, the children's favourite theme park will be | Movieworld. ;; Dreamworld. ;; Waterworld. | C
 m 6 | At the wildlife sanctuary they will be able to take close-up photographs of | the crocodiles. ;; the kangaroos. ;; the koalas. | A
 m 7 | The client wants the accommodation to be near the | beach. ;; nightclubs. ;; shopping facilities. | C
-> Questions 8–10: Which THREE facilities does the client want at her accommodation? A. childcare · B. playroom · C. parking · D. gym · E. laundry · F. cleaning · G. sauna/spa. (Gõ một chữ cái mỗi ô, thứ tự nào cũng được.)
+> Questions 8–10: Which THREE facilities does the client want at her accommodation? A. childcare · B. playroom · C. parking · D. gym · E. laundry · F. cleaning · G. sauna/spa.
 f 8 | Answer 1: ___ | b / e / f
 f 9 | Answer 2: ___ | e / b / f
 f 10 | Answer 3: ___ | f / b / e
@@ -377,7 +370,6 @@ f 40 | elderly patients want to feel a part of ___ | society
 === Listening | Vol 8 | Test 8 | 40
 ## Section 1 · Problems with a flat
 @audio https://drive.google.com/file/d/1x3-_i1ruV85G9-xp67yC1L2eTPehEhuQ/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 > Questions 1–6: Complete the sentences. Write NO MORE THAN TWO WORDS AND/OR A NUMBER. Elinor has been in the flat for 3 months.
 f 1 | Elinor shares the flat with her ___ | cousin
 f 2 | Elinor must contact the landlord's ___ about the repairs. | service manager
@@ -398,10 +390,10 @@ m 13 | Why does Jane recommend going to the library to buy a ticket? | The ticke
 m 14 | What will history lovers find interesting about Macquarie House? | its gardens ;; its architecture ;; its location | C
 m 15 | The Big Barbecue is different this year because | it will be much larger than before. ;; there will be free entertainment. ;; the food will be cooked by international chefs. | B
 m 16 | What can you do at the Railway Museum? | see a steam engine working ;; dress up in a railway worker's uniform ;; have a meal inside an old train | C
-> Questions 17–18: Which TWO free things does the family ticket on the steam train include? A. an educational talk · B. a children's book · C. a short film · D. a flag · E. a tour of the Ipswich Museum. (Gõ một chữ cái mỗi ô.)
+> Questions 17–18: Which TWO free things does the family ticket on the steam train include? A. an educational talk · B. a children's book · C. a short film · D. a flag · E. a tour of the Ipswich Museum.
 f 17 | Answer 1: ___ | b / d
 f 18 | Answer 2: ___ | d / b
-> Questions 19–20: Which TWO things apply when voting for Our Favourite Place? A. People of any age may vote. B. You may send in your vote by email. C. Only local residents may vote. D. You may vote several times. E. Voting ends at midnight on Saturday. (Gõ một chữ cái mỗi ô.)
+> Questions 19–20: Which TWO things apply when voting for Our Favourite Place? A. People of any age may vote. B. You may send in your vote by email. C. Only local residents may vote. D. You may vote several times. E. Voting ends at midnight on Saturday.
 f 19 | Answer 1: ___ | a / d
 f 20 | Answer 2: ___ | d / a
 ## Section 3 · Presentation and feedback

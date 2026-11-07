@@ -1,8 +1,6 @@
 === Listening | Vol 3 | Test 1 | 40
 ## Section 1 · Manor Farm - fruit picking
 @audio https://drive.google.com/file/d/1kgHsXsUK2cjnYwaECc_OEgSIsOL4lN8r/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
-Section 1: một người đàn ông xin việc hái trái cây mùa hè qua điện thoại với bà chủ nông trại.
 
 Manor Farm - Application Form, Summer fruit picking. Example: Name: Ben Miller.
 > Questions 1–3: Complete the form. Write NO MORE THAN TWO WORDS for each answer. Country of origin: the USA. Age: 20. Visa valid until: November.
@@ -18,7 +16,6 @@ f 8 | Transport: pickers are advised to travel around by ___ | bike / bicycle
 f 9 | Documentation: only pickers with a ___ will be allowed to work | passport
 f 10 | Meals: pickers must bring lunch and a day's supply of ___ | water
 ## Section 2 · Karrara Sports & Leisure Centre
-Section 2: người quản lý trung tâm thể thao mới giới thiệu các tiện ích và gói hội viên. (Bản đề gốc có sơ đồ A–I; ở đây câu 11–16 được chuyển thành chọn vị trí theo lời mô tả trong băng.)
 
 > Questions 11–16: Where is each facility in the Karrara Sports & Leisure Centre? Choose the correct description.
 m 11 | Shop | Between the café and the childcare area ;; Beside the café, directly in front of the entrance ;; In the corner of the swimming pool nearest the changing rooms ;; To the right of the changing rooms | B
@@ -27,14 +24,13 @@ m 13 | Spa | To the right of the changing rooms ;; In the corner of the swimming
 m 14 | Weights room | In the oddly-shaped room close to the administration area ;; Beside the café, directly in front of the entrance ;; To the right of the changing rooms ;; At the café end of the administration block | D
 m 15 | Gym | To the right of the changing rooms ;; In the corner of the swimming pool nearest the changing rooms ;; At the café end of the administration block ;; Between the café and the childcare area | A
 m 16 | Massage room | Beside the café, directly in front of the entrance ;; At the café end of the administration block ;; In the oddly-shaped room close to the administration area ;; To the right of the changing rooms | C
-> Questions 17–18: Choose TWO letters, A–E. Which TWO memberships have a special introductory price? A Off-peak · B Gym and Weights · C Swim Plus · D All-in · E Family Pack. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 17–18: Choose TWO letters, A–E. Which TWO memberships have a special introductory price? A Off-peak · B Gym and Weights · C Swim Plus · D All-in · E Family Pack.
 f 17 | Membership 1 ___ | a / d
 f 18 | Membership 2 ___ | d / a
-> Questions 19–20: Choose TWO letters, A–E. Which TWO free gifts will new members get? A heart monitor · B sports towel · C water bottle · D sports socks · E free massage. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 19–20: Choose TWO letters, A–E. Which TWO free gifts will new members get? A heart monitor · B sports towel · C water bottle · D sports socks · E free massage.
 f 19 | Gift 1 ___ | a / e
 f 20 | Gift 2 ___ | e / a
 ## Section 3 · The Value Survey on House Prices
-Section 3: hai sinh viên kinh tế James và Anna thảo luận một cuộc khảo sát về giá nhà ở New Zealand.
 
 > Questions 21–25: Choose the correct letter A, B or C.
 m 21 | According to James and Anna, the Value Survey measured the cost of houses by calculating | the total price of building a new house. ;; the size of house a typical family can afford. ;; the price of houses compared to average income. | C
@@ -49,7 +45,6 @@ L 28 | Richard Bernard | ABCDEFG | F
 L 29 | Professor Lowndes | ABCDEFG | A
 L 30 | Maria Darling | ABCDEFG | E
 ## Section 4 · Benefits of drama activities in the classroom
-Section 4: bài giảng cho giáo sinh thực tập về việc dùng các hoạt động kịch trong lớp học.
 
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Benefits of using drama activities in the classroom. Child's personal development.
 f 31 | Group participation develops ___ in own ideas | confidence
@@ -69,8 +64,6 @@ f 40 | Can find answers to ___ in history to see why certain decisions were made
 === Listening | Vol 3 | Test 2 | 40
 ## Section 1 · Temporary Patient Record Form
 @audio https://drive.google.com/file/d/1uXsaiLxou0XDOrdlYNn44ok5_EE7QGHJ/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
-Section 1: một người đàn ông nói chuyện với lễ tân rồi với bác sĩ tại một trung tâm y tế.
 
 Temporary Patient Record Form. Example: Name: Peter Smith.
 > Questions 1–10: Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
@@ -88,7 +81,6 @@ f 8 | He is experiencing pain in his ___ at night, which is affecting his sleep 
 f 9 | Stop using the ___ | walking stick / stick
 f 10 | Do regular ___ at home | exercises
 ## Section 2 · Gisborne, New Zealand
-Section 2: người dẫn chương trình radio giới thiệu thành phố Gisborne ở New Zealand.
 
 > Questions 11–16: Choose the correct letter A, B or C.
 m 11 | The announcer says that the main topic of today's talk will be Gisborne's | economy ;; history ;; tourism | C
@@ -103,7 +95,6 @@ L 18 | Mahia Peninsula | ABCDEFG | G
 L 19 | Motu River Rafting | ABCDEFG | F
 L 20 | Eden Woodlands Park | ABCDEFG | A
 ## Section 3 · SUVs (Sports Utility Vehicles)
-Section 3: ba sinh viên marketing thảo luận về xe SUV (xe 4 bánh dẫn động).
 
 > Questions 21–30: Complete the notes. Write NO MORE THAN THREE WORDS for each answer. SUVs: originally made for off-road driving (e.g. in remote areas).
 f 21 | Now widely used in ___ | cities / city / urban areas / towns
@@ -121,7 +112,6 @@ f 28 | Bodywork doesn't crumple in an accident; liable to ___ easily | roll over
 f 29 | Limit use to those people who need them (e.g. ___) | farmers
 f 30 | Raise cost of ___ paid by SUV drivers | insurance
 ## Section 4 · The Influence of Children on Adult Diet
-Section 4: bài giảng của giáo sư đại học về ảnh hưởng của trẻ em lên chế độ ăn của người lớn.
 
 > Questions 31–40: Complete the notes. Write NO MORE THAN TWO WORDS for each answer. Background: obesity is mainly caused by bad eating habits and lack of exercise. National survey conclusions: food consumption rose between 1971 and 2000; Americans in general eat above the recommended amounts.
 f 31 | The age group that eats most fat is ___ | teenagers
@@ -143,8 +133,6 @@ f 40 | Research needed into how our ___ affect our diet | friends
 === Listening | Vol 3 | Test 3 | 40
 ## Section 1 · Wildlife Conservation Society - membership
 @audio https://drive.google.com/file/d/1r8ST-m0iuc9CoE30iEqlmZAAaFooteQ5/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
-Section 1: một người đàn ông gọi điện hỏi về việc đăng ký làm hội viên Hội Bảo tồn Động vật hoang dã.
 
 Wildlife Conservation Society - Application for membership. Example: Caller's name: Michael Jones.
 > Questions 1–10: Complete the form. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer. Address: 21 Beale Street, Leeds.
@@ -161,7 +149,6 @@ f 9 | Reference number: ___ | jyz37 / jyz 37
 > Other requests: an extra information pack and...
 f 10 | ...a ___ | video
 ## Section 2 · Spring Festival
-Section 2: một người phụ nữ của cơ quan du lịch giới thiệu các sự kiện của Lễ hội Mùa xuân trên đài phát thanh.
 
 > Questions 11–18: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Spring Festival.
 f 11 | Firework display (4 September, 9 p.m.): near the ___ | lake
@@ -176,7 +163,6 @@ f 18 | Saturday matinee performance at ___ | 2.30 / 2:30 / 230 / 2.30 pm / 14.30
 m 19 | In the Spring Festival competition, you can win | a family pass to 'Balloons Down Under' ;; a cheque for $200 ;; a flight in a hot air balloon | C
 m 20 | You can get an entry form for the competition from | the radio station ;; the newspaper ;; the Festival's website | B
 ## Section 3 · Archaeology Course
-Section 3: sinh viên Paul trao đổi với giảng viên về khoá học khảo cổ học.
 
 > Questions 21–30: Complete the notes. Write NO MORE THAN THREE WORDS for each answer. Archaeology Course.
 f 21 | Can be combined with any other subject except ___ | classical history
@@ -193,7 +179,6 @@ f 28 | Assessment: by ___ examination | oral
 f 29 | Learning method: 50% lab work, 50% ___ | seminars
 f 30 | Site survey at end of module (the ___ is to be announced later) | location
 ## Section 4 · The effects of our digital world on young people
-Section 4: bài giảng về ảnh hưởng của công nghệ số đối với giới trẻ (ý tưởng của Marc Prensky).
 
 > Questions 31–33: Choose the correct letter A, B or C.
 m 31 | What impact does Marc Prensky believe that digital technology has had on young people? | It has altered their thinking patterns. ;; It has harmed their physical development. ;; It has limited their brain capacity. | A
@@ -211,8 +196,6 @@ L 40 | Computers can't replace educators. | ABC | C
 === Listening | Vol 3 | Test 4 | 40
 ## Section 1 · Student Accommodation
 @audio https://drive.google.com/file/d/1ppRacdQL50_jebVO5cmS5uZNZV7LYL3Y/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
-Section 1: một sinh viên nước ngoài gọi cho văn phòng nhà ở sinh viên của một trường đại học ở Anh để hỏi thông tin. (Bảng gốc bị lỗi bản scan nên một số ô được dựng lại theo băng.)
 
 Example: College accommodation - single room (standard: £3276 per year).
 > Questions 1–10: Complete the table. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
@@ -227,7 +210,6 @@ f 8 | Additional costs: also need to pay for ___ (most properties are far from t
 f 9 | Private renting contract: minimum 6 months; need a ___ | deposit
 f 10 | ...and two ___ | references
 ## Section 2 · Global Museum - audio guide
-Section 2: bài hướng dẫn âm thanh giới thiệu ba triển lãm nổi bật của Bảo tàng Global.
 
 > Questions 11–18: Choose the correct letter A, B or C.
 m 11 | The Heritage Clothes exhibition was put together by | museum staff. ;; local residents. ;; clothing manufacturers. | B
@@ -242,7 +224,6 @@ m 18 | The hands-on activity allows people to | make some biscuits. ;; taste som
 f 19 | The gift shop is located beside the ___ on the ground floor. | information desk
 f 20 | Free ___ are available for visitors' belongings. | lockers
 ## Section 3 · Pacific tapa cloth
-Section 3: sinh viên Helen thảo luận với giảng viên về bài tập nhân học (vải tapa ở Thái Bình Dương).
 
 > Questions 21–24: Choose the correct letter A, B or C.
 m 21 | Pacific tapa cloth is different from other types of tapa cloth because it is | the only tapa made today. ;; better quality than others. ;; put to a wider range of uses. | C
@@ -257,7 +238,6 @@ L 28 | Fiji | ABCD | D
 L 29 | Tahiti | ABCD | A
 L 30 | Tikopia | ABCD | B
 ## Section 4 · Learner persistence
-Section 4: bài nói của một giảng viên đại học về nghiên cứu 'learner persistence' (vì sao một số sinh viên kiên trì học tốt hơn).
 
 > Questions 31–32: Choose the correct letter A, B or C.
 m 31 | Participants in the learner persistence study were all drawn from the same | age group. ;; geographical area. ;; socio-economic level. | B
@@ -276,7 +256,6 @@ f 40 | Outside office hours, offer ___ help | online
 === Listening | Vol 3 | Test 5 | 40
 ## Section 1 · Wincham Farm residential centre
 @audio https://drive.google.com/file/d/1gw_p1YDnrTiEssJdBzXI7hxTMP9Bq1m-/view
-Section 1: cuộc gọi hỏi về Wincham Farm, một trung tâm giáo dục nội trú gắn với nông trại hữu cơ. Nghe một lần như thi thật.
 
 Example: The man wants to visit the centre with colleagues (C).
 > Questions 1–8: Choose the correct letter A, B or C.
@@ -293,7 +272,6 @@ f 9 | ___ Rd, near Sherborne (road name) | cotehele
 f 10 | Postcode: ___ | sh12 1lq / sh121lq
 ## Section 2 · Vacation jobs survey
 @audio https://drive.google.com/file/d/1JYT6unwV-ECrTFV3HXWS3NOyTf1uT88R/view
-Section 2: chương trình trên đài sinh viên về kết quả khảo sát các công việc làm thêm kỳ nghỉ hè.
 
 > Questions 11–16: Complete the table. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
 f 11 | Stocktaking - main advantage: ___ | travelling / traveling
@@ -309,7 +287,6 @@ m 19 | The job's most interesting aspect was | learning about the environment ;;
 m 20 | Peter has decided that next vacation he | won't take a job. ;; will work at the zoo. ;; will work elsewhere. | A
 ## Section 3 · Study syndicates
 @audio https://drive.google.com/file/d/1pgAWKZyvFzke2Lphfuy0MRixKe9lLYZ6/view
-Section 3: ba sinh viên địa chất (Andy, Bob và Helen) bàn về việc lập nhóm tự học cho kỳ thi.
 
 > Questions 21–22: Complete the notes. Write NO MORE THAN THREE WORDS for each answer. Reasons for having Study Syndicates: teaching one another is a good way to learn; shared reading means fuller notes.
 f 21 | It gives the opportunity to ___ | share ideas
@@ -326,7 +303,6 @@ f 29 | Sources of information: the ___ | internet
 f 30 | For the presentations, use: overhead projector, whiteboard, ___ | copies of notes / copies / handouts / photocopies
 ## Section 4 · Health on the night shift
 @audio https://drive.google.com/file/d/1D-Y--arPWdyIofiAkHjl9LHww6d6oJ23/view
-Section 4: bài nói về tác động sức khoẻ của việc làm ca đêm.
 
 > Questions 31–40: Complete the notes. Write NO MORE THAN THREE WORDS for each answer. Background: need to examine effects of changing work and sleep habits; US and British research found these lead to health problems.
 f 31 | ___ number of night workers because of 24-hour shopping/services | increased / increasing / growing
@@ -347,7 +323,6 @@ f 40 | ...other relationships, e.g. with ___ (eventually, for individuals: socia
 === Listening | Vol 3 | Test 6 | 40
 ## Section 1 · Accommodation request
 @audio https://drive.google.com/file/d/1AR_PqWbUGTPJXUGGaoeNukwc3a348wpE/view
-Section 1: một phụ nữ nhờ nhân viên môi giới tìm nhà thuê. Nghe một lần như thi thật.
 
 Accommodation request. Example: Name: Anna Black; type of accommodation: a house.
 > Questions 1–10: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
@@ -365,7 +340,6 @@ f 9 | To check: is there a ___ in the house? | telephone / phone
 f 10 | To check: is there a ___ nearby? | bus stop
 ## Section 2 · Information for fire wardens
 @audio https://drive.google.com/file/d/14zXqQFEfAr1TJ8DNHhxf0QOcGeqhORKf/view
-Section 2: quản lý công ty nói với nhân viên về quy trình khi có hỏa hoạn.
 
 > Questions 11–14: Choose the correct letter A, B or C.
 m 11 | The company is having this meeting about fire procedures because | employees did badly in the last annual fire drill. ;; there have been changes in the building layout. ;; new staff have joined the company. | B
@@ -381,7 +355,6 @@ L 19 | checking that staff are aware of evacuation points | ABC | A
 L 20 | checking that flammable liquids are properly stored | ABC | C
 ## Section 3 · Pigeons
 @audio https://drive.google.com/file/d/1-bbCz-m9aiL7Ke35Ve1EERL45tGzGpad/view
-Section 3: hai sinh viên Môi trường học (Jennifer và Adam) so sánh tài liệu nghiên cứu về chim bồ câu.
 
 > Questions 21–25: What comments do the speakers make about each of the following types of pigeon? Choose FIVE answers from the box. A eats meat · B communicates with its wings · C is found in a variety of locations · D feeds on a particular type of plant · E sings to attract a mate · F is endangered · G is brightly coloured · H avoids the ground
 L 21 | Australian crested pigeon | ABCDEFGH | B
@@ -397,7 +370,6 @@ m 29 | What method of pigeon control was most successful in the city of Basel? |
 m 30 | Adam and Jennifer decide to do some more research on how pigeons can | affect our health. ;; damage buildings. ;; cause local flooding. | A
 ## Section 4 · The Lontar Palm
 @audio https://drive.google.com/file/d/1t5DdP8W4ibmuN_tAMvWjp5l5y2W7Niat/view
-Section 4: bài thuyết trình của sinh viên về cây cọ Lontar ở đảo Roti, Indonesia.
 
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. The tree: grows on Roti, an Indonesian island; is known as the 'tree of life'; produces delicious juice.
 f 31 | Has a fruit resembling a ___ (female trees only) | coconut
@@ -417,7 +389,6 @@ f 40 | The trunk is used in the construction of ___ | houses / house
 === Listening | Vol 3 | Test 7 | 40
 ## Section 1 · Newspaper Photo Reprint Request
 @audio https://drive.google.com/file/d/1layp5ukuFg5PKcfqCTJR7a2r3lHQkBSq/view
-Section 1: một phụ nữ gọi cho nhân viên báo địa phương để xin in lại ảnh con trai đăng trên báo. Nghe một lần như thi thật.
 
 Newspaper Photo Reprint Request Form. Example: Newspaper date: March 10.
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
@@ -434,7 +405,6 @@ f 9 | Delivery method: ___ | mail / post
 f 10 | Reading frequency: every ___ | day
 ## Section 2 · Training courses for the hospitality industry
 @audio https://drive.google.com/file/d/1s8zjsedT-NMOQmnev6CEIKfO4K3eWlfJ/view
-Section 2: người tổ chức ngày thông tin giới thiệu các khoá đào tạo cho nhân viên ngành khách sạn - nhà hàng.
 
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | What has the speaker enjoyed most about working in hospitality? | the range of jobs available ;; the range of countries he has visited ;; the range of people he has worked with | C
@@ -442,7 +412,7 @@ m 12 | What point does the speaker make about kitchen assistants? | the long hou
 m 13 | According to the speaker, which job is sometimes undervalued? | porter ;; cleaner ;; dishwasher | A
 m 14 | Experience in reception may help employees | to learn foreign languages ;; to manage difficult situations successfully ;; to get a better job eventually | C
 m 15 | The speaker says that interview skills | are particularly important in hospitality ;; are easy to learn if you have some practice ;; are understood better now than in the past | B
-> Questions 16–20: The workshops are held in classrooms around the college. (Bản đề gốc có sơ đồ trường A–J; ở đây các câu 16–20 được chuyển thành chọn vị trí theo lời chỉ đường trong băng. Người nói đang đứng ở Hall, phía dưới sơ đồ.) Where is each workshop?
+> Questions 16–20: The workshops are held in classrooms around the college. Where is each workshop?
 m 16 | Restaurant Service | The classroom immediately next door to the office (turn right out of the hall) ;; The left-hand classroom in the block of two across the square ;; The single large classroom on the western side of the square ;; The classroom at the eastern end of the long block on the northern side | A
 m 17 | Kitchen Hands | The single large classroom on the western side of the square ;; The classroom immediately next door to the office (turn right out of the hall) ;; The left-hand classroom in the block of two across the square ;; The classroom opposite the first classroom on the left, north of the office | C
 m 18 | Porters, Cleaners, Dishwashers | The classroom at the eastern end of the long block on the northern side ;; The left-hand classroom in the block of two across the square ;; The classroom immediately next door to the office ;; The single large classroom on the western side of the square | A
@@ -450,7 +420,6 @@ m 19 | Receptionists | The single large classroom on the western side of the squ
 m 20 | Interview Skills | The classroom directly opposite the first classroom on the left, north of the office ;; The single large classroom on the western side of the square ;; The classroom immediately next door to the office ;; The classroom at the eastern end of the long block on the northern side | B
 ## Section 3 · Battery-powered motorbikes
 @audio https://drive.google.com/file/d/1iSmfrP-nFrWwH9Z-oa3rK3I0iWpG-psW/view
-Section 3: hai sinh viên kỹ thuật chuẩn bị bài thuyết trình về xe máy chạy bằng pin.
 
 > Questions 21–26: Choose the correct letter A, B or C.
 m 21 | The students are preparing the presentation | as part of their final assessment. ;; to attract potential future students. ;; to share their work with their classmates. | B
@@ -466,7 +435,6 @@ L 29 | doing the sketches | ABCDEF | E
 L 30 | finding sponsors | ABCDEF | C
 ## Section 4 · The development of the telescope
 @audio https://drive.google.com/file/d/1zcOWTzzocj3usNcD7prg8EUiWQxzL1UQ/view
-Section 4: bài giảng đại học về sự phát triển ban đầu của kính thiên văn.
 
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. The development of the telescope. Roger Bacon (1200s):
 f 31 | His invention assisted ___ with sight problems when they were reading | researchers
@@ -486,7 +454,6 @@ f 40 | The problem was solved by attaching it to a ___ | building
 === Listening | Vol 3 | Test 8 | 40
 ## Section 1 · Theatre booking for Pirates
 @audio https://drive.google.com/file/d/1BMPbrXoWoePlC_XkAdY_SPzIfKQCvG27/view
-Section 1: một phụ nữ gọi điện đặt vé xem vở kịch Pirates tại nhà hát. Nghe một lần như thi thật.
 
 Theatre booking. Example: Booking for Pirates. Date: 8th December (afternoon).
 > Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. Contact number: 07796892326.
@@ -502,7 +469,6 @@ f 9 | Meals: several people are ___ | vegetarian
 f 10 | Food: ___ (cheese and tomato) | pizza / pizzas
 ## Section 2 · Singing in a choir
 @audio https://drive.google.com/file/d/1y9cOC7GNwRgIHVrbBLiD_k7BBcwkUGkF/view
-Section 2: chương trình phát thanh về việc tham gia dàn hợp xướng.
 
 > Questions 11–15: Which choir does each of the following statements apply to? Write the correct letter A, B or C. A Mitchelstown Choir · B The Blackvale Male Voice Choir · C The Caroline Singers
 L 11 | They specialise in a particular type of music. | ABC | C
@@ -518,7 +484,6 @@ m 19 | When does the choir have its rehearsals? | before work ;; at lunch-time ;
 m 20 | How does the company support the choir? | by providing concert clothes ;; by funding social events ;; by paying for singing classes | C
 ## Section 3 · Tourism research
 @audio https://drive.google.com/file/d/1UbGu3jjJIrTZHIcJII5y1NvlQ2spc6-6/view
-Section 3: hai sinh viên Eva và Mike thảo luận dự án nghiên cứu về du lịch.
 
 > Questions 21–26: Choose the correct letter A, B or C.
 m 21 | Mike suggests they use the word area to mean | geographical location. ;; tourist site. ;; research field. | A
@@ -527,14 +492,13 @@ m 23 | Why should they carry out about 200 surveys? | to provide information abo
 m 24 | Which groups of people do they decide to interview? | domestic tourists and local residents ;; local residents and international tourists ;; international and domestic tourists | C
 m 25 | Mike expresses concern at having to ask about | the amount of money a person has spent ;; a person's age ;; a person's occupation | B
 m 26 | Which form will their results be presented in? | a table ;; a pie chart ;; a graph | B
-> Questions 27–30: Which tourist attraction will be highlighted in each of the following countries? Choose FOUR answers from the box. A ancient buildings · B contemporary art gallery · C museums displaying traditional objects · D food festival · E national parks · F theatre performances · G traditional dances. (Thứ tự A–G theo đề gốc bị lẫn khi scan; bảng chữ cái đã được đối chiếu với đáp án và băng nghe.)
+> Questions 27–30: Which tourist attraction will be highlighted in each of the following countries? Choose FOUR answers from the box. A ancient buildings · B contemporary art gallery · C museums displaying traditional objects · D food festival · E national parks · F theatre performances · G traditional dances.
 L 27 | Mexico | ABCDEFG | D
 L 28 | Greece | ABCDEFG | A
 L 29 | Britain | ABCDEFG | F
 L 30 | India | ABCDEFG | G
 ## Section 4 · Working as a patent attorney
 @audio https://drive.google.com/file/d/1I-IzZ-pJP_QjIgU26Uja4MlXf9RhysM6/view
-Section 4: bài nói của một cựu sinh viên về nghề luật sư sáng chế (patent attorney).
 
 > Questions 31–40: Complete the notes. Write NO MORE THAN TWO WORDS for each answer. Working as a Patent Attorney. Getting a patent:
 f 31 | Nowadays most patents are applied for by a ___ | company
@@ -554,7 +518,6 @@ f 40 | ___ departments | government
 === Listening | Vol 3 | Test 9 | 40
 ## Section 1 · Party reservation
 @audio https://drive.google.com/file/d/1ShX4z1NGw8Bg2OW-52eGGHkbUfAgJa7q/view
-Section 1: một phụ nữ gọi điện đến nhà hàng để đặt phòng tổ chức tiệc sinh nhật. Nghe một lần như thi thật.
 
 Party Reservation. Example: Number of guests for the party: 60 people.
 > Questions 1–5: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
@@ -571,7 +534,6 @@ f 9 | Book a ___ to take guests to the Forest Hotel | taxi
 f 10 | Phone number: ___ | 07749 132760 / 07749132760
 ## Section 2 · Vacuum cleaner museum
 @audio https://drive.google.com/file/d/1cCLrbGKK0bWdXZn6XFQTvOQ6BtCjX4mm/view
-Section 2: bản tin phát thanh về một bảo tàng mới chuyên về máy hút bụi.
 
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | When did James Brown start collecting vacuum cleaners? | at 4 years old ;; at 8 years old ;; at 30 years old | B
@@ -587,7 +549,6 @@ L 19 | Electrolux Triple X | ABCDEFG | G
 L 20 | Kirby | ABCDEFG | A
 ## Section 3 · The role of health visitors
 @audio https://drive.google.com/file/d/1OsADSwCirlPYuxx_YJ6uNXhZQANPgBH4/view
-Section 3: cô sinh viên Lisa thảo luận với giáo sư Dr Harris về đề tài nghiên cứu vai trò của nhân viên y tế thăm hộ gia đình (health visitors).
 
 > Questions 21–25: Choose the correct letter A, B or C.
 m 21 | In the context of Lisa's research project, Dr Harris suggests she should | re-think the focus of her research. ;; be prepared to be flexible. ;; narrow the scope. | B
@@ -603,7 +564,6 @@ L 29 | The Future of Health Visiting | ABCDEFG | B
 L 30 | Resources for Health Visitors | ABCDEFG | E
 ## Section 4 · The sense of smell
 @audio https://drive.google.com/file/d/1ctQS85CFM-xeDHDpl4fM357SS9FzqEeO/view
-Section 4: bài giảng cho sinh viên tâm lý học về khứu giác của con người.
 
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Course on the Sense of Smell - Background: people's sense of smell is not as developed as that of some animals; there is a misconception that it is weak; in fact subtle smells have a great impact on people's mood.
 f 31 | The animal with the most accurate sense of smell is the ___ | bear
@@ -622,7 +582,6 @@ f 40 | A chef lost her sense of smell but regained it by smelling ___ on a daily
 === Listening | Vol 3 | Test 10 | 40
 ## Section 1 · Film Club
 @audio https://drive.google.com/file/d/1_5vXJ6MAZOR7qEGUFQ50F8ZJ_GKwpHGZ/view
-Section 1: một thiếu niên hỏi thông tin về việc tham gia câu lạc bộ phim tại rạp chiếu. Nghe một lần như thi thật.
 
 Film Club - Membership information. Club meets every 2 weeks.
 > Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
@@ -641,7 +600,6 @@ f 9 | Type of film: a ___ | comedy
 f 10 | Followed by a ___ by the director | talk
 ## Section 2 · extrahands.com
 @audio https://drive.google.com/file/d/1Gw86lGchcFVMD3uXR_g2YzgxorFPSciN/view
-Section 2: chương trình phát thanh, Stephen nói về tổ chức tình nguyện extrahands.com.
 
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | Stephen says the founders of extrahands.com originally needed help in | preparing their fields for planting. ;; harvesting their organic crops. ;; constructing their farm buildings. | A
@@ -657,7 +615,6 @@ L 19 | USA | ABCDEFG | B
 L 20 | Italy | ABCDEFG | C
 ## Section 3 · Song-writing course for drama students
 @audio https://drive.google.com/file/d/1RSKAOofnBiKbuT1icyLiwSU59fwmPkim/view
-Section 3: hai sinh viên kịch Charles và Lorna thảo luận về khoá học viết nhạc.
 
 > Questions 21–25: Choose the correct letter A, B or C.
 m 21 | What problem is Lorna having with her report? | listing the references ;; keeping to the word limit ;; writing the evaluation | B
@@ -673,7 +630,6 @@ L 29 | Kevin Gray | ABCDEFGH | H
 L 30 | Dorothy Thomas | ABCDEFGH | C
 ## Section 4 · Office design
 @audio https://drive.google.com/file/d/1L9_-3MViRGPvdzrQw2Q_SUZFgwTsRoAU/view
-Section 4: bài nói về nghiên cứu thiết kế không gian văn phòng.
 
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Office Design. Early 20th century:
 f 31 | Workers employed to do ___ arranged in rows | typing

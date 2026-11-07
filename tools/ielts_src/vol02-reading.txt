@@ -66,7 +66,7 @@ f 20 | The twin research was used in medical application as early as the year __
 f 21 | Research field 1 ___ | a / e / f
 f 22 | Research field 2 ___ | a / e / f
 f 23 | Research field 3 ___ | a / e / f
-> Questions 24–26: Choose THREE results that had been verified in this passage. A Non-identical twins come from different eggs · B The genetic relation between identical twins is closer than between non-identical ones · C Vitamin C has an evident effect on a cold · D Genetic influence on smoking is superior to the environment's · E If a pregnant woman eats too much sweet food it would lead to skin disease · F Hair loss has been found to be connected with skin problems. (Write three letters, in any order.) (Bản gốc có đáp án A, B, D.)
+> Questions 24–26: Choose THREE results that had been verified in this passage. A Non-identical twins come from different eggs · B The genetic relation between identical twins is closer than between non-identical ones · C Vitamin C has an evident effect on a cold · D Genetic influence on smoking is superior to the environment's · E If a pregnant woman eats too much sweet food it would lead to skin disease · F Hair loss has been found to be connected with skin problems. (Write three letters, in any order.)
 f 24 | Result 1 ___ | a / b / d
 f 25 | Result 2 ___ | a / b / d
 f 26 | Result 3 ___ | a / b / d

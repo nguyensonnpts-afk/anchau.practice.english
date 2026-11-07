@@ -273,7 +273,9 @@ button.card .mode-ico{--mc:var(--c-read);--mcs:var(--c-read-soft);background:var
 .grid>button.card:nth-child(4) .mode-ico{--mc:var(--c-speak);--mcs:var(--c-speak-soft)}
 .grid>button.card:nth-child(5) .mode-ico{--mc:var(--accent);--mcs:var(--accent-soft)}
 @media (max-width:1300px){.who .nm{display:none}header.top .logo span{display:none}}
-nav.tabs button[data-sk=reading]{--tc:var(--c-read)}nav.tabs button[data-sk=listening]{--tc:var(--c-listen)}nav.tabs button[data-sk=full]{--tc:var(--accent)}
+:root.tch .wrap{max-width:1240px}:root.tch header.top .logo span{display:none}:root.tch nav.tabs button{padding:8px 9px}
+@media (max-width:1180px){:root.tch .who .tag{display:none}}
+nav.tabs button[data-sk=reading],nav.tabs button[data-sk=t-reading]{--tc:var(--c-read)}nav.tabs button[data-sk=listening],nav.tabs button[data-sk=t-listening]{--tc:var(--c-listen)}nav.tabs button[data-sk=full],nav.tabs button[data-sk=t-full]{--tc:var(--accent)}nav.tabs button[data-sk=t-speaking]{--tc:var(--c-speak)}nav.tabs button[data-sk=t-writing]{--tc:var(--c-write)}
 /* vol sections */
 .volhead{display:flex;align-items:baseline;gap:12px;margin:30px 0 12px}
 .volhead h2{margin:0}
@@ -447,7 +449,7 @@ mark.hl{background:color-mix(in srgb,var(--mark) 70%,transparent);color:inherit;
 /* stats + reports + install */
 .gx2{grid-template-columns:repeat(2,minmax(0,1fr))}.gx4{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:860px){.gx2{grid-template-columns:1fr}.gx4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:641px){nav.tabs{flex-wrap:nowrap}nav.tabs button{padding:8px 10px;white-space:nowrap}}
+@media (min-width:641px){header.top .wrap{flex-wrap:nowrap}nav.tabs{flex-wrap:nowrap;min-width:0;overflow-x:auto;scrollbar-width:none}nav.tabs::-webkit-scrollbar{display:none}nav.tabs button{padding:8px 10px;white-space:nowrap}}
 .rep-link{color:var(--muted);font-size:12.5px;text-decoration:underline dotted;text-underline-offset:3px}
 .rep-link:hover{color:var(--bad)}
 .install{display:flex;align-items:center;gap:14px;padding:14px 18px;margin:14px 0 4px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(100deg,var(--brand-soft),var(--card) 70%)}
@@ -699,6 +701,9 @@ function bestPct(sid,testId){const rs=P(sid).results.filter(r=>r.testId===testId
    ========================================================= */
 function myAssignments(sid){return D.assignments.filter(a=>a.to==='all'||(a.to||[]).includes(sid))}
 const KLAB={test:'Đề thi',set:'Bộ từ',writing:'Writing',speaking:'Speaking',full:'Thi 4 kỹ năng'};
+function asgLab(a){if(a.kind==='test'){const t=testById(a.ref);return t?(t.type==='thpt'?'Phổ thông':(t.skill||'Reading')):'Đề thi'}return KLAB[a.kind]}
+const ASK=()=>[['L','Listening'],['R','Reading'],['W','Writing'],['S','Speaking'],['full','Thi 4 kỹ năng'],['set','Bộ từ'],...(allTests().some(t=>t.type==='thpt')?[['thpt','Phổ thông']]:[])];
+const ASK_DATA={L:'test',R:'test',thpt:'test',W:'writing',S:'speaking',set:'set',full:'full'};
 function asgItem(a){if(a.kind==='full'){const f=fullById(a.ref);return f&&{title:'Thi 4 kỹ năng · '+f.title}}if(a.kind==='test')return testById(a.ref);if(a.kind==='set')return setById(a.ref);if(a.kind==='writing'){const w=wById(a.ref);return w&&{title:'Writing Task '+w.task+' · '+w.title}}const t=spTopicById(a.ref);return t&&{title:'Speaking · '+(t.cue||t.title)}}
 function asgOpen(a){if(a.kind==='full')return `fullStart('${a.ref}')`;if(a.kind==='test')return `go('test',{id:'${a.ref}'})`;if(a.kind==='set')return `go('set',{id:'${a.ref}'})`;if(a.kind==='writing')return `go('writing');wStart('${a.ref}')`;return `go('speaking');skStart('${a.ref}')`}
 function assignDone(a,sid){
@@ -741,13 +746,13 @@ function testBack(t){return t.type==='ielts'?(t.skill==='Listening'?'listening':
 const BACKLAB={reading:'Reading',listening:'Listening',exam:'Phổ thông'};
 function header(){
  const el=$('#hdr');
- if(!U){el.innerHTML=`<div class="wrap"><div class="logo"><b>A</b>${h(D.settings.className)}</div>${THM_BTN()}</div>`;return}
+ if(!U){document.documentElement.classList.remove('tch');el.innerHTML=`<div class="wrap"><div class="logo"><b>A</b>${h(D.settings.className)}</div>${THM_BTN()}</div>`;return}
  const st=[['home','Trang chủ'],['vocab','Luyện từ'],['reading','Reading'],['listening','Listening'],['speaking','Speaking'],['writing','Writing'],['full','Thi 4 kỹ năng'],...(allTests().some(t=>t.type==='thpt')?[['exam','Phổ thông']]:[]),['history','Kết quả']];
- const tt=[['t-students','Học viên'],['t-grade','Chấm bài'],['t-stats','Thống kê'],['t-sets','Bộ từ'],['t-tests','Đề thi'],['t-full','Thi 4 kỹ năng'],['t-sw','Nói/Viết'],['t-assign','Giao bài'],['t-data','Dữ liệu']];
- const tabs=U.role==='teacher'?tt:st;
+ const tt=[['t-students','Học viên'],['t-grade','Chấm bài'],['t-stats','Thống kê'],['t-sets','Bộ từ'],['t-listening','Listening'],['t-reading','Reading'],['t-writing','Writing'],['t-speaking','Speaking'],['t-full','Thi 4 kỹ năng'],...(allTests().some(t=>t.type==='thpt')?[['t-exam','Phổ thông']]:[]),['t-assign','Giao bài'],['t-data','Dữ liệu']];
+ const tabs=U.role==='teacher'?tt:st;document.documentElement.classList.toggle('tch',U.role==='teacher');
  const cur=R.v;
  const fx=(typeof WR!=='undefined'&&WR&&WR.full)||(typeof SK!=='undefined'&&SK&&SK.full);
- const isOn=k=>(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student'&&!R.tf)||(k==='t-full'&&(cur==='t-fullrun'||!!R.tf))||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review'&&!R.tf);
+ const isOn=k=>(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student'&&!R.tf)||(k==='t-full'&&(cur==='t-fullrun'||!!R.tf))||(cur==='t-testedit'&&k===tTestBack())||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review'&&!R.tf);
  el.innerHTML=`<div class="wrap"><div class="logo" onclick="go('${tabs[0][0]}')"><b>A</b><span>${h(D.settings.className)}</span></div>
  <nav class="tabs">${tabs.map(([k,l])=>`<button class="${isOn(k)?'on':''}" data-sk="${k}" onclick="go('${k}')">${l}${isOn(k)?'<i class="tl"></i>':''}</button>`).join('')}</nav>
  <div class="who">${U.role==='teacher'?'<span class="tag acc">Giáo viên</span>':`<span class="nm">${h(U.name)}</span><span class="tag gray">${h(U.code)}</span>`}${THM_BTN()}<button class="thm" onclick="logout()" title="Đăng xuất" aria-label="Đăng xuất"><svg viewBox="0 0 24 24"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M14 8l4 4-4 4M18 12H8"/></svg></button></div></div>`;
@@ -896,7 +901,7 @@ VIEWS.home=()=>{
  </div>
  <div class="grid g2 mt2">
   <div class="card"><h2>Bài được giao</h2>${asg.length?asg.map(a=>{const it=asgItem(a);if(!it)return'';const done=assignDone(a,U.id);const late=a.due&&!done&&a.due<today();
-   return `<div class="list-item"><div><div><b>${h(it.title)}</b></div><div class="small muted">${KLAB[a.kind]}${a.due?' · Hạn '+fdate(a.due):''}${a.note?' · '+h(a.note):''}</div></div>
+   return `<div class="list-item"><div><div><b>${h(it.title)}</b></div><div class="small muted">${asgLab(a)}${a.due?' · Hạn '+fdate(a.due):''}${a.note?' · '+h(a.note):''}</div></div>
    <div class="row">${done?'<span class="tag ok">Đã xong</span>':late?'<span class="tag bad">Quá hạn</span>':'<span class="tag warn">Chưa làm</span>'}
    <button class="btn sm ${done?'':'pri'}" onclick="${asgOpen(a)}">${a.kind==='set'?'Học':'Làm bài'}</button></div></div>`}).join(''):'<div class="empty">Chưa có bài nào được giao.</div>'}</div>
   <div class="card"><h2>Học nhanh</h2>
@@ -1475,12 +1480,16 @@ VIEWS['t-grade']=()=>{
 };
 
 /* --- Giáo viên: soạn đề Speaking/Writing --- */
-VIEWS['t-sw']=()=>`<h1>Đề Speaking & Writing</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự thêm.</p>
- <div class="grid g2">
- <div class="card"><div class="row between"><h2>Writing</h2><button class="btn sm pri" onclick="wEditor()">+ Thêm đề</button></div>${allW().map(w=>`<div class="list-item"><div><span class="tag ${w.task===1?'acc':''}">Task ${w.task}</span> <b class="small">${h(w.title)}</b></div>${w.builtin?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="wEditor('${w.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('wprompts','${w.id}')">Xóa</button></div>`}</div>`).join('')}</div>
- <div class="card"><div class="row between"><h2>Speaking</h2><div class="row"><button class="btn sm pri" onclick="spEditor(1)">+ Part 1</button><button class="btn sm pri" onclick="spEditor(2)">+ Part 2&3</button></div></div>
- ${allP1().map(t=>`<div class="list-item"><div><span class="tag">P1</span> <b class="small">${h(t.title)}</b></div>${SP1.includes(t)?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="spEditor(1,'${t.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sp1','${t.id}')">Xóa</button></div>`}</div>`).join('')}
- ${allP2().map(t=>`<div class="list-item"><div><span class="tag acc">P2</span> <b class="small">${h(t.cue)}</b></div>${SP2.includes(t)?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="spEditor(2,'${t.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sp2','${t.id}')">Xóa</button></div>`}</div>`).join('')}</div></div>`;
+const wRow=w=>`<div class="list-item"><div><b class="small">${h(w.title)}</b><div class="small muted">${w.minutes||(w.task===1?20:40)} phút · tối thiểu ${w.min||(w.task===1?150:250)} từ</div></div>${w.builtin?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="wEditor('${w.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('wprompts','${w.id}')">Xóa</button></div>`}</div>`;
+VIEWS['t-writing']=()=>{const t1=allW().filter(w=>w.task===1),t2=allW().filter(w=>w.task===2);
+ return `<div class="row between"><div><h1>IELTS Writing</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự thêm, chia theo Task 1 và Task 2.</p></div><button class="btn pri" onclick="wEditor()">+ Thêm đề Writing</button></div>
+ <div class="volhead"><h2>Task 1</h2><span class="vm">${t1.length} đề</span></div><div class="card">${t1.map(wRow).join('')||'<div class="empty">Chưa có đề.</div>'}</div>
+ <div class="volhead"><h2>Task 2</h2><span class="vm">${t2.length} đề</span></div><div class="card">${t2.map(wRow).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`};
+VIEWS['t-speaking']=()=>{const p1=allP1(),p2=allP2();
+ return `<div class="row between"><div><h1>IELTS Speaking</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự thêm, chia theo Part 1 và Part 2 & 3.</p></div><div class="row"><button class="btn pri" onclick="spEditor(1)">+ Part 1</button><button class="btn pri" onclick="spEditor(2)">+ Part 2 & 3</button></div></div>
+ <div class="volhead"><h2>Part 1</h2><span class="vm">${p1.length} chủ đề</span></div><div class="card">${p1.map(t=>`<div class="list-item"><div><b class="small">${h(t.title)}</b><div class="small muted">${t.qs.length} câu hỏi</div></div>${SP1.includes(t)?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="spEditor(1,'${t.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sp1','${t.id}')">Xóa</button></div>`}</div>`).join('')||'<div class="empty">Chưa có chủ đề.</div>'}</div>
+ <div class="volhead"><h2>Part 2 & 3</h2><span class="vm">${p2.length} đề</span></div><div class="card">${p2.map(t=>`<div class="list-item"><div><b class="small">${h(t.cue)}</b><div class="small muted">${t.p3.length} câu Part 3</div></div>${SP2.includes(t)?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="spEditor(2,'${t.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sp2','${t.id}')">Xóa</button></div>`}</div>`).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`};
+VIEWS['t-sw']=()=>VIEWS['t-writing']();
 function wEditor(id){const w=id?wById(id):null;modal(`<h2>${w?'Sửa':'Thêm'} đề Writing</h2>
  <div class="grid g2" style="gap:10px;grid-template-columns:1fr 1fr"><div><label class="f">Task</label><select id="we-t"><option value="1" ${w&&w.task===1?'selected':''}>Task 1</option><option value="2" ${!w||w.task===2?'selected':''}>Task 2</option></select></div><div><label class="f">Số phút</label><input type="number" id="we-m" value="${w?w.minutes:40}"></div></div>
  <label class="f">Tên ngắn</label><input type="text" id="we-n" value="${h(w?w.title:'')}">
@@ -1811,9 +1820,24 @@ function saveSet(id){
 function delItem(k,id){if(!confirm('Xóa mục này?'))return;D[k]=(D[k]||[]).filter(x=>x.id!==id);D.deleted=D.deleted||{};(D.deleted[k]=D.deleted[k]||[]).push(id);if(k!=='assignments')D.assignments=D.assignments.filter(a=>a.ref!==id);save();render()}
 
 /* --- Đề thi --- */
-VIEWS['t-tests']=()=>`<div class="row between"><div><h1>Đề thi</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự soạn.</p></div><button class="btn pri" onclick="go('t-testedit')">+ Soạn đề mới</button></div>
- ${['ielts','thpt'].map(tp=>`<h2 class="mt2">${tp==='ielts'?'IELTS':'Tiếng Anh phổ thông'}</h2><div class="card">${allTests().filter(t=>t.type===tp).map(t=>`<div class="list-item"><div><b>${h(t.title)}</b> <span class="tag ${t.builtin?'gray':''}">${t.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${h(t.skill||'')}${t.vol?' · '+h(t.vol):''} · ${flatQs(t).length} câu · ${t.minutes} phút</div></div>
- <div class="row">${t.builtin?'':`<button class="btn sm" onclick="go('t-testedit',{id:'${t.id}'})">Sửa</button><button class="btn sm danger" onclick="delItem('tests','${t.id}')">Xóa</button>`}</div></div>`).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`).join('')}`;
+const TVOL={Reading:'all',Listening:'all'};
+function tTestRow(t){return `<div class="list-item"><div><b>${h(t.title)}</b> <span class="tag ${t.builtin?'gray':''}">${t.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${flatQs(t).length} câu · ${t.minutes} phút</div></div>
+ <div class="row">${t.builtin?'':`<button class="btn sm" onclick="go('t-testedit',{id:'${t.id}'})">Sửa</button><button class="btn sm danger" onclick="delItem('tests','${t.id}')">Xóa</button>`}</div></div>`}
+function tSkillTests(sk){
+ const all=allTests().filter(t=>t.type==='ielts'&&(t.skill||'Reading')===sk);
+ const vols=[...new Set(all.map(t=>t.vol||'Đề của giáo viên'))].sort(volSort);
+ if(TVOL[sk]!=='all'&&!vols.includes(TVOL[sk]))TVOL[sk]='all';
+ const show=TVOL[sk]==='all'?vols:[TVOL[sk]];
+ return `<div class="row between"><div><h1>IELTS ${sk}</h1><p class="sub">${all.length} đề ${sk}, chia theo Vol. Đề mẫu có sẵn và đề bạn tự soạn.</p></div><button class="btn pri" onclick="go('t-testedit',{sk:'${sk}'})">+ Soạn đề ${sk}</button></div>
+ ${vols.length>1?`<div class="seg mb"><button class="${TVOL[sk]==='all'?'on':''}" onclick="TVOL['${sk}']='all';render()">Tất cả</button>${vols.map(v=>`<button class="${TVOL[sk]===v?'on':''}" onclick="TVOL['${sk}']=${h(JSON.stringify(v))};render()">${h(v)}</button>`).join('')}</div>`:''}
+ ${show.length?show.map(v=>{const ts=all.filter(t=>(t.vol||'Đề của giáo viên')===v);return `<div class="volhead"><h2>${h(v)}</h2><span class="vm">${ts.length} đề</span></div><div class="card">${ts.map(tTestRow).join('')}</div>`}).join(''):'<div class="card empty">Chưa có đề nào.</div>'}`}
+VIEWS['t-listening']=()=>tSkillTests('Listening');
+VIEWS['t-reading']=()=>tSkillTests('Reading');
+VIEWS['t-exam']=()=>{const ts=allTests().filter(t=>t.type==='thpt');
+ return `<div class="row between"><div><h1>Tiếng Anh phổ thông</h1><p class="sub">Đề bạn tự soạn cho chương trình phổ thông.</p></div><button class="btn pri" onclick="go('t-testedit',{sk:'thpt'})">+ Soạn đề mới</button></div><div class="card">${ts.map(tTestRow).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`};
+VIEWS['t-tests']=()=>VIEWS['t-listening']();
+function tTestBack(){const t=R.id&&testById(R.id);const k=t?(t.type==='thpt'?'thpt':(t.skill||'Reading')):(R.sk||'Reading');return k==='thpt'?'t-exam':k==='Listening'?'t-listening':'t-reading'}
+const TBACKLAB={'t-exam':'Phổ thông','t-listening':'Listening','t-reading':'Reading'};
 const TEST_HELP=`## Tên phần (tùy chọn, mở phần mới)
 >> Dòng bắt đầu bằng >> là đoạn văn đọc hiểu (nhiều dòng được)
 )) Dòng bắt đầu bằng )) là nội dung bài nghe (máy sẽ đọc)
@@ -1859,16 +1883,17 @@ function parseTest(src){
 }
 VIEWS['t-testedit']=()=>{
  const t=R.id?testById(R.id):null;
- return `<div class="crumb" onclick="go('t-tests')">← Đề thi</div><h1>${t?'Sửa đề':'Soạn đề mới'}</h1>
+ const pre=R.sk||'';
+ return `<div class="crumb" onclick="go(tTestBack())">← ${TBACKLAB[tTestBack()]}</div><h1>${t?'Sửa đề':'Soạn đề mới'}</h1>
  <div class="grid g2"><div class="card">
   <label class="f">Tên đề</label><input type="text" id="te-t" value="${h(t?t.title:'')}" placeholder="Ví dụ: Kiểm tra 15 phút – Câu bị động">
-  <div class="grid g3" style="gap:10px;grid-template-columns:1fr 1fr 1fr"><div><label class="f">Mục</label><select id="te-ty"><option value="ielts" ${t&&t.type==='ielts'?'selected':''}>IELTS</option><option value="thpt" ${t&&t.type==='thpt'?'selected':''}>Phổ thông</option></select></div>
-  <div><label class="f">Kỹ năng</label><select id="te-sk">${['Reading','Listening','Tổng hợp','Đọc hiểu','Ngữ pháp'].map(x=>`<option ${t&&t.skill===x?'selected':''}>${x}</option>`).join('')}</select></div>
+  <div class="grid g3" style="gap:10px;grid-template-columns:1fr 1fr 1fr"><div><label class="f">Mục</label><select id="te-ty"><option value="ielts" ${(t?t.type==='ielts':pre!=='thpt')?'selected':''}>IELTS</option><option value="thpt" ${(t?t.type==='thpt':pre==='thpt')?'selected':''}>Phổ thông</option></select></div>
+  <div><label class="f">Kỹ năng</label><select id="te-sk">${['Reading','Listening','Tổng hợp','Đọc hiểu','Ngữ pháp'].map(x=>`<option ${(t?t.skill===x:pre===x)?'selected':''}>${x}</option>`).join('')}</select></div>
   <div><label class="f">Số phút</label><input type="number" id="te-m" value="${t?t.minutes:15}" min="1"></div></div>
   <label class="f">Vol / nhóm đề (tùy chọn)</label><input type="text" id="te-v" value="${h(t?t.vol||'':'')}" placeholder="Ví dụ: Vol 1">
   <label class="f">Mô tả ngắn</label><input type="text" id="te-d" value="${h(t?t.desc||'':'')}">
   <label class="f">Nội dung đề</label><textarea id="te-src" style="min-height:360px" oninput="previewTest()">${h(t?t.src||'':'')}</textarea>
-  <div class="row mt"><button class="btn pri" onclick="saveTest('${t?t.id:''}')">Lưu đề</button><button class="btn ghost" onclick="go('t-tests')">Hủy</button></div>
+  <div class="row mt"><button class="btn pri" onclick="saveTest('${t?t.id:''}')">Lưu đề</button><button class="btn ghost" onclick="go(tTestBack())">Hủy</button></div>
  </div>
  <div><div class="card"><h3>Cách soạn đề</h3><pre class="help">${h(TEST_HELP)}</pre><button class="btn sm mt" onclick="if(!$('#te-src').value||confirm('Thay nội dung hiện tại bằng ví dụ?')){$('#te-src').value=EXAMPLE_SRC;previewTest()}">Chèn ví dụ</button></div>
  <div class="card mt" id="te-prev"></div></div></div>`;
@@ -1898,14 +1923,14 @@ function previewTest(){const el=$('#te-prev');if(!el)return;const src=$('#te-src
  <div class="small mt">${r.sections.map(s=>`<div class="mt"><b>${h(s.title||'Phần')}</b>${s.passage?' · có đoạn văn':''}${s.audio?' · có bài nghe':''}<br>${s.questions.map(q=>q.t==='mc'?`MC (${q.o.length} phương án)`:q.t==='fill'?`Điền: ${h(q.a.join('/'))}`:'Viết luận').join(' · ')}</div>`).join('')}</div>`}
 function saveTest(id){const title=$('#te-t').value.trim();if(!title){toast('Nhập tên đề');return}const src=$('#te-src').value;const r=parseTest(src);if(r.errs.length){toast('Đề còn lỗi, xem phần Xem trước');return}
  const o={id:id||uid('t'),title,type:$('#te-ty').value,skill:$('#te-sk').value.trim(),vol:$('#te-v').value.trim(),minutes:Math.max(1,+$('#te-m').value||15),desc:$('#te-d').value.trim(),src,sections:r.sections,updated:Date.now()};
- const i=D.tests.findIndex(x=>x.id===o.id);if(i>=0)D.tests[i]=o;else D.tests.push(o);save();toast('Đã lưu đề');go('t-tests')}
+ const i=D.tests.findIndex(x=>x.id===o.id);if(i>=0)D.tests[i]=o;else D.tests.push(o);save();toast('Đã lưu đề');go(o.type==='thpt'?'t-exam':o.skill==='Listening'?'t-listening':'t-reading')}
 
 /* --- Giao bài --- */
 VIEWS['t-assign']=()=>{
  const pre=R.pre;
  return `<h1>Giao bài</h1><p class="sub">Giao bộ từ hoặc đề thi cho cả lớp hoặc từng học viên.</p>
  <div class="grid g2"><div class="card"><h2>Giao bài mới</h2>
-  <label class="f">Loại</label><div class="seg">${Object.entries(KLAB).map(([k,l])=>`<button id="ak-${k}" onclick="asgKind('${k}')">${l}</button>`).join('')}</div>
+  <label class="f">Loại</label><div class="seg">${ASK().map(([k,l])=>`<button id="ak-${k}" onclick="asgKind('${k}')">${l}</button>`).join('')}</div>
   <label class="f">Chọn</label><select id="a-ref" onchange="asgInfo()"></select><div id="a-info"></div>
   <label class="f">Giao cho</label>
   <label class="row small"><input type="checkbox" id="a-all" ${pre?'':'checked'} onchange="document.querySelectorAll('.a-stu').forEach(c=>{c.checked=false;c.disabled=this.checked})"> Cả lớp (kể cả học viên mới sau này)</label>
@@ -1913,18 +1938,24 @@ VIEWS['t-assign']=()=>{
   <div class="grid g2" style="gap:10px;grid-template-columns:1fr 1fr"><div><label class="f">Hạn nộp</label><input type="date" id="a-due"></div><div><label class="f">Lời nhắn</label><input type="text" id="a-note" placeholder="Tùy chọn"></div></div>
   <button class="btn pri mt" onclick="saveAssign()">Giao bài</button>
  </div>
- <div class="card"><h2>Đã giao</h2>${D.assignments.length?D.assignments.slice().reverse().map(a=>{const it=asgItem(a);const who=a.to==='all'?D.students:D.students.filter(s=>a.to.includes(s.id));const done=who.filter(s=>assignDone(a,s.id)).length;
-  return `<div class="list-item"><div><b class="small">${h(it?it.title:'(đã xóa)')}</b><div class="small muted">${KLAB[a.kind]} · ${a.to==='all'?'Cả lớp':who.map(s=>h(s.name)).join(', ')}${a.due?' · hạn '+fdate(a.due):''}</div></div><div class="row"><span class="tag ${done===who.length&&who.length?'ok':'warn'}">${done}/${who.length} xong</span><button class="btn sm danger" onclick="delItem('assignments','${a.id}')">Xóa</button></div></div>`}).join(''):'<div class="empty">Chưa giao bài nào.</div>'}</div></div>`;
+ <div class="card"><h2>Đã giao</h2>${D.assignments.length?(()=>{const ORD=['Listening','Reading','Writing','Speaking','Thi 4 kỹ năng','Bộ từ','Phổ thông','Đề thi'];const list=D.assignments.slice().reverse();const labs=[...new Set(list.map(asgLab))].sort((x,y)=>ORD.indexOf(x)-ORD.indexOf(y));
+  return labs.map(lb=>`<h3 class="mt" style="margin-bottom:0">${h(lb)}</h3>`+list.filter(a=>asgLab(a)===lb).map(a=>{const it=asgItem(a);const who=a.to==='all'?D.students:D.students.filter(s=>a.to.includes(s.id));const done=who.filter(s=>assignDone(a,s.id)).length;
+  return `<div class="list-item"><div><b class="small">${h(it?it.title:'(đã xóa)')}</b><div class="small muted">${a.to==='all'?'Cả lớp':who.map(s=>h(s.name)).join(', ')}${a.due?' · hạn '+fdate(a.due):''}</div></div><div class="row"><span class="tag ${done===who.length&&who.length?'ok':'warn'}">${done}/${who.length} xong</span><button class="btn sm danger" onclick="delItem('assignments','${a.id}')">Xóa</button></div></div>`}).join('')).join('')})():'<div class="empty">Chưa giao bài nào.</div>'}</div></div>`;
 };
-let aKind='test';
+let aKind='L';
 AFTER['t-assign']=()=>asgKind(aKind);
-function asgKind(k){aKind=k;Object.keys(KLAB).forEach(x=>$('#ak-'+x).classList.toggle('on',x===k));let opts;
- if(k==='test')opts=allTests().map(i=>[i.id,(i.type==='ielts'?'[IELTS'+(i.vol?' · '+i.vol:'')+'] ':'[THPT] ')+i.title]);
- else if(k==='set')opts=allSets().map(i=>[i.id,'['+i.cat+'] '+i.title]);
- else if(k==='writing')opts=allW().map(w=>[w.id,'[Task '+w.task+'] '+w.title]);
- else if(k==='full')opts=(D.fulls||[]).filter(f=>f.by==='teacher').map(f=>[f.id,f.title]);
- else opts=[...allP1().map(t=>[t.id,'[Part 1] '+t.title]),...allP2().map(t=>[t.id,'[Part 2&3] '+t.cue])];
- $('#a-ref').innerHTML=opts.map(([v,l])=>`<option value="${v}">${h(l)}</option>`).join('');$('#a-ref').style.display=opts.length?'':'none';asgInfo()}
+function asgKind(k){if(k==='test')k='L';if(!ASK().some(([x])=>x===k))k='L';aKind=k;ASK().forEach(([x])=>$('#ak-'+x).classList.toggle('on',x===k));let groups;
+ const byVol=sk=>{const ts=allTests().filter(t=>t.type==='ielts'&&(t.skill||'Reading')===sk);return [...new Set(ts.map(t=>t.vol||'Đề của giáo viên'))].sort(volSort).map(v=>[v,ts.filter(t=>(t.vol||'Đề của giáo viên')===v).map(t=>[t.id,t.title])])};
+ if(k==='L')groups=byVol('Listening');
+ else if(k==='R')groups=byVol('Reading');
+ else if(k==='thpt')groups=[['',allTests().filter(t=>t.type==='thpt').map(t=>[t.id,t.title])]];
+ else if(k==='W')groups=[['Task 1',allW().filter(w=>w.task===1).map(w=>[w.id,w.title])],['Task 2',allW().filter(w=>w.task===2).map(w=>[w.id,w.title])]];
+ else if(k==='S')groups=[['Part 1',allP1().map(t=>[t.id,t.title])],['Part 2 & 3',allP2().map(t=>[t.id,t.cue])]];
+ else if(k==='set'){const ss=allSets();groups=[...new Set(ss.map(x=>x.cat))].map(c=>[c,ss.filter(x=>x.cat===c).map(x=>[x.id,x.title])])}
+ else groups=[['',(D.fulls||[]).filter(f=>f.by==='teacher').map(f=>[f.id,f.title])]];
+ groups=groups.filter(g=>g[1].length);const n=groups.reduce((a,g)=>a+g[1].length,0);
+ const opt=([v,l])=>`<option value="${v}">${h(l)}</option>`;
+ $('#a-ref').innerHTML=groups.map(([g,o])=>g?`<optgroup label="${h(g)}">${o.map(opt).join('')}</optgroup>`:o.map(opt).join('')).join('');$('#a-ref').style.display=n?'':'none';asgInfo()}
 function asgInfo(){const el=$('#a-info');if(!el)return;const v=$('#a-ref').value;
  if(aKind!=='full'){el.innerHTML=v?'':'<div class="small muted mt">Chưa có mục nào để giao.</div>';return}
  const f=v&&fullById(v);
@@ -1935,7 +1966,7 @@ function asgRandFull(){const keep=FB;FB={tab:'L',vol:{L:'all',R:'all'}};['L','R'
  D.fulls=D.fulls||[];const n=D.fulls.filter(f=>f.by==='teacher').length+1;const f=fbObj('Đề 4 kỹ năng số '+n,'teacher');D.fulls.push(f);save();FB=keep;
  asgKind('full');$('#a-ref').value=f.id;asgInfo();toast('Đã ghép '+f.title)}
 function saveAssign(){if(!$('#a-ref').value){toast(aKind==='full'?'Hãy ghép một đề 4 kỹ năng trước':'Chưa chọn bài để giao');return}const all=$('#a-all').checked;const to=all?'all':[...document.querySelectorAll('.a-stu:checked')].map(c=>c.value);if(!all&&!to.length){toast('Chọn ít nhất một học viên');return}
- D.assignments.push({id:uid('a'),kind:aKind,ref:$('#a-ref').value,to,due:$('#a-due').value||'',note:$('#a-note').value.trim(),created:Date.now()});save();toast('Đã giao bài. Nhớ gửi gói bài học cho học viên nếu các em học trên máy khác.');R.pre=null;render()}
+ D.assignments.push({id:uid('a'),kind:ASK_DATA[aKind],ref:$('#a-ref').value,to,due:$('#a-due').value||'',note:$('#a-note').value.trim(),created:Date.now()});save();toast('Đã giao bài. Nhớ gửi gói bài học cho học viên nếu các em học trên máy khác.');R.pre=null;render()}
 
 /* --- Dữ liệu --- */
 VIEWS['t-data']=()=>`<h1>Dữ liệu & cài đặt</h1><p class="sub">Mọi dữ liệu được lưu ngay trong trình duyệt này. Dùng các nút dưới đây để chia sẻ giữa các máy.</p>

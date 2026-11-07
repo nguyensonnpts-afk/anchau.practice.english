@@ -503,7 +503,7 @@ f 20 | Sleep deprivation experiments on ___ have shown that animals die without 
 f 21 | Scientists have not yet worked out why almost all animals sleep with ___ | closed eyes / eyes closed
 f 22 | For humans, sleep is vital for the efficient functioning of the ___ | brain
 f 23 | During periods of ___ Swainson's thrushes experience severe sleep deprivation | migration
-> Questions 24–26: (Ghi chú: bản đề gốc bị thiếu câu 24-26; ba câu dưới đây được soạn bổ sung theo bài đọc.) Do the following statements agree with the information given in Reading Passage 2? TRUE / FALSE / NOT GIVEN.
+> Questions 24–26: Do the following statements agree with the information given in Reading Passage 2? TRUE / FALSE / NOT GIVEN.
 tf 24 | Orca calves and their mothers stop moving for long periods during the first month after birth. | F
 tf 25 | Dolphins can rest one half of their brain while the other half stays awake. | T
 tf 26 | Saper believes that humans could safely adopt the sleep pattern of Swainson's thrushes. | F

@@ -1,7 +1,6 @@
 === Listening | Vol 2 | Test 1 | 40
 ## Section 1 · Medical Consultation
 @audio https://drive.google.com/file/d/1SE2l4m5pCar_Ngq1Ueh3IF8rYaX1EE8B/view
-Section 1: một phụ nữ đến gặp bác sĩ vì có vấn đề về mắt. Nghe một lần như thi thật.
 > Questions 1–4: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. Consultation – Patient Information.
 f 1 | Name: Anu ___ | atkinson
 f 2 | Post code: ___ | el14 2bf / el142bf / el 14 2bf
@@ -25,7 +24,7 @@ f 14 | Davison Wildlife Park is a great place for ___ | families / family
 f 15 | Children are allowed to ___ | feed the animals
 f 16 | Red kangaroos are generally larger than ___ | adults
 f 17 | Crocodiles can live for at least ___ | 50 years / fifty years / 50
-> Questions 18–20: Which THREE activities are popular now for tourists in the inland region? A hill hiking · B barbecue and bonfire · C buying souvenirs · D visiting the EMU farm · E visiting the cheese factory · F following nature trails · G fruit picking · H staying in staff cottages. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 18–20: Which THREE activities are popular now for tourists in the inland region? A hill hiking · B barbecue and bonfire · C buying souvenirs · D visiting the EMU farm · E visiting the cheese factory · F following nature trails · G fruit picking · H staying in staff cottages.
 f 18 | Activity 1 ___ | c / e / g
 f 19 | Activity 2 ___ | e / c / g
 f 20 | Activity 3 ___ | g / c / e
@@ -61,7 +60,6 @@ f 40 | A compass: detect the ___ in order to locate the fossils | sediments / se
 === Listening | Vol 2 | Test 2 | 40
 ## Section 1 · Travel and Vehicle Insurance
 @audio https://drive.google.com/file/d/1DuIrz0HQAdvBajA9jF5gkoYQ0vG6nL2O/view
-Section 1: một khách hàng hỏi nhân viên bán hàng về các loại bảo hiểm. Nghe một lần như thi thật.
 > Questions 1–6: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. Travel Insurance – Section 1: Baggage and Personal Effects.
 f 1 | Type: ___ / Comprehensive | individual
 f 2 | single ___ : $1,500 | item
@@ -72,7 +70,7 @@ f 6 | as verified by the ___ | airline
 > Questions 7–8: Choose the correct letter A, B or C.
 m 7 | The woman will buy | a new motorbike. ;; an old car. ;; a new car. | B
 m 8 | The woman does not want to insure her vehicle with a Multi-saver policy | because it has too many conditions. ;; because it is rather expensive. ;; because it benefits homeowners. | C
-> Questions 9–10: Which TWO of the following relate to the Top Cover policy? A it includes an agreement on the value of a holder's vehicle · B it covers vehicles of any age · C there is a stand-down period before it takes effect · D it covers storm damage · E it is cheaper than many other policies. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 9–10: Which TWO of the following relate to the Top Cover policy? A it includes an agreement on the value of a holder's vehicle · B it covers vehicles of any age · C there is a stand-down period before it takes effect · D it covers storm damage · E it is cheaper than many other policies.
 f 9 | Feature 1 ___ | a / d
 f 10 | Feature 2 ___ | d / a
 ## Section 2 · Eyesaver – an eye care charity
@@ -120,7 +118,6 @@ f 40 | Leatherback turtles are found to use more ___ in order to search for food
 === Listening | Vol 2 | Test 3 | 40
 ## Section 1 · International Club
 @audio https://drive.google.com/file/d/1zQUGzaKgIo_baim85mxA_v-8HxhQ8GAM/view
-Section 1: một người đàn ông gọi điện hỏi về việc tham gia một câu lạc bộ quốc tế. Nghe một lần như thi thật.
 > Questions 1–7: Complete the table. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. International Club. Library: open from 11:00 am to 6 pm; Deposit $ (1); return the deposit if there is no damage. (2) centre: open on (3); $3; bring one guest for free. Swimming: starts on (4); $ (5); bring your own swimming suit. Dance class: open all day; $5 ((6) included); bring enough water and food. (7): open between 10:30 am and 3:30 pm (weekdays); $3; replacement for the visit to Grand Hotel.
 f 1 | Library deposit: $ ___ | 15 / fifteen
 f 2 | ___ centre | ice skating
@@ -129,13 +126,13 @@ f 4 | Swimming starts on ___ | 16th october / 16 october / october 16th / octobe
 f 5 | Swimming fee: $ ___ | 3 / three
 f 6 | Dance class: $5 (___ included) | free drinks / drinks
 f 7 | ___ : open between 10:30 am and 3:30 pm (weekdays), replacement for the visit to Grand Hotel | museum / local museum
-> Questions 8–10: Choose THREE correct answers. Which THREE events are held every month by the club? A Lecture · B Film · C Saturday excursion · D Tennis · E Culture evening · F Night tour · G Yoga classes (Lưu ý: bản scan gốc bị mất tên lựa chọn D; chỉ cần chọn 3 chữ cái đúng.)
+> Questions 8–10: Choose THREE correct answers. Which THREE events are held every month by the club? A Lecture · B Film · C Saturday excursion · D Tennis · E Culture evening · F Night tour · G Yoga classes
 f 8 | Event held every month 1 ___ | a / c / e
 f 9 | Event held every month 2 ___ | a / c / e
 f 10 | Event held every month 3 ___ | a / c / e
 ## Section 2 · Railway station announcement
 @audio https://drive.google.com/file/d/1Um0zeGvRTs3qKK_ydL5bZ-irvtmqWnKG/view
-> Questions 11–15: Label the map of the railway station. Write the correct letter A–I. (Bản đề gốc có bản đồ nhà ga A–I; hãy nghe và chọn chữ cái vị trí.)
+> Questions 11–15: Label the map of the railway station. Write the correct letter A–I.
 L 11 | bike racks | ABCDEFGHI | G
 L 12 | luggage lockers | ABCDEFGHI | B
 L 13 | chemist's | ABCDEFGHI | C
@@ -178,7 +175,6 @@ f 40 | Crocodiles have the same migration system as ___ | birds
 === Listening | Vol 2 | Test 4 | 40
 ## Section 1 · Apartments in Arillas
 @audio https://drive.google.com/file/d/1V2x3Q9e5b1LAUtorOVtIUBvVknCFU0TC/view
-Section 1: một người hỏi nhân viên về các căn hộ cho thuê và các bảo tàng ở Arillas. Nghe một lần như thi thật.
 > Questions 1–4: Complete the table. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Apartments in Arillas. Rose Garden Apartments: free parking lot (example); a large (1). Blue Bay: no parking lot; man-made lake, no (2). Sunshade Apartments: huge parking lot; no (3) in the room. Grand Apartments: no charge on street; most guests are (4).
 f 1 | Rose Garden Apartments: a large ___ | swimming pool
 f 2 | Blue Bay: man-made lake, no ___ | lift
@@ -237,7 +233,6 @@ f 40 | Some agricultural activities like ___ are unlikely to be changed. | fishi
 === Listening | Vol 2 | Test 5 | 40
 ## Section 1 · Hotel renovation project
 @audio https://drive.google.com/file/d/1N2tBCMXLUHTBb9e6_UrxCYQk5YyNJJpS/view
-Section 1: một người đàn ông gọi cho công ty cải tạo để hỏi về việc sửa sang khách sạn. Nghe một lần như thi thật.
 > Questions 1–10: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Renovation project.
 f 1 | Name of the hotel: ___ Hotel | central
 f 2 | Signboard: the ___ needs to be bigger | address
@@ -247,7 +242,7 @@ f 5 | Resting area: turn the ___ room into reception | lounge
 f 6 | Notice board – translation needed: ___ | spanish
 f 7 | Price board – current colour: ___ | red
 f 8 | Construction: starts before ___ | july
-f 9 | Manager's name: ___ Baron (nghe và nghe chính tả tên) | cliffton / clifton
+f 9 | Manager's name: ___ Baron | cliffton / clifton
 f 10 | Manager's telephone number: ___ | 093036602 / 093036 602 / 093 036 602
 ## Section 2 · Melbourne Zoo
 @audio https://drive.google.com/file/d/1j8-yqhj89AHrFgog9JkArprvU3Meh1Z-/view
@@ -257,7 +252,7 @@ m 12 | What is the most popular species in the zoo? | kangaroo ;; koala ;; sheep
 m 13 | What is the key to feeding kangaroos? | feeding more than one at a time ;; gently touching the baby kangaroos ;; standing up straight when feeding | C
 m 14 | Why is the wild dog area closed? | The wild dogs are unwell. ;; The enclosure is under repair. ;; The dogs have not arrived. | B
 m 15 | Where can visitors get discount tickets this year? | at the café ;; on the official website ;; at the gift shop | A
-> Questions 16–20: Label the map of the zoo. Write the correct letter A–G. (Bản đề gốc có bản đồ sở thú A–G; hãy nghe và chọn chữ cái vị trí.)
+> Questions 16–20: Label the map of the zoo. Write the correct letter A–G.
 L 16 | Arena | ABCDEFG | C
 L 17 | Educational hall | ABCDEFG | E
 L 18 | Picnic spot | ABCDEFG | A
@@ -295,7 +290,6 @@ L 40 | Sarah Godfrey | ABCDEF | E
 === Listening | Vol 2 | Test 6 | 40
 ## Section 1 · Visiting the doctor
 @audio https://drive.google.com/file/d/1O2Jcl8T1ZVX3unMUZ8QZ3B6N68OSxr1W/view
-Section 1: một người phụ nữ gọi cho bác sĩ vì có vấn đề về sức khỏe. Nghe một lần như thi thật.
 > Questions 1–4: Choose the correct letter A, B or C.
 m 1 | Why does she call this doctor? | He is popular among overseas students. ;; The advertisement says he is excellent. ;; She heard that he was a good doctor. | C
 m 2 | How does the sickness affect the woman? | It interrupts work. ;; It keeps her awake at night. ;; It makes her feel anxious. | A
@@ -311,7 +305,7 @@ f 9 | Both of her parents have ___ | toothache
 f 10 | Medicine allergy: ___ | none
 ## Section 2 · Campus orientation and accommodation
 @audio https://drive.google.com/file/d/1Yz03XbaRgfjSQp0jriXBN6FrHninYsBm/view
-> Questions 11–15: Label the map of the campus. Write the correct letter A–H. (Bản đề gốc có bản đồ khuôn viên A–H; hãy nghe và chọn chữ cái vị trí.)
+> Questions 11–15: Label the map of the campus. Write the correct letter A–H.
 L 11 | Student service office | ABCDEFGH | F
 L 12 | Stadium | ABCDEFGH | B
 L 13 | Health centre | ABCDEFGH | E
@@ -354,7 +348,6 @@ f 40 | An assessment assuming that the island will survive for many ___ | centur
 === Listening | Vol 2 | Test 7 | 40
 ## Section 1 · Enquiry about a rural centre (Winsham Farm)
 @audio https://drive.google.com/file/d/1LQeZ14lOlMdXaN-q77S8IY9xTP5kpUfU/view
-Section 1: một người đàn ông hỏi về trung tâm nông thôn Winsham Farm. Nghe một lần như thi thật.
 > Questions 1–8: Choose the correct letter A, B or C. Example: The man wants to visit the centre with colleagues (C).
 m 1 | The centre has enough accommodation for | 18 people ;; 20 people ;; 38 people | C
 m 2 | The meeting room is currently | unavailable ;; flooded ;; booked | A
@@ -413,7 +406,6 @@ f 40 | ...and other relationships, e.g. ___ | friends / friendships
 === Listening | Vol 2 | Test 8 | 40
 ## Section 1 · Wildlife Conservation Society membership
 @audio https://drive.google.com/file/d/1sNlrS_WgJdKW1LEyWbyydqXCILi8VVav/view
-Section 1: một người gọi điện đăng ký làm thành viên Wildlife Conservation Society. Nghe một lần như thi thật.
 > Questions 1–10: Complete the form below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer. Wildlife Conservation Society - Application for membership. Example: Caller's name: Michael Jones. Address: 21 Beel Street Leeds. Phone number: 0117358642. Account name: Michael Jones. Account number: 01059612. Other requests: extra information pack.
 f 1 | Heard of WCS from: ___ | radio
 f 2 | Postcode: ___ | ls142jw / ls14 2jw
@@ -448,7 +440,7 @@ m 22 | Dr Rubin and Jack agree that many of Prout's problems were caused by | po
 m 23 | How did Prout learn to paint? | His father taught him. ;; He went to art school. ;; He copied pictures. | C
 m 24 | What point does Jack make about Prout's style? | Prout used different styles simultaneously. ;; Many other artists had a similar style. ;; Prout's style developed throughout his career. | A
 m 25 | What did John Ruskin admire about Prout's paintings? | their realism ;; their representation of buildings ;; their wide range of subject matter | B
-> Questions 26–30: What information do the speakers give about each of the following pictures? Choose FIVE answers from the box and write the correct letter A–G. A one of several paintings of the same view; B probably an inaccurate title; C may not be genuine; D was never finished; E typical subject matter for Prout; F skilful painting of light and dark; G shows an event that never took place. (Bản đề gốc có hình ảnh các bức tranh; hãy nghe và chọn chữ cái thông tin.)
+> Questions 26–30: What information do the speakers give about each of the following pictures? Choose FIVE answers from the box and write the correct letter A–G. A one of several paintings of the same view; B probably an inaccurate title; C may not be genuine; D was never finished; E typical subject matter for Prout; F skilful painting of light and dark; G shows an event that never took place.
 L 26 | A view in Germany: at Wurzburg | ABCDEFG | E
 L 27 | Bridge on the Ouse, near York | ABCDEFG | B
 L 28 | Venice | ABCDEFG | C
@@ -463,7 +455,7 @@ f 33 | One problem with the present method of production of the SW40 is that it 
 f 34 | The speaker hopes to acquire financial support from an agency called ___ | health international
 f 35 | The SW40 has a maximum output of ___ litres on a sunny day. | 9 / nine
 f 36 | Each SW40 produces enough water for a ___ | family
-> Questions 37–40: Label the diagram. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Cross-section of SW40 solar water purifier. (Bản đề gốc có sơ đồ; các chỗ trống nằm ở nắp, góc nghiêng, tia UV và thùng chứa nước.)
+> Questions 37–40: Label the diagram. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Cross-section of SW40 solar water purifier.
 f 37 | Lid made of ___ | glass
 f 38 | Best inclined at angle ___ degrees | 12.5 / 12.5 degrees
 f 39 | UV light destroys ___ | germs
@@ -472,7 +464,7 @@ f 40 | Water ___ containing pure water | collection tank
 === Listening | Vol 2 | Test 9 | 40
 ## Section 1 · Newspaper Photo Reprint Request Form
 @audio https://drive.google.com/file/d/10uTmrXrpV5EGY_Y3KS6UIi4vLH4vUQSH/view
-Section 1: một phụ nữ gọi điện cho bộ phận dịch vụ của tòa soạn để xin in lại ảnh con trai. Ví dụ – Newspaper date: March 10th.
+Example: Newspaper date: March 10th.
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
 f 1 | Newspaper pages: the ___ page | front
 f 2 | Newspaper story: Student Athlete of the ___ | week
@@ -486,14 +478,13 @@ f 9 | Delivery method: ___ | mail
 f 10 | Reading frequency: every ___ | day
 ## Section 2 · Hospitality Training Courses Information Day
 @audio https://drive.google.com/file/d/1bKA8YDv5Ie8frxqVhJHYPFymkxYQ10R6/view
-Section 2: bài nói của người tổ chức ngày thông tin về các khóa đào tạo ngành khách sạn, nhà hàng.
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | What has the speaker enjoyed most about working in hospitality? | the range of jobs available ;; the range of countries he has visited ;; the range of people he has worked with | C
 m 12 | What point does the speaker make about kitchen assistants? | The long hours will not suit everyone. ;; Their work is sometimes quite boring. ;; The pay is not particularly good. | A
 m 13 | According to the speaker, which job is sometimes undervalued? | porter ;; cleaner ;; dishwasher | A
 m 14 | Experience in reception may help employees | to learn foreign languages. ;; to manage difficult situations successfully. ;; to get a better job eventually. | C
 m 15 | The speaker says that interview skills | are particularly important in hospitality. ;; are easy to learn if you have some practice. ;; are understood better now than in the past. | B
-> Questions 16–20: Label the plan. Write the correct letter A–J next to each workshop. (Bản đề gốc có sơ đồ trường với các ô A–J; hãy nghe và chọn chữ cái vị trí.)
+> Questions 16–20: Label the plan. Write the correct letter A–J next to each workshop.
 L 16 | Restaurant Service | ABCDEFGHIJ | J
 L 17 | Kitchen Hands | ABCDEFGHIJ | C
 L 18 | Porters, Cleaners, Dishwashers | ABCDEFGHIJ | B
@@ -501,7 +492,6 @@ L 19 | Receptionists | ABCDEFGHIJ | E
 L 20 | Interview Skills | ABCDEFGHIJ | F
 ## Section 3 · Battery-powered Motorbikes
 @audio https://drive.google.com/file/d/1zErrvB8U2bT8zYJ7KgxMh7l7hTV0Ei3U/view
-Section 3: hai sinh viên kỹ thuật chuẩn bị bài thuyết trình về xe máy chạy pin.
 > Questions 21–26: Choose the correct letter A, B or C.
 m 21 | The students are preparing the presentation | as part of their final assessment. ;; to attract potential future students. ;; to share their work with their classmates. | B
 m 22 | What do the students say about the battery-powered motorbike in their project? | It is more efficient than ordinary motorbikes. ;; It is faster than ordinary motorbikes. ;; It is more complex than ordinary motorbikes. | A
@@ -516,7 +506,6 @@ L 29 | doing the sketches | ABCDEF | E
 L 30 | finding sponsors | ABCDEF | C
 ## Section 4 · The Development of the Telescope
 @audio https://drive.google.com/file/d/1g-Oad-em5pL2Z53nkGkwC41QYh4riBPJ/view
-Section 4: bài giảng đại học về sự phát triển ban đầu của kính thiên văn.
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Roger Bacon (1200s); Lipperhey (1608): put concave and convex lenses together to create the telescope; Galileo (1609): tried out different lenses.
 f 31 | Bacon's invention assisted ___ with sight problems when reading | researchers
 f 32 | The small telescope was first used in the ___ | theatre / theater
@@ -532,7 +521,7 @@ f 40 | The problem was solved by attaching it to a ___ | building
 === Listening | Vol 2 | Test 10 | 40
 ## Section 1 · Theatre Booking for Pirates
 @audio https://drive.google.com/file/d/1JTPXctgc6kLyRtJ0U2hkJMLqhdhjQvBp/view
-Section 1: một phụ nữ gọi điện đặt vé xem vở Pirates tại nhà hát. Ví dụ – Booking for: Pirates. Date: 8th December (afternoon). Contact number: 07796892326.
+Example: Booking for: Pirates. Date: 8th December (afternoon). Contact number: 07796892326.
 > Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
 f 1 | Name: Fenella ___ | Bittens
 f 2 | Type of booking: ___ with discount | group
@@ -546,7 +535,6 @@ f 9 | Several people are ___ | vegetarian
 f 10 | Food: ___ (cheese and tomato) | pizza / pizzas
 ## Section 2 · Singing in a Choir
 @audio https://drive.google.com/file/d/1V1NO8fGbRY3Or3pNTZg8QvujomNflOuc/view
-Section 2: chương trình radio về việc tham gia dàn hợp xướng.
 > Questions 11–15: Which choir does each of the following statements apply to? A Mitchelstown Choir · B The Blackvale Male Voice Choir · C The Caroline Singers
 L 11 | They specialise in a particular type of music. | ABC | C
 L 12 | They organise social events. | ABC | A
@@ -561,7 +549,6 @@ m 19 | When do the choir have their rehearsals? | before work ;; at lunch-time ;
 m 20 | How does the company support the choir? | by providing concert clothes ;; by funding social events ;; by paying for singing classes | C
 ## Section 3 · Tourism Research Project
 @audio https://drive.google.com/file/d/1BOtVX1aRnidFp02oz4IAnPP84-lPwpDL/view
-Section 3: hai sinh viên Eva và Mike thảo luận dự án nghiên cứu về du lịch.
 > Questions 21–26: Choose the correct letter A, B or C.
 m 21 | Mike suggests they use the word "area" to mean | geographical location. ;; tourist site. ;; research field. | A
 m 22 | According to Eva, most people believe that culture | refers to long-established events and places. ;; includes modern forms of art and entertainment. ;; is becoming less linked to particular regions. | A
@@ -576,7 +563,6 @@ L 29 | Britain | ABCDEFG | F
 L 30 | India | ABCDEFG | G
 ## Section 4 · Getting a Patent
 @audio https://drive.google.com/file/d/1lqCm4y0rLxyGDvAO8-f8jyVyN4EzEzWb/view
-Section 4: bài nói trong ngày hướng nghiệp của một cựu sinh viên làm luật sư sáng chế (patent attorney).
 > Questions 31–40: Complete the notes. Write NO MORE THAN TWO WORDS for each answer.
 f 31 | Nowadays most patents are applied for by a ___ | company
 f 32 | The invention has to be ___ in order to be patented | original

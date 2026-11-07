@@ -1,9 +1,8 @@
 === Listening | Vol 9 | Test 1 | 40
 ## Section 1 · Sharing a House
 @audio https://drive.google.com/file/d/1NjMtsqDpCAJ4iNPWKb8M7_KmqqdIulyI/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: Jim đến xem một căn phòng và nói chuyện với Peter về việc ở chung nhà. Ví dụ – Jim wants to find out about a: room.
+Example: Jim wants to find out about a: room.
 > Questions 1–10: Complete the sentences. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
 f 1 | Jim's weekly rent will be $ ___ | 80
 f 2 | Jim can park his car in the ___ | garage
@@ -16,7 +15,6 @@ f 8 | Peter will share the cost of ___ with Jim. | petrol
 f 9 | Peter wants Jim to move in by ___ | 1st of june / 1st june / 1 june / june 1st / june 1 / the 1st of june
 f 10 | Jim agrees to move in after his ___ | exam
 ## Section 2 · Spring Down Junior School
-Section 2: một giáo viên giới thiệu trường tiểu học cho phụ huynh.
 > Questions 11–17: Complete the sentences. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
 f 11 | The school day starts at ___ with registration, and finishes at 4 p.m. | 8.55 / 8:55 / 855 / 8.55 a.m. / 8:55 a.m.
 f 12 | The school canteen offers a ___ for lunch. | hot meal
@@ -25,28 +23,26 @@ f 14 | On Thursday afternoons all children must take part in ___ | sports / spor
 f 15 | Every term the children do a special ___ | poster
 f 16 | The children are given tests each ___ | month
 f 17 | The children can go to ___ after school to learn new skills such as music. | clubs
-> Questions 18–20: Label the plan. Choose THREE answers A–H. A music room · B assembly hall · C computer room · D cloakroom · E Head's office · G gym · H reception. (Bản đề gốc có sơ đồ trường; hãy nghe và chọn chữ cái vị trí được nhắc tới.)
-L 18 | Location 1 on the plan (ở bên phải lối vào chính) | ABCDEGH | E
-L 19 | Location 2 on the plan (phòng cải tạo từ cloakroom cũ) | ABCDEGH | A
-L 20 | Location 3 on the plan (assembly hall cũ bên cạnh hội trường mới) | ABCDEGH | G
+> Questions 18–20: Label the plan. Choose THREE answers A–H. A music room · B assembly hall · C computer room · D cloakroom · E Head's office · G gym · H reception.
+L 18 | Location 1 on the plan | ABCDEGH | E
+L 19 | Location 2 on the plan | ABCDEGH | A
+L 20 | Location 3 on the plan | ABCDEGH | G
 ## Section 3 · Forensic Linguistics Project
-Section 3: hai sinh viên Jen và Rob thảo luận về đề tài nhận dạng giọng nói.
 > Questions 21–24: Choose the correct letter A, B or C.
 m 21 | What do the students agree about defining forensic linguistics? | The dictionary definition was not very useful. ;; They could provide an example of the kind of work involved. ;; They should read about the subject to see how it is described. | B
 m 22 | Jen thinks it will be difficult to analyse the voice recording because | it is not of good quality. ;; the accent is difficult to understand. ;; she doesn't know if the speaker is male or female. | A
 m 23 | Why does Jen think that the 'suspect' might vary their voice patterns? | because they're being recorded. ;; because they've been told to. ;; because they feel uncomfortable about their accent. | B
 m 24 | What does Rob think about Jen's approach to study? | She worries too much about her ability. ;; She often ignores the most important issues. ;; She has trouble getting started. | A
-> Questions 25–26: Choose TWO letters. Which TWO books do Jen and Rob decide to get from the library? A Voice Identification · B Modern Forensic Techniques · C Language and Crime · D Forensics Today · E Research Methods in Forensic Linguistics (Nhập một chữ cái mỗi ô, thứ tự bất kỳ.)
+> Questions 25–26: Choose TWO letters. Which TWO books do Jen and Rob decide to get from the library? A Voice Identification · B Modern Forensic Techniques · C Language and Crime · D Forensics Today · E Research Methods in Forensic Linguistics
 f 25 | Book 1 ___ | b / e
 f 26 | Book 2 ___ | e / b
-> Questions 27–28: Choose TWO letters. Which TWO practical considerations are both Jen and Rob concerned about? A how much time they have for writing up the project · B being able to do enough research · C only speaking to the 'suspect' once · D using recording equipment · E how easy it will be to contact the 'suspect' (Nhập một chữ cái mỗi ô, thứ tự bất kỳ.)
+> Questions 27–28: Choose TWO letters. Which TWO practical considerations are both Jen and Rob concerned about? A how much time they have for writing up the project · B being able to do enough research · C only speaking to the 'suspect' once · D using recording equipment · E how easy it will be to contact the 'suspect'
 f 27 | Concern 1 ___ | a / d
 f 28 | Concern 2 ___ | d / a
-> Questions 29–30: Choose TWO letters. Which TWO sections of the project will Rob write alone? A Methodology · B Literature review · C Introduction · D Analysis · E Discussion and conclusions (Nhập một chữ cái mỗi ô, thứ tự bất kỳ.)
+> Questions 29–30: Choose TWO letters. Which TWO sections of the project will Rob write alone? A Methodology · B Literature review · C Introduction · D Analysis · E Discussion and conclusions
 f 29 | Section 1 ___ | c / e
 f 30 | Section 2 ___ | e / c
 ## Section 4 · Dormancy
-Section 4: bài giảng sinh học về trạng thái ngủ đông / ngủ nghỉ (dormancy) ở sinh vật.
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
 f 31 | Organisms enter dormancy to save available ___ | resources
 f 32 | can live in conditions which are environmentally ___ | stressful
@@ -62,9 +58,7 @@ f 40 | When it wakes up, the first part of the body to heat up is the ___ | hear
 === Listening | Vol 9 | Test 2 | 40
 ## Section 1 · Almond Valley Poppy Reserve
 @audio https://drive.google.com/file/d/1-B1elFgKRVFGi2gZvoPHHo7H2hiz04hD/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: một phụ nữ gọi điện cho nhân viên kiểm lâm để hỏi về khu bảo tồn hoa anh túc (poppy).
 > Questions 1–5: Complete the notes. Write ONE WORD ONLY for each answer. Almond Valley Poppy Reserve is a nature reserve.
 f 1 | The poppies will be at their best at the end of the ___ . | month
 f 2 | The poppies on the hills are ___ in colour. | orange
@@ -78,7 +72,6 @@ f 8 | Wildflower tour (every two hours from 8:00 a.m.) – duration: ___ | 1 hou
 f 9 | Wildlife tour – start time: ___ a.m. or 7:00 p.m. | 5.30 / 5:30 / 530
 f 10 | Wildlife tour photography: bring tripod and a ___ lens | zoom
 ## Section 2 · Life in an Iron Age Village
-Section 2: Jim, một tình nguyện viên, kể về cuộc sống trong ngôi làng thời đại đồ sắt.
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | Jim says that in the Iron Age village | he is sometimes cold at night. ;; he always gets up early. ;; he has time to himself. | B
 m 12 | What does Jim say about the food they eat in the village? | It takes time to prepare. ;; It is difficult to get used to. ;; It has to be eaten quickly. | A
@@ -92,7 +85,6 @@ L 18 | Insert centre post and build a wooden ___ around it | ABCDEFGHI | I
 L 19 | Complete roof framework using ___ wood rods | ABCDEFGHI | E
 L 20 | Cover roof with reed bundles of ___ lengths | ABCDEFGHI | C
 ## Section 3 · How Jobs Might Change in the Future
-Section 3: hai sinh viên kinh doanh Emma và Nick chuẩn bị bài thuyết trình.
 > Questions 21–24: Choose the correct letter A, B or C.
 m 21 | What do the students find surprising about the way that complaints were dealt with at the call centre? | the way that customers responded to it ;; the employees' lack of enthusiasm for it ;; the kind of questions employees were obliged to ask | A
 m 22 | What does Emma say about the report by Jerry Kaplan? | It shows how machines will respond to human needs. ;; It emphasises the variety of roles that machines will have. ;; It explains the limitations of machines. | C
@@ -106,7 +98,6 @@ L 28 | Section on workplace structure | ABCDEFGH | G
 L 29 | Section on tracking technology | ABCDEFGH | E
 L 30 | Interview with company manager | ABCDEFGH | F
 ## Section 4 · Health on the Night Shift
-Section 4: bài giảng về ảnh hưởng sức khỏe của việc làm ca đêm.
 > Questions 31–40: Complete the notes. Write NO MORE THAN THREE WORDS for each answer.
 f 31 | Background: increase in ___ night workers because of 24-hour shopping/services | the number of / number of
 f 32 | Main cause A: the ___ regulates daily life | internal clock / the internal clock
@@ -122,9 +113,8 @@ f 40 | other relationships, e.g. ___ | peer group
 === Listening | Vol 9 | Test 3 | 40
 ## Section 1 · Winsham Farm Centre
 @audio https://drive.google.com/file/d/1HuJoeaH9pbGP1O74zVMxjb_QQ1utTi6d/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: cuộc gọi hỏi về Winsham Farm, một trung tâm giáo dục có chỗ ở. Ví dụ – The man wants to visit the centre with: colleagues.
+Example: The man wants to visit the centre with: colleagues.
 > Questions 1–8: Choose the correct letter A, B or C.
 m 1 | The centre has enough accommodation for | 18 people. ;; 20 people. ;; 38 people. | C
 m 2 | The meeting room is currently | unavailable. ;; flooded. ;; booked. | A
@@ -138,7 +128,6 @@ m 8 | Groups who wish to stay at the centre must pay | part of the cost in advan
 f 9 | Winsham Farm, ___ Rd | cotehele
 f 10 | near Sherbourne – postcode: ___ | sh12 1lq / sh121lq
 ## Section 2 · Student Vacation Jobs
-Section 2: chương trình radio sinh viên về kết quả khảo sát các công việc làm thêm trong kỳ nghỉ.
 > Questions 11–16: Complete the table. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
 f 11 | Stocktaking – main advantage: ___ | travelling
 f 12 | Stocktaking – recommendation: ___ | get good shoes
@@ -152,7 +141,6 @@ m 18 | Peter mainly enjoyed the job because it was | easy. ;; challenging. ;; un
 m 19 | The job's most interesting aspect was | learning about the environment. ;; working with children. ;; caring for the animals. | B
 m 20 | Peter has decided that next vacation he | won't take a job. ;; will work at the zoo. ;; will work elsewhere. | A
 ## Section 3 · Voice Training for Drama Students
-Section 3: Fiona, trưởng khoa kịch, trao đổi với giảng viên mới Ed về buổi huấn luyện giọng nói.
 > Questions 21–26: Choose the correct letter A, B or C.
 m 21 | Ed is giving the voice coaching workshop in order to get | a new job. ;; a qualification. ;; a promotion. | B
 m 22 | According to Fiona, the seating pattern that Ed chooses | should be illustrated visually. ;; has to be explained in detail. ;; is not particularly important. | A
@@ -166,7 +154,6 @@ L 28 | Improve Your Accent | ABCDEFG | B
 L 29 | Actors' Handbook | ABCDEFG | G
 L 30 | Confident Voice Delivery | ABCDEFG | D
 ## Section 4 · Food Safety Standards
-Section 4: bài giảng về tiêu chuẩn an toàn thực phẩm tại Úc.
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
 f 31 | Risk assessment: the product's ___ (could they attract harmful bacteria?) | ingredients
 f 32 | how products are ___ and distributed | stored
@@ -182,9 +169,8 @@ f 40 | many children can influence their ___ | parents
 === Listening | Vol 9 | Test 4 | 40
 ## Section 1 · Weekend Course Booking
 @audio https://drive.google.com/file/d/1q0kew_zpLIKfsn51yX65dzVJNJ941qDr/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: một người đàn ông gọi điện đặt chỗ cho khóa học cuối tuần (workshop guitar). Booking for: a guitar workshop.
+Booking for: a guitar workshop.
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
 f 1 | Start date: ___ | july 18th / 18th july / july 18 / 18 july / 18th of july
 f 2 | Course code: ___ | q1632
@@ -197,7 +183,6 @@ f 8 | One-to-one lesson selected: ___ guitar | blues
 f 9 | First heard about us from: a ___ | magazine
 f 10 | Additional request: would like ___ if possible | parking
 ## Section 2 · Denford Festival
-Section 2: bài nói trên radio về lễ hội Denford.
 > Questions 11–15: What is the main attraction in each area of the festival? Choose FIVE answers A–G. A talks about gardening · B live music · C an art exhibition · D a children's playground · E evening entertainment · F a competition for adults · G vegetable market
 L 11 | Bridge Street | ABCDEFG | C
 L 12 | King's Park | ABCDEFG | D
@@ -211,7 +196,6 @@ m 18 | What will be provided for international visitors? | discounts on accommod
 m 19 | What information is given about car park A? | It is bigger than car park B. ;; It is closer to town than car park B. ;; It will close earlier than car park B. | A
 m 20 | What change have the organisers made to the programme this year? | replacing the programme with an app ;; reducing the number of programmes printed ;; introducing a charge for the programmes | B
 ## Section 3 · Action Research Course for Practising Teachers
-Section 3: một sinh viên đang học sư phạm hỏi giảng viên về khóa nghiên cứu hành động.
 > Questions 21–23: Complete the notes. Write NO MORE THAN TWO WORDS for each answer. Course leader: Alan Cumner.
 f 21 | (get his recent book called '___ ') | professional learning
 f 22 | Course objectives: researching as part of a ___ | team
@@ -225,7 +209,6 @@ f 28 | Analysing ___ (use statistics based on own students) | test results
 f 29 | Using questionnaires – use the ___ to find respondents | internet
 f 30 | Using ___ (own choice of respondents) | interviews
 ## Section 4 · The Digital World and Young People
-Section 4: bài giảng về ảnh hưởng của thế giới số tới giới trẻ (quan điểm của Prensky).
 > Questions 31–33: Choose the correct letter A, B or C.
 m 31 | What impact does Marc Prensky believe that digital technology has had on young people? | It has altered their thinking patterns. ;; It has harmed their physical development. ;; It has limited their brain capacity. | A
 m 32 | Digital immigrants tend to access computers | using their native language. ;; less efficiently than young people. ;; for less important information. | B
@@ -242,9 +225,7 @@ L 40 | Computers can't replace educators. | ABC | C
 === Listening | Vol 9 | Test 5 | 40
 ## Section 1 · How to Become a Tea Taster
 @audio https://drive.google.com/file/d/1ayvSH_Y9DBNMnlYqIHhmsLLkqFrRTQvv/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: một sinh viên nói chuyện với người làm nghề nếm trà tại hội chợ việc làm.
 > Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. How to become a tea taster.
 f 1 | A trainee tea taster mainly works in the company's ___ | lab
 f 2 | taste the tea using a ___ | spoon
@@ -257,13 +238,12 @@ f 8 | ability to distinguish different kinds of ___ accurately | colour / color 
 f 9 | effective ___ skills in different situations | communication
 f 10 | being prepared to ___ | travel
 ## Section 2 · Pioneer Historical Village
-Section 2: hướng dẫn viên nói chuyện với nhóm khách tham quan làng lịch sử Pioneer.
 > Questions 11–14: Choose the correct letter A, B or C.
 m 11 | When did Pioneer Historical Village open to the public? | 1962 ;; 1970 ;; 1980 | C
 m 12 | How much will each adult in the group pay for a ticket? | $11.00 ;; $12.50 ;; $16.00 | A
 m 13 | What sort of demonstration will the visitors be able to watch? | an unusual approach to baking bread ;; a quick way of making candles ;; a traditional method of making sweets | C
 m 14 | What kind of experience with animals can visitors have at Pioneer Village? | gathering eggs ;; milking cows ;; feeding goats | A
-> Questions 15–20: Label the map. Choose the correct letter A–K. (Bản đề gốc có bản đồ làng với các vị trí A–K; hãy nghe mô tả vị trí và chọn chữ cái.)
+> Questions 15–20: Label the map. Choose the correct letter A–K.
 L 15 | Schoolhouse | ABCDEFGHIJK | I
 L 16 | Mill | ABCDEFGHIJK | B
 L 17 | Stables | ABCDEFGHIJK | H
@@ -271,11 +251,10 @@ L 18 | Doctor's Office | ABCDEFGHIJK | E
 L 19 | Hotel | ABCDEFGHIJK | F
 L 20 | Workshop | ABCDEFGHIJK | J
 ## Section 3 · Disposing of Dangerous Household Waste
-Section 3: Annie và Ryan thảo luận với giảng viên về bài thuyết trình rác thải nguy hại trong gia đình.
-> Questions 21–22: Choose TWO letters. Which TWO things do Annie and Ryan agree are surprising about people's behaviour and attitudes to waste disposal? A People like to be reminded about what to recycle. · B People often forget what is dangerous. · C People are prepared to pay more for safer products. · D People recycle cheap items less often than expensive ones. · E People think waste disposal is boring. (Nhập một chữ cái mỗi ô, thứ tự bất kỳ.)
+> Questions 21–22: Choose TWO letters. Which TWO things do Annie and Ryan agree are surprising about people's behaviour and attitudes to waste disposal? A People like to be reminded about what to recycle. · B People often forget what is dangerous. · C People are prepared to pay more for safer products. · D People recycle cheap items less often than expensive ones. · E People think waste disposal is boring.
 f 21 | Surprising thing 1 ___ | b / e
 f 22 | Surprising thing 2 ___ | e / b
-> Questions 23–24: Choose TWO letters. Which TWO things does Annie think will improve recycling rates in the local area? A giving people financial rewards for recycling · B giving a fine to households which don't recycle · C involving children in more schemes · D passing laws which require local councils to recycle more · E having more research on people's current habits (Nhập một chữ cái mỗi ô, thứ tự bất kỳ.)
+> Questions 23–24: Choose TWO letters. Which TWO things does Annie think will improve recycling rates in the local area? A giving people financial rewards for recycling · B giving a fine to households which don't recycle · C involving children in more schemes · D passing laws which require local councils to recycle more · E having more research on people's current habits
 f 23 | Improvement 1 ___ | b / c
 f 24 | Improvement 2 ___ | c / b
 > Questions 25–30: What advice do Ryan and Annie agree should be given about each type of waste? Choose SIX answers A–H. A should be disposed of more regularly · B should have better labelling · C should normally be used up completely · D should be saved for later disposal · E should be made available for others' use · F should be repaired rather than thrown away · G should be further modified to be made less harmful · H should be retained and used for different purposes
@@ -286,7 +265,6 @@ L 28 | pesticides | ABCDEFGH | B
 L 29 | tyres | ABCDEFGH | H
 L 30 | fridges | ABCDEFGH | G
 ## Section 4 · Whale Shark Conservation Field Trip
-Section 4: sinh viên trình bày chuyến thực địa tại trung tâm nghiên cứu cá mập voi ở Ningaloo.
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
 f 31 | They stay near the ___ (of the water) | surface
 f 32 | and they lack any actual ___ | bones
@@ -302,9 +280,7 @@ f 40 | Ban scuba activities as whale sharks are affected by the ___ the activiti
 === Listening | Vol 9 | Test 6 | 40
 ## Section 1 · Kiwi Air Customer Complaint Form
 @audio https://drive.google.com/file/d/19Ho1OTxJsG7ZUvTp0qfh_AqWJ9wkLXnf/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: một khách hàng gọi điện khiếu nại về việc đặt vé máy bay trên website của Kiwi Air.
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
 f 1 | Name: Janet ___ | quigley
 f 2 | Ticket details: one adult and three children (Wellington to Christchurch) – four ___ tickets | return
@@ -317,13 +293,12 @@ f 8 | the rule is unfair for large families and ___ groups | school
 f 9 | letter to go to the ___ | manager
 f 10 | reference number: ___ | gbk8422
 ## Section 2 · Linwood Apartment Complex
-Section 2: quản lý khu căn hộ Linwood giới thiệu với cư dân mới.
 > Questions 11–14: Choose the correct letter A, B or C.
 m 11 | When was the first apartment complex completed? | 1 year ago ;; 3 years ago ;; 5 years ago | A
 m 12 | What does the manager say he enjoys most about the job? | resolving problems between residents ;; dealing with financial matters ;; organizing building maintenance | A
 m 13 | Regarding restrictions in the complex, the manager says | only some types of flowers can be planted ;; only the interiors of apartments can be painted ;; only certain colors can be used on the walls | B
 m 14 | What does the manager ask residents to do for the welcome party? | bring food ;; prepare name tags ;; decorate the hall | C
-> Questions 15–20: Label the map. Choose the correct letter A–K. (Bản đề gốc có sơ đồ khu căn hộ với các vị trí A–K; hãy nghe mô tả và chọn chữ cái.)
+> Questions 15–20: Label the map. Choose the correct letter A–K.
 L 15 | Shop | ABCDEFGHIJK | F
 L 16 | Barbecue area | ABCDEFGHIJK | C
 L 17 | Childcare center | ABCDEFGHIJK | D
@@ -331,7 +306,6 @@ L 18 | Laundry | ABCDEFGHIJK | E
 L 19 | Recreation room | ABCDEFGHIJK | H
 L 20 | Hall | ABCDEFGHIJK | A
 ## Section 3 · The History and Development of the Bicycle
-Section 3: Max và Izzy chuẩn bị bài thuyết trình về lịch sử xe đạp.
 > Questions 21–24: Choose the correct letter A, B or C.
 m 21 | Izzy believes the 'safety bicycle' is significant because it was | specifically made for children to use. ;; the first bicycle to be similar to modern bicycles. ;; designed to travel at higher speeds than previous models. | B
 m 22 | What effect of bicycles on the 19th-century working classes does Max want to highlight? | how people spent their free time ;; where people were employed ;; the way people found romantic partners | C
@@ -345,7 +319,6 @@ L 28 | Rashid | ABCDEFGH | F
 L 29 | Saira | ABCDEFGH | E
 L 30 | Giovanni | ABCDEFGH | A
 ## Section 4 · The Patagon People of South America
-Section 4: bài giảng khảo cổ học về người Patagon ở Nam Mỹ.
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
 f 31 | Young guanaco were used to make the coats because of their ___ skin. | soft
 f 32 | Scrapers made from ___ are today displayed in museums. | stone
@@ -361,9 +334,8 @@ f 40 | Shepherds still make ___ using similar techniques. | blankets
 === Listening | Vol 9 | Test 7 | 40
 ## Section 1 · Car Servicing
 @audio https://drive.google.com/file/d/1mqPSYKY2x1a8CQxvNzCO4-HZmRpjCYHD/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: khách hàng gọi điện đặt lịch bảo dưỡng xe. Ví dụ – Customer name: Ian Croft.
+Example: Customer name: Ian Croft.
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
 f 1 | Registration number: ___ | bd51str
 f 2 | Number of miles: ___ | 180,000 / 180000
@@ -376,21 +348,19 @@ f 8 | needs a spare ___ | key
 f 9 | Courtesy car? Yes, preferably ___ | automatic
 f 10 | Phone: ___ | 07847 355780 / 07847355780
 ## Section 2 · Rosedale Library Open Day
-Section 2: David Laws giới thiệu kế hoạch mở rộng thư viện Rosedale.
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | Why is David Laws leading the meeting instead of Penny Williams today? | Penny Williams is not well. ;; David Laws is the director now. ;; The meeting will be postponed. | A
 m 12 | What does David say has been a problem with guest speaker talks? | expensive tickets ;; lack of publicity ;; inconvenient time | B
 m 13 | What did the speaker say about the break-in at the library? | The building suffered some damage. ;; Some valuable items were stolen. ;; The thieves had prepared well. | A
 m 14 | Why do they want to extend the library? | It has had no renovation since it was founded. ;; It needs to double the number of computers. ;; The number of visitors has increased. | C
 m 15 | The money from the city council will be used for | recruiting extra staff ;; buying more computers ;; improving the lighting | C
-> Questions 16–20: Label the plan of Rosedale Library. Choose the correct letter A–H. (Bản đề gốc có sơ đồ thư viện với các vị trí A–H; hãy nghe mô tả và chọn chữ cái.)
+> Questions 16–20: Label the plan of Rosedale Library. Choose the correct letter A–H.
 L 16 | Children's room | ABCDEFGH | C
 L 17 | Community room | ABCDEFGH | A
 L 18 | Café | ABCDEFGH | B
 L 19 | Academic study room | ABCDEFGH | H
 L 20 | Multimedia room | ABCDEFGH | G
 ## Section 3 · The Artist Samuel Prout
-Section 3: sinh viên Jack trao đổi với Dr Rubin về họa sĩ Samuel Prout.
 > Questions 21–25: Choose the correct letter A, B or C.
 m 21 | According to Jack, why did Samuel Prout never become very famous? | His output was very limited. ;; He was seen as old-fashioned. ;; His work never had a major exhibition. | C
 m 22 | Dr Rubin and Jack agree that many of Prout's problems were caused by | poor health. ;; jealous colleagues. ;; an unhappy marriage. | A
@@ -404,7 +374,6 @@ L 28 | Woodland scene | ABCDEFG | C
 L 29 | Venice | ABCDEFG | F
 L 30 | Entrance to a harbour | ABCDEFG | A
 ## Section 4 · Case Study: Chocozine's Difficult Decision
-Section 4: bài giảng kinh doanh về công ty Chocozine.
 > Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
 f 31 | Smith and his colleagues noticed the spread of mass-customisation in many US ___ | industries
 f 32 | A European retailer wanted 15,000 chocolate bars to use as a ___ for customers. | gift
@@ -420,9 +389,8 @@ f 40 | Accepting ___ orders has created severe problems for many new businesses.
 === Listening | Vol 9 | Test 8 | 40
 ## Section 1 · Call Record Card
 @audio https://drive.google.com/file/d/11XKiDEKxARng0LSZqbOLQoaD_mLm3V55/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: cuộc gọi tới Medical Help Direct về chứng đau lưng. Ví dụ – Caller's phone number: 03786 439251.
+Example: Caller's phone number: 03786 439251.
 > Questions 1–10: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
 f 1 | Caller's name: Robert ___ | ridyard
 f 2 | Address: 27 ___ , Moortown | station road
@@ -435,7 +403,6 @@ f 8 | Treatment already applied: has applied heat; has taken ___ | painkillers
 f 9 | Advice given: try using ___ | ice
 f 10 | Ask for information about ___ | exercise
 ## Section 2 · Preparing for a Trip to an Outdoor Education Center
-Section 2: hiệu trưởng nói với phụ huynh về chuyến đi ba ngày tới trung tâm giáo dục ngoài trời.
 > Questions 11–16: Choose the correct letter A, B or C.
 m 11 | A trip to the outdoor education center will help the children | create good relationships ;; manage without adult supervision ;; react positively to new challenges | C
 m 12 | To prepare their children for the trip, parents should | let them try sleeping in a tent at home ;; make sure they get enough sleep before they leave ;; tell them that they will be in a tent with their friends | B
@@ -443,13 +410,12 @@ m 13 | What do parents need to put in their children's backpack? | plastic bags 
 m 14 | What are children allowed to bring on the trip? | electronic games ;; cell phones ;; penknives | B
 m 15 | How are parents selected to attend the trip? | The first ten parents to sign up will be able to go ;; Parents' names will be chosen from a box ;; Preference will be given to parents with camping skills | A
 m 16 | Payment for the trip | must be handed to the child's teacher ;; can be left at the school office ;; should be made directly to the outdoor education center | B
-> Questions 17–20: Label the map of the centre. Choose the correct letter A–G. (Bản đề gốc có sơ đồ trung tâm với các vị trí A–G; hãy nghe mô tả và chọn chữ cái.)
+> Questions 17–20: Label the map of the centre. Choose the correct letter A–G.
 L 17 | Woodcarving studio | ABCDEFG | E
 L 18 | Emergency meeting point | ABCDEFG | A
 L 19 | Conservation center | ABCDEFG | F
 L 20 | Arts and crafts room | ABCDEFG | B
 ## Section 3 · Stone Point: A New Zealand Historical Site
-Section 3: Liz và Scott chuẩn bị bài thuyết trình về địa điểm lịch sử Stone Point.
 > Questions 21–24: Choose the correct letter A, B or C.
 m 21 | According to Liz, Stone Point played a key role in local history because | it was used for defence or attack purposes. ;; it was the landing point for the first Maori settlers. ;; it was developed as a commercial port. | A
 m 22 | Scott and Liz agree Maori originally chose to inhabit Stone Point because of | its rich soil. ;; the supply of fish. ;; available building materials. | B
@@ -463,7 +429,6 @@ L 28 | Modernisation of the fort in the 1930s–40s | ABCDEFGH | F
 L 29 | Uses of Stone Point from 1950s to the present day | ABCDEFGH | C
 L 30 | The use of Stone Point as a public park | ABCDEFGH | E
 ## Section 4 · Rural Development: The Berbers and Tuaregs
-Section 4: bài giảng về phát triển nông thôn, người Berber và Tuareg ở Bắc Phi.
 > Questions 31–40: Complete the notes. Write NO MORE THAN TWO WORDS for each answer.
 f 31 | began to lead a nomadic life, moving across ___ and mountains | deserts
 f 32 | some Berbers, known as ___ nomads, moved twice a year | seasonal
@@ -479,9 +444,8 @@ f 40 | some Tuaregs now work as ___ for the Malian Department of Tourism | guide
 === Listening | Vol 9 | Test 9 | 40
 ## Section 1 · Renfrew Activity Centre
 @audio https://drive.google.com/file/d/19WEGNtqznsNtZMKpP8JgSoJIT_XbchwT/view
-File nghe gồm cả 4 Section, phát liên tục. Bạn chỉ nghe một lần như thi thật.
 
-Section 1: một phụ nữ gọi điện hỏi về các khóa học cuối tuần tại trung tâm hoạt động Renfrew. Ví dụ – Rock climbing: Centre grounds, £60 per person (nhóm 12 người).
+Example: Rock climbing: Centre grounds, £60 per person.
 > Questions 1–7: Complete the table. Write NO MORE THAN TWO WORDS for each answer.
 f 1 | Rock climbing – basic skill learned: using the ___ | ropes / rope
 f 2 | Rock climbing – price includes: ___ | equipment
@@ -495,21 +459,19 @@ f 8 | Deposit for group booking: ___ of full amount | 20% / 20 percent / 20 per 
 f 9 | Must bring suitable ___ | shoes
 f 10 | Name of contact: Gordon ___ | arkwright
 ## Section 2 · Beach Clean-up Day
-Section 2: Brenda, người tổ chức, hướng dẫn tình nguyện viên cho ngày dọn dẹp bãi biển Quinlan.
 > Questions 11–15: Choose the correct letter A, B or C.
 m 11 | Quinlan Beach was chosen for the clean-up day because | litter there is a danger to wildlife. ;; visitors have complained about litter there. ;; the local council requested help with litter collection there. | A
 m 12 | What does Brenda say about the groups for the clean-up day? | Groups will stay the same all day. ;; Everyone should choose their group in advance. ;; Group members can decide on their roles. | C
 m 13 | What equipment does Brenda say that people may want to bring? | bags ;; a whistle ;; a litter-picking tool | C
 m 14 | What does Brenda say about clothing for the day? | Hats are optional. ;; Footwear should be waterproof. ;; Gloves are provided in a range of sizes. | B
 m 15 | Why does Brenda want each group to fill in a survey? | to collect information about the types of litter they pick up ;; to indicate the location of the litter they pick up ;; to measure how much litter they pick up | B
-> Questions 16–20: Label the map of Quinlan Beach. Choose the correct letter A–I. (Bản đề gốc có bản đồ bãi biển với các vị trí A–I; hãy nghe mô tả và chọn chữ cái.)
+> Questions 16–20: Label the map of Quinlan Beach. Choose the correct letter A–I.
 L 16 | First aid station | ABCDEFGHI | F
 L 17 | Equipment pick-up | ABCDEFGHI | B
 L 18 | Toilets | ABCDEFGHI | G
 L 19 | Meeting point | ABCDEFGHI | I
 L 20 | Location for lunch | ABCDEFGHI | D
 ## Section 3 · Research Project on Maths Ability
-Section 3: sinh viên Aya thảo luận với giảng viên về dự án nghiên cứu năng lực toán học.
 > Questions 21–23: Choose the correct letter A, B or C.
 m 21 | Aya chose interviewing as her main research method because | it was easier to use than other methods. ;; it enabled her to explore points of interest in detail. ;; it was different from methods used by other research groups. | B
 m 22 | On what basis did Aya choose her research participants? | They were available in large numbers. ;; They had asked to be involved in the project. ;; They all had very similar attitudes to maths. | C
@@ -523,7 +485,6 @@ f 28 | How do people solve maths questions? Research method: ___ of people's str
 f 29 | Successful: understanding the question as a ___ | whole
 f 30 | Unsuccessful: giving up after first ___ of the problem | reading
 ## Section 4 · The Red Sea Urchin
-Section 4: bài giảng về nhím biển đỏ (Red Sea Urchin).
 > Questions 31–40: Complete the notes. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.
 f 31 | The red sea urchin feeds on ___ | plants
 f 32 | is covered in ___ that protect it | spines
