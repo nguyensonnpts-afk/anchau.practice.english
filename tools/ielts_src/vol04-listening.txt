@@ -59,3 +59,70 @@ f 37 | Sustainability lobby is prepared to ___ nuclear energy | accept
 f 38 | Myth 3 Role of technology: introduction of battery stations on ___ is an example of new business thinking, not new technology | roads
 f 39 | Agriculture: some farmers plant crops like sunflowers which don't use much water, unlike ___ | corn
 f 40 | Greater use of water is a result of changes in our ___ | diet
+=== Listening | Vol 4 | Test 2 | 40
+## Section 1 · Holiday on Jackson Island
+@audio https://drive.google.com/file/d/1mOfYUH4fmMvRUdXbAcgpP5V7N-9jN8iD/view
+Section 1: hai người bạn, John và Anna, nói chuyện về kỳ nghỉ của Anna trên đảo Jackson. Nghe một lần như thi thật.
+
+Ví dụ: Camford – ở cùng người anh/chị họ (cousin).
+> Questions 1–7: Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Holiday on Jackson Island (Place · Anna's accommodation · Things Anna did · Anna's recommendation).
+f 1 | Camford: went shopping in the market – need to take ___ | cash
+f 2 | Newtown: bus tour – visit the ___ | museum
+f 3 | Golden Beach: stayed in a ___ | caravan
+f 4 | Golden Beach: did some ___ | sailing
+f 5 | Golden Beach: stay for at least ___ | four days / 4 days
+f 6 | Place: ___ (accommodation: in a motel) | White Mountain
+f 7 | White Mountain: went ___ – book some lessons in advance | snowboarding
+> Questions 8–10: More advice. Write ONE WORD ONLY for each answer.
+f 8 | Try the ___ at the cafe on the mountain. | cakes / cake
+f 9 | Hire a ___ | car
+f 10 | Buy a ___ before the holiday. | map / maps
+## Section 2 · Arts Weekend at Grampic Arts Campus
+@audio https://drive.google.com/file/d/1QdzEr9WrxlCZ6pUe3c3rUNHNoKeNWhGP/view
+Section 2: giám đốc trung tâm nghệ thuật giới thiệu cho nhóm tham dự Arts Weekend.
+
+> Questions 11–15: Label the map of Grampic Arts Campus. Write the correct letter, A–H, next to questions 11–15. (Bản đề gốc có bản đồ khu campus với các vị trí A–H; hãy nghe và chọn chữ cái vị trí.)
+L 11 | Bike sheds | ABCDEFGH | G
+L 12 | Snack shop | ABCDEFGH | E
+L 13 | Fitness rooms | ABCDEFGH | A
+L 14 | Family rooms | ABCDEFGH | F
+L 15 | TV room | ABCDEFGH | H
+> Questions 16–20: Choose the correct letter A, B or C.
+m 16 | The drama option takes place | in the theatre. ;; in the sports hall. ;; in the lecture rooms. | C
+m 17 | The photography option is reserved for | people new to photography. ;; people with special equipment. ;; parents and children. | A
+m 18 | The writing option will focus on | poetry techniques. ;; short stories. ;; starting a novel. | B
+m 19 | The music option involves | singing classes. ;; going to a concert. ;; giving a performance. | C
+m 20 | What information is given about the creche? | It costs the same as last year. ;; Lunch costs extra. ;; Parents must pay in advance. | A
+## Section 3 · Planning a geography lesson report
+@audio https://drive.google.com/file/d/1hYjmz8VGFgCSZVIfoQXeOw7BJuzmMtj1/view
+Section 3: hai giáo sinh thực tập, Dean và Hannah, thảo luận báo cáo về bài giảng địa lý của họ.
+
+> Questions 21 and 22: Choose TWO letters, A–E. Which TWO topics were the aims of the geography lesson related to? A global interdependency · B manufacturing methods · C the environmental impact of trade · D transport systems · E the development of writing tools. Viết hai chữ cái (thứ tự nào cũng được).
+f 21 | Topic 1 ___ | a / d
+f 22 | Topic 2 ___ | d / a
+> Questions 23 and 24: Choose TWO letters, A–E. Which TWO problems do Dean and Hannah identify in their lesson? A the lesson structure · B the materials · C the teacher coordination · D the student grouping · E the timing. (Thứ tự lựa chọn dựng lại từ bản scan lỗi.) Viết hai chữ cái (thứ tự nào cũng được).
+f 23 | Problem 1 ___ | d / e
+f 24 | Problem 2 ___ | e / d
+> Questions 25–30: Complete the flow-chart. Choose SIX answers from the box and write the correct letter, A–H. A export routes · B future · C talk · D homework · E worksheet · F history · G producers · H methods of transport. Geography lesson plan: student activities. Examine a pencil and discuss where the component materials come from.
+L 25 | Locate the top ___ on a world map. | ABCDEFGH | G
+L 26 | Discuss the pros and cons of different ___ | ABCDEFGH | H
+L 27 | In groups, discuss countries' possible ___ to the USA. | ABCDEFGH | A
+L 28 | Complete a ___ about pencil distribution within the USA. | ABCDEFGH | E
+L 29 | Share ideas about the ___ of pencils. | ABCDEFGH | B
+L 30 | Prepare a ___ | ABCDEFGH | C
+## Section 4 · Biomass fuel
+@audio https://drive.google.com/file/d/1x6j_RnmY2rTLkwVUyaArQUMNo3Jr3o_7/view
+Section 4: giảng viên nói với sinh viên khoa học môi trường về nhiên liệu sinh khối (biomass).
+
+Biomass is waste plant material, e.g. sawdust, straw. Biomass briquettes can be used as domestic or industrial fuel.
+> Questions 31–40: Complete the notes below. Write ONE WORD ONLY for each answer.
+f 31 | Benefits of biomass briquettes – financial: no ___ for materials | cost
+f 32 | Convenience: clean and easy to handle and ___ | store
+f 33 | Production by machine: biomass is first converted to a ___ | powder
+f 34 | The machine expels the mixture through ___ of different shapes. | holes
+f 35 | N.B. Only a relatively small amount of ___ is needed to operate the machine. | electricity / energy
+f 36 | Production by hand: biomass is mixed with water and sticky material, e.g. ___ , and then pressed into shape. | starch
+f 37 | Current use – Europe and the USA: briquettes have been in use for some time for ___ | agriculture
+f 38 | India and China: in 2002 China had about 600 ___ | factories
+f 39 | Uganda: customers are mainly public institutions or ___ | businesses
+f 40 | Prospects for biomass fuel: the ___ is likely to increase. | demand
