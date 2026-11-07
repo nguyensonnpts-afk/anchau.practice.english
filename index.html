@@ -631,7 +631,7 @@ const DAY=86400000;
 function blank(){return {teacherPin:'1234',settings:{selfReg:true,className:'Lớp Tiếng Anh'},students:[],sets:[],tests:[],assignments:[],progress:{}}}
 let D=load();
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.students)return Object.assign(blank(),x)}catch(e){}return blank()}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){toast('Không lưu được dữ liệu trên trình duyệt này')}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){toast('Không lưu được dữ liệu trên trình duyệt này')}if(window.SYNC)SYNC.dirty()}
 function getSession(){try{return JSON.parse(localStorage.getItem(SKEY))}catch(e){return null}}
 function setSession(s){try{s?localStorage.setItem(SKEY,JSON.stringify(s)):localStorage.removeItem(SKEY)}catch(e){}}
 
@@ -876,7 +876,7 @@ VIEWS.login=()=>{
  `}</div></div>`;
 };
 function genCode(){let c;do{c='HV'+Math.floor(1000+Math.random()*9000)}while(D.students.some(s=>s.code===c));return c}
-function stuLogin(){const c=$('#lcode').value.trim().toUpperCase();const s=D.students.find(x=>x.code.toUpperCase()===c);if(!s){toast('Không tìm thấy mã học viên này');return}s.lastLogin=Date.now();save();U={role:'student',id:s.id,name:s.name,code:s.code};setSession({role:'student',id:s.id});go('home')}
+function stuLogin(){const c=$('#lcode').value.trim().toUpperCase();const s=D.students.find(x=>x.code.toUpperCase()===c);if(!s){toast(window.SYNC&&SYNC.on&&!SYNC.ready?'Đang tải dữ liệu lớp, thử lại sau vài giây':'Không tìm thấy mã học viên này');return}s.lastLogin=Date.now();save();U={role:'student',id:s.id,name:s.name,code:s.code};setSession({role:'student',id:s.id});go('home')}
 function stuRegister(){const n=$('#lname').value.trim();if(n.length<2){toast('Nhập họ tên');return}const s={id:uid('u'),name:n,code:genCode(),created:Date.now(),lastLogin:Date.now()};D.students.push(s);save();U={role:'student',id:s.id,name:s.name,code:s.code};setSession({role:'student',id:s.id});go('home');modal(`<h2>Chào ${h(n)}!</h2><p>Mã học viên của bạn là</p><div class="big-score" style="margin:6px 0 12px">${s.code}</div><p class="muted">Hãy ghi nhớ mã này để đăng nhập lần sau.</p><button class="btn pri" onclick="modal('')">Bắt đầu học</button>`)}
 function teaLogin(){if($('#lpin').value===D.teacherPin){U={role:'teacher',name:'Giáo viên'};setSession({role:'teacher'});go('t-students')}else toast('Sai mã PIN')}
 
@@ -1655,7 +1655,7 @@ VIEWS.history=()=>{
  <div class="card"><h2>Bài đã làm</h2>${rs.length?`<div class="tbl"><table><thead><tr><th>Đề</th><th>Ngày</th><th>Kết quả</th><th></th></tr></thead><tbody>${rs.map(r=>{const t=testById(r.testId);return `<tr><td>${h(t?t.title:'(đề đã xóa)')}</td><td>${fdt(r.date)}</td><td><span class="tag">${resultLabel(t,r)}</span></td><td>${t?`<button class="btn sm" onclick="go('result',{rid:'${r.id}'})">Xem</button>`:''}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Chưa làm bài nào.</div>'}</div>
  ${(p.fullruns||[]).length?`<div class="card mt"><h2>Thi 4 kỹ năng</h2>${myFullTable(U.id)}</div>`:''}
  <div class="card mt"><h2>Tiến độ từ vựng</h2>${sets.length?sets.map(({s,st})=>`<div class="list-item"><div style="flex:1"><b>${h(s.title)}</b><div class="bar mt" style="margin-top:6px"><i style="width:${st.m/st.total*100}%"></i></div></div><span class="small muted">${st.m}/${st.total} thuộc · ${st.l} đang học</span></div>`).join(''):'<div class="empty">Chưa học từ nào.</div>'}</div>
- <div class="card mt"><h2>Đồng bộ với giáo viên</h2><p class="small muted">Dữ liệu được lưu trên trình duyệt của máy này. Nếu học ở nhà, hãy xuất file kết quả và gửi cho giáo viên (Zalo, email…).</p>
+ <div class="card mt"><h2>Đồng bộ với giáo viên</h2><p class="small muted">${window.SYNC&&SYNC.on?'Kết quả tự đồng bộ online với giáo viên khi có mạng. Nếu cần, bạn vẫn có thể xuất file kết quả để gửi.':'Dữ liệu được lưu trên trình duyệt của máy này. Nếu học ở nhà, hãy xuất file kết quả và gửi cho giáo viên (Zalo, email…).'}</p>
  <div class="row"><button class="btn pri" onclick="exportMine()">Xuất kết quả gửi giáo viên</button><button class="btn" onclick="importPack()">Nhập file từ giáo viên</button></div></div>`;
 };
 function exportMine(){const s=stuById(U.id);download(`ket-qua-${s.code}-${today()}.json`,{kind:'student-progress',app:'lopta',students:[s],progress:{[s.id]:P()}})}
@@ -1789,7 +1789,7 @@ VIEWS['t-student']=()=>{
 };
 function editStudent(id){const s=stuById(id);modal(`<h2>Sửa học viên</h2><label class="f">Họ tên</label><input type="text" id="es-n" value="${h(s.name)}"><label class="f">Nhóm / lớp</label><input type="text" id="es-g" value="${h(s.group||'')}"><label class="f">Mã đăng nhập</label><input type="text" id="es-c" value="${h(s.code)}"><label class="f">Ghi chú (học viên không thấy)</label><textarea class="prose" style="min-height:90px" id="es-note">${h(s.note||'')}</textarea><div class="row mt"><button class="btn pri" onclick="saveStudent('${id}')">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
 function saveStudent(id){const s=stuById(id);const c=$('#es-c').value.trim().toUpperCase();if(!c){toast('Mã không được trống');return}if(D.students.some(x=>x.id!==id&&x.code.toUpperCase()===c)){toast('Mã đã có người dùng');return}s.name=$('#es-n').value.trim()||s.name;s.group=$('#es-g').value.trim();s.code=c;s.note=$('#es-note').value;save();modal('');render()}
-function delStudent(id){const s=stuById(id);if(!confirm(`Xóa học viên ${s.name} và toàn bộ kết quả?`))return;D.students=D.students.filter(x=>x.id!==id);delete D.progress[id];D.assignments.forEach(a=>{if(Array.isArray(a.to))a.to=a.to.filter(x=>x!==id)});save();go('t-students')}
+function delStudent(id){const s=stuById(id);if(!confirm(`Xóa học viên ${s.name} và toàn bộ kết quả?`))return;D.students=D.students.filter(x=>x.id!==id);delete D.progress[id];if(window.SYNC)SYNC.del(id);D.assignments.forEach(a=>{if(Array.isArray(a.to))a.to=a.to.filter(x=>x!==id)});save();go('t-students')}
 
 /* --- Bộ từ --- */
 VIEWS['t-sets']=()=>`<div class="row between"><div><h1>Bộ từ vựng</h1><p class="sub">Bộ từ mẫu có sẵn và bộ từ bạn tự soạn.</p></div><button class="btn pri" onclick="setEditor()">+ Tạo bộ từ</button></div>
@@ -1996,5 +1996,7 @@ function saveCfg(){D.settings.className=$('#cfg-n').value.trim()||'Lớp Tiếng
  render();
 })();
 </script>
+<script src="assets/firebase-config.js"></script>
+<script src="assets/sync.js"></script>
 </body>
 </html>

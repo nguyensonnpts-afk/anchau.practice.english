@@ -1,0 +1,16 @@
+rules_version = '2';
+// Dán nội dung này vào Firebase console > Firestore Database > Rules.
+// Chỉ cho phép đọc/ghi hai bộ sưu tập của app; mỗi tài liệu là một chuỗi JSON (trường j) dưới 1 MB.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /lopta/{doc} {
+      allow read: if true;
+      allow write: if doc == 'lop' && request.resource.data.j is string;
+    }
+    match /lopta_hv/{id} {
+      allow read: if true;
+      allow delete: if true;
+      allow create, update: if request.resource.data.j is string;
+    }
+  }
+}
