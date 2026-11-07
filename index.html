@@ -3,7 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lớp Tiếng Anh</title>
+<title>Lớp Tiếng Anh · Luyện từ vựng và đề IELTS</title>
+<meta name="description" content="Luyện từ vựng bằng thẻ ghi nhớ, làm đề IELTS Reading, Listening có chấm điểm ngay, luyện Writing và Speaking.">
+<meta name="theme-color" content="#2a55d6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1420" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Tiếng Anh">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lớp Tiếng Anh">
+<meta property="og:description" content="Luyện từ vựng và luyện đề IELTS, THPT: thẻ ghi nhớ, đề Reading, Listening chấm điểm ngay, Writing và Speaking.">
+<meta property="og:url" content="https://nguyensonnpts-afk.github.io/anchau.practice.english/">
+<meta property="og:image" content="https://nguyensonnpts-afk.github.io/anchau.practice.english/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -85,7 +103,7 @@ button.card{font:inherit;color:inherit;width:100%;display:flex;flex-direction:co
 .stat .n{font-family:var(--serif);font-size:34px;font-weight:400;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .stat .l{color:var(--muted);font-size:12.5px;margin-top:4px;letter-spacing:.01em}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line2);background:var(--card);padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:500;font-size:14.5px;text-decoration:none;color:var(--ink);transition:background .25s,border-color .25s,color .25s,transform .15s var(--ease),box-shadow .25s}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line2);background:var(--card);padding:10px 16px;border-radius:999px;cursor:pointer;font-weight:500;font-size:14.5px;text-decoration:none;color:var(--ink);transition:background .25s,border-color .25s,color .25s,transform .15s var(--ease),box-shadow .25s}
 .btn:hover{border-color:var(--ink)}
 .btn:active{transform:scale(.97)}
 .btn.pri{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
@@ -101,7 +119,7 @@ button.card{font:inherit;color:inherit;width:100%;display:flex;flex-direction:co
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .between{justify-content:space-between}
 .mt{margin-top:14px}.mt2{margin-top:30px}.mb{margin-bottom:18px}
-.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:var(--brand-soft);color:var(--brand);font-weight:500}
+.tag{font-family:var(--sans);vertical-align:middle;display:inline-block;font-size:12px;padding:2px 9px;border-radius:6px;background:var(--brand-soft);color:var(--brand);font-weight:500}
 .tag.acc{background:var(--accent-soft);color:var(--accent)}
 .tag.ok{background:var(--ok-soft);color:var(--ok)}
 .tag.bad{background:var(--bad-soft);color:var(--bad)}
@@ -320,6 +338,25 @@ mark.hl{background:color-mix(in srgb,var(--mark) 70%,transparent);color:inherit;
 .player.loading .pp{opacity:.6}
 .player-note{margin:8px 2px 0}
 @media (max-width:640px){.exam-head .row.between>b{flex:1 1 100%!important}.rtools .btn{white-space:nowrap}.exam-head .qnav span{width:24px;height:24px;font-size:10.5px}.rtools{flex:1;gap:2px}.rtools .btn{padding:5px 9px;font-size:12.5px}.exam-head .timer{font-size:15px;padding:5px 11px}.player{gap:10px;padding:12px}.player .pp{width:44px;height:44px}.player .tm{min-width:0;font-size:12px}}
+
+/* stats + reports + install */
+.gx2{grid-template-columns:repeat(2,minmax(0,1fr))}.gx4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:860px){.gx2{grid-template-columns:1fr}.gx4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:641px){nav.tabs{flex-wrap:nowrap}nav.tabs button{padding:8px 10px;white-space:nowrap}}
+.rep-link{color:var(--muted);font-size:12.5px;text-decoration:underline dotted;text-underline-offset:3px}
+.rep-link:hover{color:var(--bad)}
+.install{display:flex;align-items:center;gap:14px;padding:14px 18px;margin:14px 0 4px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(100deg,var(--brand-soft),var(--card) 70%)}
+.install img{width:40px;height:40px;border-radius:10px;flex:none}
+.install .t{flex:1;min-width:0;font-size:14px}
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.chart text{font-family:var(--sans);font-size:11px;fill:var(--muted)}
+.chart .v{fill:var(--ink);font-weight:600}
+.hbar{display:grid;grid-template-columns:minmax(150px,1.3fr) 2fr 64px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.hbar:last-child{border-bottom:0}
+.hbar .tr{height:10px;border-radius:99px;background:var(--bg2);overflow:hidden}
+.hbar .tr i{display:block;height:100%;border-radius:99px;background:var(--bad);transform-origin:left;animation:grow .9s var(--ease) both}
+.hbar .pc{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+@media (max-width:640px){.hbar{grid-template-columns:1fr 64px}.hbar .tr{grid-column:1/-1;grid-row:2}}
 
 /* motion: entrance on view change */
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -644,7 +681,7 @@ function header(){
  const el=$('#hdr');
  if(!U){el.innerHTML=`<div class="wrap"><div class="logo"><b>A</b>${h(D.settings.className)}</div></div>`;return}
  const st=[['home','Trang chủ'],['vocab','Luyện từ'],['exam','Luyện đề'],['speaking','Speaking'],['writing','Writing'],['history','Kết quả']];
- const tt=[['t-students','Học viên'],['t-grade','Chấm bài'],['t-sets','Bộ từ'],['t-tests','Đề thi'],['t-sw','Đề Nói/Viết'],['t-assign','Giao bài'],['t-data','Dữ liệu']];
+ const tt=[['t-students','Học viên'],['t-grade','Chấm bài'],['t-stats','Thống kê'],['t-sets','Bộ từ'],['t-tests','Đề thi'],['t-sw','Nói/Viết'],['t-assign','Giao bài'],['t-data','Dữ liệu']];
  const tabs=U.role==='teacher'?tt:st;
  const cur=R.v;
  const isOn=k=>cur===k||(k==='vocab'&&['set','flash','quiz','spell','match','review'].includes(cur))||(k==='exam'&&['test','result'].includes(cur))||(k==='t-students'&&cur==='t-student')||(k==='speaking'&&cur==='skres')||(k==='writing'&&cur==='wres')||(k==='t-grade'&&cur==='t-review');
@@ -736,7 +773,7 @@ VIEWS.home=()=>{
  const p=P();const days=[];for(let i=27;i>=0;i--){const d=new Date(Date.now()-i*DAY).toISOString().slice(0,10);days.push(p.activity[d]||0)}
  const lv=n=>n===0?'':n<10?'l1':n<30?'l2':'l3';
  const lastRes=p.results.slice(-3).reverse();
- return `<h1>Chào ${h(U.name)}</h1><p class="sub">${s.due?`Hôm nay bạn có <b>${s.due}</b> từ cần ôn.`:'Bạn không có từ nào đến hạn ôn. Học thêm từ mới nhé!'}</p>
+ return `<h1>Chào ${h(U.name)}</h1>${installBanner()}<p class="sub">${s.due?`Hôm nay bạn có <b>${s.due}</b> từ cần ôn.`:'Bạn không có từ nào đến hạn ôn. Học thêm từ mới nhé!'}</p>
  <div class="grid g4">
   <div class="card stat"><div class="n">${s.learned}</div><div class="l">Từ đã học</div></div>
   <div class="card stat"><div class="n">${s.mastered}</div><div class="l">Từ đã thuộc</div></div>
@@ -1026,7 +1063,7 @@ VIEWS.result=()=>{
  ${r.total?`<h2 class="mt2">Xem lại đáp án</h2><div class="card review">${qs.filter(q=>q.t!=='essay').map(q=>{const a=r.ans[q.n];const ok=isRight(q,a);
   const your=q.t==='mc'?(a!=null?`${'ABCDEFG'[a]}. ${fmt(q.o[a])}`:'<i>bỏ trống</i>'):(a?h(a):'<i>bỏ trống</i>');
   const right=q.t==='mc'?`${'ABCDEFG'[q.a]}. ${fmt(q.o[q.a])}`:h(q.a.join(' / '));
-  return `<div class="q"><div><span class="qn">${q.n}</span>${fmt(q.q)}</div><div class="mt small"><span class="${ok?'ok':'bad'}">${ok?'✓ Đúng':'✗ Sai'}</span> · Bạn chọn: ${your}${ok?'':` · Đáp án: <b>${right}</b>`}</div>${q.e?`<div class="explain">💡 ${fmt(q.e)}</div>`:''}</div>`}).join('')}</div>`:''}`;
+  return `<div class="q"><div><span class="qn">${q.n}</span>${fmt(q.q)}</div><div class="mt small"><span class="${ok?'ok':'bad'}">${ok?'✓ Đúng':'✗ Sai'}</span> · Bạn chọn: ${your}${ok?'':` · Đáp án: <b>${right}</b>`}${U.role==='student'?` · <a href="#" class="rep-link" onclick="event.preventDefault();reportQ('${t.id}',${q.n})">${(P().reports||[]).some(x=>x.testId===t.id&&x.n===q.n)?'Đã báo lỗi':'Báo lỗi câu này'}</a>`:''}</div>${q.e?`<div class="explain">💡 ${fmt(q.e)}</div>`:''}</div>`}).join('')}</div>`:''}`;
 };
 function saveGrade(sid,rid){const r=P(sid).results.find(x=>x.id===rid);const b=$('#eband').value;r.essay.band=b===''?null:+b;r.essay.comment=$('#ecom').value;r.essay.gradedAt=Date.now();save();toast('Đã lưu. Gửi lại gói dữ liệu cho học viên để họ thấy nhận xét.')}
 
@@ -1295,6 +1332,75 @@ VIEWS.history=()=>{
 function exportMine(){const s=stuById(U.id);download(`ket-qua-${s.code}-${today()}.json`,{kind:'student-progress',app:'lopta',students:[s],progress:{[s.id]:P()}})}
 
 /* =========================================================
+   CÀI APP, BÁO LỖI, THỐNG KÊ
+   ========================================================= */
+let INSTALL=null;
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();INSTALL=e;if(R.v==='home')render()});
+addEventListener('appinstalled',()=>{INSTALL=null;toast('Đã cài Lớp Tiếng Anh lên máy');if(R.v==='home')render()});
+if('serviceWorker' in navigator&&location.protocol==='https:')addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+function installBanner(){
+ let hide=false;try{hide=localStorage.getItem('noinst')==='1'}catch(e){}
+ if(hide||matchMedia('(display-mode: standalone)').matches||navigator.standalone)return '';
+ const ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+ if(!INSTALL&&!ios)return '';
+ return `<div class="install"><img src="assets/icons/icon-192.png" alt=""><div class="t"><b>Cài lên điện thoại hoặc máy tính</b><div class="small muted">${INSTALL?'Mở nhanh như một ứng dụng và vẫn ôn từ vựng được khi mất mạng.':'Trên iPhone: bấm nút Chia sẻ ở Safari, chọn "Thêm vào MH chính".'}</div></div>${INSTALL?`<button class="btn pri sm" onclick="doInstall()">Cài đặt</button>`:''}<button class="btn ghost sm" title="Ẩn" onclick="try{localStorage.setItem('noinst','1')}catch(e){};render()">✕</button></div>`;
+}
+async function doInstall(){if(!INSTALL)return;INSTALL.prompt();try{await INSTALL.userChoice}catch(e){}INSTALL=null;render()}
+
+function reportQ(tid,n){
+ const t=testById(tid);const q=flatQs(t).find(x=>x.n===n);
+ modal(`<h2>Báo lỗi câu ${n}</h2><p class="small muted">${h(t.title)}</p><div class="explain" style="background:var(--bg2)">${fmt(q.q)}</div>
+ <label class="f">Bạn thấy sai ở đâu?</label><textarea class="prose" style="min-height:110px" id="repnote" placeholder="Ví dụ: đáp án đúng phải là B vì đoạn 3 viết..."></textarea>
+ <p class="small muted">Báo lỗi được gửi cho giáo viên cùng file kết quả khi bạn bấm "Xuất kết quả gửi giáo viên" ở mục Kết quả.</p>
+ <div class="row mt"><button class="btn pri" onclick="saveReport('${tid}',${n})">Gửi báo lỗi</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`);
+ setTimeout(()=>{const e=$('#repnote');e&&e.focus()},50);
+}
+function saveReport(tid,n){const note=$('#repnote').value.trim();if(note.length<3){toast('Hãy ghi ngắn gọn chỗ bạn thấy sai');return}const p=P();p.reports=p.reports||[];p.reports.push({id:uid('rp'),testId:tid,n,note,date:Date.now()});save();modal('');render();toast('Đã ghi lại. Nhớ xuất kết quả gửi giáo viên nhé.')}
+function allReports(){const out=[];for(const sid in D.progress){(D.progress[sid].reports||[]).forEach(x=>out.push({...x,sid}))}return out.sort((a,b)=>b.date-a.date)}
+function resolveReport(sid,id){const x=(P(sid).reports||[]).find(y=>y.id===id);if(x){x.done=Date.now();save();render()}}
+function showReportQ(tid,n){const t=testById(tid);if(!t){toast('Đề này đã bị xóa');return}const q=flatQs(t).find(x=>x.n===n);if(!q)return;
+ const ans=q.t==='mc'?`${'ABCDEFGHIJ'[q.a]}. ${fmt(q.o[q.a])}`:h((q.a||[]).join(' / '));
+ modal(`<h2>${h(t.title)} · câu ${n}</h2><div class="mt">${fmt(q.q)}</div>${q.t==='mc'?`<div class="small muted mt">Phương án: ${q.o.map((o,i)=>'ABCDEFGHIJ'[i]+'. '+fmt(o)).join(' · ')}</div>`:''}<p class="mt">Đáp án hiện tại: <b>${ans}</b></p>${q.e?`<div class="explain">💡 ${fmt(q.e)}</div>`:''}<p class="small muted mt">Nếu đáp án sai, sửa trong file nguồn của đề (tools/ielts_src) hoặc trong mục Đề thi với đề tự soạn.</p><div class="row mt"><button class="btn pri" onclick="modal('')">Đóng</button></div>`)}
+
+function qKind(q){if(q.t==='fill')return 'Điền từ';if(q.t!=='mc')return null;const o=q.o.map(x=>String(x).trim().toUpperCase());if(o.includes('NOT GIVEN'))return o.includes('TRUE')?'True / False / Not Given':'Yes / No / Not Given';if(o.every(x=>/^[A-Z]$/.test(x)))return 'Chọn chữ cái, ghép thông tin';return 'Trắc nghiệm'}
+function wkStart(t){const d=new Date(t);d.setHours(0,0,0,0);d.setDate(d.getDate()-((d.getDay()+6)%7));return d.getTime()}
+let statSid='all';
+VIEWS['t-stats']=()=>{
+ const sids=statSid==='all'?D.students.map(s=>s.id):[statSid];
+ const res=[];sids.forEach(sid=>P(sid).results.forEach(r=>{if(r.total){const t=testById(r.testId);if(t)res.push({r,t,sid})}}));
+ // weekly
+ const W=10,now=wkStart(Date.now()),weeks=[];for(let i=W-1;i>=0;i--){const st=now-i*7*DAY;const rs=res.filter(o=>wkStart(o.r.date)===st);weeks.push({st,n:rs.length,avg:rs.length?rs.reduce((a,o)=>a+o.r.score/o.r.total,0)/rs.length:null})}
+ const cw=640,ch=200,pl=34,pb=26,bw=(cw-pl)/W;
+ const y=v=>ch-pb-(ch-pb-12)*v;
+ const chart=`<svg class="chart" viewBox="0 0 ${cw} ${ch}" role="img" aria-label="Điểm trung bình theo tuần">
+  ${[0,.25,.5,.75,1].map(v=>`<line x1="${pl}" x2="${cw}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end">${v*100}%</text>`).join('')}
+  ${weeks.map((w,i)=>{const x=pl+i*bw+bw*.2,wd=bw*.6;const d=new Date(w.st);const lab=`${d.getDate()}/${d.getMonth()+1}`;
+   return (w.avg!=null?`<rect x="${x}" y="${y(w.avg)}" width="${wd}" height="${Math.max(2,y(0)-y(w.avg))}" rx="4" fill="var(--brand)"><title>${lab}: ${Math.round(w.avg*100)}% (${w.n} bài)</title></rect><text class="v" x="${x+wd/2}" y="${y(w.avg)-6}" text-anchor="middle">${Math.round(w.avg*100)}%</text>`:'')+`<text x="${x+wd/2}" y="${ch-8}" text-anchor="middle">${lab}</text>`}).join('')}
+ </svg>`;
+ // by question type
+ const kinds={};const miss={};
+ res.forEach(({r,t})=>flatQs(t).forEach(q=>{const k=qKind(q);if(!k)return;const ok=isRight(q,r.ans[q.n]);kinds[k]=kinds[k]||{n:0,bad:0};kinds[k].n++;if(!ok)kinds[k].bad++;
+  const key=t.id+'#'+q.n;miss[key]=miss[key]||{t,q,n:0,bad:0};miss[key].n++;if(!ok)miss[key].bad++}));
+ const kl=Object.entries(kinds).sort((a,b)=>b[1].bad/b[1].n-a[1].bad/a[1].n);
+ const ml=Object.values(miss).filter(m=>m.n>=2&&m.bad>0).sort((a,b)=>b.bad/b.n-a.bad/a.n||b.n-a.n).slice(0,8);
+ const skills={};res.forEach(({r,t})=>{const k=t.type==='ielts'?(t.skill||'IELTS'):'THPT';skills[k]=skills[k]||{n:0,s:0};skills[k].n++;skills[k].s+=r.score/r.total});
+ const reps=allReports().filter(x=>statSid==='all'||x.sid===statSid);const open=reps.filter(x=>!x.done);
+ const avgAll=res.length?Math.round(res.reduce((a,o)=>a+o.r.score/o.r.total,0)/res.length*100):0;
+ return `<div class="row between"><div><h1>Thống kê</h1><p class="sub">Từ các bài học viên đã nộp. Nhập file kết quả của học viên ở mục Học viên để số liệu cập nhật.</p></div>
+ <select style="width:auto;min-width:200px" onchange="statSid=this.value;render()"><option value="all">Cả lớp (${D.students.length} học viên)</option>${D.students.map(s=>`<option value="${s.id}" ${statSid===s.id?'selected':''}>${h(s.name)}</option>`).join('')}</select></div>
+ <div class="grid gx4"><div class="card stat"><div class="n">${res.length}</div><div class="l">Bài đã chấm tự động</div></div><div class="card stat"><div class="n">${avgAll}%</div><div class="l">Tỉ lệ đúng trung bình</div></div>
+ ${Object.entries(skills).slice(0,2).map(([k,v])=>`<div class="card stat"><div class="n">${Math.round(v.s/v.n*100)}%</div><div class="l">${h(k)} · ${v.n} bài</div></div>`).join('')}</div>
+ <div class="grid gx2 mt">
+  <div class="card"><h2>Điểm trung bình theo tuần</h2>${res.length?chart+'<p class="small muted" style="margin:6px 0 0">Mỗi cột là tỉ lệ câu đúng trung bình của các bài nộp trong tuần (tính từ thứ Hai).</p>':'<div class="empty">Chưa có bài nộp.</div>'}</div>
+  <div class="card"><h2>Dạng câu hay sai</h2>${kl.length?kl.map(([k,v])=>{const pc=Math.round(v.bad/v.n*100);return `<div class="hbar"><span class="small"><b>${h(k)}</b><br><span class="muted">${v.n} lượt trả lời</span></span><span class="tr"><i style="width:${pc}%"></i></span><span class="pc">${pc}% sai</span></div>`}).join(''):'<div class="empty">Chưa có dữ liệu.</div>'}</div>
+ </div>
+ <div class="grid gx2 mt">
+  <div class="card"><h2>Câu sai nhiều nhất</h2>${ml.length?ml.map(m=>`<div class="list-item"><div style="min-width:0"><b class="small">${h(m.t.title)} · câu ${m.q.n}</b><div class="small muted" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${h(String(m.q.q).replace(/<[^>]+>/g,'').slice(-90))}</div></div><div class="row" style="flex-wrap:nowrap"><span class="tag bad">${m.bad}/${m.n} sai</span><button class="btn sm" onclick="showReportQ('${m.t.id}',${m.q.n})">Xem</button></div></div>`).join(''):'<div class="empty">Cần ít nhất 2 lượt làm cùng một đề.</div>'}</div>
+  <div class="card"><h2>Học viên báo lỗi ${open.length?`<span class="tag bad">${open.length} chưa xử lý</span>`:''}</h2>${reps.length?reps.slice(0,30).map(x=>{const t=testById(x.testId);const s=stuById(x.sid);return `<div class="list-item" style="${x.done?'opacity:.55':''}"><div style="min-width:0"><b class="small">${h(t?t.title:'(đề đã xóa)')} · câu ${x.n}</b><div class="small">${h(x.note)}</div><div class="small muted">${h(s?s.name:'')} · ${fdt(x.date)}</div></div><div class="row" style="flex-wrap:nowrap"><button class="btn sm" onclick="showReportQ('${x.testId}',${x.n})">Xem câu</button>${x.done?'<span class="tag ok">Đã xử lý</span>':`<button class="btn sm pri" onclick="resolveReport('${x.sid}','${x.id}')">Đã xử lý</button>`}</div></div>`}).join(''):'<div class="empty">Chưa có báo lỗi nào.</div>'}</div>
+ </div>`;
+};
+
+/* =========================================================
    NHẬP / XUẤT & GỘP DỮ LIỆU
    ========================================================= */
 function upsert(list,items){(items||[]).forEach(x=>{if(!x||!x.id||x.builtin)return;const i=list.findIndex(y=>y.id===x.id);if(i>=0)list[i]=x;else list.push(x)})}
@@ -1311,10 +1417,11 @@ function mergeData(inc){
   a.results.sort((x,y)=>x.date-y.date);
   ['writings','speaking'].forEach(k=>(b[k]||[]).forEach(r=>{const ex=a[k].find(x=>x.id===r.id);if(!ex){a[k].push(r);n.res++}else if(r.grade&&(r.grade.gradedAt||0)>((ex.grade&&ex.grade.gradedAt)||0))ex.grade=r.grade}));
   for(const d in (b.activity||{}))a.activity[d]=Math.max(a.activity[d]||0,b.activity[d]);
+  a.reports=a.reports||[];(b.reports||[]).forEach(x=>{const ex=a.reports.find(y=>y.id===x.id);if(!ex){a.reports.push(x);n.rep=(n.rep||0)+1}else if(x.done&&!ex.done)ex.done=x.done});
  }
  save();return n;
 }
-function importPack(){pickFile(x=>{try{const n=mergeData(x);toast(`Đã nhập dữ liệu${n.stu?` · ${n.stu} học viên mới`:''}${n.res?` · ${n.res} kết quả mới`:''}`);render()}catch(e){toast('File không đúng định dạng của ứng dụng này')}})}
+function importPack(){pickFile(x=>{try{const n=mergeData(x);toast(`Đã nhập dữ liệu${n.stu?` · ${n.stu} học viên mới`:''}${n.res?` · ${n.res} kết quả mới`:''}${n.rep?` · ${n.rep} báo lỗi mới`:''}`);render()}catch(e){toast('File không đúng định dạng của ứng dụng này')}})}
 function classPack(withProgress){return {kind:'class-pack',app:'lopta',date:Date.now(),settings:{className:D.settings.className},students:D.students,sets:D.sets,tests:D.tests,wprompts:D.wprompts||[],sp1:D.sp1||[],sp2:D.sp2||[],assignments:D.assignments,deleted:D.deleted||{},progress:withProgress?D.progress:undefined}}
 
 /* =========================================================
