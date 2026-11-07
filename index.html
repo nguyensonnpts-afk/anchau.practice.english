@@ -377,7 +377,19 @@ mark.hl{background:color-mix(in srgb,var(--mark) 70%,transparent);color:inherit;
 .player .wv{flex:1;min-width:0;height:48px;cursor:pointer;display:block;touch-action:none}
 .player .tm{flex:none;font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);min-width:92px;text-align:right}
 .player.loading .pp{opacity:.6}
-.player-note{margin:8px 2px 0}
+.player-note{max-width:992px;margin:10px auto 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px}
+.player-note a{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-weight:500;white-space:nowrap}
+.player-note a svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.player-note a:hover{text-decoration:underline}
+.player-note .src{display:inline-flex;align-items:center;gap:7px}
+.player-note .src::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sk,var(--brand));opacity:.7}
+/* Google Drive fallback: crop its player to just the play + waveform row, shaped as a pill */
+.dframe{position:relative;height:80px;max-width:1000px;margin:0 auto;border-radius:40px;overflow:hidden;background:#282a2c;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);isolation:isolate}
+.dframe iframe{position:absolute;left:0;top:-78px;width:100%;height:300px;border:0;display:block}
+:root:not(.dark-on) .dframe{background:#ebe9e7;box-shadow:inset 0 0 0 1px var(--line)}
+:root:not(.dark-on) .dframe iframe{filter:invert(1) hue-rotate(180deg) brightness(1.1)}
+.dframe::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--sk,var(--brand)) 18%,transparent)}
+@media (max-width:640px){.dframe{border-radius:24px}}
 @media (max-width:640px){.exam-head .row.between>b{flex:1 1 100%!important}.rtools .btn{white-space:nowrap}.exam-head .qnav span{width:24px;height:24px;font-size:10.5px}.rtools{flex:1;gap:2px}.rtools .btn{padding:5px 9px;font-size:12.5px}.exam-head .timer{font-size:15px;padding:5px 11px}.player{gap:10px;padding:12px}.player .pp{width:44px;height:44px}.player .tm{min-width:0;font-size:12px}}
 
 /* stats + reports + install */
@@ -1118,7 +1130,7 @@ AFTER.test=()=>{if(!R.running)return;measureEH();document.querySelectorAll('.pla
 function audioBox(src){const m=/drive\.google\.com\/(?:file\/d\/|uc\?[^"]*id=|open\?id=)([\w-]+)/.exec(src);
  const direct=m?`https://drive.usercontent.google.com/download?id=${m[1]}&export=download`:src;
  const fb=m?`https://drive.google.com/file/d/${h(m[1])}/preview`:'';
- return `<div class="card mb player-wrap"><div class="player loading" data-src="${h(direct)}" data-fb="${fb}"><button class="pp" aria-label="Phát / tạm dừng"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button><canvas class="wv" aria-label="Thanh tiến độ bài nghe"></canvas><span class="tm">0:00 / --:--</span></div>${m?`<p class="small muted player-note">Bài nghe lấy từ Google Drive. Nếu không phát được, <a href="https://drive.google.com/file/d/${h(m[1])}/view" target="_blank" rel="noopener">mở trong tab mới</a>.</p>`:''}</div>`}
+ return `<div class="card mb player-wrap"><div class="player loading" data-src="${h(direct)}" data-fb="${fb}"><button class="pp" aria-label="Phát / tạm dừng"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z"/></svg></button><canvas class="wv" aria-label="Thanh tiến độ bài nghe"></canvas><span class="tm">0:00 / --:--</span></div>${m?`<p class="muted player-note"><span class="src">Bài nghe từ Google Drive</span><a href="https://drive.google.com/file/d/${h(m[1])}/view" target="_blank" rel="noopener">Không nghe được? Mở tab mới<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a></p>`:''}</div>`}
 function audioBoxOld(src){const m=/drive\.google\.com\/(?:file\/d\/|uc\?[^"]*id=|open\?id=)([\w-]+)/.exec(src);if(m)return `<div class="card mb"><iframe src="https://drive.google.com/file/d/${h(m[1])}/preview" style="width:100%;height:120px;border:0;border-radius:8px" allow="autoplay" loading="lazy" title="Bài nghe"></iframe><p class="small muted">Bài nghe phát từ Google Drive. Nếu không phát được, <a href="https://drive.google.com/file/d/${h(m[1])}/view" target="_blank" rel="noopener">mở trong tab mới</a>.</p></div>`;return `<div class="card mb"><audio controls preload="none" src="${h(src)}" style="width:100%"></audio></div>`}
 function initPlayer(el){
  if(el._init)return;el._init=1;
@@ -1157,7 +1169,7 @@ function initPlayer(el){
  a.addEventListener('loadedmetadata',()=>{el.classList.remove('loading');kick()});
  ['play','pause','ended'].forEach(ev=>a.addEventListener(ev,()=>{icon();kick()}));
  a.addEventListener('timeupdate',kick);
- a.addEventListener('error',()=>{if(!el.dataset.fb){tm.textContent='Không phát được';return}const f=document.createElement('iframe');f.src=el.dataset.fb;f.style.cssText='width:100%;height:120px;border:0;border-radius:8px';f.allow='autoplay';f.title='Bài nghe';el.replaceWith(f)});
+ a.addEventListener('error',()=>{if(!el.dataset.fb){tm.textContent='Không phát được';return}const w=document.createElement('div');w.className='dframe';const f=document.createElement('iframe');f.src=el.dataset.fb;f.allow='autoplay';f.title='Bài nghe';f.setAttribute('scrolling','no');w.appendChild(f);el.replaceWith(w)});
  requestAnimationFrame(draw);
 }
 function playAudio(si){const t=testById(EX.id);EX.plays[si]=(EX.plays[si]||0)+1;$('#plays'+si).textContent=`Đã phát ${EX.plays[si]} lần`;speak(t.sections[si].audio,0.88)}
