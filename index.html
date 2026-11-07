@@ -889,13 +889,15 @@ function teaLogin(){if($('#lpin').value===D.teacherPin){U={role:'teacher',name:'
 /* =========================================================
    HỌC VIÊN · TRANG CHỦ
    ========================================================= */
+// Quote on the home card: a new random one on every page load, never the same as last time
+const HOME_Q=(()=>{let prev=-1;try{prev=+(localStorage.getItem('homeq')??-1)}catch(e){}let i=Math.floor(Math.random()*QUOTES.length);if(QUOTES.length>1&&i===prev)i=(i+1+Math.floor(Math.random()*(QUOTES.length-1)))%QUOTES.length;try{localStorage.setItem('homeq',i)}catch(e){}return i})();
 VIEWS.home=()=>{
  const s=stuSummary(U.id);const asg=myAssignments(U.id);
  const p=P();const days=[];for(let i=27;i>=0;i--){const d=new Date(Date.now()-i*DAY).toISOString().slice(0,10);days.push(p.activity[d]||0)}
  const lv=n=>n===0?'':n<10?'l1':n<30?'l2':'l3';
  const lastRes=p.results.slice(-3).reverse();
  const td=new Date(),wd=['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'][td.getDay()];
- const q=QUOTES[(Math.floor(Date.now()/DAY)+5)%QUOTES.length];
+ const q=QUOTES[HOME_Q];
  return `<p class="eyebrow">${wd} · ${td.getDate()} tháng ${td.getMonth()+1}</p><h1>Chào ${h(U.name)}</h1>${installBanner()}<p class="sub">${s.due?`Hôm nay bạn có <b>${s.due}</b> từ cần ôn.`:'Bạn không có từ nào đến hạn ôn. Học thêm từ mới nhé!'}</p>
  <div class="grid g5">
   <div class="card stat"><div class="n">${s.learned}</div><div class="l">Từ đã học</div></div>
