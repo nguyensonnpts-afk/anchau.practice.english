@@ -118,3 +118,484 @@ L 37 | quieter areas | ABCDEF | E
 L 38 | end of aisles | ABCDEF | F
 L 39 | middle shelves | ABCDEF | A
 L 40 | near the entrance | ABCDEF | B
+
+=== Listening | Vol 1 | Test 3 | 40
+## Section 1 · Riverdale Pre-school
+@audio https://drive.google.com/file/d/130B2nFivHL0X_2Lqnp66seMNCHVl0VCF/view
+Section 1: một người cha gọi điện hỏi về trường mầm non cho con gái. Nghe một lần như thi thật.
+
+Riverdale Pre-school – ví dụ: Children in a class: 20.
+> Questions 1–5: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. Classes: First group Mrs. Oliver; second group Mrs. ___ (Q1). Hours and days: Suzie will attend 3 days a week for a total of ___ hours (Q2).
+f 1 | Second group: Mrs. ___ (spelled K-E-O-G-H) | keogh
+f 2 | Suzie will attend 3 days a week for a total of ___ hours | 15
+f 3 | Outside: just got a new slide; intend to make a ___ | garden
+f 4 | Indoors: this year, the children are very interested in ___ | music
+f 5 | Indoors: they hear a ___ every day | story
+> Questions 6–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 6 | Fees: now costs $___ per term | 470
+f 7 | Fees include a trip to a ___ this year | farm
+f 8 | Fees include the chance to take home a ___ every week | toy
+f 9 | Do not forget: put a ___ in Suzie's bag | pillow
+f 10 | Arrange a visit; phone number: ___ | 0914638520
+## Section 2 · Finding a Part-time Job
+@audio https://drive.google.com/file/d/1OpYDF4Zbxi5EKQwolht2jfCVNlFLemyG/view
+> Questions 11–15: Complete the sentences. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
+f 11 | Special conditions may apply to ___ students looking for a job. | overseas
+f 12 | The university Job Centre is located on the ___ Campus. | woodside
+f 13 | The Job Centre remains open until ___ every evening. | 8 / 8 pm / 8 p.m. / eight / 8.00 / 8:00 / 20:00
+f 14 | The only day the employment lawyer is available is ___ . | tuesday
+f 15 | The university ___ regularly advertises new jobs. | website
+> Questions 16–20: Choose the correct letter A, B or C.
+m 16 | At present, the university is offering part-time work in | its offices. ;; the IT centre. ;; the car parks. | C
+m 17 | Local employers visit the university | only in the first term. ;; twice a term. ;; throughout the year. | C
+m 18 | According to the speaker, a part-time job can | lead to a full-time job after graduation. ;; provide a useful work record for the future. ;; give the chance to develop team-work skills. | B
+m 19 | Students who work part-time | will be taxed. ;; will be paid every week. ;; will need private insurance. | A
+m 20 | Part-time student workers are advised to | give notice in writing. ;; communicate by email. ;; have a mobile phone. | A
+## Section 3 · Research Project
+@audio https://drive.google.com/file/d/1c2E_7NuV6UHYoeYXPPqR0YJZBFzFjMr4/view
+> Questions 21–26: Choose the correct letter A, B or C.
+m 21 | How did John choose the topic of his research project? | He thought the information would be useful for town planning. ;; He has a special interest in the use of public services. ;; He read about a similar study which had been done earlier. | C
+m 22 | During his research, John is expecting to find that | the use of public services has altered very little. ;; a group of people has changed its habits. ;; the most frequently used facility is the library. | B
+m 23 | What is the problem with using official records? | They may be lacking in detail. ;; They may not be readily available. ;; They may be difficult to analyse. | A
+m 24 | What does the tutor think about John using a questionnaire to get information? | He needs to do a course in questionnaire design first. ;; He should use this method instead of looking at public records. ;; He will find the practice he gets useful the following year. | C
+m 25 | Which new variable does John agree to add to his investigation? | Occupation ;; Income group ;; Qualifications | C
+m 26 | How many questionnaires will John distribute? | The same number as in the previous study ;; A greater number than he needs for analysis ;; The number recommended in the project guidelines | B
+> Questions 27–28: Choose TWO letters A–E. Which TWO strategies will John use to encourage people to fill out his questionnaire? A Using simple language · B Delivering the questionnaires in person · C Making the questionnaires anonymous · D Providing return envelopes · E Trialling the questionnaire on friends. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 27 | Strategy 1 ___ | d / e
+f 28 | Strategy 2 ___ | e / d
+> Questions 29–30: Choose TWO letters A–E. Which TWO pieces of advice does the tutor give John about his questionnaire? A There should be a mixture of question types · B Some questions should elicit personal information · C There should be an introduction to explain the survey's purpose · D A telephone number should be provided for queries · E The questions should only take a few minutes to answer. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 29 | Advice 1 ___ | b / c
+f 30 | Advice 2 ___ | c / b
+## Section 4 · Driverless Vehicle Competition
+@audio https://drive.google.com/file/d/1QyNuJIozV2fxfChgYzI3NVGvHpE6GliM/view
+> Questions 31–33: Complete the sentences. Write NO MORE THAN TWO WORDS for each answer.
+f 31 | Undergraduates from both the engineering school and the ___ department can definitely take part in the project. | computer science
+f 32 | The automated vehicles will have to avoid obstacles such as ___ . | rocks
+f 33 | The tutor mentions one vehicle which used technology such as ___ , lasers, and laptops to measure its surroundings. | video cameras / video camera
+> Questions 34–36: Choose the correct letter A, B or C.
+m 34 | The purpose of holding the race is to | interest students in careers in industry. ;; help provide finance for universities. ;; find useful new design features. | C
+m 35 | The tutor says success will depend on | the software design. ;; good, solid construction. ;; sophisticated mechanisms. | A
+m 36 | This year's competitors were surprised that the vehicles | were so easy to design. ;; were as successful as they were. ;; took such a short time to construct. | B
+> Questions 37–40: Complete the schedule. Write ONE WORD ONLY for each answer. Early May: introductory ___ about the project. Late May: essay giving information about relevant ___ and experience. June: visit to a factory. September: workshop – discuss ___, learn to use design package. December: submission of initial designs. January: selection of the ___ .
+f 37 | Early May: introductory ___ about the project | seminar
+f 38 | Late May: essay giving information about relevant ___ and experience | skills
+f 39 | September workshop: discuss ___ and learn to use design package | ideas
+f 40 | January: selection of the ___ | team
+
+=== Listening | Vol 1 | Test 4 | 40
+## Section 1 · Music Alive Agency
+@audio https://drive.google.com/file/d/1nQqxdkUigReZOMRAhiFs7GjZJFvbP8_-/view
+Section 1: một nhạc sĩ gọi điện hỏi một đại lý âm nhạc. Nghe một lần như thi thật.
+
+Music Alive Agency – ví dụ: Contact person: Jim Cranleigh.
+> Questions 1–5: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Members' details are on a ___ | database
+f 2 | Type of music represented: modern music (___ and jazz) | rock
+f 3 | Newsletter comes out once a ___ | month
+f 4 | Cost of adult membership: £ ___ | 45
+f 5 | Current number of members: ___ | 750
+> Questions 6–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 6 | Facilities include: rehearsal rooms and a ___ | studio
+f 7 | There is no charge for ___ advice | legal
+f 8 | To become a member, send a letter with contact details and a ___ | recording
+f 9 | Address: 707, ___ Street, Marbury | kippax
+f 10 | Contact email: music. ___ @bsu.co.uk | talent
+## Section 2 · Albany Fishing Competition
+@audio https://drive.google.com/file/d/1ndebNL7QY8hX6sjoHOeSfGnWYCInJnDo/view
+> Questions 11–14: Choose the correct letter A, B or C.
+m 11 | What do participants need to take to the registration desk? | a form of identification ;; a competitor number ;; cash for the entrance fee | A
+m 12 | What does the entrance fee to the competition include? | equipment for fishing ;; all food for both days ;; fuel for the fishing | B
+m 13 | Participants without a fishing license are recommended to apply for one | at the registration desk. ;; over the phone. ;; on the internet. | C
+m 14 | What will happen at 6pm on Sunday? | The time allocated for fishing will end. ;; The fish caught will be judged. ;; The prizes will be awarded to the winners. | B
+> Questions 15–20: Label the map. Write the correct letter A–I next to each place. (Bản đề gốc có bản đồ Albany Fishing Competition với các vị trí A–I; hãy nghe chỉ dẫn và chọn chữ cái vị trí.)
+L 15 | Registration area | ABCDEFGHI | G
+L 16 | Shore fishing area | ABCDEFGHI | A
+L 17 | Boat launching area | ABCDEFGHI | C
+L 18 | Judging area | ABCDEFGHI | H
+L 19 | Dining area | ABCDEFGHI | D
+L 20 | Prize-giving area | ABCDEFGHI | B
+## Section 3 · Preparing for the End-of-year Art Exhibition
+@audio https://drive.google.com/file/d/10gaHKnGoYe1Wcg3q6POUtudlOLKTztJf/view
+> Questions 21–26: Choose the correct letter A, B or C.
+m 21 | Max and Abby agree that in the art exhibition they are looking forward to | showing people their work. ;; getting feedback from their tutor. ;; talking to other students about their displays. | A
+m 22 | In last year's exhibition, both students were impressed by | a set of metal sculptures. ;; a series of wooden models. ;; a collection of textile designs. | B
+m 23 | What has Max decided to call his display? | Mother Nature ;; Views of Farmland ;; Seasons | A
+m 24 | What does Abby think will be difficult about preparing for their displays? | having enough time to set it up ;; choosing which pieces to show ;; filling up all the available space | A
+m 25 | What does Abby say about the summary they have to write? | She isn't sure whether people will read it. ;; It will be difficult to keep it short enough. ;; It will be hard to clarify the reasons for her work. | B
+m 26 | What aspect of the display will the students organise themselves? | arranging the lighting ;; inviting local journalists ;; providing comment forms | C
+> Questions 27–30: Which feature do the speakers identify as particularly interesting for each of the following exhibitions they saw? Choose FOUR answers from the box. A the realistic colours · B the sense of space · C the unusual interpretation of the theme · D the painting technique · E the variety of materials used · F the use of light and shade
+L 27 | On the Water | ABCDEF | D
+L 28 | City Life | ABCDEF | B
+L 29 | Faces | ABCDEF | A
+L 30 | Moods | ABCDEF | C
+## Section 4 · The Mangrove Regeneration Project
+@audio https://drive.google.com/file/d/1-dWybJbREhIjYl0f6TPAFXFMNpQEqXwn/view
+> Questions 31–40: Complete the notes. Write NO MORE THAN TWO WORDS for each answer. Mangrove forests protect coastal areas from 31 ___ and are an important habitat for wildlife. Problems: mangroves had been used by farmers as 32 ___; poisoned by the use of 33 ___; local people used the mangroves as a place to put their 34 ___. Actions: a barrier made of 35 ___ was constructed but it failed; new mangroves had to be grown from seed; the seeds of the 36 ___ mangrove were used. First set of seedlings: kept in small pots in a 37 ___, watered with 38 ___ water, planted out on the south side of a small island, at risk from the large 39 ___ population. Second set: planted in the seabed near established mangrove roots; destroyed in a 40 ___. Results: the first set of seedlings was successful.
+f 31 | Mangroves protect coastal areas from ___ | flooding
+f 32 | Mangroves had been used by farmers as ___ | firewood
+f 33 | Mangroves were poisoned by the use of ___ by the sea | fertilizer / fertiliser
+f 34 | Local people used the mangroves as a place to put their ___ | trash
+f 35 | A barrier which was made of ___ was constructed - but it failed | sand
+f 36 | The seeds of the ___ mangrove were used | grey / gray
+f 37 | First set of seedlings: kept in small pots in a ___ | hothouse / hot house
+f 38 | Watered with ___ water | rain
+f 39 | At risk from the large ___ population | rabbit
+f 40 | The young plants were destroyed in a ___ | storm
+
+=== Listening | Vol 1 | Test 5 | 40
+## Section 1 · New Guinea and its Tribes
+File nghe Section 1 (Part 1.mp3) không có trong thư mục Drive của Test 5; hãy dùng bản transcript nếu cần. Nghe một lần như thi thật.
+> Questions 1–4: Complete the sentences. Write NO MORE THAN TWO WORDS for each answer. The eastern side of the island of New Guinea.
+f 1 | The eastern side of the island of New Guinea, Papua New Guinea, became an ___ in 1975. | independent country
+f 2 | Only 18% of the inhabitants of Papua New Guinea reside in ___ . | urban areas / urban area
+f 3 | Papua New Guinea tribes should be seen as separate ___ . | social groups
+f 4 | There are a small number of tribes who have had no ___ with neighbouring groups and the world beyond. | contact
+> Questions 5–10: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Tribes of Papua New Guinea.
+f 5 | Huli Wigmen: decorate their faces with ___ | yellow paint
+f 6 | Asaro mud men: cover their bodies in mud to resemble ___ in order to frighten off other tribes | river spirits
+f 7 | Asaro mud men: put on ___ to make themselves look fiercer | terrifying masks / masks
+f 8 | Chimbu skeleton dancers: now perform dances for the benefit of ___ | tourists
+f 9 | Mount Hagan Sing-Sing: begun by the ___ in 1961 to bring together tribes in peace | government
+f 10 | Some loss of authenticity, such as the replacement of ___ dyes on their costumes with artificial ones | natural
+## Section 2 · Improving Photography Skills
+@audio https://drive.google.com/file/d/1G3zQsJooSGOK-VxsLwQSx2FPnYwdbjBv/view
+> Questions 11–15: Choose the correct letter A, B or C.
+m 11 | What does Darren now think about the Latin name of the red squirrel? | It is suitable for this species. ;; It is meaningless. ;; It is an amusing description. | A
+m 12 | The number of red squirrels is reduced due to | the invasion of an exotic species. ;; a disease brought by the exotic species. ;; the declining food supply. | C
+m 13 | Darren differentiates red squirrels from rats by | their food category. ;; how the food was eaten. ;; the way they stored food. | B
+m 14 | What was the restriction for Darren's photography? | He could only take photos of one species at a time. ;; He could only use one camera. ;; He could only take photographs in a certain location. | C
+m 15 | Why is Darren confident about his photographs? | He practised a lot. ;; His teacher prepared him well. ;; He had high-quality equipment. | B
+> Questions 16–20: Complete the notes. Write NO MORE THAN THREE WORDS for each answer. Ways to improve photography skills.
+f 16 | The photos will be exhibited in a ___ | local museum
+f 17 | Darren's photos once won a competition held by a ___ | national newspaper
+f 18 | Some pictures need a so-called ___ in the scene | secondary object
+f 19 | Darren thinks the lighting is best late in the ___ | afternoon
+f 20 | To take better photos, photographers should make ___ | detailed notes
+## Section 3 · Water Hyacinth
+@audio https://drive.google.com/file/d/1i0-xBjpDnRiGg8VuW-Hd22Uwmx4wRxE0/view
+> Questions 21–22: Choose TWO letters A–D. Which TWO problems are caused by water hyacinth? A plants and fish are poisoned · B farmers cannot fish · C the dam's structure is damaged · D electricity production is affected. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 21 | Problem 1 ___ | b / d / e
+f 22 | Problem 2 ___ | d / b / e
+> Questions 23–26: Choose the correct letter A, B or C.
+m 23 | Where was water hyacinth originally from? | Latin America ;; Africa ;; Europe | A
+m 24 | What is the primary cause of the decrease in nutrients from the soil? | soil erosion ;; a change of rainfall ;; loss of trees | C
+m 25 | When will the biological solution bring risks to the environment? | immediately ;; 6 months later ;; many years later | C
+m 26 | What does John say about the mechanical solution? | ineffective ;; dangerous ;; expensive | C
+> Questions 27–30: What is the benefit of the cut-down water hyacinth to each of the following? Choose FOUR answers from the box. A can reduce the effect of global warming · B can be used as an alternative energy resource · C can make quick profits · D can produce materials for plants to grow in · E can be good for human health · F can produce fertiliser
+L 27 | dried water hyacinth | ABCDEF | D
+L 28 | mushroom farmers | ABCDEF | C
+L 29 | oyster and straw mushrooms | ABCDEF | E
+L 30 | cows | ABCDEF | B
+## Section 4 · Nanotechnology and its Applications
+@audio https://drive.google.com/file/d/1nNz1FYHckpEP0eoMBayNPoWUmXhELwlq/view
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Nanotechnology is the study on the scale of nanometres.
+f 31 | The development in nanotechnology is the result of a new type of ___ | microscope
+f 32 | People are worried that nanotech products are ___ | unnatural
+f 33 | Food and household: the availability of ___ in our diet (e.g. in potatoes) is greatly improved | iron
+f 34 | The packaging cost of ___ is particularly reduced | chocolate
+f 35 | Nanotechnology can increase the ___ of food. | flavour / flavor
+f 36 | Agriculture: the efficiency of ___ is increased | fertilisers / fertilizers / fertiliser / fertilizer
+f 37 | Nanotubes allow more ___ to enter veins | drugs / drug
+f 38 | As the most popular material, ___ is used to kill bacteria | silver
+f 39 | Nanotechnology is also helpful in ___ loss programmes | weight
+f 40 | Cosmetics: nanoparticles protect skin from the ___ and help to improve the ability against ageing | sun / uv
+
+=== Listening | Vol 1 | Test 6 | 40
+## Section 1 · Tour Booking Enquiry
+@audio https://drive.google.com/file/d/1JFQ4zVFlT5VcvHjwz7ysWtCB4ufuhp7A/view
+Section 1: một khách hàng hỏi đại lý du lịch về các chuyến đi. Nghe một lần như thi thật.
+> Questions 1–10: Complete the table. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Type of holiday: ___ | surfing
+f 2 | Hotel – meal: including ___ | breakfast
+f 3 | Hotel – facilities: a pool, a nightclub and a ___ | gym
+f 4 | Hotel – prices: reduced from £ ___ to £315 | 360
+f 5 | Self-catering apartment: stay in a ___ room | shared
+f 6 | Equipment rental for one week: £ ___ | 75
+f 7 | Insurance – ___ cover: £30 | basic
+f 8 | Insurance – Premier cover: £ ___ | 42.5 / 42.50
+f 9 | The cheapest way of going to the airport: by ___ | taxi
+f 10 | Pay by ___ : no extra fee | cheque / check
+## Section 2 · Community Centre Dance Workshop
+@audio https://drive.google.com/file/d/1XGDfr2egOfWGOXMTbxrG1YYOL32yEiIA/view
+> Questions 11–12: Choose TWO letters A–E. Which TWO items will participants receive when they check in? A a class list · B a face towel · C a name tag · D a shoe bag · E a water bottle. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 11 | Item 1 ___ | a / d
+f 12 | Item 2 ___ | d / a
+> Questions 13–14: Choose TWO letters A–E. Which TWO activities will be hosted in the first afternoon and evening? A costume making · B a musical show · C an informal dance · D a talk on dance history · E a dance test. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 13 | Activity 1 ___ | c / d
+f 14 | Activity 2 ___ | d / c
+> Questions 15–20: Label the plan of the Community Centre. Write the correct letter A–J next to each room. (Bản đề gốc có sơ đồ trung tâm cộng đồng với các vị trí A–J; hãy nghe chỉ dẫn và chọn chữ cái vị trí.)
+L 15 | shower room | ABCDEFGHIJ | C
+L 16 | bunkroom | ABCDEFGHIJ | E
+L 17 | games room | ABCDEFGHIJ | I
+L 18 | reception | ABCDEFGHIJ | F
+L 19 | medical centre | ABCDEFGHIJ | D
+L 20 | store | ABCDEFGHIJ | B
+## Section 3 · Assignment Feedback
+@audio https://drive.google.com/file/d/1g5EVQB6c5HATL7LktqXkMQlissQB72mZ/view
+> Questions 21–22: Complete the notes. Write ONE WORD ONLY for each answer. Things that need to be done: hand in book reports with the next assignment.
+f 21 | Check accuracy of the ___ in the last section | references
+f 22 | Give more ___ | examples
+> Questions 23–27: Answer the questions. Write NO MORE THAN THREE WORDS for each answer.
+f 23 | When will Karen give her presentation? | next seminar / the next seminar
+f 24 | What must she do during the presentation? | explain the experiment / explain experiment
+f 25 | By which date does she have to submit an abstract? | 26th november / 26 november / november 26 / november 26th / 26 nov
+f 26 | Where will the presentation take place? | chemistry lab / the chemistry lab
+f 27 | Who will grade her presentation? | professor / the professor
+> Questions 28–30: Choose THREE letters A–H. Which THREE modules will Karen study next year? A Communication Skills · B Data collection · C Discourse Analysis · D Language and Society · E Phonology · F Psycholinguistics · G Research Methodology · H Social interaction. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 28 | Module 1 ___ | a / c / f
+f 29 | Module 2 ___ | c / a / f
+f 30 | Module 3 ___ | f / a / c
+## Section 4 · Research on Birds in Australia
+@audio https://drive.google.com/file/d/1Dc9A5r_V1kus6nKDFJlJEGe_rYJZ3lyb/view
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Research on birds in Australia – the study by Cunningham in 1995 and the study by Conway in 2006.
+f 31 | The study aimed to study birds which were ___ in cities | protected
+f 32 | Researchers were able to ___ rather than count the number of birds by some methods, such as random sampling | estimate
+f 33 | Researchers studied birds' companionship habits using a ___ system | mapping
+f 34 | Researchers attached tags to birds' legs to identify their ___ over time | trends / trend / whereabouts
+f 35 | Human activities such as ___ had a negative effect on the reproduction of birds | pollution
+f 36 | Measures by local organisations: to increase birds' rate of ___ in various ways | survival
+f 37 | To reduce the dangers caused by ___ farms, e.g. colliding with turbines | wind
+f 38 | Conway (2006): researchers monitored the ___ of birds' nocturnal callings during flight | frequency
+f 39 | ___ were taken to listen to birds' sounds | recordings
+f 40 | Data could be collected through noise detection devices placed at a great ___ | distance
+
+=== Listening | Vol 1 | Test 7 | 40
+## Section 1 · Rented Properties – Information About a House
+@audio https://drive.google.com/file/d/1fIFNE3LCG0j8i2Ey7ThMWjPMw56xMT7W/view
+Section 1: một sinh viên gọi cho chủ nhà để hỏi thuê nhà. Nghe một lần như thi thật.
+> Questions 1–10: Complete the table. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | Available date: ___ May | 5 / 5th / fifth
+f 2 | Prices: rent $ ___ per month (in total) | 1700
+f 3 | Prices: $15 for a ___ | credit check
+f 4 | Facilities: 3 bedrooms and 2 bathrooms; a remodelled ___ | kitchen
+f 5 | No ___ | dishwasher
+f 6 | A ___ with a work area | garage
+f 7 | Utilities: the landlord will provide landscaping service, but the tenants must ___ the grass | water
+f 8 | The tenants should pay $15 for rubbish and ___ service | recycling
+f 9 | There is no central air conditioning, but there is a ___ conditioning unit | window
+f 10 | Name of landlord: Sam ___ | dressler
+## Section 2 · A Theme Park in Fun City
+@audio https://drive.google.com/file/d/1E1WYJe43qjDyzC4YZkNfpSuHqk3xlWxe/view
+> Questions 11–16: Choose the correct letter A, B or C.
+m 11 | When does the riding in the park open? | 9.00 am ;; 9.30 am ;; 10.00 am | C
+m 12 | How much does a Family Fast-line Track ticket cost if you book online? | £78 ;; £95 ;; £113 | B
+m 13 | What is suggested when you plan to go to the lake in the park? | take a camera ;; go there in summer ;; take waterproof clothes | B
+m 14 | What is special about the rollercoaster bike? | it uses special materials ;; it is the most exciting activity ;; it is designed for families | A
+m 15 | What should they bring to the resort? | food for the picnic ;; cameras ;; bottled water | A
+m 16 | What activity is recommended toward the end of a day trip? | watching fireworks ;; going fishing ;; joining the circus | A
+> Questions 17–20: What comment is made about each of the following activities? Choose FOUR answers from the box. A doesn't have a long wait · B is suitable for all families · C is suitable for children · D is suitable for young adults · E is based on a real story · F is the most frightening one · G has a surprising ending
+L 17 | Cowboy Show | ABCDEFG | A
+L 18 | Driving School Ride | ABCDEFG | C
+L 19 | Rollercoaster Jumping | ABCDEFG | F
+L 20 | Magic Show | ABCDEFG | G
+## Section 3 · The Job Market and Hiring Strategies
+@audio https://drive.google.com/file/d/1FYaD0Gai0uXLb2RjBJvSQqEAKpGkI7OE/view
+> Questions 21–22: Choose TWO letters A–E. Which TWO aspects should people just graduating from secondary schools emphasise? A degree of motivation · B practical experience · C eagerness to learn · D educational qualifications · E other areas of interest outside work. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 21 | Aspect 1 ___ | a / c
+f 22 | Aspect 2 ___ | c / a
+> Questions 23–24: Choose TWO letters A–E. Which TWO of the following are mentioned about women returning to work after raising children? A they have limited working time · B they are more expensive to retrain · C they are very mature · D they lack confidence · E they have difficulty in re-adjusting to work. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 23 | Point 1 ___ | c / e
+f 24 | Point 2 ___ | e / c
+> Questions 25–26: Choose TWO letters A–E. Which TWO types of people do employers always avoid hiring? A people who have worked for a rival company · B people who have worked for their previous company for a long time · C people who were sacked by a previous company · D people who have been unemployed for a long time · E people who quit their job because it was unsuitable. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 25 | Type 1 ___ | c / e
+f 26 | Type 2 ___ | e / c
+> Questions 27–29: Choose THREE letters A–G. Which THREE factors are mentioned as reasons why people avoid hiring retrenched workers? A lack of experience relevant to new industries · B higher costs of employment · C comparatively old age · D lack of work experience · E the difficulty of retraining · F the reputation of the previous company · G previous skills which are useless. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 27 | Factor 1 ___ | a / c / e
+f 28 | Factor 2 ___ | c / a / e
+f 29 | Factor 3 ___ | e / a / c
+> Question 30: Complete the notes. Write ONE WORD ONLY. Reasons for rejection during the application process: unsuitable experience and skills; applicants' inappropriate 30 ___ and appearance; poor social skills.
+f 30 | Applicants' inappropriate ___ and appearance | clothes
+## Section 4 · Organic Farming
+@audio https://drive.google.com/file/d/1sLBKxuUBhQSKq84V9tf6yYARfUohJC5n/view
+> Questions 31–37: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. Organic farming – advantages and comparison with traditional farming.
+f 31 | Organic farming is ___ | sustainable
+f 32 | It can boost the ___ of organic food products | sales
+f 33 | It can save necessary ___ for producing pesticides and fertilisers | energy
+f 34 | ___ which double in number may attack organic vegetables | insects
+f 35 | Production of organic vegetables such as tomatoes and ___ is 40% lower | potatoes
+f 36 | Winter weed production is ___ lower than it used to be | 10% / 10 percent / 10
+f 37 | Production of organic products for animals including organic ___ keeps the same | grass
+> Questions 38–40: Choose the correct letter A, B or C.
+m 38 | What happened to organic farming in India? | Yields increased. ;; Farmers were reluctant to accept it. ;; Farmers could apply it successfully by following instructions. | A
+m 39 | The conclusion in the international organic farming review focuses on | whether people are interested in organic farming. ;; comparing different methods of organic farming in different countries. ;; whether organic farming is beneficial to wildlife. | C
+m 40 | According to the speaker, what is the main advantage of organic farming? | It depends on consumers. ;; It can produce food of more nutritional value. ;; It can protect the environment. | A
+
+=== Listening | Vol 1 | Test 8 | 40
+## Section 1 · Washing Machine Warranty
+@audio https://drive.google.com/file/d/126LTFC5zYLLYE5yP_8gBKR0jJH1-3ve9/view
+Section 1: một phụ nữ gọi điện về chiếc máy giặt bị hỏng. Nghe một lần như thi thật.
+> Questions 1–4: Complete the table. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer. Name: Judie Smith.
+f 1 | Reference number: ___ | cwx57684 / cwx576884
+f 2 | Time of purchase: ___ ago | 9 months / nine months / 9 month / nine month
+f 3 | Current address: 120 ___ , Oxford | middle street
+f 4 | Postcode: ___ | g0194ke / go194ke
+> Questions 5–10: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
+f 5 | The floor was wet because of the ___ | water
+f 6 | The washing machine was out of control and the woman ___ immediately | switched off / switched it off / switched the machine off / turned it off
+f 7 | The floor is made of ___ | wood
+f 8 | Ask a ___ to repair the washing machine | client engineer
+f 9 | The repairman is available ___ | next tuesday / tuesday
+f 10 | The woman's house is opposite the ___ | post office
+## Section 2 · Driving Licence and Traffic in the UK
+@audio https://drive.google.com/file/d/19GcadWEysbLEVxoaW2cEt3u8ORjnxTUZ/view
+File audio Section 2 của Test 8 trên Drive là định dạng video (part 2.mp4); vẫn phát được như audio.
+> Questions 11–15: Choose the correct letter A, B or C.
+m 11 | What is the basic requirement for applying for a UK driving licence? | a medical report ;; a valid licence from another country ;; current residency in the UK | C
+m 12 | What is true about the translation of original licences? | Applicants need to go to a recognised organisation. ;; It is not always necessary for foreigners when applying for a UK licence. ;; Applicants need to pay an extra fee for translation services. | A
+m 13 | When applying for a UK licence, which type of photos will NOT be approved? | Photos in which the applicant is wearing glasses. ;; Photos with a cream background. ;; Photos that are undersized. | B
+m 14 | What does the speaker think of the licence checking service? | The process is too slow. ;; The application form is confusing. ;; Some of the steps are unnecessary. | A
+m 15 | What does the speaker recommend about making an application? | Choosing a quiet location. ;; Visiting the nearest branch. ;; Completing the forms online. | C
+> Questions 16–20: What is the current feature of traffic management in each of the following cities? Choose FIVE answers from the box. A good signage · B multiple access roads · C police control points · D ring roads · E one-way streets · F effective traffic lights · G additional lanes · H pedestrianised areas
+L 16 | London | ABCDEFGH | A
+L 17 | Edinburgh | ABCDEFGH | F
+L 18 | Cardiff | ABCDEFGH | G
+L 19 | Manchester | ABCDEFGH | D
+L 20 | Oxford | ABCDEFGH | B
+## Section 3 · Hotel Internship Essay
+@audio https://drive.google.com/file/d/1uttQq-KDilZ_6ulOvNpB2l0GhCwu59t5/view
+> Questions 21–26: What problem does Mona point out about each part of the hotel where she interned? Choose SIX answers from the box. A it lacks patience · B it is very strict · C it is a daily routine · D it lacks sufficient staff · E it is noisy · F it is very tiring
+L 21 | reception | ABCDEF | C
+L 22 | restaurant | ABCDEF | B
+L 23 | coffee bar | ABCDEF | D
+L 24 | shop | ABCDEF | F
+L 25 | personnel office | ABCDEF | A
+L 26 | cleaning | ABCDEF | E
+> Questions 27–30: Choose the correct letter A, B or C.
+m 27 | How does the experience benefit Mona? | It is good for her future job. ;; It is good for her dissertation. ;; It can let her know something about the specific job. | A
+m 28 | Why does the tutor want Mona to do the presentation? | Because she can do it skilfully. ;; Because she wants to do it herself. ;; Because she can show other students how to do a presentation. | C
+m 29 | What does Mona suggest Tom do? | Talk to the university's career centre. ;; Talk to his tutor. ;; Contact the hotel manager. | A
+m 30 | What is Tom's plan for his own essay? | To study the rise of five-star hotels. ;; To use a video approach. ;; To do research into how the hotel industry works. | A
+## Section 4 · The Early History of Salt
+@audio https://drive.google.com/file/d/1v3_pcxLLHQbdmgsjDET9rjDcCAYea8nK/view
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer.
+f 31 | Introduction: salt is essential for human ___ | health
+f 32 | Ancient Rome: the word ___ comes from the Latin word for the payment to Roman soldiers | salary
+f 33 | Ancient Sweden: animals were kept in the local ___ at the right time of year | forest
+f 34 | Fresh meat was only available in ___ | october
+f 35 | Salt has been widely used: we can tell from the diet of the ___ in Sweden | king
+f 36 | ___ consumption increased rapidly because the food was much too salty | beer
+f 37 | Salt source: people mainly extract salt from oceans and ___ in the basins | deserts / desert
+f 38 | Salt from spring water is more ___ and purer compared to that from sea water | concentrated
+f 39 | Salt distribution: in ancient Sweden, locals needed to protect the ___ by which they imported salt | shipping
+f 40 | In other ancient countries, people carrying salt around were seen as a natural means of ___ | transport
+
+=== Listening | Vol 1 | Test 9 | 40
+## Section 1 · Sports Photography Course Registration
+@audio https://drive.google.com/file/d/1pgAbRGUdjYUfVz0jV2snPUz0r-zAZuYk/view
+Section 1: một người đàn ông gọi điện hỏi về khóa học nhiếp ảnh thể thao. Nghe một lần như thi thật.
+
+Sports Photography Course Registration – ví dụ: Caller's name: Chris Johnson.
+> Questions 1–6: Complete the table. Write ONE WORD AND/OR A NUMBER for each answer.
+f 1 | The level of the selected course: suitable for ___ | beginners
+f 2 | How to register: no need for an ___ | interview
+f 3 | Cost: $ ___ | 38
+f 4 | Date available: next course, beginning ___ | april 17 / april 17th / 17 april / 17th april / 17th / 17
+f 5 | Telephone number: ___ | 07139587302
+f 6 | Requirement: bring two photos of different ___ | weather
+> Questions 7–10: Complete the table. Write ONE WORD ONLY for each answer. Curriculum – Saturday morning: introduction by the instructor; how to choose the appropriate ___ . Saturday afternoon: discuss the ___ to take photos; workshop of how to ___ pictures. Sunday: advice on how to ___ pictures.
+f 7 | Saturday morning: how to choose the appropriate ___ | equipment
+f 8 | Saturday afternoon: discuss the best ___ to take photos | position
+f 9 | Workshop of how to ___ pictures | edit
+f 10 | Sunday: advice on how to ___ pictures | sell
+## Section 2 · State Museum Audio Guide
+@audio https://drive.google.com/file/d/1Pk3RUHc_z4xeKRno0Fl2Gv2r9ULGg5nZ/view
+> Questions 11–18: Choose the correct letter A, B or C.
+m 11 | The Heritage Clothes Exhibition was put together by | museum staff ;; local residents ;; clothing manufacturers | B
+m 12 | The photographs show the clothes worn by | their owners ;; professional models ;; design students | A
+m 13 | The exhibition called "Toys from the Past" is | displayed in a new gallery ;; on show for a limited time ;; specially aimed at children | B
+m 14 | Visitors to "Toys from the Past" are recommended to | play with the toy trains ;; look at all the dolls ;; see the board games | C
+m 15 | The miniature toys are | made by the museum ;; bought by the museum ;; borrowed by the museum | C
+m 16 | The biscuit factory made tins | for people all over the world ;; of different shapes ;; for many famous people | B
+m 17 | People's favourite biscuit used to be | an unsweetened one ;; one covered in chocolate ;; one filled with cream | A
+m 18 | The hands-on activity allows people to | make some biscuits ;; taste some of the biscuits ;; pack a biscuit tin | C
+> Questions 19–20: Complete the sentences. Write NO MORE THAN TWO WORDS for each answer.
+f 19 | The gift shop is located beside the ___ on the ground floor. | information desk
+f 20 | Free ___ are available for visitors' belongings. | lockers / locker
+## Section 3 · Music and Consumer Behaviour
+@audio https://drive.google.com/file/d/18-l8aM91arAPNtw6tzEvG0s1h6B8EoRm/view
+> Questions 21–24: Choose the correct letter A, B or C.
+m 21 | What is the topic of the research? | the effect of music on consumers ;; the effect of music on eating ;; the effect of music on the price of food | A
+m 22 | The research finds out that in the restaurants | the music is played everywhere. ;; the music is played at a uniform volume level. ;; the music is played at a certain time. | B
+m 23 | The first few questions in the questionnaire are | to understand people's taste in music. ;; to clarify the research aim. ;; to disguise the purpose of the survey. | C
+m 24 | The questions in the questionnaire came from | a previous study. ;; a professional dictionary. ;; the student herself. | A
+> Questions 25–26: Choose TWO letters A–E. Which TWO are the main reasons given for choosing a restaurant? A competitors nearby · B environment · C transport facilities · D service · E seat capacity. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 25 | Reason 1 ___ | a / e
+f 26 | Reason 2 ___ | e / a
+> Questions 27–30: What is people's attitude toward playing each of the following music in restaurants? Choose FOUR answers from the box. A people will spend more money in the restaurant · B people don't even notice the music · C people will come back again · D people don't think the restaurant is worth the price · E people will leave the restaurant right after eating · F people don't like the restaurant at all
+L 27 | no music | ABCDEF | D
+L 28 | jazz | ABCDEF | A
+L 29 | classical music | ABCDEF | E
+L 30 | pop music | ABCDEF | C
+## Section 4 · The Cube Houses of Rotterdam
+@audio https://drive.google.com/file/d/1sCaBIr9jj2WH8ekMXfrkXEyxaygEjTb2/view
+> Questions 31–40: Complete the notes. Write ONE WORD ONLY for each answer. Cube Houses – background information and design features.
+f 31 | Altogether, the Cube Houses can function as a ___ | village
+f 32 | Each Cube is in the shape of a ___ | tree
+f 33 | The Cube Houses sit on top of a ___ for pedestrians to the central city | bridge
+f 34 | During construction, the work was temporarily discontinued because the designer faced the problem of ___ | finance
+f 35 | Underneath the houses, there are three pillars made of ___ | concrete
+f 36 | A new building is situated between a warehouse and a ___ of architecture | school
+f 37 | Both the lower level and the top level of each house are in the shape of a ___ | triangle
+f 38 | The top floor is sometimes used as a small ___ | garden
+f 39 | There is a nearby market ___ across the square from the Cube Houses | hall
+f 40 | For guests, two advantages of the house are its convenient ___ and reasonable price | location
+
+=== Listening | Vol 1 | Test 10 | 40
+## Section 1 · Damaged Fridge Report
+@audio https://drive.google.com/file/d/1OTUFywaS0aEi9tIJMdYROhu8FufT1UCU/view
+Section 1: một phụ nữ gọi điện về chiếc tủ lạnh bị hỏng. Nghe một lần như thi thật.
+> Questions 1–6: Complete the table. Write ONE WORD AND/OR A NUMBER for each answer. Warranty: 3 years.
+f 1 | Model: ___ mount | top
+f 2 | Colour: ___ | silver
+f 3 | Date of purchase: ___ | january 12th / january 12 / 12th january / 12 january / 12th / 12
+f 4 | Problems: the non-stop ___ | alarm
+f 5 | The temperature is now ___ degrees | 10 / ten
+f 6 | The repair shop: Ken's Appliance (near to the ___ ) | station
+> Questions 7–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
+f 7 | The customer needs to store food for her ___ shop. | sandwich
+f 8 | Total value of loss: $ ___ | 180
+f 9 | Things to do: ask the ___ to call back | manager
+f 10 | Replace the damaged ___ | door
+## Section 2 · A Trip to Southern Scotland
+@audio https://drive.google.com/file/d/192GFFxz6QDRb2iO6hRlFJIX5gjWq7Pmt/view
+> Questions 11–16: What tourist attraction does each of the following locations have? Choose SIX answers from the box. A farming life in the past · B nature reserve · C canoes · D old ruins · E newly born deer · F birds · G waterfalls · H wild flowers · I hills
+L 11 | Sheepfoul (Shapefile) | ABCDEFGHI | I
+L 12 | Brown Mare (Brown Manor) | ABCDEFGHI | H
+L 13 | Doris | ABCDEFGHI | B
+L 14 | Lodge Estate | ABCDEFGHI | E
+L 15 | Aurden (Jordan) | ABCDEFGHI | D
+L 16 | Eastlake (East Lake) | ABCDEFGHI | F
+> Questions 17–18: Choose TWO letters A–E. Which TWO types of accommodation are available on a weekly basis? A lighthouse · B hostel · C castle · D cottages · E bed and breakfast. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 17 | Accommodation 1 ___ | b / d
+f 18 | Accommodation 2 ___ | d / b
+> Questions 19–20: Choose TWO letters A–E. Which TWO benefits can all the members receive? A free entry to some castles · B subscription to Scottish magazines · C discount on apartment rent · D free visitor guide · E free parking. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+f 19 | Benefit 1 ___ | b / d
+f 20 | Benefit 2 ___ | d / b
+## Section 3 · SUVs (Sport Utility Vehicles)
+@audio https://drive.google.com/file/d/1DHu9ctX0vbahRl7U14awMCCaMnILZYVM/view
+> Questions 21–30: Complete the notes. Write NO MORE THAN TWO WORDS for each answer. SUVs (Sport Utility Vehicles). Purposes: initially made for off-road driving in remote areas.
+f 21 | Now often found in ___ | cities / city
+f 22 | Advantages: available for ___ use | commercial
+f 23 | Larger ___ capacity | engine
+f 24 | Reasons for popularity – seen as ___ by mothers | safe
+f 25 | Drivers like their ___ | higher seats
+f 26 | Disadvantages: SUVs can be ___ in urban centres | harmful
+f 27 | ... because of their ___ | weight
+f 28 | They are liable to ___ | roll over / rollover
+f 29 | How to limit the use of SUVs: limit use to those people who need them (e.g. ___ ) | farmers
+f 30 | Raise cost of ___ for drivers | insurance
+## Section 4 · Learner Persistence
+@audio https://drive.google.com/file/d/1VvZltudzIxNYwKYNKqx_KhnnatMyiyAd/view
+> Questions 31–32: Choose the correct letter A, B or C.
+m 31 | Participants in the learner persistence study were all drawn from the same | age ;; geographical area ;; socio-economic level | B
+m 32 | The study showed that when starting their course, older students were worried about | effects on their home life ;; implications for their future career ;; financial constraints | A
+> Questions 33–37: Complete the table of research findings. Write ONE WORD ONLY for each answer. Social and environmental factors / Other factors / Personal characteristics. First level of importance: effective support · perceived success in study · enjoyment of a 33 ___. Second level: positive experience at 34 ___ · good 35 ___ · many 36 ___ in daily life. Third level: good interaction with the 37 ___ · no family problems · capacity for multi-tasking.
+f 33 | First level – personal characteristics: enjoyment of a ___ | challenge
+f 34 | Second level – social factors: positive experience at ___ | school
+f 35 | Second level – other factors: good ___ | health
+f 36 | Second level – personal characteristics: many ___ in daily life | interests
+f 37 | Third level – social factors: good interaction with the ___ | tutors
+> Questions 38–40: Complete the recommendations. Write ONE WORD ONLY for each answer.
+f 38 | Ask new students to complete questionnaires to gauge their level of ___ | maturity
+f 39 | Train the selected students to act as ___ | advisors / advisers
+f 40 | Outside office hours, offer ___ help | online
