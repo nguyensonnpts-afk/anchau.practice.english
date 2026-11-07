@@ -1,9 +1,8 @@
 === Listening | Vol 6 | Test 1 | 40
 ## Section 1 · Sailing Courses
 @audio https://drive.google.com/file/d/1C-0KThSbibdxsF4StR52-KEHszJS_GjQ/view
-Section 1: một phụ nữ gọi điện hỏi về các khóa học chèo thuyền buồm cho trẻ em. Nghe một lần như thi thật.
 
-Sailing Courses – ví dụ: There will be a Taster Day on 22nd June.
+Sailing Courses. Example: There will be a Taster Day on 22nd June.
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer.
 f 1 | Two-day course: children are always accompanied by their ___ | instructor
 f 2 | Two-day course: cost £ ___ | 65
@@ -59,7 +58,6 @@ f 40 | In serious cases, ___ is usually offered | compensation
 === Listening | Vol 6 | Test 2 | 40
 ## Section 1 · Booking a residential workshop
 @audio https://drive.google.com/file/d/1WYSsHAF3p53XNLORmsXxzVdbo7lqNTQ3/view
-Section 1: một người gọi điện đặt chỗ cho workshop kịch (drama) kéo dài hai ngày. Nghe một lần như thi thật.
 
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer. Course required: drama workshop.
 f 1 | Full name of participant: Jan ___ | creswick / cresswick / kresswick
@@ -80,7 +78,7 @@ m 12 | The weather this summer has been | perfect for growing fruit. ;; worse th
 m 13 | The manager says that tractor drivers | require an appropriate licence. ;; need previous orchard experience. ;; must be over 18 years old. | A
 m 14 | Working inside the shed | may be rather hot. ;; can be noisy at times. ;; will often be dirty. | B
 m 15 | What final advice does the manager give? | Eat and drink regularly. ;; Try not to damage the trees. ;; Leave your phones in a secure location. | A
-> Questions 16–20: Label the map of Parsons Fruit Farm. Write the correct letter A–I. (Bản đề gốc có bản đồ A–I; hãy nghe mô tả vị trí và chọn chữ cái.)
+> Questions 16–20: Label the map of Parsons Fruit Farm. Write the correct letter A–I.
 L 16 | Workshop | ABCDEFGHI | G
 L 17 | Lunchroom | ABCDEFGHI | B
 L 18 | Farm Office | ABCDEFGHI | H
@@ -116,7 +114,6 @@ f 40 | Adding to the problem of ___ | global warming
 === Listening | Vol 6 | Test 3 | 40
 ## Section 1 · Get Away Tours
 @audio https://drive.google.com/file/d/1fL-Ld92jmpk5FU75q2ZPFZHAwjMCUZZ1/view
-Section 1: một người đàn ông gọi điện cho công ty du lịch hỏi về các tour xe đạp. Nghe một lần như thi thật.
 
 > Questions 1–5: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer. Get Away Tours – Office hours: 10am to 7pm. Price includes accommodation and meals.
 f 1 | Cost of cheapest tour per person is $ ___ (this month only) | 1100 / 1,100
@@ -137,7 +134,7 @@ m 11 | The school is looking for new team coaches and managers because | the ove
 m 12 | What does the speaker say is the most important thing a coach needs? | confidence about the rules of a particular sport ;; the ability to make children enthusiastic about a sport ;; commitment to training the team for a full season | B
 m 13 | For parents who would like to coach rugby, one requirement is that they | attend an upcoming registration event. ;; can commit to two coaching sessions per week. ;; have their own child in the team. | A
 m 14 | In order to get a netball uniform, parents will need to | pay a deposit at school. ;; ask the team manager for one. ;; visit the recommended local sports store | A
-> Questions 15–20: Label the map of the cross country running event. Write the correct letter A–I. (Bản đề gốc có bản đồ A–I; hãy nghe mô tả vị trí và chọn chữ cái.)
+> Questions 15–20: Label the map of the cross country running event. Write the correct letter A–I.
 L 15 | Drinks station | ABCDEFGHI | C
 L 16 | Crossing point | ABCDEFGHI | H
 L 17 | Halfway point | ABCDEFGHI | B
@@ -174,7 +171,6 @@ f 40 | The use of new materials, particularly ___, led to new techniques. | glas
 === Listening | Vol 6 | Test 4 | 40
 ## Section 1 · Coxhead Motorhomes
 @audio https://drive.google.com/file/d/1RMmr80w8bSGsdn9N5LnoC03HM51tESYj/view
-Section 1: một khách hàng gọi điện cho công ty cho thuê nhà di động (motorhome) ở Anh. Nghe một lần như thi thật.
 
 Coxhead Motorhomes – Representative: Dave Sparrow. Model recommended: 'Two berth end kitchen'. Cost £545 – £755 per week. All vehicles are under 30 months old.
 > Questions 1–10: Complete the notes. Write ONE WORD AND/OR A NUMBER for each answer.
@@ -232,7 +228,6 @@ f 40 | The noisiest creature is probably a particular kind of ___ which lives in
 === Listening | Vol 6 | Test 5 | 40
 ## Section 1 · Campsite Reservation
 @audio https://drive.google.com/file/d/1hW7ojrDS4TxJ3FsBZ1AjvTo3iMyBwdVw/view
-Section 1: một phụ nữ gọi điện đặt chỗ cắm trại ở công viên quốc gia. Nghe một lần như thi thật.
 
 > Questions 1–10: Complete the form. Write ONE WORD AND/OR A NUMBER for each answer. Name: Sandra Kemp. Number of nights: two.
 f 1 | Park region: ___ California | southern
@@ -253,7 +248,7 @@ m 12 | What is the main thing the manager is looking for in his staff? | Experie
 m 13 | When did the Ocean Edge Hotel first open? | in the 18th century ;; in the 19th century ;; in the 20th century | C
 m 14 | How long do staff generally remain at the hotel? | three years ;; five years ;; ten years | B
 m 15 | Which group of guests is growing fastest? | tourists visiting local attractions ;; people staying for one or two nights on business ;; people working locally who go home at weekends | C
-> Questions 16–20: Label the plan of the hotel main building. Write the correct letter A–I. (Bản đề gốc có sơ đồ A–I; hãy nghe mô tả vị trí và chọn chữ cái. Đáp án 16–17 suy ra từ bản key scan, có thể kém chắc chắn.)
+> Questions 16–20: Label the plan of the hotel main building. Write the correct letter A–I.
 L 16 | Office | ABCDEFGHI | I
 L 17 | Function room | ABCDEFGHI | F
 L 18 | Main conference room | ABCDEFGHI | B
@@ -266,13 +261,13 @@ m 21 | What first attracted Terence to the topic of Ife sculptures? | He read se
 m 22 | In his presentation Terence will focus on sculptures featuring | abstract designs. ;; fish and wild animals. ;; people. | C
 m 23 | How did Terence finance his trip to Ife? | He received money from an arts organisation. ;; His mother and father paid for him. ;; He wrote about the trip for a newspaper. | A
 m 24 | What was most memorable for Terence about his trip? | helping at an archaeological site ;; the professor he met ;; the artists he got to know | B
-> Questions 25–26: Choose TWO letters, A–E. Which TWO additions will Terence make to the part of the presentation on the sculptures? A enlarged pictures of the sculptures / B more material about the subjects / C more about his personal opinion of the art works / D extra information about the techniques used / E additional information about the artists. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 25–26: Choose TWO letters, A–E. Which TWO additions will Terence make to the part of the presentation on the sculptures? A enlarged pictures of the sculptures / B more material about the subjects / C more about his personal opinion of the art works / D extra information about the techniques used / E additional information about the artists.
 f 25 | Addition 1 ___ | a / d
 f 26 | Addition 2 ___ | d / a
-> Questions 27–28: Choose TWO letters, A–E. Which TWO additions will Terence make to the section on history? A data about the kings in the Ife area / B extra information about the surrounding region / C examination of the beliefs of the Ife people / D an explanation of the development of modern Ife / E more details of past activities of the Ife people. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 27–28: Choose TWO letters, A–E. Which TWO additions will Terence make to the section on history? A data about the kings in the Ife area / B extra information about the surrounding region / C examination of the beliefs of the Ife people / D an explanation of the development of modern Ife / E more details of past activities of the Ife people.
 f 27 | Addition 1 ___ | b / c
 f 28 | Addition 2 ___ | c / b
-> Questions 29–30: Choose TWO letters, A–E. Which TWO features of his research in Nigeria will Terence discuss in his presentation? A the influence of the sculptures on western artists / B the uncertainty over who made the sculptures / C the source of the materials used for the sculptures / D the problems he faced in collecting information / E the original discovery of the sculptures. Viết một chữ cái cho mỗi ô (thứ tự nào cũng được).
+> Questions 29–30: Choose TWO letters, A–E. Which TWO features of his research in Nigeria will Terence discuss in his presentation? A the influence of the sculptures on western artists / B the uncertainty over who made the sculptures / C the source of the materials used for the sculptures / D the problems he faced in collecting information / E the original discovery of the sculptures.
 f 29 | Feature 1 ___ | b / e
 f 30 | Feature 2 ___ | e / b
 ## Section 4 · Reasons for and against urban migration
@@ -291,9 +286,8 @@ f 40 | Citizens may find the quantity of daily ___ stressful | traffic
 === Listening | Vol 6 | Test 6 | 40
 ## Section 1 · A Residence Survey
 @audio https://drive.google.com/file/d/1ZWA3oSL2BCNg0lWHL4myrynY_PbsSVCy/view
-Section 1: một người phỏng vấn hỏi Lee trả lời bảng khảo sát về nơi cư trú ở miền bắc. Nghe một lần như thi thật.
 
-A Residence Survey – ví dụ: Age of the interviewee: 19.
+A Residence Survey. Example: Age of the interviewee: 19.
 > Questions 1–5: Complete the notes. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.
 f 1 | Current occupation: ___ | salesman / salesperson
 f 2 | Length of living in the north: ___ | 9 years / nine years / 9 / nine
@@ -308,7 +302,7 @@ f 9 | Preferred exercises: go swimming, go to the gym, go ___ | sailing
 f 10 | Part-time course: ___ | japanese
 ## Section 2 · The Amston Way (cycle route)
 @audio https://drive.google.com/file/d/1CXPJPZmwGyvBB0s0KiLBDVJGuO0SA4xb/view
-> Questions 11–14: Label the map of the cycle route. Write the correct letter A–I. (Bản đề gốc có bản đồ A–I; hãy nghe mô tả vị trí và chọn chữ cái.)
+> Questions 11–14: Label the map of the cycle route. Write the correct letter A–I.
 L 11 | Rocks | ABCDEFGHI | B
 L 12 | Colleen Nature Reserve | ABCDEFGHI | E
 L 13 | Ashington China Factory | ABCDEFGHI | F

@@ -1,7 +1,7 @@
 // Service worker: works offline after the first visit.
 // Page: network first (always newest when online), cache as fallback.
 // Data, images, fonts: served from cache, refreshed in the background.
-const V = 'lta-v2';
+const V = 'lta-v3';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'assets/icons/icon-192.png', 'assets/icons/icon-512.png'];
 
 self.addEventListener('install', e => {
