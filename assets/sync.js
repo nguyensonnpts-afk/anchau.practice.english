@@ -82,7 +82,13 @@
  }
  function markReady(k){if(got[k])return;got[k]=true;if(got.c&&got.h){S.ready=true;S.dirty();if(!U&&R.v==='login')after()}}
 
- Promise.all([import(BASE+'firebase-app.js'),import(BASE+'firebase-firestore.js')]).then(([A,FS])=>{
+ // Mở app lúc không có mạng thì chưa tải được Firebase: thử lại khi có mạng trở lại.
+ // Kết quả làm lúc offline vẫn nằm trong máy và được đẩy lên ngay khi kết nối được.
+ let loading=false;
+ function start(){
+  if(F||loading)return;loading=true;
+  // Thử tải bằng fetch trước: trình duyệt nhớ lần import() thất bại, nên chỉ import() khi chắc là có mạng
+  fetch(BASE+'firebase-app.js',{mode:'no-cors',cache:'no-store'}).then(()=>Promise.all([import(BASE+'firebase-app.js'),import(BASE+'firebase-firestore.js')])).then(([A,FS])=>{
   F=FS;const app=A.initializeApp(CFG);db=FS.getFirestore(app);if(CFG.emulator)FS.connectFirestoreEmulator(db,CFG.emulator.host,CFG.emulator.port);
   FS.onSnapshot(FS.doc(db,COL,CDOC),snap=>{
    if(snap.metadata.hasPendingWrites)return;
@@ -101,5 +107,10 @@
    if(changed)after();
    markReady('h');
   },e=>{console.warn('sync: không đọc được danh sách học viên',e);S.err=e});
- }).catch(e=>{console.warn('sync: không tải được Firebase',e);S.err=e});
+ }).catch(e=>{console.warn('sync: không tải được Firebase',e);S.err=e;loading=false});
+ }
+ start();
+ addEventListener('online',start);
+ setInterval(()=>{if(!F)start()},30000);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)start()});
 })();
