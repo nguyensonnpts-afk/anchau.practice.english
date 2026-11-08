@@ -528,6 +528,30 @@ mark.hl{background:color-mix(in srgb,var(--mark) 70%,transparent);color:inherit;
   .reveal{opacity:1;transform:none}
   #app .sr{opacity:1!important;transform:none!important}
 }
+/* nhận xét trực tiếp trong bài viết */
+.anno-grid{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:18px;align-items:start}
+@media (max-width:860px){.anno-grid{grid-template-columns:1fr}}
+.passage.anno{background:var(--bg);max-width:none;-webkit-user-select:text;user-select:text;cursor:text}
+.anno mark.an{background:color-mix(in srgb,var(--mark) 55%,transparent);color:inherit;border-radius:3px;padding:0 1px;cursor:pointer}
+del.an{color:var(--bad);text-decoration:line-through;text-decoration-thickness:1.5px;cursor:pointer}
+ins.an{color:var(--ok);text-decoration:none;background:var(--ok-soft);border-radius:3px;padding:0 3px;margin-left:2px;cursor:pointer}
+.anno span.an{border-bottom:2px dotted var(--ok);cursor:pointer}
+.an-n{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--c-write);color:var(--card);font:500 10.5px/1 var(--sans);vertical-align:super;margin:0 2px;cursor:pointer;-webkit-user-select:none;user-select:none}
+.ncard .an-n{vertical-align:middle;margin:0}
+.anno .on{outline:2px solid var(--c-write);outline-offset:2px;border-radius:3px}
+.nside{display:flex;flex-direction:column;gap:10px;min-width:0}
+@media (min-width:861px){.nside{position:sticky;top:calc(var(--hdr,0px) + 14px);max-height:calc(100vh - var(--hdr,0px) - 28px);overflow:auto;padding:2px}}
+.ncard{border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;background:var(--card);cursor:pointer;font-size:14px;transition:border-color .2s,box-shadow .2s}
+.ncard:hover{border-color:var(--line2)}
+.ncard.on{border-color:var(--c-write);box-shadow:var(--shadow-lg)}
+.ncard .nh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.nty-c{color:var(--c-write)}.nty-r{color:var(--brand)}.nty-d{color:var(--bad)}.nty-i{color:var(--ok)}
+.nq{color:var(--muted);font-size:13.5px;border-left:3px solid var(--line2);padding-left:9px;margin:4px 0;white-space:pre-wrap;font-family:var(--serif)}
+.ncard .nt{white-space:pre-wrap;margin-top:4px;color:var(--ink)}
+.atool{position:absolute;z-index:30;display:flex;flex-wrap:wrap;gap:2px;padding:5px;background:var(--ink);border-radius:14px;box-shadow:var(--shadow-lg)}
+.atool[hidden]{display:none}
+.atool button{border:0;background:none;color:var(--bg);font:inherit;font-size:13.5px;padding:8px 12px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.atool button:hover{background:color-mix(in srgb,var(--bg) 16%,transparent)}
 </style>
 </head>
 <body>
@@ -1426,12 +1450,14 @@ function reviewView(){
   ${gradeBox('speaking',sid,x,['Fluency & Coherence','Lexical Resource','Grammar Range & Accuracy','Pronunciation'],['fc','lr','gra','pr'])}
   ${x.items.map((it,i)=>{const st=textStats(it.text);return `<div class="card mt"><span class="tag ${it.part===2?'acc':''}">Part ${it.part}</span> <b>${h(it.q)}</b>${it.audio?`<audio controls id="au_${x.id}_${i}" style="width:100%;margin-top:10px"></audio>`:''}<div class="passage mt" style="background:var(--bg)">${h(it.text)||'<i class="muted">(không có lời chép)</i>'}</div><div class="small muted mt">${it.dur}s · ${it.words} từ · ${it.wpm} từ/phút · đa dạng từ ${Math.round(st.ttr*100)}%${st.fill.length?' · từ đệm: '+st.fill.map(f=>f[0]+'×'+f[1]).join(', '):''}</div></div>`}).join('')}`;
  }
- const x=(p.writings||[]).find(a=>a.id===R.rid);if(!x)return '<div class="empty">Không tìm thấy.</div>';const w=wById(x.promptId);
+ const x=(p.writings||[]).find(a=>a.id===R.rid);if(!x)return '<div class="empty">Không tìm thấy.</div>';const w=wById(x.promptId);if(!ANX||ANX.id!==x.id)ANV='edit';ANX={sid,id:x.id};
  return `<div class="crumb" onclick="${back}">← Quay lại</div>${fullBar()}<h1>Writing Task ${w?w.task:''} · ${h(w?w.title:'(đề đã xóa)')}</h1><p class="sub">${isT?h((stuById(sid)||{}).name||'')+' · ':''}${fdt(x.date)} · ${wc(x.text)} từ · làm trong ${Math.round(x.dur/60)} phút</p>
  ${gradeBox('writing',sid,x,[w&&w.task===1?'Task Achievement':'Task Response','Coherence & Cohesion','Lexical Resource','Grammar Range & Accuracy'],['tr','cc','lr','gra'])}
+ ${redoBox(sid,x,isT)}
  ${w?`<details class="card mt"><summary><b>Xem đề bài</b></summary><p>${fmt(w.prompt)}</p>${w.chart?chartSVG(w.chart):''}${w.img?`<img src="${h(w.img)}" style="max-width:100%">`:''}</details>`:''}
  ${w&&w.model?`<details class="card mt"><summary><b>Xem bài mẫu (band 8.0+)</b></summary><p class="small muted">Bài mẫu để tham khảo cách triển khai ý, không phải đáp án duy nhất.</p><p>${fmt(w.model)}</p></details>`:''}
- <div class="card mt"><h3>Bài viết</h3><div class="passage" style="background:var(--bg)">${h(x.text)}</div>${statsHTML(textStats(x.text),{writing:true,task:w?w.task:2,min:w?w.min:0})}</div>`;
+ <div class="card mt" style="cursor:auto"><div id="anno-box" style="width:100%">${annoBox(sid,x,isT)}</div>${statsHTML(textStats(x.text),{writing:true,task:w?w.task:2,min:w?w.min:0})}</div>
+ ${modelBox(sid,x,isT)}`;
 }
 AFTER.skres=AFTER['t-review']=()=>{if(R.kind!=='speaking')return;const x=(P(R.sid).speaking||[]).find(a=>a.id===R.rid);if(!x)return;x.items.forEach(async(it,i)=>{if(!it.audio)return;const b=await IDB.get(x.id+'_'+i);const el=$(`#au_${x.id}_${i}`);if(el){if(b)el.src=URL.createObjectURL(b);else el.replaceWith(Object.assign(document.createElement('div'),{className:'small muted',textContent:'(File ghi âm chỉ nghe được trên máy học viên đã ghi)'}))}})};
 function gradeBox(kind,sid,x,labels,keys){
@@ -1444,6 +1470,103 @@ function gradeBox(kind,sid,x,labels,keys){
 }
 function saveSWGrade(kind,sid,id,keys){const list=kind==='speaking'?P(sid).speaking:P(sid).writings;const x=list.find(a=>a.id===id);const g={};keys.forEach(k=>{const v=$('#g_'+k).value;g[k]=v===''?null:+v});g.band=bandAvg(keys.map(k=>g[k]));g.comment=$('#g_com').value;g.gradedAt=Date.now();x.grade=g;save();render();toast(g.band!=null?`Đã lưu. Overall band ${g.band}`:'Đã lưu nhận xét (chưa đủ 4 tiêu chí để tính band)')}
 
+/* --- Nhận xét trực tiếp trong bài viết, bài mẫu, viết lại bài ---
+   Lưu ở x.fb = {notes:[{id,type,s,e,t,c,at}], model, at}; type: c nhận xét, r thay thế, d xóa, i thêm (sau đoạn chọn).
+   s,e là vị trí ký tự trong x.text. Đồng bộ: bản có fb.at mới hơn thắng. */
+const NT={c:'Nhận xét',r:'Thay thế',d:'Xóa',i:'Thêm'};
+let ANX=null,ANSEL=null,ANV='edit',annoT=0;
+const wNotes=x=>((x.fb&&x.fb.notes)||[]).slice().sort((a,b)=>a.s-b.s||a.e-b.e);
+const annoX=()=>ANX&&(P(ANX.sid).writings||[]).find(y=>y.id===ANX.id);
+function setFb(x,patch){x.fb=Object.assign({notes:[],model:''},x.fb,patch,{at:Date.now()});save()}
+function annoHTML(x,mode){
+ const t=x.text;if(mode==='orig')return h(t);
+ let out='',p=0;
+ wNotes(x).forEach((n,k)=>{if(n.s<p)return;out+=h(t.slice(p,n.s));const q=h(t.slice(n.s,n.e)),b=`<span class="an-n" data-x data-n="${n.id}">${k+1}</span>`;
+  if(n.type==='c')out+=`<mark class="an" data-n="${n.id}">${q}</mark>${b}`;
+  else if(n.type==='d')out+=`<del class="an" data-n="${n.id}">${q}</del>${b}`;
+  else if(n.type==='r')out+=`<del class="an" data-n="${n.id}">${q}</del><ins class="an" data-x data-n="${n.id}">${h(n.t)}</ins>${b}`;
+  else out+=`<span class="an" data-n="${n.id}">${q}</span><ins class="an" data-x data-n="${n.id}">${h(n.t)}</ins>${b}`;
+  p=n.e});
+ return out+h(t.slice(p));
+}
+function noteCard(x,n,k,isT){const q=x.text.slice(n.s,n.e);
+ return `<div class="ncard" data-n="${n.id}" onclick="annoFocus('${n.id}')"><div class="nh"><span class="an-n">${k+1}</span><b class="small nty-${n.type}">${NT[n.type]}</b><span class="small muted" style="margin-left:auto">${fdt(n.at)}</span></div>
+ <div class="nq">${h(q)}</div>
+ ${n.type==='r'?`<div class="nt">Sửa thành: <ins class="an">${h(n.t)}</ins></div>`:n.type==='i'?`<div class="nt">Thêm vào sau: <ins class="an">${h(n.t)}</ins></div>`:''}
+ ${n.c?`<div class="nt">${h(n.c)}</div>`:''}
+ ${isT?`<div class="row" style="margin-top:8px;gap:6px"><button class="btn sm" onclick="event.stopPropagation();annoForm('${n.type}','${n.id}')">Sửa</button><button class="btn sm danger" onclick="event.stopPropagation();annoDel('${n.id}')">Xóa</button></div>`:''}</div>`}
+function noteCards(x,isT){const ns=wNotes(x);if(!ns.length)return isT?'<p class="small muted" style="margin:0">Chưa có nhận xét nào trong bài.</p>':'';return ns.map((n,k)=>noteCard(x,n,k,isT)).join('')}
+function annoBox(sid,x,isT){
+ const ns=wNotes(x),mode=isT?'edit':ANV,side=isT||ns.length;
+ return `<div class="row between" style="width:100%"><h3 style="margin:0">Bài viết</h3>${!isT&&ns.length?`<div class="seg"><button class="${ANV==='edit'?'on':''}" onclick="ANV='edit';annoRefresh()">Có chỉnh sửa (${ns.length})</button><button class="${ANV==='orig'?'on':''}" onclick="ANV='orig';annoRefresh()">Bản gốc</button></div>`:''}</div>
+ ${isT?'<p class="small muted" style="margin:6px 0 0">Bôi đen một từ hoặc một đoạn trong bài để nhận xét, sửa, xóa hoặc thêm chữ. Học viên sẽ thấy ngay trong bài của mình.</p>':''}
+ <div class="${side?'anno-grid':''} mt" style="width:100%"><div id="anno-wrap" style="position:relative;min-width:0"><div class="passage anno" id="anno" onclick="annoClick(event)">${annoHTML(x,mode)}</div>
+ ${isT?`<div class="atool" id="atool" hidden onpointerdown="event.preventDefault()" onmousedown="event.preventDefault()"><button onclick="annoNew('c')">💬 Nhận xét</button><button onclick="annoNew('r')">Sửa</button><button onclick="annoNew('d')">Xóa</button><button onclick="annoNew('i')">Thêm sau</button></div>`:''}</div>
+ ${side?`<div class="nside">${noteCards(x,isT)}</div>`:''}</div>`;
+}
+function annoRefresh(){const x=annoX(),el=$('#anno-box');if(x&&el)el.innerHTML=annoBox(ANX.sid,x,U.role==='teacher')}
+function annoOff(root,node,off){const r=document.createRange();r.setStart(root,0);r.setEnd(node,off);const f=r.cloneContents();f.querySelectorAll('[data-x]').forEach(e=>e.remove());return f.textContent.length}
+function annoSel(){
+ const tb=$('#atool'),root=$('#anno'),x=annoX();if(!tb||!root||!x)return;
+ const s=getSelection();
+ if(!s.rangeCount||s.isCollapsed||!root.contains(s.anchorNode)||!root.contains(s.focusNode)){tb.hidden=true;return}
+ const r=s.getRangeAt(0);let a=annoOff(root,r.startContainer,r.startOffset),b=annoOff(root,r.endContainer,r.endOffset);const t=x.text;
+ while(a<b&&/\s/.test(t[a]))a++;while(b>a&&/\s/.test(t[b-1]))b--;
+ if(a>=b){tb.hidden=true;return}
+ ANSEL={s:a,e:b};
+ const rc=r.getBoundingClientRect(),wr=$('#anno-wrap').getBoundingClientRect();
+ tb.hidden=false;tb.style.top=(rc.bottom-wr.top+8)+'px';tb.style.left=Math.max(0,Math.min(rc.left-wr.left,wr.width-tb.offsetWidth))+'px';
+}
+document.addEventListener('selectionchange',()=>{if(!$('#atool'))return;clearTimeout(annoT);annoT=setTimeout(annoSel,180)});
+function annoNew(type){const x=annoX();if(!x||!ANSEL)return;const{s,e}=ANSEL;
+ if(wNotes(x).some(n=>n.s<e&&s<n.e)){toast('Đoạn này đã có nhận xét. Hãy sửa nhận xét cũ ở cột bên cạnh.');return}
+ getSelection().removeAllRanges();$('#atool').hidden=true;annoForm(type)}
+function annoForm(type,id){const x=annoX();const n=id?wNotes(x).find(a=>a.id===id):null;const s=n?n.s:ANSEL.s,e=n?n.e:ANSEL.e;
+ modal(`<h2>${NT[type]}</h2><div class="nq" style="margin-bottom:6px">${h(x.text.slice(s,e))}</div>
+ ${type==='r'||type==='i'?`<label class="f">${type==='r'?'Sửa thành':'Chữ hoặc dấu cần thêm vào sau đoạn trên'}</label><input type="text" id="an-t" value="${h(n?n.t||'':type==='r'?x.text.slice(s,e):'')}">`:''}
+ <label class="f">${type==='c'?'Nhận xét':'Giải thích cho học viên (không bắt buộc)'}</label><textarea class="prose" id="an-c" style="min-height:90px">${h(n?n.c||'':'')}</textarea>
+ <div class="row mt"><button class="btn pri" onclick="annoSave('${type}','${id||''}',${s},${e})">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`);
+ setTimeout(()=>{const f=$('#an-t')||$('#an-c');if(f)f.focus()},50)}
+function annoSave(type,id,s,e){const x=annoX();const t=$('#an-t')?$('#an-t').value:'',c=$('#an-c').value.trim();
+ if(type==='c'&&!c){toast('Nhập nhận xét');return}
+ if((type==='r'||type==='i')&&!t.trim()){toast(type==='r'?'Nhập chữ thay thế':'Nhập chữ cần thêm');return}
+ const notes=((x.fb&&x.fb.notes)||[]).map(a=>Object.assign({},a));
+ if(id){const n=notes.find(a=>a.id===id);Object.assign(n,{t,c})}else notes.push({id:uid('an'),type,s,e,t,c,at:Date.now()});
+ setFb(x,{notes});modal('');annoRefresh()}
+function annoDel(id){if(!confirm('Xóa nhận xét này?'))return;const x=annoX();setFb(x,{notes:((x.fb&&x.fb.notes)||[]).filter(a=>a.id!==id)});annoRefresh()}
+function annoClick(ev){const el=ev.target.closest('[data-n]');if(!el)return;const s=getSelection();if(s&&!s.isCollapsed)return;annoFocus(el.dataset.n,true)}
+function annoFocus(id,fromText){
+ document.querySelectorAll('.on[data-n]').forEach(e=>e.classList.remove('on'));
+ document.querySelectorAll(`[data-n="${id}"]`).forEach(e=>e.classList.add('on'));
+ if(fromText){const card=document.querySelector(`.nside .ncard[data-n="${id}"]`);if(!card)return;
+  if(innerWidth<=860){const x=annoX();const ns=wNotes(x);const k=ns.findIndex(n=>n.id===id);modal(`${noteCard(x,ns[k],k,false)}<button class="btn mt" onclick="modal('')">Đóng</button>`)}
+  else card.scrollIntoView({block:'nearest',behavior:'smooth'});
+ }else{const m=document.querySelector(`#anno [data-n="${id}"]`);if(m)m.scrollIntoView({block:'center',behavior:'smooth'})}
+}
+/* Bài mẫu */
+function modelOpts(x){const w=wById(x.promptId),o=[],seen=new Set();
+ if(w&&w.model){o.push({k:'p',l:'Bài mẫu có sẵn của đề',t:w.model});seen.add(w.model)}
+ D.students.forEach(s=>(P(s.id).writings||[]).forEach(y=>{const t=y.fb&&y.fb.model;if(y.id!==x.id&&y.promptId===x.promptId&&t&&!seen.has(t)){seen.add(t);o.push({k:y.id,l:'Bài mẫu đã gửi cho '+s.name,t})}}));return o}
+function modelBox(sid,x,isT){const m=(x.fb&&x.fb.model)||'';
+ if(!isT)return m?`<div class="card mt" style="cursor:auto"><div class="row between" style="width:100%"><h3 style="margin:0">Bài mẫu từ giáo viên</h3><span class="tag ok">${wc(m)} từ</span></div><p class="small muted">So sánh với bài của bạn để học cách triển khai ý và dùng từ.</p><div class="passage" style="background:var(--bg);max-width:none;width:100%">${h(m)}</div></div>`:'';
+ const o=modelOpts(x);
+ return `<div class="card mt" style="cursor:auto" id="md-box"><h3>Bài mẫu cho học viên</h3><p class="small muted" style="margin-top:0">Viết hoặc dán bài mẫu cho đề này. Học viên sẽ thấy bài mẫu ngay dưới bài viết của mình.</p>
+ ${o.length?`<div class="row mb" style="width:100%"><select id="md-src" style="max-width:340px">${o.map(a=>`<option value="${a.k}">${h(a.l)}</option>`).join('')}</select><button class="btn sm" onclick="modelPick()">Dùng bài này</button></div>`:''}
+ <textarea class="prose" id="md-t" style="min-height:220px;width:100%" placeholder="Dán hoặc viết bài mẫu…" oninput="$('#md-wc').textContent=wc(this.value)+' từ'">${h(m)}</textarea>
+ <div class="row mt"><button class="btn pri" onclick="modelSave()">Lưu bài mẫu</button>${m?'<button class="btn ghost" onclick="modelSave(true)">Gỡ bài mẫu</button>':''}<span class="small muted" id="md-wc">${wc(m)} từ</span></div></div>`}
+function modelPick(){const x=annoX();const a=modelOpts(x).find(o=>o.k===$('#md-src').value);if(!a)return;const ta=$('#md-t');if(ta.value.trim()&&!confirm('Thay nội dung đang có bằng bài mẫu này?'))return;ta.value=a.t;ta.oninput()}
+function modelSave(clear){const x=annoX();if(clear&&!confirm('Gỡ bài mẫu khỏi bài này?'))return;const m=clear?'':$('#md-t').value.trim();setFb(x,{model:m});const b=$('#md-box');if(b)b.outerHTML=modelBox(ANX.sid,x,true);toast(clear?'Đã gỡ bài mẫu':m?'Đã lưu bài mẫu. Học viên sẽ thấy ngay dưới bài viết.':'Bài mẫu đang trống')}
+/* Viết lại bài */
+function redoBox(sid,x,isT){const ws=P(sid).writings||[];const prev=x.redoOf&&ws.find(y=>y.id===x.redoOf);const next=ws.filter(y=>y.redoOf===x.id);const v=isT?'t-review':'wres';
+ const lk=y=>`go('${v}',{kind:'writing',rid:'${y.id}',sid:'${sid}'})`;
+ const links=`${prev?`<p class="small" style="margin:0 0 6px">Đây là bài viết lại của <a href="#" onclick="event.preventDefault();${lk(prev)}">bài ngày ${fdt(prev.date)}</a>${prev.grade&&prev.grade.band!=null?` (Band ${prev.grade.band})`:''}.</p>`:''}${next.map(y=>`<p class="small" style="margin:0 0 6px">Đã viết lại: <a href="#" onclick="event.preventDefault();${lk(y)}">bài ngày ${fdt(y.date)}</a> · ${y.grade&&y.grade.band!=null?'Band '+y.grade.band:'chờ chấm'}</p>`).join('')}`;
+ const can=!isT&&((x.grade&&x.grade.band!=null)||wNotes(x).length)&&wById(x.promptId);
+ if(!links&&!can)return '';
+ return `<div class="card mt" style="cursor:auto">${can?`<div class="row between" style="width:100%;align-items:center"><div style="flex:1;min-width:220px"><h3 style="margin:0 0 4px">Viết lại bài</h3><p class="small muted" style="margin:0">Sửa bài theo nhận xét của giáo viên rồi nộp lại. Bài viết lại được lưu thành bài mới để giáo viên chấm, bài này vẫn giữ nguyên.</p></div><button class="btn pri" onclick="wRedo('${x.id}')">Viết lại bài này</button></div>${links?'<div class="mt">'+links+'</div>':''}`:links}</div>`}
+function wRedo(id){const x=(P().writings||[]).find(y=>y.id===id);if(!x)return;let d='';try{d=localStorage.getItem('lopta_draft_'+U.id+'_r'+id)||''}catch(e){}go('writing');wStart(x.promptId,{redo:id,text:d||x.text})}
+function redoPanel(){const x=(P().writings||[]).find(y=>y.id===WR.redo);if(!x)return '';const ns=wNotes(x),g=x.grade||{};
+ return `<details class="mt" open style="width:100%"><summary><b>Nhận xét của giáo viên cho bài trước${ns.length?` (${ns.length})`:''}</b></summary>${g.band!=null?`<p class="small">Band bài trước: <b>${g.band}</b></p>`:''}${g.comment?`<div class="explain">${fmt(g.comment)}</div>`:''}<div class="mt">${noteCards(x,false)}</div></details>`}
+
 /* --- Trang Writing --- */
 let wTab=2;let WR=null;
 VIEWS.writing=()=>{
@@ -1455,19 +1578,19 @@ VIEWS.writing=()=>{
  ${wTab==='mine'?wHistory(U.id):`<div class="grid g2">${allW().filter(w=>w.task===wTab).map(w=>`<div class="card"><div class="row between"><span class="tag ${w.task===1?'acc':''}">Task ${w.task}</span>${asg.has(w.id)?'<span class="tag warn">Được giao</span>':''}</div><h3 class="mt">${h(w.title)}</h3><p class="small muted" style="margin:0 0 8px">${h(w.prompt.split('\n')[0]).slice(0,150)}</p><p class="small muted">${w.minutes} phút · tối thiểu ${w.min} từ${cnt(w.id)?` · đã viết ${cnt(w.id)} lần`:''}</p><button class="btn pri" onclick="wStart('${w.id}')">Viết bài</button></div>`).join('')}</div>`}`;
 };
 function wHistory(sid){const l=(P(sid).writings||[]).slice().reverse();if(!l.length)return '<div class="card empty">Chưa có bài viết nào.</div>';
- return `<div class="card">${l.map(x=>{const w=wById(x.promptId);return `<div class="list-item"><div><b class="small">${w?'Task '+w.task+' · '+h(w.title):'(đề đã xóa)'}</b><div class="small muted">${fdt(x.date)} · ${wc(x.text)} từ</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'wres'}',{kind:'writing',rid:'${x.id}',sid:'${sid}'})">Xem</button></div></div>`}).join('')}</div>`}
-function draftKey(id){return 'lopta_draft_'+U.id+'_'+id}
+ return `<div class="card">${l.map(x=>{const w=wById(x.promptId);return `<div class="list-item"><div><b class="small">${w?'Task '+w.task+' · '+h(w.title):'(đề đã xóa)'}</b>${x.redoOf?' <span class="tag acc">Viết lại</span>':''}<div class="small muted">${fdt(x.date)} · ${wc(x.text)} từ</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'wres'}',{kind:'writing',rid:'${x.id}',sid:'${sid}'})">Xem</button></div></div>`}).join('')}</div>`}
+function draftKey(id){return 'lopta_draft_'+U.id+'_'+(WR&&WR.redo&&WR.id===id?'r'+WR.redo:id)}
 function wStart(id,o){const w=wById(id);let d='';try{d=localStorage.getItem(draftKey(id))||''}catch(e){}WR=Object.assign({id,t0:Date.now(),end:Date.now()+w.minutes*60000,text:d},o||{});render()}
 function wrView(){const w=wById(WR.id);
  return `<div class="exam-head"><div class="row between"><b style="flex:1;min-width:0">Writing Task ${w.task} · ${h(w.title)}</b><span class="timer" id="timer"></span><button class="btn ghost" onclick="wQuit()">Thoát</button><button class="btn pri" onclick="wSubmit()">Nộp bài</button></div></div>
  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start">
- <div class="card"><p>${fmt(w.prompt)}</p>${w.chart?chartSVG(w.chart):''}${w.img?`<img src="${h(w.img)}" style="max-width:100%">`:''}<p class="small muted">Viết ít nhất ${w.min} từ.</p></div>
+ <div class="card"><p>${fmt(w.prompt)}</p>${w.chart?chartSVG(w.chart):''}${w.img?`<img src="${h(w.img)}" style="max-width:100%">`:''}<p class="small muted">Viết ít nhất ${w.min} từ.</p>${WR.redo?redoPanel():''}</div>
  <div class="card"><textarea class="prose" id="wtext" style="min-height:420px" placeholder="Viết bài ở đây. Để một dòng trống giữa các đoạn." oninput="wInput(this.value)">${h(WR.text)}</textarea><div class="row between small mt"><span>Số từ: <b id="wwc">${wc(WR.text)}</b> / ${w.min}</span><span class="muted" id="wsaved">Bản nháp tự lưu</span></div></div></div>`}
 AFTER.writing=()=>{if(!WR)return;clearInterval(timerH);const tick=()=>{const left=Math.max(0,WR.end-Date.now());const el=$('#timer');if(!el){clearInterval(timerH);return}el.textContent=fmtSec(Math.floor(left/1000));el.classList.toggle('low',left<120000);if(left<=0){clearInterval(timerH);el.textContent='Hết giờ';}};tick();timerH=setInterval(tick,1000)};
 function wInput(v){WR.text=v;$('#wwc').textContent=wc(v);try{localStorage.setItem(draftKey(WR.id),v)}catch(e){}}
 function wQuit(){if(WR.text.trim()&&!confirm('Bản nháp được giữ lại để viết tiếp sau. Thoát?'))return;const fr=WR.full;WR=null;clearInterval(timerH);fr?go('fullrun',{id:fr}):go('writing')}
 function wSubmit(){const w=wById(WR.id);const n=wc(WR.text);if(n<20){toast('Bài viết quá ngắn');return}if(!confirm(n<w.min?`Bài mới có ${n}/${w.min} từ. Vẫn nộp?`:'Nộp bài?'))return;
- const p=P();p.writings=p.writings||[];const x={id:uid('w'),promptId:w.id,text:WR.text,date:Date.now(),dur:Math.round((Date.now()-WR.t0)/1000),grade:null};p.writings.push(x);const fr=WR.full;if(fr)fullMark(fr,WR.fpart,x.id);bump();save();try{localStorage.removeItem(draftKey(w.id))}catch(e){}WR=null;clearInterval(timerH);go('wres',{kind:'writing',rid:x.id,sid:U.id,full:fr})}
+ const p=P();p.writings=p.writings||[];const x={id:uid('w'),promptId:w.id,text:WR.text,date:Date.now(),dur:Math.round((Date.now()-WR.t0)/1000),grade:null};if(WR.redo)x.redoOf=WR.redo;p.writings.push(x);const fr=WR.full;if(fr)fullMark(fr,WR.fpart,x.id);bump();save();try{localStorage.removeItem(draftKey(w.id))}catch(e){}WR=null;clearInterval(timerH);go('wres',{kind:'writing',rid:x.id,sid:U.id,full:fr})}
 
 /* --- Giáo viên: Chấm bài --- */
 let gradeTab='pending';
@@ -1477,7 +1600,7 @@ VIEWS['t-grade']=()=>{
  return `<h1>Chấm bài Speaking & Writing</h1><p class="sub">${pend.length} bài đang chờ chấm. Bài của học viên học ở máy khác sẽ hiện ở đây sau khi bạn nhập file kết quả.</p>
  <div class="seg mb"><button class="${gradeTab==='pending'?'on':''}" onclick="gradeTab='pending';render()">Chờ chấm (${pend.length})</button><button class="${gradeTab==='all'?'on':''}" onclick="gradeTab='all';render()">Tất cả (${all.length})</button></div>
  <div class="card">${list.length?list.map(({s,kind,x})=>{const t=kind==='writing'?(()=>{const w=wById(x.promptId);return w?'Writing Task '+w.task+' · '+w.title:'Writing'})():(x.mock?'Speaking · Thi thử':'Speaking · '+x.title);
-  return `<div class="list-item"><div><b>${h(s.name)}</b> <span class="small muted">${h(s.code)}</span><div class="small">${h(t)}</div><div class="small muted">${fdt(x.date)}</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm pri" onclick="go('t-review',{kind:'${kind}',rid:'${x.id}',sid:'${s.id}'})">Chấm</button></div></div>`}).join(''):'<div class="empty">Không có bài nào.</div>'}</div>`;
+  return `<div class="list-item"><div><b>${h(s.name)}</b> <span class="small muted">${h(s.code)}</span><div class="small">${h(t)}${x.redoOf?' <span class="tag acc">Viết lại</span>':''}</div><div class="small muted">${fdt(x.date)}</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm pri" onclick="go('t-review',{kind:'${kind}',rid:'${x.id}',sid:'${s.id}'})">Chấm</button></div></div>`}).join(''):'<div class="empty">Không có bài nào.</div>'}</div>`;
 };
 
 /* --- Giáo viên: soạn đề Speaking/Writing --- */
@@ -1744,7 +1867,7 @@ function mergeData(inc){
   for(const k in (b.words||{})){if(!a.words[k]||(b.words[k].last||0)>(a.words[k].last||0))a.words[k]=b.words[k]}
   (b.results||[]).forEach(r=>{const ex=a.results.find(x=>x.id===r.id);if(!ex){a.results.push(r);n.res++}else if(r.essay&&ex.essay&&(r.essay.gradedAt||0)>(ex.essay.gradedAt||0))ex.essay=r.essay});
   a.results.sort((x,y)=>x.date-y.date);
-  ['writings','speaking'].forEach(k=>(b[k]||[]).forEach(r=>{const ex=a[k].find(x=>x.id===r.id);if(!ex){a[k].push(r);n.res++}else if(r.grade&&(r.grade.gradedAt||0)>((ex.grade&&ex.grade.gradedAt)||0))ex.grade=r.grade}));
+  ['writings','speaking'].forEach(k=>(b[k]||[]).forEach(r=>{const ex=a[k].find(x=>x.id===r.id);if(!ex){a[k].push(r);n.res++}else{if(r.grade&&(r.grade.gradedAt||0)>((ex.grade&&ex.grade.gradedAt)||0))ex.grade=r.grade;if(r.fb&&(r.fb.at||0)>((ex.fb&&ex.fb.at)||0))ex.fb=r.fb}}));
   a.fullruns=a.fullruns||[];(b.fullruns||[]).forEach(r=>{const ex=a.fullruns.find(x=>x.id===r.id);if(!ex)a.fullruns.push(r);else for(const k in r.parts)if(r.parts[k])ex.parts[k]=r.parts[k]});
   for(const d in (b.activity||{}))a.activity[d]=Math.max(a.activity[d]||0,b.activity[d]);
   a.reports=a.reports||[];(b.reports||[]).forEach(x=>{const ex=a.reports.find(y=>y.id===x.id);if(!ex){a.reports.push(x);n.rep=(n.rep||0)+1}else if(x.done&&!ex.done)ex.done=x.done});
