@@ -557,6 +557,25 @@ ins.an{color:var(--ok);text-decoration:none;background:var(--ok-soft);border-rad
 .done-tag{white-space:nowrap}
 .restabs .cnt{font-size:11.5px;color:var(--muted);margin-left:2px}
 @media (max-width:640px){.restabs{display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-radius:18px}.restabs button{padding:8px 6px;border-radius:14px}}
+/* bài mẫu có định dạng */
+.mdtools{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:8px;width:100%}
+.mdtools .btn{min-width:38px}
+mark.mk{background:color-mix(in srgb,var(--mark) 60%,transparent);color:inherit;border-radius:3px;padding:0 2px}
+.mdv{width:100%}
+.mdv .mdtext{background:var(--bg);max-width:none;width:100%}
+.gl .gp{background:var(--c-read-soft);color:var(--c-read);border-radius:4px;padding:0 3px;font-weight:500}
+.gl .gn,.gloss .gn{font:500 10px/1 var(--sans);color:var(--c-read);margin-left:1px}
+.gl .gm{font-family:var(--sans);font-size:.78em;color:var(--muted);font-style:italic;margin-left:3px}
+.gl .gm::before{content:"("}.gl .gm::after{content:")"}
+.mdv.hidem .gl .gm{display:none}
+.mdv.hidem .gloss .gmv{color:transparent;background:var(--bg2);border-radius:4px}
+.gloss{border:1px solid var(--line);border-radius:var(--r-sm);padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.gloss .gi{display:grid;grid-template-columns:22px auto 1fr;gap:8px;align-items:baseline;font-size:14px}
+.gloss .gi .gn{display:inline-grid;place-items:center;min-width:18px;height:18px;border-radius:9px;background:var(--c-read-soft)}
+.gloss .gmv{color:var(--ink2);transition:color .2s}
+@media (max-width:640px){.gloss .gi{grid-template-columns:22px 1fr}.gloss .gi .gmv{grid-column:2}}
+.mdgloss{position:absolute;left:12px;right:12px;top:12px;z-index:20;box-shadow:var(--shadow-lg);cursor:auto;max-width:420px;padding:14px}
+.mdgloss[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -1552,14 +1571,32 @@ function annoFocus(id,fromText){
 function modelOpts(x){const w=wById(x.promptId),o=[],seen=new Set();
  if(w&&w.model){o.push({k:'p',l:'Bài mẫu có sẵn của đề',t:w.model});seen.add(w.model)}
  D.students.forEach(s=>(P(s.id).writings||[]).forEach(y=>{const t=y.fb&&y.fb.model;if(y.id!==x.id&&y.promptId===x.promptId&&t&&!seen.has(t)){seen.add(t);o.push({k:y.id,l:'Bài mẫu đã gửi cho '+s.name,t})}}));return o}
+/* Định dạng bài mẫu: **đậm**, *nghiêng*, ==tô sáng==, [[cụm từ|nghĩa tiếng Việt]] */
+const mdPlain=t=>String(t||'').replace(/\[\[([^\]|]+)\|([^\]]*)\]\]/g,'$1').replace(/\*\*|==|\*/g,'');
+const mdGlossList=t=>[...String(t||'').matchAll(/\[\[([^\]|]+)\|([^\]]*)\]\]/g)].map(m=>[m[1].trim(),m[2].trim()]);
+function mdModel(t){let n=0;return h(t||'')
+ .replace(/\[\[([^\]|]+)\|([^\]]*)\]\]/g,(m,a,b)=>`<span class="gl"><span class="gp">${a}</span><sup class="gn">${++n}</sup><span class="gm">${b}</span></span>`)
+ .replace(/==(.+?)==/g,'<mark class="mk">$1</mark>').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/(^|[^*])\*(?!\s)([^*\n]+?)\*/g,'$1<i>$2</i>')}
+function mdView(t,id){const g=mdGlossList(t);
+ return `<div class="mdv" id="${id}"><div class="row between" style="width:100%;margin-bottom:8px">${g.length?`<button class="btn sm ghost" onclick="this.closest('.mdv').classList.toggle('hidem');this.textContent=this.closest('.mdv').classList.contains('hidem')?'Hiện nghĩa tiếng Việt':'Ẩn nghĩa để tự kiểm tra'">Ẩn nghĩa để tự kiểm tra</button>`:''}</div>
+ <div class="passage mdtext">${mdModel(t)}</div>
+ ${g.length?`<div class="gloss mt"><b class="small">Cụm từ hay (${g.length})</b>${g.map(([a,b],i)=>`<div class="gi"><span class="gn">${i+1}</span><b>${h(a)}</b><span class="gmv">${h(b)}</span></div>`).join('')}</div>`:''}</div>`}
+function mdWrap(a,b){const ta=$('#md-t');const s0=ta.selectionStart,s1=ta.selectionEnd;if(s0===s1){toast('Bôi đen chữ trong bài mẫu trước');return}const v=ta.value;ta.value=v.slice(0,s0)+a+v.slice(s0,s1)+b+v.slice(s1);ta.focus();ta.setSelectionRange(s0+a.length,s1+a.length);mdPrev()}
+function mdGloss(){const ta=$('#md-t');const s0=ta.selectionStart,s1=ta.selectionEnd;const sel=ta.value.slice(s0,s1).trim();if(!sel){toast('Bôi đen cụm từ cần chú thích trước');return}
+ const ov=$('#md-gloss');ov.dataset.s=s0;ov.dataset.e=s1;$('#md-gq').textContent=sel;$('#md-gm').value='';ov.hidden=false;setTimeout(()=>$('#md-gm').focus(),30)}
+function mdGlossOk(){const ov=$('#md-gloss'),ta=$('#md-t');const m=$('#md-gm').value.trim().replace(/[\]|]/g,'');if(!m){toast('Nhập nghĩa tiếng Việt');return}const s0=+ov.dataset.s,s1=+ov.dataset.e,v=ta.value;ta.value=v.slice(0,s0)+'[['+v.slice(s0,s1).replace(/[\[\]|]/g,'')+'|'+m+']]'+v.slice(s1);ov.hidden=true;mdPrev()}
+function mdPrev(){const ta=$('#md-t'),pv=$('#md-pv');if(!ta)return;$('#md-wc').textContent=wc(mdPlain(ta.value))+' từ';if(pv)pv.innerHTML=ta.value.trim()?mdView(ta.value,'md-pvv'):'<p class="small muted" style="margin:0">Xem trước sẽ hiện ở đây.</p>'}
 function modelBox(sid,x,isT){const m=(x.fb&&x.fb.model)||'';
- if(!isT)return m?`<div class="card mt" style="cursor:auto"><div class="row between" style="width:100%"><h3 style="margin:0">Bài mẫu từ giáo viên</h3><span class="tag ok">${wc(m)} từ</span></div><p class="small muted">So sánh với bài của bạn để học cách triển khai ý và dùng từ.</p><div class="passage" style="background:var(--bg);max-width:none;width:100%">${h(m)}</div></div>`:'';
+ if(!isT)return m?`<div class="card mt" style="cursor:auto"><div class="row between" style="width:100%"><h3 style="margin:0">Bài mẫu từ giáo viên</h3><span class="tag ok">${wc(mdPlain(m))} từ</span></div><p class="small muted">So sánh với bài của bạn để học cách triển khai ý và dùng từ. Cụm từ được tô màu có nghĩa tiếng Việt ở bên dưới.</p>${mdView(m,'md-st')}</div>`:'';
  const o=modelOpts(x);
  return `<div class="card mt" style="cursor:auto" id="md-box"><h3>Bài mẫu cho học viên</h3><p class="small muted" style="margin-top:0">Viết hoặc dán bài mẫu cho đề này. Học viên sẽ thấy bài mẫu ngay dưới bài viết của mình.</p>
  ${o.length?`<div class="row mb" style="width:100%"><select id="md-src" style="max-width:340px">${o.map(a=>`<option value="${a.k}">${h(a.l)}</option>`).join('')}</select><button class="btn sm" onclick="modelPick()">Dùng bài này</button></div>`:''}
- <textarea class="prose" id="md-t" style="min-height:220px;width:100%" placeholder="Dán hoặc viết bài mẫu…" oninput="$('#md-wc').textContent=wc(this.value)+' từ'">${h(m)}</textarea>
- <div class="row mt"><button class="btn pri" onclick="modelSave()">Lưu bài mẫu</button>${m?'<button class="btn ghost" onclick="modelSave(true)">Gỡ bài mẫu</button>':''}<span class="small muted" id="md-wc">${wc(m)} từ</span></div></div>`}
-function modelPick(){const x=annoX();const a=modelOpts(x).find(o=>o.k===$('#md-src').value);if(!a)return;const ta=$('#md-t');if(ta.value.trim()&&!confirm('Thay nội dung đang có bằng bài mẫu này?'))return;ta.value=a.t;ta.oninput()}
+ <div class="mdtools" onmousedown="if(event.target.closest('button'))event.preventDefault()"><button class="btn sm" title="In đậm" onclick="mdWrap('**','**')"><b>B</b></button><button class="btn sm" title="In nghiêng" onclick="mdWrap('*','*')"><i>I</i></button><button class="btn sm" title="Tô sáng" onclick="mdWrap('==','==')"><mark class="mk">Tô sáng</mark></button><button class="btn sm" onclick="mdGloss()">Chú thích nghĩa</button><span class="small muted">Bôi đen chữ trong bài rồi bấm nút.</span></div>
+ <div style="position:relative;width:100%"><textarea class="prose" id="md-t" style="min-height:220px;width:100%" placeholder="Dán hoặc viết bài mẫu…" oninput="mdPrev()">${h(m)}</textarea>
+ <div class="mdgloss card" id="md-gloss" hidden><b class="small">Nghĩa tiếng Việt của</b><div class="nq" id="md-gq"></div><input type="text" id="md-gm" placeholder="ví dụ: không thể phủ nhận" onkeydown="if(event.key==='Enter')mdGlossOk()"><div class="row mt" style="gap:6px"><button class="btn sm pri" onclick="mdGlossOk()">Thêm chú thích</button><button class="btn sm ghost" onclick="$('#md-gloss').hidden=true">Hủy</button></div></div></div>
+ <details class="mt" style="width:100%" open><summary class="small"><b>Xem trước (học viên sẽ thấy như thế này)</b></summary><div id="md-pv" class="mt">${m?mdView(m,'md-pvv'):'<p class="small muted" style="margin:0">Xem trước sẽ hiện ở đây.</p>'}</div></details>
+ <div class="row mt"><button class="btn pri" onclick="modelSave()">Lưu bài mẫu</button>${m?'<button class="btn ghost" onclick="modelSave(true)">Gỡ bài mẫu</button>':''}<span class="small muted" id="md-wc">${wc(mdPlain(m))} từ</span></div></div>`}
+function modelPick(){const x=annoX();const a=modelOpts(x).find(o=>o.k===$('#md-src').value);if(!a)return;const ta=$('#md-t');if(ta.value.trim()&&!confirm('Thay nội dung đang có bằng bài mẫu này?'))return;ta.value=a.t;mdPrev()}
 function modelSave(clear){const x=annoX();if(clear&&!confirm('Gỡ bài mẫu khỏi bài này?'))return;const m=clear?'':$('#md-t').value.trim();setFb(x,{model:m});const b=$('#md-box');if(b)b.outerHTML=modelBox(ANX.sid,x,true);toast(clear?'Đã gỡ bài mẫu':m?'Đã lưu bài mẫu. Học viên sẽ thấy ngay dưới bài viết.':'Bài mẫu đang trống')}
 /* Viết lại bài */
 function redoBox(sid,x,isT){const ws=P(sid).writings||[];const prev=x.redoOf&&ws.find(y=>y.id===x.redoOf);const next=ws.filter(y=>y.redoOf===x.id);const v=isT?'t-review':'wres';
@@ -1570,7 +1607,7 @@ function redoBox(sid,x,isT){const ws=P(sid).writings||[];const prev=x.redoOf&&ws
  return `<div class="card mt" style="cursor:auto">${can?`<div class="row between" style="width:100%;align-items:center"><div style="flex:1;min-width:220px"><h3 style="margin:0 0 4px">Viết lại bài</h3><p class="small muted" style="margin:0">Sửa bài theo nhận xét của giáo viên rồi nộp lại. Bài viết lại được lưu thành bài mới để giáo viên chấm, bài này vẫn giữ nguyên.</p></div><button class="btn pri" onclick="wRedo('${x.id}')">Viết lại bài này</button></div>${links?'<div class="mt">'+links+'</div>':''}`:links}</div>`}
 function wRedo(id){const x=(P().writings||[]).find(y=>y.id===id);if(!x)return;let d='';try{d=localStorage.getItem('lopta_draft_'+U.id+'_r'+id)||''}catch(e){}go('writing');wStart(x.promptId,{redo:id,text:d||x.text})}
 function redoPanel(){const x=(P().writings||[]).find(y=>y.id===WR.redo);if(!x)return '';const ns=wNotes(x),g=x.grade||{};
- return `<details class="mt" open style="width:100%"><summary><b>Nhận xét của giáo viên cho bài trước${ns.length?` (${ns.length})`:''}</b></summary>${g.band!=null?`<p class="small">Band bài trước: <b>${g.band}</b></p>`:''}${g.comment?`<div class="explain">${fmt(g.comment)}</div>`:''}<div class="mt">${noteCards(x,false)}</div></details>${x.fb&&x.fb.model?`<details class="mt" style="width:100%"><summary><b>Bài mẫu từ giáo viên (${wc(x.fb.model)} từ)</b></summary><div class="passage mt" style="background:var(--bg);max-width:none;padding:16px 18px">${h(x.fb.model)}</div></details>`:''}`}
+ return `<details class="mt" open style="width:100%"><summary><b>Nhận xét của giáo viên cho bài trước${ns.length?` (${ns.length})`:''}</b></summary>${g.band!=null?`<p class="small">Band bài trước: <b>${g.band}</b></p>`:''}${g.comment?`<div class="explain">${fmt(g.comment)}</div>`:''}<div class="mt">${noteCards(x,false)}</div></details>${x.fb&&x.fb.model?`<details class="mt" style="width:100%"><summary><b>Bài mẫu từ giáo viên (${wc(mdPlain(x.fb.model))} từ)</b></summary><div class="mt">${mdView(x.fb.model,'md-rd')}</div></details>`:''}`}
 
 /* --- Trang Writing --- */
 let wTab=2;let WR=null;
