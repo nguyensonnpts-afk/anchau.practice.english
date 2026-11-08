@@ -618,6 +618,7 @@ mark.mk{background:color-mix(in srgb,var(--mark) 60%,transparent);color:inherit;
 .chip.on{border-color:var(--ink);background:var(--ink);color:var(--bg)}
 @media (max-width:760px){.vtop{grid-template-columns:1fr}.rate.r5{grid-template-columns:repeat(5,1fr);gap:5px}.rate.r5 button{padding:9px 2px;font-size:11.5px}.rate.r5 small{font-size:10px}.tnums{gap:18px}.tnums b{font-size:28px}}
 .tabs .nb{display:inline-block;min-width:18px;height:18px;padding:0 5px;margin-left:5px;border-radius:9px;background:var(--accent);color:#fff;font-size:11px;line-height:18px;text-align:center;vertical-align:1px}
+.rchip .rx{border:0;background:none;color:var(--muted);cursor:pointer;margin-left:6px;padding:0 2px;font-size:15px;line-height:1}.rchip .rx:hover{color:var(--bad)}
 </style>
 </head>
 <body>
@@ -724,7 +725,12 @@ let D=load();
 function load(){try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.students)return Object.assign(blank(),x)}catch(e){}return blank()}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){toast('Không lưu được dữ liệu trên trình duyệt này')}if(window.SYNC)SYNC.dirty()}
 function getSession(){try{return JSON.parse(localStorage.getItem(SKEY))}catch(e){return null}}
-function setSession(s){try{s?localStorage.setItem(SKEY,JSON.stringify(s)):localStorage.removeItem(SKEY)}catch(e){}}
+/* hồ sơ đã đăng nhập trên chính máy này (không đồng bộ lên mạng) */
+const RKEY='lopta_recent_v1';
+function recentIds(){try{const x=JSON.parse(localStorage.getItem(RKEY));if(Array.isArray(x))return x}catch(e){}const ss=getSession();return ss&&ss.role==='student'&&ss.id?[ss.id]:[]}
+function recentAdd(id){try{localStorage.setItem(RKEY,JSON.stringify([id,...recentIds().filter(x=>x!==id)].slice(0,8)))}catch(e){}}
+function recentDel(id){try{localStorage.setItem(RKEY,JSON.stringify(recentIds().filter(x=>x!==id)))}catch(e){}render()}
+function setSession(s){if(s&&s.role==='student'&&s.id)recentAdd(s.id);try{s?localStorage.setItem(SKEY,JSON.stringify(s)):localStorage.removeItem(SKEY)}catch(e){}}
 
 const allSets=()=>[...SAMPLE_SETS,...D.sets];
 const allTests=()=>[...SAMPLE_TESTS,...D.tests];
@@ -953,13 +959,13 @@ let loginTab='stu';
 const QUOTES=[["The limits of my language mean the limits of my world.", "Ludwig Wittgenstein"], ["To have another language is to possess a second soul.", "Charlemagne"], ["One language sets you in a corridor for life. Two languages open every door along the way.", "Frank Smith"], ["Learning is a treasure that will follow its owner everywhere.", "Chinese proverb"], ["A different language is a different vision of life.", "Federico Fellini"], ["The beautiful thing about learning is that no one can take it away from you.", "B.B. King"], ["Language is the road map of a culture.", "Rita Mae Brown"], ["Live as if you were to die tomorrow. Learn as if you were to live forever.", "Mahatma Gandhi"], ["If you talk to a man in his own language, that goes to his heart.", "Nelson Mandela"], ["Words are, in my not-so-humble opinion, our most inexhaustible source of magic.", "J.K. Rowling"], ["Education is not the filling of a pail, but the lighting of a fire.", "attributed to W.B. Yeats"], ["You can never understand one language until you understand at least two.", "Geoffrey Willans"]];
 function dailyQuote(){const d=Math.floor(Date.now()/86400000);const [q,a]=QUOTES[d%QUOTES.length];return `<p class="quote">${q.split(' ').map((w,i)=>`<span style="animation-delay:${(.25+i*.06).toFixed(2)}s">${h(w)}</span>`).join(' ')}<small>— ${h(a)}</small></p>`}
 VIEWS.login=()=>{
- const recent=D.students.slice().sort((a,b)=>(b.lastLogin||0)-(a.lastLogin||0)).slice(0,8);
+ const recent=recentIds().map(stuById).filter(Boolean);
  return `<div class="login-bg" aria-hidden="true"></div><div class="login"><div class="hero"><b>A</b><h1>${h(D.settings.className)}</h1><p class="sub">Luyện từ vựng và luyện đề IELTS, THPT</p>${dailyQuote()}</div>
  <div class="card"><div class="row" style="justify-content:center"><div class="seg"><button class="${loginTab==='stu'?'on':''}" onclick="loginTab='stu';render()">Học viên</button><button class="${loginTab==='tea'?'on':''}" onclick="loginTab='tea';render()">Giáo viên</button></div></div>
  ${loginTab==='stu'?`
   <label class="f">Mã học viên</label><input type="text" id="lcode" placeholder="Ví dụ: HV1234" onkeydown="if(event.key==='Enter')stuLogin()">
   <button class="btn pri mt" style="width:100%" onclick="stuLogin()">Vào học</button>
-  ${recent.length?`<p class="small muted mt">Hồ sơ đã dùng trên máy này:</p><div class="chips">${recent.map(s=>`<span class="chip" onclick="$('#lcode').value='${h(s.code)}';stuLogin()">${h(s.name)}</span>`).join('')}</div>`:''}
+  ${recent.length?`<p class="small muted mt">Hồ sơ đã dùng trên máy này:</p><div class="chips">${recent.map(s=>`<span class="chip rchip" onclick="$('#lcode').value='${h(s.code)}';stuLogin()">${h(s.name)}<button class="rx" title="Bỏ khỏi máy này" onclick="event.stopPropagation();recentDel('${s.id}')">×</button></span>`).join('')}</div>`:''}
   ${D.settings.selfReg?`<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
   <p class="small muted" style="margin:0">Chưa có mã? Tạo hồ sơ mới:</p>
   <div class="row mt" style="flex-wrap:nowrap"><input type="text" id="lname" placeholder="Họ và tên" onkeydown="if(event.key==='Enter')stuRegister()"><button class="btn" onclick="stuRegister()">Tạo</button></div>`:'<p class="small muted mt">Chưa có mã? Hãy hỏi giáo viên của bạn.</p>'}
