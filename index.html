@@ -576,6 +576,13 @@ mark.mk{background:color-mix(in srgb,var(--mark) 60%,transparent);color:inherit;
 @media (max-width:640px){.gloss .gi{grid-template-columns:22px 1fr}.gloss .gi .gmv{grid-column:2}}
 .mdgloss{position:absolute;left:12px;right:12px;top:12px;z-index:20;box-shadow:var(--shadow-lg);cursor:auto;max-width:420px;padding:14px}
 .mdgloss[hidden]{display:none}
+.wcats .cnt,.wch .cnt{font-size:11.5px;color:var(--muted);margin-left:2px}
+.wcats button.zero{opacity:.5}
+.wch{margin:16px 0 8px;font-size:15px}
+.wcsel{width:auto;max-width:190px;padding:6px 28px 6px 10px;font-size:13px;margin:0 8px}
+.pkh{font-size:12px;letter-spacing:.02em;color:var(--muted);padding:10px 4px 4px;display:flex;gap:6px}
+.pkh span{opacity:.7}
+@media (max-width:640px){.wcats{display:flex;flex-wrap:nowrap;overflow-x:auto;width:100%;border-radius:16px}.wcats button{flex:none}.wcsel{max-width:130px;margin:0 4px}}
 </style>
 </head>
 <body>
@@ -1338,6 +1345,22 @@ if(window.IELTS_SP1)SP1.push(...window.IELTS_SP1);
 if(window.IELTS_SP2)SP2.push(...window.IELTS_SP2);
 const allW=()=>[...WPROMPTS,...(D.wprompts||[])];
 const wById=id=>allW().find(x=>x.id===id);
+/* Dạng bài Writing */
+const WCATS={1:[['trend','Trends'],['nochange','No change'],['other','Others']],
+ 2:[['ab','A and B'],['better','A is better than B'],['best','The only/the best'],['outweigh','Disadvantages outweigh advantages'],['discuss','Discussion'],['probsol','Problems & Solutions'],['agree','Agree/Disagree'],['should','Should'],['direct','Direct questions']]};
+const WCAT_DEF={'w1-internet':'trend','w1-drinks':'trend','w1-oe-income':'trend','w1-oe-tourists':'trend','w1-oe-unemployment':'trend','w1-oe-immigration':'nochange','w1-oe-jam':'other','w1-oe-pineapple':'other','w1-oe-docks':'other','w1-oe-train':'other',
+ 'w2-uni':'discuss','w2-aging':'outweigh','w2-school-age':'discuss','w2-traffic':'probsol','w2-online':'direct','w2-oe-01':'agree','w2-oe-02':'probsol','w2-oe-03':'agree','w2-oe-04':'discuss','w2-oe-05':'outweigh','w2-oe-06':'should','w2-oe-07':'should','w2-oe-08':'better','w2-oe-09':'best','w2-oe-10':'discuss'};
+function wGuess(w){const p=(w.prompt||'').toLowerCase();
+ if(w.task===1){if(/process|diagram|map|plan|layout|stages|steps/.test(p))return 'other';if(/(from|between) \d{4} (to|and) \d{4}|over the period|\d{4}.*\d{4}|change/.test(p))return 'trend';return 'nochange'}
+ if(/outweigh/.test(p))return 'outweigh';if(/discuss both/.test(p))return 'discuss';if(/advantages and disadvantages/.test(p))return 'ab';
+ if(/problem|cause|solution|reason/.test(p)&&/\?/.test(p))return 'probsol';if(/the (best|only) way|the most important/.test(p))return 'best';
+ if(/better than|more important than|rather than|not as .* as/.test(p))return 'better';if(/agree or disagree/.test(p))return /\bshould\b/.test(p)?'should':'agree';return 'direct'}
+const wCat=w=>(D.wcat&&D.wcat[w.id])||w.cat||WCAT_DEF[w.id]||wGuess(w);
+const wCatLabel=(t,c)=>((WCATS[t]||[]).find(x=>x[0]===c)||[0,''])[1];
+const wCatOpts=(t,cur)=>WCATS[t].map(([k,l])=>`<option value="${k}" ${k===cur?'selected':''}>${h(l)}</option>`).join('');
+function wSetCat(id,c){D.wcat=Object.assign({},D.wcat,{[id]:c});save();render()}
+/* nhóm danh sách đề theo dạng; f(w) trả về HTML của một đề */
+function wByCat(task,list,f,wrap){return WCATS[task].map(([k,l])=>{const ws=list.filter(w=>wCat(w)===k);return ws.length?wrap(l,ws.length,ws.map(f).join('')):''}).join('')}
 const spTopicById=id=>allP1().find(x=>x.id===id)||allP2().find(x=>x.id===id);
 
 /* --- Biểu đồ SVG cho Writing Task 1 --- */
@@ -1610,14 +1633,18 @@ function redoPanel(){const x=(P().writings||[]).find(y=>y.id===WR.redo);if(!x)re
  return `<details class="mt" open style="width:100%"><summary><b>Nhận xét của giáo viên cho bài trước${ns.length?` (${ns.length})`:''}</b></summary>${g.band!=null?`<p class="small">Band bài trước: <b>${g.band}</b></p>`:''}${g.comment?`<div class="explain">${fmt(g.comment)}</div>`:''}<div class="mt">${noteCards(x,false)}</div></details>${x.fb&&x.fb.model?`<details class="mt" style="width:100%"><summary><b>Bài mẫu từ giáo viên (${wc(mdPlain(x.fb.model))} từ)</b></summary><div class="mt">${mdView(x.fb.model,'md-rd')}</div></details>`:''}`}
 
 /* --- Trang Writing --- */
-let wTab=2;let WR=null;
+let wTab=2;let WR=null;const WCSEL={1:'all',2:'all'};
 VIEWS.writing=()=>{
  if(WR)return wrView();
  if(wTab==='mine')wTab=2;const mine=P().writings||[];const cnt=id=>mine.filter(x=>x.promptId===id).length;
  const asg=new Set(myAssignments(U.id).filter(a=>a.kind==='writing').map(a=>a.ref));
  return `<h1>Luyện Writing</h1><p class="sub">Viết bài có tính giờ, xem nhận xét tự động ngay và nhận band, nhận xét chi tiết từ giáo viên.</p>
  <div class="seg mb"><button class="${wTab===1?'on':''}" onclick="wTab=1;render()">Task 1</button><button class="${wTab===2?'on':''}" onclick="wTab=2;render()">Task 2</button></div>
- ${`<div class="grid g2">${allW().filter(w=>w.task===wTab).map(w=>`<div class="card${cnt(w.id)?' done':''}"><div class="row between"><span class="tag ${w.task===1?'acc':''}">Task ${w.task}</span><span class="row" style="gap:6px">${asg.has(w.id)?'<span class="tag warn">Được giao</span>':''}${cnt(w.id)?'<span class="tag ok done-tag">✓ Đã viết</span>':''}</span></div><h3 class="mt">${h(w.title)}</h3><p class="small muted" style="margin:0 0 8px">${h(w.prompt.split('\n')[0]).slice(0,150)}</p><p class="small muted">${w.minutes} phút · tối thiểu ${w.min} từ</p><button class="btn pri" onclick="wStart('${w.id}')">Viết bài</button></div>`).join('')}</div>`}`;
+ ${(()=>{const all=allW().filter(w=>w.task===wTab);const cs=WCATS[wTab];const sel=WCSEL[wTab];const card=w=>`<div class="card${cnt(w.id)?' done':''}"><div class="row between"><span class="tag ${w.task===1?'acc':''}">${h(wCatLabel(w.task,wCat(w)))}</span><span class="row" style="gap:6px">${asg.has(w.id)?'<span class="tag warn">Được giao</span>':''}${cnt(w.id)?'<span class="tag ok done-tag">✓ Đã viết</span>':''}</span></div><h3 class="mt">${h(w.title)}</h3><p class="small muted" style="margin:0 0 8px">${h(w.prompt.split('\n')[0]).slice(0,150)}</p><p class="small muted">${w.minutes} phút · tối thiểu ${w.min} từ</p><button class="btn pri" onclick="wStart('${w.id}')">Viết bài</button></div>`;
+  const chips=`<div class="seg mb wcats"><button class="${sel==='all'?'on':''}" onclick="WCSEL[${wTab}]='all';render()">Tất cả <span class="cnt">${all.length}</span></button>${cs.map(([k,l])=>{const n=all.filter(w=>wCat(w)===k).length;return `<button class="${sel===k?'on':''}${n?'':' zero'}" onclick="WCSEL[${wTab}]='${k}';render()">${h(l)} <span class="cnt">${n}</span></button>`}).join('')}</div>`;
+  const body=sel==='all'?wByCat(wTab,all,card,(l,n,html)=>`<div class="volhead"><h2>${h(l)}</h2><span class="vm">${n} đề</span></div><div class="grid g2">${html}</div>`)
+   :(()=>{const ws=all.filter(w=>wCat(w)===sel);return ws.length?`<div class="grid g2">${ws.map(card).join('')}</div>`:'<div class="card empty">Chưa có đề nào thuộc dạng này.</div>'})();
+  return chips+body})()}`;
 };
 function wHistory(sid){const l=(P(sid).writings||[]).slice().reverse();if(!l.length)return '<div class="card empty">Chưa có bài viết nào.</div>';
  return `<div class="card">${l.map(x=>{const w=wById(x.promptId);return `<div class="list-item"><div><b class="small">${w?'Task '+w.task+' · '+h(w.title):'(đề đã xóa)'}</b>${x.redoOf?' <span class="tag acc">Viết lại</span>':''}<div class="small muted">${fdt(x.date)} · ${wc(x.text)} từ</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'wres'}',{kind:'writing',rid:'${x.id}',sid:'${sid}'${R.v==='history'?",from:'history'":''}})">Xem</button></div></div>`}).join('')}</div>`}
@@ -1646,23 +1673,23 @@ VIEWS['t-grade']=()=>{
 };
 
 /* --- Giáo viên: soạn đề Speaking/Writing --- */
-const wRow=w=>`<div class="list-item"><div><b class="small">${h(w.title)}</b><div class="small muted">${w.minutes||(w.task===1?20:40)} phút · tối thiểu ${w.min||(w.task===1?150:250)} từ</div></div>${w.builtin?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="wEditor('${w.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('wprompts','${w.id}')">Xóa</button></div>`}</div>`;
+const wRow=w=>`<div class="list-item"><div style="flex:1;min-width:0"><b class="small">${h(w.title)}</b><div class="small muted">${w.minutes||(w.task===1?20:40)} phút · tối thiểu ${w.min||(w.task===1?150:250)} từ</div></div><select class="wcsel" title="Dạng bài" onchange="wSetCat('${w.id}',this.value)">${wCatOpts(w.task,wCat(w))}</select>${w.builtin?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="wEditor('${w.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('wprompts','${w.id}')">Xóa</button></div>`}</div>`;
 VIEWS['t-writing']=()=>{const t1=allW().filter(w=>w.task===1),t2=allW().filter(w=>w.task===2);
  return `<div class="row between"><div><h1>IELTS Writing</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự thêm, chia theo Task 1 và Task 2.</p></div><button class="btn pri" onclick="wEditor()">+ Thêm đề Writing</button></div>
- <div class="volhead"><h2>Task 1</h2><span class="vm">${t1.length} đề</span></div><div class="card">${t1.map(wRow).join('')||'<div class="empty">Chưa có đề.</div>'}</div>
- <div class="volhead"><h2>Task 2</h2><span class="vm">${t2.length} đề</span></div><div class="card">${t2.map(wRow).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`};
+ ${[[1,t1],[2,t2]].map(([t,l])=>`<div class="volhead"><h2>Task ${t}</h2><span class="vm">${l.length} đề · đổi dạng bài ở ô bên phải mỗi đề</span></div>${l.length?wByCat(t,l,wRow,(lab,n,html)=>`<h3 class="wch">${h(lab)} <span class="small muted">${n}</span></h3><div class="card">${html}</div>`):'<div class="card empty">Chưa có đề.</div>'}`).join('')}`};
 VIEWS['t-speaking']=()=>{const p1=allP1(),p2=allP2();
  return `<div class="row between"><div><h1>IELTS Speaking</h1><p class="sub">Đề mẫu có sẵn và đề bạn tự thêm, chia theo Part 1 và Part 2 & 3.</p></div><div class="row"><button class="btn pri" onclick="spEditor(1)">+ Part 1</button><button class="btn pri" onclick="spEditor(2)">+ Part 2 & 3</button></div></div>
  <div class="volhead"><h2>Part 1</h2><span class="vm">${p1.length} chủ đề</span></div><div class="card">${p1.map(t=>`<div class="list-item"><div><b class="small">${h(t.title)}</b><div class="small muted">${t.qs.length} câu hỏi</div></div>${SP1.includes(t)?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="spEditor(1,'${t.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sp1','${t.id}')">Xóa</button></div>`}</div>`).join('')||'<div class="empty">Chưa có chủ đề.</div>'}</div>
  <div class="volhead"><h2>Part 2 & 3</h2><span class="vm">${p2.length} đề</span></div><div class="card">${p2.map(t=>`<div class="list-item"><div><b class="small">${h(t.cue)}</b><div class="small muted">${t.p3.length} câu Part 3</div></div>${SP2.includes(t)?'<span class="tag gray">Mẫu</span>':`<div class="row"><button class="btn sm" onclick="spEditor(2,'${t.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sp2','${t.id}')">Xóa</button></div>`}</div>`).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`};
 VIEWS['t-sw']=()=>VIEWS['t-writing']();
 function wEditor(id){const w=id?wById(id):null;modal(`<h2>${w?'Sửa':'Thêm'} đề Writing</h2>
- <div class="grid g2" style="gap:10px;grid-template-columns:1fr 1fr"><div><label class="f">Task</label><select id="we-t"><option value="1" ${w&&w.task===1?'selected':''}>Task 1</option><option value="2" ${!w||w.task===2?'selected':''}>Task 2</option></select></div><div><label class="f">Số phút</label><input type="number" id="we-m" value="${w?w.minutes:40}"></div></div>
+ <div class="grid g2" style="gap:10px;grid-template-columns:1fr 1fr"><div><label class="f">Task</label><select id="we-t" onchange="$('#we-c').innerHTML=wCatOpts(+this.value,WCATS[+this.value][0][0])"><option value="1" ${w&&w.task===1?'selected':''}>Task 1</option><option value="2" ${!w||w.task===2?'selected':''}>Task 2</option></select></div><div><label class="f">Số phút</label><input type="number" id="we-m" value="${w?w.minutes:40}"></div></div>
+ <label class="f">Dạng bài</label><select id="we-c">${w?wCatOpts(w.task,wCat(w)):wCatOpts(2,'agree')}</select>
  <label class="f">Tên ngắn</label><input type="text" id="we-n" value="${h(w?w.title:'')}">
  <label class="f">Đề bài</label><textarea class="prose" style="min-height:140px" id="we-p">${h(w?w.prompt:'')}</textarea>
  <label class="f">Link ảnh biểu đồ (Task 1, tùy chọn)</label><input type="text" id="we-i" value="${h(w&&w.img||'')}" placeholder="https://… hoặc images/ten-anh.png">
  <div class="row mt"><button class="btn pri" onclick="saveW('${w?w.id:''}')">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
-function saveW(id){const t=+$('#we-t').value;const o={id:id||uid('wp'),task:t,title:$('#we-n').value.trim()||'Đề Writing',prompt:$('#we-p').value.trim(),minutes:+$('#we-m').value||(t===1?20:40),min:t===1?150:250,img:$('#we-i').value.trim()};if(!o.prompt){toast('Nhập đề bài');return}D.wprompts=D.wprompts||[];const i=D.wprompts.findIndex(x=>x.id===o.id);if(i>=0)D.wprompts[i]=o;else D.wprompts.push(o);save();modal('');render()}
+function saveW(id){const t=+$('#we-t').value;const o={id:id||uid('wp'),task:t,title:$('#we-n').value.trim()||'Đề Writing',prompt:$('#we-p').value.trim(),minutes:+$('#we-m').value||(t===1?20:40),min:t===1?150:250,img:$('#we-i').value.trim()};if(!o.prompt){toast('Nhập đề bài');return}D.wprompts=D.wprompts||[];const i=D.wprompts.findIndex(x=>x.id===o.id);if(i>=0)D.wprompts[i]=o;else D.wprompts.push(o);D.wcat=Object.assign({},D.wcat,{[o.id]:$('#we-c').value});save();modal('');render()}
 function spEditor(part,id){const t=id?spTopicById(id):null;
  if(part===1)modal(`<h2>${t?'Sửa':'Thêm'} chủ đề Part 1</h2><label class="f">Chủ đề</label><input type="text" id="se1-t" value="${h(t?t.title:'')}" placeholder="Ví dụ: Music"><label class="f">Câu hỏi (mỗi dòng một câu)</label><textarea class="prose" id="se1-q">${h(t?t.qs.join('\n'):'')}</textarea><div class="row mt"><button class="btn pri" onclick="saveSP(1,'${t?t.id:''}')">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`);
  else modal(`<h2>${t?'Sửa':'Thêm'} đề Part 2 & 3</h2><label class="f">Đề Part 2 (cue card)</label><input type="text" id="se2-c" value="${h(t?t.cue:'')}" placeholder="Describe a…"><label class="f">Gợi ý "You should say" (mỗi dòng một ý)</label><textarea class="prose" style="min-height:100px" id="se2-p">${h(t?t.points.join('\n'):'')}</textarea><label class="f">Câu hỏi Part 3 (mỗi dòng một câu)</label><textarea class="prose" style="min-height:100px" id="se2-q">${h(t?t.p3.join('\n'):'')}</textarea><div class="row mt"><button class="btn pri" onclick="saveSP(2,'${t?t.id:''}')">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
@@ -1747,8 +1774,8 @@ function fbBuilder(teacher){
  if(k==='L'||k==='R'){const sk=k==='L'?'Listening':'Reading';const all=fbTests(sk);const vols=[...new Set(all.map(t=>t.vol||'Đề của giáo viên'))].sort(volSort);const v=FB.vol[k];
   list=`<div class="seg mb">${['all',...vols].map(x=>`<button class="${v===x?'on':''}" onclick="FB.vol.${k}=${h(JSON.stringify(x))};render()">${x==='all'?'Tất cả':h(x)}</button>`).join('')}</div>
   <div class="picklist">${all.filter(t=>v==='all'||(t.vol||'Đề của giáo viên')===v).map(t=>fbRow(k,t.id,t.title,`${flatQs(t).length} câu · ${t.minutes} phút`)).join('')||'<div class="empty">Chưa có đề.</div>'}</div>`}
- else if(k==='W')list=`<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"><div><h3>Task 1 <span class="small muted">(20 phút)</span></h3><div class="picklist">${allW().filter(w=>w.task===1).map(w=>fbRow('W1',w.id,w.title,w.prompt.split('\n')[0].slice(0,90))).join('')}</div></div>
-  <div><h3>Task 2 <span class="small muted">(40 phút)</span></h3><div class="picklist">${allW().filter(w=>w.task===2).map(w=>fbRow('W2',w.id,w.title,w.prompt.split('\n')[0].slice(0,90))).join('')}</div></div></div>`;
+ else if(k==='W')list=`<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"><div><h3>Task 1 <span class="small muted">(20 phút)</span></h3><div class="picklist">${wByCat(1,allW().filter(w=>w.task===1),w=>fbRow('W1',w.id,w.title,w.prompt.split('\n')[0].slice(0,90)),(l,n,html)=>`<div class="pkh">${h(l)} <span>${n}</span></div>${html}`)}</div></div>
+  <div><h3>Task 2 <span class="small muted">(40 phút)</span></h3><div class="picklist">${wByCat(2,allW().filter(w=>w.task===2),w=>fbRow('W2',w.id,w.title,w.prompt.split('\n')[0].slice(0,90)),(l,n,html)=>`<div class="pkh">${h(l)} <span>${n}</span></div>${html}`)}</div></div></div>`;
  else list=`<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"><div><h3>Part 1</h3><div class="picklist">${allP1().map(t=>fbRow('P1',t.id,t.title,t.qs.length+' câu hỏi')).join('')}</div></div>
   <div><h3>Part 2 & 3</h3><div class="picklist">${allP2().map(t=>fbRow('P2',t.id,t.cue,t.p3.length+' câu Part 3')).join('')}</div></div></div>`;
  const ready=['L','R','W','S'].every(fbHas);
@@ -1908,6 +1935,7 @@ function mergeData(inc){
  if(inc.students){inc.students.forEach(s=>{const ex=D.students.find(x=>x.id===s.id)||D.students.find(x=>x.code===s.code);if(ex){Object.assign(ex,{name:s.name,note:s.note??ex.note})}else{D.students.push(s);n.stu++}})}
  upsert(D.sets,inc.sets);upsert(D.tests,inc.tests);upsert(D.assignments,inc.assignments);['wprompts','sp1','sp2','fulls'].forEach(k=>{D[k]=D[k]||[];upsert(D[k],inc[k])});
  if(inc.deleted){['sets','tests','assignments','wprompts','sp1','sp2','fulls'].forEach(k=>(inc.deleted[k]||[]).forEach(id=>{D[k]=(D[k]||[]).filter(x=>x.id!==id)}))}
+ if(inc.wcat)D.wcat=Object.assign({},D.wcat,inc.wcat);
  if(inc.settings&&inc.kind==='class-pack'){D.settings.className=inc.settings.className||D.settings.className}
  for(const sid in (inc.progress||{})){const a=P(sid),b=inc.progress[sid];
   for(const k in (b.words||{})){if(!a.words[k]||(b.words[k].last||0)>(a.words[k].last||0))a.words[k]=b.words[k]}
@@ -1921,7 +1949,7 @@ function mergeData(inc){
  save();return n;
 }
 function importPack(){pickFile(x=>{try{const n=mergeData(x);toast(`Đã nhập dữ liệu${n.stu?` · ${n.stu} học viên mới`:''}${n.res?` · ${n.res} kết quả mới`:''}${n.rep?` · ${n.rep} báo lỗi mới`:''}`);render()}catch(e){toast('File không đúng định dạng của ứng dụng này')}})}
-function classPack(withProgress){return {kind:'class-pack',app:'lopta',date:Date.now(),settings:{className:D.settings.className},students:D.students,sets:D.sets,tests:D.tests,wprompts:D.wprompts||[],sp1:D.sp1||[],sp2:D.sp2||[],fulls:(D.fulls||[]).filter(f=>f.by==='teacher'),assignments:D.assignments,deleted:D.deleted||{},progress:withProgress?D.progress:undefined}}
+function classPack(withProgress){return {kind:'class-pack',app:'lopta',date:Date.now(),settings:{className:D.settings.className},students:D.students,sets:D.sets,tests:D.tests,wprompts:D.wprompts||[],wcat:D.wcat||{},sp1:D.sp1||[],sp2:D.sp2||[],fulls:(D.fulls||[]).filter(f=>f.by==='teacher'),assignments:D.assignments,deleted:D.deleted||{},progress:withProgress?D.progress:undefined}}
 
 /* =========================================================
    GIÁO VIÊN
