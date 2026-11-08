@@ -552,6 +552,11 @@ ins.an{color:var(--ok);text-decoration:none;background:var(--ok-soft);border-rad
 .atool[hidden]{display:none}
 .atool button{border:0;background:none;color:var(--bg);font:inherit;font-size:13.5px;padding:8px 12px;border-radius:10px;cursor:pointer;white-space:nowrap}
 .atool button:hover{background:color-mix(in srgb,var(--bg) 16%,transparent)}
+.card.done{background:color-mix(in srgb,var(--ok-soft) 55%,var(--card));border-color:color-mix(in srgb,var(--ok) 30%,var(--line))}
+.card.done .btn.pri{background:var(--card);color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.done-tag{white-space:nowrap}
+.restabs .cnt{font-size:11.5px;color:var(--muted);margin-left:2px}
+@media (max-width:640px){.restabs{display:grid;grid-template-columns:repeat(3,1fr);width:100%;border-radius:18px}.restabs button{padding:8px 6px;border-radius:14px}}
 </style>
 </head>
 <body>
@@ -777,7 +782,7 @@ function header(){
  const tabs=U.role==='teacher'?tt:st;document.documentElement.classList.toggle('tch',U.role==='teacher');
  const cur=R.v;
  const fx=(typeof WR!=='undefined'&&WR&&WR.full)||(typeof SK!=='undefined'&&SK&&SK.full);
- const isOn=k=>(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student'&&!R.tf)||(k==='t-full'&&(cur==='t-fullrun'||!!R.tf))||(cur==='t-testedit'&&k===tTestBack())||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review'&&!R.tf);
+ const isOn=k=>R.from==='history'?k==='history':(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student'&&!R.tf)||(k==='t-full'&&(cur==='t-fullrun'||!!R.tf))||(cur==='t-testedit'&&k===tTestBack())||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review'&&!R.tf);
  el.innerHTML=`<div class="wrap"><div class="logo" onclick="go('${tabs[0][0]}')"><b>A</b><span>${h(D.settings.className)}</span></div>
  <nav class="tabs">${tabs.map(([k,l])=>`<button class="${isOn(k)?'on':''}" data-sk="${k}" onclick="go('${k}')">${l}${isOn(k)?'<i class="tl"></i>':''}</button>`).join('')}</nav>
  <div class="who">${U.role==='teacher'?'<span class="tag acc">Giáo viên</span>':`<span class="nm">${h(U.name)}</span><span class="tag gray">${h(U.code)}</span>`}${THM_BTN()}<button class="thm" onclick="logout()" title="Đăng xuất" aria-label="Đăng xuất"><svg viewBox="0 0 24 24"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M14 8l4 4-4 4M18 12H8"/></svg></button></div></div>`;
@@ -1133,10 +1138,10 @@ function mtPick(side,i){const m=MT;if(m.done.has(i))return;m.bad=null;if(side===
 /* =========================================================
    LUYỆN ĐỀ
    ========================================================= */
-function testCard(t,asg){const n=flatQs(t).length;const b=bestPct(U.id,t.id);const tries=P().results.filter(r=>r.testId===t.id).length;
- return `<div class="card tcard" ${t.skill?`data-skill="${h(t.skill)}"`:''}><div class="row between"><span class="tag ${t.skill?'sk':t.type==='ielts'?'':'acc'}">${h(t.skill||(t.type==='ielts'?'IELTS':'THPT'))}</span>${asg.has(t.id)?'<span class="tag warn">Được giao</span>':''}</div>
+function testCard(t,asg){const n=flatQs(t).length;const tries=P().results.filter(r=>r.testId===t.id).length;
+ return `<div class="card tcard${tries?' done':''}" ${t.skill?`data-skill="${h(t.skill)}"`:''}><div class="row between"><span class="tag ${t.skill?'sk':t.type==='ielts'?'':'acc'}">${h(t.skill||(t.type==='ielts'?'IELTS':'THPT'))}</span><span class="row" style="gap:6px">${asg.has(t.id)?'<span class="tag warn">Được giao</span>':''}${tries?'<span class="tag ok done-tag">✓ Đã làm</span>':''}</span></div>
   <h3 class="mt" data-vt="${t.id}">${h(t.title)}</h3><p class="small muted" style="margin:0">${h(t.desc||'')}</p>
-  <p class="small muted">${n} câu · ${t.minutes} phút${tries?` · đã làm ${tries} lần`:''}${b!=null?` · tốt nhất ${Math.round(b*100)}%`:''}</p>
+  <p class="small muted">${n} câu · ${t.minutes} phút</p>
   <button class="btn pri" onclick="go('test',{id:'${t.id}'})">${tries?'Làm lại':'Bắt đầu'}</button></div>`}
 const volNum=v=>{const m=/(\d+)/.exec(v||'');return m?+m[1]:999};
 const volSort=(a,b)=>volNum(a)-volNum(b)||String(a).localeCompare(String(b));
@@ -1262,7 +1267,7 @@ VIEWS.result=()=>{
  const qs=flatQs(t);const pct=r.total?Math.round(r.score/r.total*100):0;
  let big='';
  if(r.total){big=t.type==='ielts'?`<div class="big-score">Band ~${ieltsBand(r.score,r.total)}</div><p class="muted">${r.score}/${r.total} câu đúng (${pct}%) · quy đổi ước tính theo thang 40 câu</p>`:`<div class="big-score">${(Math.round(r.score/r.total*10*100)/100)}<span style="font-size:22px">/10</span></div><p class="muted">${r.score}/${r.total} câu đúng (${pct}%)</p>`}
- return `<div class="crumb" onclick="${U.role==='teacher'?(R.tf?`go('t-fullrun',{id:'${R.tf}',sid:'${sid}'})`:`go('t-student',{id:'${sid}'})`):R.full?`go('fullrun',{id:'${R.full}'})`:`go('${testBack(t)}')`}">← Quay lại</div>${fullBar()}<h1>${h(t.title)}</h1><p class="sub">Nộp lúc ${fdt(r.date)} · làm trong ${Math.floor(r.dur/60)} phút ${r.dur%60} giây</p>
+ return `<div class="crumb" onclick="${U.role==='teacher'?(R.tf?`go('t-fullrun',{id:'${R.tf}',sid:'${sid}'})`:`go('t-student',{id:'${sid}'})`):R.from==='history'?`go('history')`:R.full?`go('fullrun',{id:'${R.full}'})`:`go('${testBack(t)}')`}">← Quay lại</div>${fullBar()}<h1>${h(t.title)}</h1><p class="sub">Nộp lúc ${fdt(r.date)} · làm trong ${Math.floor(r.dur/60)} phút ${r.dur%60} giây</p>
  <div class="card mb" style="text-align:center">${big}
  ${r.essay?`<div style="text-align:left"><h3>Bài viết (${wc(r.essay.text)} từ)</h3><div class="passage" style="background:var(--bg)">${h(r.essay.text)||'<i class="muted">(trống)</i>'}</div>
   ${U.role==='teacher'?`<div class="grid g2 mt"><div><label class="f">Band giáo viên chấm</label><input type="number" step="0.5" min="0" max="9" id="eband" value="${r.essay.band??''}"></div></div><label class="f">Nhận xét</label><textarea class="prose" style="min-height:120px" id="ecom">${h(r.essay.comment||'')}</textarea><button class="btn pri mt" onclick="saveGrade('${sid}','${r.id}')">Lưu điểm & nhận xét</button>`
@@ -1387,7 +1392,7 @@ const fmtSec=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
 let spkTab='p1';let SK=null;
 VIEWS.speaking=()=>{
  if(SK)return skView();
- const done=P().speaking||[];const cnt=id=>done.filter(x=>x.topic===id).length;
+ if(spkTab==='mine')spkTab='p1';const done=P().speaking||[];const cnt=id=>done.filter(x=>x.topic===id).length;
  return `<h1>Luyện Speaking</h1><p class="sub">Nghe câu hỏi, bấm ghi âm và trả lời. Máy chép lại lời bạn nói và đưa nhận xét nhanh, giáo viên chấm band sau.</p>
  ${SR?'':'<div class="explain mb">Trình duyệt này không hỗ trợ chép lời tự động. Hãy dùng Chrome hoặc Edge để có đầy đủ tính năng. Bạn vẫn ghi âm được.</div>'}
  <details class="card mb"><summary><b>Hướng dẫn luyện tập Speaking mỗi ngày (luyennoi.com)</b></summary>
@@ -1401,13 +1406,13 @@ VIEWS.speaking=()=>{
    <li>Sau khi luyện, <b>nộp ảnh minh chứng</b> (ảnh chụp màn hình kết quả) là hoàn thành.</li>
   </ol></details>
  <div class="card mb row between" style="background:var(--brand-soft)"><div><h3 style="margin:0">Thi thử Speaking đầy đủ</h3><div class="small muted">Part 1 (4 câu), Part 2 (1 phút chuẩn bị, 2 phút nói), Part 3 (3 câu). Khoảng 12 phút.</div></div><button class="btn pri" onclick="skMock()">Bắt đầu thi thử</button></div>
- <div class="seg mb"><button class="${spkTab==='p1'?'on':''}" onclick="spkTab='p1';render()">Part 1</button><button class="${spkTab==='p2'?'on':''}" onclick="spkTab='p2';render()">Part 2 & 3</button><button class="${spkTab==='mine'?'on':''}" onclick="spkTab='mine';render()">Bài đã nói (${done.length})</button></div>
- ${spkTab==='p1'?`<div class="grid g3">${allP1().map(t=>`<div class="card"><span class="tag">Part 1</span><h3 class="mt">${h(t.title)}</h3><p class="small muted">${t.qs.length} câu hỏi${cnt(t.id)?` · đã luyện ${cnt(t.id)} lần`:''}</p><button class="btn pri" onclick="skStart('${t.id}')">Luyện</button></div>`).join('')}</div>`:''}
- ${spkTab==='p2'?`<div class="grid g2">${allP2().map(t=>`<div class="card"><span class="tag acc">Part 2 & 3</span><h3 class="mt">${h(t.cue)}</h3><p class="small muted">${t.points.length} gợi ý · ${t.p3.length} câu Part 3${cnt(t.id)?` · đã luyện ${cnt(t.id)} lần`:''}</p><button class="btn pri" onclick="skStart('${t.id}')">Luyện</button></div>`).join('')}</div>`:''}
- ${spkTab==='mine'?skHistory(U.id):''}`;
+ <div class="seg mb"><button class="${spkTab==='p1'?'on':''}" onclick="spkTab='p1';render()">Part 1</button><button class="${spkTab==='p2'?'on':''}" onclick="spkTab='p2';render()">Part 2 & 3</button></div>
+ ${spkTab==='p1'?`<div class="grid g3">${allP1().map(t=>`<div class="card${cnt(t.id)?' done':''}"><div class="row between" style="width:100%"><span class="tag">Part 1</span>${cnt(t.id)?'<span class="tag ok done-tag">✓ Đã luyện</span>':''}</div><h3 class="mt">${h(t.title)}</h3><p class="small muted">${t.qs.length} câu hỏi</p><button class="btn pri" onclick="skStart('${t.id}')">Luyện</button></div>`).join('')}</div>`:''}
+ ${spkTab==='p2'?`<div class="grid g2">${allP2().map(t=>`<div class="card${cnt(t.id)?' done':''}"><div class="row between" style="width:100%"><span class="tag acc">Part 2 & 3</span>${cnt(t.id)?'<span class="tag ok done-tag">✓ Đã luyện</span>':''}</div><h3 class="mt">${h(t.cue)}</h3><p class="small muted">${t.points.length} gợi ý · ${t.p3.length} câu Part 3</p><button class="btn pri" onclick="skStart('${t.id}')">Luyện</button></div>`).join('')}</div>`:''}
+ `;
 };
 function skHistory(sid){const l=(P(sid).speaking||[]).slice().reverse();if(!l.length)return '<div class="card empty">Chưa có bài nói nào.</div>';
- return `<div class="card">${l.map(x=>`<div class="list-item"><div><b class="small">${x.mock?'Thi thử Speaking':h(x.title)}</b><div class="small muted">${fdt(x.date)} · ${x.items.length} câu</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'skres'}',{kind:'speaking',rid:'${x.id}',sid:'${sid}'})">Xem</button></div></div>`).join('')}</div>`}
+ return `<div class="card">${l.map(x=>`<div class="list-item"><div><b class="small">${x.mock?'Thi thử Speaking':h(x.title)}</b><div class="small muted">${fdt(x.date)} · ${x.items.length} câu</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'skres'}',{kind:'speaking',rid:'${x.id}',sid:'${sid}'${R.v==='history'?",from:'history'":''}})">Xem</button></div></div>`).join('')}</div>`}
 function skBuild(t){const items=[];if(t.qs)t.qs.forEach(q=>items.push({part:1,q,target:30}));else{items.push({part:2,q:t.cue,points:t.points,target:120,prep:60});t.p3.forEach(q=>items.push({part:3,q,target:45}))}return items}
 function skStart(id){const t=spTopicById(id);SK={topic:id,title:t.title||t.cue,items:skBuild(t),i:0,res:[],phase:'ready'};render()}
 function skMock(){const a=shuffle(allP1())[0],b=shuffle(allP2())[0];const items=[...shuffle(a.qs).slice(0,4).map(q=>({part:1,q,target:30})),{part:2,q:b.cue,points:b.points,target:120,prep:60},...b.p3.map(q=>({part:3,q,target:45}))];SK={topic:'mock',mock:true,title:'Thi thử: '+a.title+' / '+b.title,items,i:0,res:[],phase:'ready'};render()}
@@ -1443,7 +1448,7 @@ VIEWS.skres=()=>reviewView();
 VIEWS.wres=()=>reviewView();
 VIEWS['t-review']=()=>reviewView();
 function reviewView(){
- const sid=R.sid;const p=P(sid);const isT=U.role==='teacher';const back=isT?(R.tf?`go('t-fullrun',{id:'${R.tf}',sid:'${sid}'})`:`go('t-grade')`):R.full?`go('fullrun',{id:'${R.full}'})`:(R.kind==='speaking'?`go('speaking')`:`go('writing')`);
+ const sid=R.sid;const p=P(sid);const isT=U.role==='teacher';const back=isT?(R.tf?`go('t-fullrun',{id:'${R.tf}',sid:'${sid}'})`:`go('t-grade')`):R.from==='history'?`go('history')`:R.full?`go('fullrun',{id:'${R.full}'})`:(R.kind==='speaking'?`go('speaking')`:`go('writing')`);
  if(R.kind==='speaking'){
   const x=(p.speaking||[]).find(a=>a.id===R.rid);if(!x)return '<div class="empty">Không tìm thấy.</div>';const g=x.grade||{};
   return `<div class="crumb" onclick="${back}">← Quay lại</div>${fullBar()}<h1>${x.mock?'Thi thử Speaking':'Speaking · '+h(x.title)}</h1><p class="sub">${isT?h((stuById(sid)||{}).name||'')+' · ':''}${fdt(x.date)}</p>
@@ -1558,27 +1563,27 @@ function modelPick(){const x=annoX();const a=modelOpts(x).find(o=>o.k===$('#md-s
 function modelSave(clear){const x=annoX();if(clear&&!confirm('Gỡ bài mẫu khỏi bài này?'))return;const m=clear?'':$('#md-t').value.trim();setFb(x,{model:m});const b=$('#md-box');if(b)b.outerHTML=modelBox(ANX.sid,x,true);toast(clear?'Đã gỡ bài mẫu':m?'Đã lưu bài mẫu. Học viên sẽ thấy ngay dưới bài viết.':'Bài mẫu đang trống')}
 /* Viết lại bài */
 function redoBox(sid,x,isT){const ws=P(sid).writings||[];const prev=x.redoOf&&ws.find(y=>y.id===x.redoOf);const next=ws.filter(y=>y.redoOf===x.id);const v=isT?'t-review':'wres';
- const lk=y=>`go('${v}',{kind:'writing',rid:'${y.id}',sid:'${sid}'})`;
+ const lk=y=>`go('${v}',{kind:'writing',rid:'${y.id}',sid:'${sid}'${R.from?`,from:'${R.from}'`:''}})`;
  const links=`${prev?`<p class="small" style="margin:0 0 6px">Đây là bài viết lại của <a href="#" onclick="event.preventDefault();${lk(prev)}">bài ngày ${fdt(prev.date)}</a>${prev.grade&&prev.grade.band!=null?` (Band ${prev.grade.band})`:''}.</p>`:''}${next.map(y=>`<p class="small" style="margin:0 0 6px">Đã viết lại: <a href="#" onclick="event.preventDefault();${lk(y)}">bài ngày ${fdt(y.date)}</a> · ${y.grade&&y.grade.band!=null?'Band '+y.grade.band:'chờ chấm'}</p>`).join('')}`;
  const can=!isT&&((x.grade&&x.grade.band!=null)||wNotes(x).length)&&wById(x.promptId);
  if(!links&&!can)return '';
  return `<div class="card mt" style="cursor:auto">${can?`<div class="row between" style="width:100%;align-items:center"><div style="flex:1;min-width:220px"><h3 style="margin:0 0 4px">Viết lại bài</h3><p class="small muted" style="margin:0">Sửa bài theo nhận xét của giáo viên rồi nộp lại. Bài viết lại được lưu thành bài mới để giáo viên chấm, bài này vẫn giữ nguyên.</p></div><button class="btn pri" onclick="wRedo('${x.id}')">Viết lại bài này</button></div>${links?'<div class="mt">'+links+'</div>':''}`:links}</div>`}
 function wRedo(id){const x=(P().writings||[]).find(y=>y.id===id);if(!x)return;let d='';try{d=localStorage.getItem('lopta_draft_'+U.id+'_r'+id)||''}catch(e){}go('writing');wStart(x.promptId,{redo:id,text:d||x.text})}
 function redoPanel(){const x=(P().writings||[]).find(y=>y.id===WR.redo);if(!x)return '';const ns=wNotes(x),g=x.grade||{};
- return `<details class="mt" open style="width:100%"><summary><b>Nhận xét của giáo viên cho bài trước${ns.length?` (${ns.length})`:''}</b></summary>${g.band!=null?`<p class="small">Band bài trước: <b>${g.band}</b></p>`:''}${g.comment?`<div class="explain">${fmt(g.comment)}</div>`:''}<div class="mt">${noteCards(x,false)}</div></details>`}
+ return `<details class="mt" open style="width:100%"><summary><b>Nhận xét của giáo viên cho bài trước${ns.length?` (${ns.length})`:''}</b></summary>${g.band!=null?`<p class="small">Band bài trước: <b>${g.band}</b></p>`:''}${g.comment?`<div class="explain">${fmt(g.comment)}</div>`:''}<div class="mt">${noteCards(x,false)}</div></details>${x.fb&&x.fb.model?`<details class="mt" style="width:100%"><summary><b>Bài mẫu từ giáo viên (${wc(x.fb.model)} từ)</b></summary><div class="passage mt" style="background:var(--bg);max-width:none;padding:16px 18px">${h(x.fb.model)}</div></details>`:''}`}
 
 /* --- Trang Writing --- */
 let wTab=2;let WR=null;
 VIEWS.writing=()=>{
  if(WR)return wrView();
- const mine=P().writings||[];const cnt=id=>mine.filter(x=>x.promptId===id).length;
+ if(wTab==='mine')wTab=2;const mine=P().writings||[];const cnt=id=>mine.filter(x=>x.promptId===id).length;
  const asg=new Set(myAssignments(U.id).filter(a=>a.kind==='writing').map(a=>a.ref));
  return `<h1>Luyện Writing</h1><p class="sub">Viết bài có tính giờ, xem nhận xét tự động ngay và nhận band, nhận xét chi tiết từ giáo viên.</p>
- <div class="seg mb"><button class="${wTab===1?'on':''}" onclick="wTab=1;render()">Task 1</button><button class="${wTab===2?'on':''}" onclick="wTab=2;render()">Task 2</button><button class="${wTab==='mine'?'on':''}" onclick="wTab='mine';render()">Bài đã viết (${mine.length})</button></div>
- ${wTab==='mine'?wHistory(U.id):`<div class="grid g2">${allW().filter(w=>w.task===wTab).map(w=>`<div class="card"><div class="row between"><span class="tag ${w.task===1?'acc':''}">Task ${w.task}</span>${asg.has(w.id)?'<span class="tag warn">Được giao</span>':''}</div><h3 class="mt">${h(w.title)}</h3><p class="small muted" style="margin:0 0 8px">${h(w.prompt.split('\n')[0]).slice(0,150)}</p><p class="small muted">${w.minutes} phút · tối thiểu ${w.min} từ${cnt(w.id)?` · đã viết ${cnt(w.id)} lần`:''}</p><button class="btn pri" onclick="wStart('${w.id}')">Viết bài</button></div>`).join('')}</div>`}`;
+ <div class="seg mb"><button class="${wTab===1?'on':''}" onclick="wTab=1;render()">Task 1</button><button class="${wTab===2?'on':''}" onclick="wTab=2;render()">Task 2</button></div>
+ ${`<div class="grid g2">${allW().filter(w=>w.task===wTab).map(w=>`<div class="card${cnt(w.id)?' done':''}"><div class="row between"><span class="tag ${w.task===1?'acc':''}">Task ${w.task}</span><span class="row" style="gap:6px">${asg.has(w.id)?'<span class="tag warn">Được giao</span>':''}${cnt(w.id)?'<span class="tag ok done-tag">✓ Đã viết</span>':''}</span></div><h3 class="mt">${h(w.title)}</h3><p class="small muted" style="margin:0 0 8px">${h(w.prompt.split('\n')[0]).slice(0,150)}</p><p class="small muted">${w.minutes} phút · tối thiểu ${w.min} từ</p><button class="btn pri" onclick="wStart('${w.id}')">Viết bài</button></div>`).join('')}</div>`}`;
 };
 function wHistory(sid){const l=(P(sid).writings||[]).slice().reverse();if(!l.length)return '<div class="card empty">Chưa có bài viết nào.</div>';
- return `<div class="card">${l.map(x=>{const w=wById(x.promptId);return `<div class="list-item"><div><b class="small">${w?'Task '+w.task+' · '+h(w.title):'(đề đã xóa)'}</b>${x.redoOf?' <span class="tag acc">Viết lại</span>':''}<div class="small muted">${fdt(x.date)} · ${wc(x.text)} từ</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'wres'}',{kind:'writing',rid:'${x.id}',sid:'${sid}'})">Xem</button></div></div>`}).join('')}</div>`}
+ return `<div class="card">${l.map(x=>{const w=wById(x.promptId);return `<div class="list-item"><div><b class="small">${w?'Task '+w.task+' · '+h(w.title):'(đề đã xóa)'}</b>${x.redoOf?' <span class="tag acc">Viết lại</span>':''}<div class="small muted">${fdt(x.date)} · ${wc(x.text)} từ</div></div><div class="row">${x.grade&&x.grade.band!=null?`<span class="tag ok">Band ${x.grade.band}</span>`:'<span class="tag warn">Chờ chấm</span>'}<button class="btn sm" onclick="go('${U.role==='teacher'?'t-review':'wres'}',{kind:'writing',rid:'${x.id}',sid:'${sid}'${R.v==='history'?",from:'history'":''}})">Xem</button></div></div>`}).join('')}</div>`}
 function draftKey(id){return 'lopta_draft_'+U.id+'_'+(WR&&WR.redo&&WR.id===id?'r'+WR.redo:id)}
 function wStart(id,o){const w=wById(id);let d='';try{d=localStorage.getItem(draftKey(id))||''}catch(e){}WR=Object.assign({id,t0:Date.now(),end:Date.now()+w.minutes*60000,text:d},o||{});render()}
 function wrView(){const w=wById(WR.id);
@@ -1683,7 +1688,7 @@ function bandCells(r,sid){const d=fullDetail(r,sid);
  return FPARTS.map(([k])=>{const x=d[k];return `<td class="c">${x.st==='none'?'<span class="muted">—</span>':x.band!=null?`<span class="bcell">${x.band}</span>`:x.st==='pending'?'<span class="tag warn"><span class="lf">Chờ chấm</span><span class="ls">Chờ</span></span>':x.st==='part'?'<span class="tag gray">Dở</span>':'<span class="tag gray"><span class="lf">Chưa làm</span><span class="ls">–</span></span>'}</td>`}).join('')+`<td class="c">${d.all!=null?`<span class="bcell ov">${d.all}</span>`:'<span class="muted">—</span>'}</td>`}
 const BHEAD=[['Listening','L'],['Reading','R'],['Writing','W'],['Speaking','S'],['Overall','All']].map(([a,b])=>`<th class="c"><span class="lf">${a}</span><span class="ls">${b}</span></th>`).join('');
 function myFullTable(sid){const runs=(P(sid).fullruns||[]).slice().reverse();if(!runs.length)return '<div class="empty">Chưa có bài thi nào.</div>';
- return `<div class="tbl"><table><thead><tr><th>Bài thi</th>${BHEAD}<th></th></tr></thead><tbody>${runs.map(r=>`<tr><td><b class="small">${h(r.title)}</b><div class="small muted">${fdt(r.date)}</div></td>${bandCells(r,sid)}<td><button class="btn sm" onclick="${U.role==='teacher'?`go('t-fullrun',{id:'${r.id}',sid:'${sid}'})`:`go('fullrun',{id:'${r.id}'})`}">${fullDone(r)?'Xem':'Làm tiếp'}</button></td></tr>`).join('')}</tbody></table></div>`}
+ return `<div class="tbl"><table><thead><tr><th>Bài thi</th>${BHEAD}<th></th></tr></thead><tbody>${runs.map(r=>`<tr><td><b class="small">${h(r.title)}</b><div class="small muted">${fdt(r.date)}</div></td>${bandCells(r,sid)}<td><button class="btn sm" onclick="${U.role==='teacher'?`go('t-fullrun',{id:'${r.id}',sid:'${sid}'})`:`go('fullrun',{id:'${r.id}'${R.v==='history'?",from:'history'":''}})`}">${fullDone(r)?'Xem':'Làm tiếp'}</button></td></tr>`).join('')}</tbody></table></div>`}
 
 /* --- Bộ ghép đề (dùng chung cho học viên & giáo viên) --- */
 let FB={tab:'L',vol:{L:'all',R:'all'}};
@@ -1742,7 +1747,7 @@ VIEWS.fullrun=()=>{
  const wk=['W1','W2'].filter(k=>pl[k]);const wt=wk.map(k=>`Task ${k[1]}: ${h((wById(pl[k])||{}).title||'')}`).join('<br>');
  const sp=[pl.P1&&'Part 1: '+h((spTopicById(pl.P1)||{}).title||''),pl.P2&&'Part 2&3: '+h((spTopicById(pl.P2)||{}).title||'')].filter(Boolean).join('<br>');
  const pend=ks.length&&!next&&b.all==null;
- return `<div class="crumb" onclick="go('full')">← Thi 4 kỹ năng</div><p class="eyebrow">Bài thi IELTS 4 kỹ năng</p><h1>${h(r.title)}</h1><p class="sub">Làm lần lượt theo thứ tự thi thật: Listening, Reading, Writing, Speaking. Mỗi phần tính giờ riêng, bạn có thể nghỉ giữa các phần.</p>
+ return `<div class="crumb" onclick="${R.from==='history'?"go('history')":"go('full')"}">← ${R.from==='history'?'Kết quả':'Thi 4 kỹ năng'}</div><p class="eyebrow">Bài thi IELTS 4 kỹ năng</p><h1>${h(r.title)}</h1><p class="sub">Làm lần lượt theo thứ tự thi thật: Listening, Reading, Writing, Speaking. Mỗi phần tính giờ riêng, bạn có thể nghỉ giữa các phần.</p>
  <div class="card mb" style="text-align:center">${b.all!=null?`<p class="eyebrow" style="justify-content:center">Overall band</p><div class="big-score">${b.all}</div>`:pend?`<span class="tag warn">Đã làm xong, đang chờ giáo viên chấm Writing và Speaking</span>`:`<p class="muted" style="margin:0">Hoàn thành cả 4 phần để có band tổng. Listening và Reading được chấm ngay, Writing và Speaking do giáo viên chấm.</p>`}</div>
  <div class="fsteps">${card('L','Listening',((testById(pl.L)||{}).minutes||30)+' phút',tl('L'),['L'],!!r.parts.L)}${card('R','Reading',((testById(pl.R)||{}).minutes||60)+' phút',tl('R'),['R'],!!r.parts.R)}${wk.length?card('W','Writing','60 phút',wt,wk,wk.every(k=>r.parts[k])):''}${pl.P1||pl.P2?card('S','Speaking','11–14 phút',sp,['S'],!!r.parts.S):''}</div>`;
 };
@@ -1771,13 +1776,17 @@ VIEWS['t-fullrun']=()=>{
 };
 
 /* --- Lịch sử --- */
+let resTab='Reading';
+function resTable(rs){return rs.length?`<div class="tbl"><table><thead><tr><th>Đề</th><th>Ngày</th><th>Kết quả</th><th></th></tr></thead><tbody>${rs.map(r=>{const t=testById(r.testId);return `<tr><td>${h(t?t.title:'(đề đã xóa)')}</td><td>${fdt(r.date)}</td><td><span class="tag">${resultLabel(t,r)}</span></td><td>${t?`<button class="btn sm" onclick="go('result',{rid:'${r.id}',from:'history'})">Xem</button>`:''}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Chưa làm bài nào.</div>'}
 VIEWS.history=()=>{
  const p=P();const rs=p.results.slice().reverse();
+ const sk=r=>{const t=testById(r.testId);return t&&t.skill==='Listening'?'Listening':'Reading'};
  const sets=allSets().map(s=>({s,st:setStats(s,U.id)})).filter(x=>x.st.learned);
- return `<h1>Kết quả của tôi</h1><p class="sub">Toàn bộ bài đã làm và tiến độ từ vựng.</p>
- <div class="card"><h2>Bài đã làm</h2>${rs.length?`<div class="tbl"><table><thead><tr><th>Đề</th><th>Ngày</th><th>Kết quả</th><th></th></tr></thead><tbody>${rs.map(r=>{const t=testById(r.testId);return `<tr><td>${h(t?t.title:'(đề đã xóa)')}</td><td>${fdt(r.date)}</td><td><span class="tag">${resultLabel(t,r)}</span></td><td>${t?`<button class="btn sm" onclick="go('result',{rid:'${r.id}'})">Xem</button>`:''}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Chưa làm bài nào.</div>'}</div>
- ${(p.fullruns||[]).length?`<div class="card mt"><h2>Thi 4 kỹ năng</h2>${myFullTable(U.id)}</div>`:''}
- <div class="card mt"><h2>Tiến độ từ vựng</h2>${sets.length?sets.map(({s,st})=>`<div class="list-item"><div style="flex:1"><b>${h(s.title)}</b><div class="bar mt" style="margin-top:6px"><i style="width:${st.m/st.total*100}%"></i></div></div><span class="small muted">${st.m}/${st.total} thuộc · ${st.l} đang học</span></div>`).join(''):'<div class="empty">Chưa học từ nào.</div>'}</div>
+ const tabs=[['Reading','Reading',rs.filter(r=>sk(r)==='Reading').length],['Listening','Listening',rs.filter(r=>sk(r)==='Listening').length],['Writing','Writing',(p.writings||[]).length],['Speaking','Speaking',(p.speaking||[]).length],['Vocab','Từ vựng',sets.length],['Full','Thi 4 kỹ năng',(p.fullruns||[]).length]];
+ const body=resTab==='Full'?`<div class="card">${myFullTable(U.id)}</div>`:resTab==='Writing'?wHistory(U.id):resTab==='Speaking'?skHistory(U.id):resTab==='Vocab'?`<div class="card">${sets.length?sets.map(({s,st})=>`<div class="list-item"><div style="flex:1"><b>${h(s.title)}</b><div class="bar mt" style="margin-top:6px"><i style="width:${st.m/st.total*100}%"></i></div></div><span class="small muted">${st.m}/${st.total} thuộc · ${st.l} đang học</span></div>`).join(''):'<div class="empty">Chưa học từ nào.</div>'}</div>`:`<div class="card">${resTable(rs.filter(r=>sk(r)===resTab))}</div>`;
+ return `<h1>Kết quả của tôi</h1><p class="sub">Toàn bộ bài đã làm, chia theo kỹ năng.</p>
+ <div class="seg mb restabs">${tabs.map(([k,l,n])=>`<button class="${resTab===k?'on':''}" onclick="resTab='${k}';render()">${l}${n?` <span class="cnt">${n}</span>`:''}</button>`).join('')}</div>
+ ${body}
  <div class="card mt"><h2>Đồng bộ với giáo viên</h2><p class="small muted">${window.SYNC&&SYNC.on?'Kết quả tự đồng bộ online với giáo viên khi có mạng. Nếu cần, bạn vẫn có thể xuất file kết quả để gửi.':'Dữ liệu được lưu trên trình duyệt của máy này. Nếu học ở nhà, hãy xuất file kết quả và gửi cho giáo viên (Zalo, email…).'}</p>
  <div class="row"><button class="btn pri" onclick="exportMine()">Xuất kết quả gửi giáo viên</button><button class="btn" onclick="importPack()">Nhập file từ giáo viên</button></div></div>`;
 };
