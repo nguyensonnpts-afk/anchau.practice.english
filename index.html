@@ -2092,8 +2092,11 @@ function asgKind(k){if(k==='test')k='L';if(!ASK().some(([x])=>x===k))k='L';aKind
 function asgInfo(){const el=$('#a-info');if(!el)return;const v=$('#a-ref').value;
  if(aKind!=='full'){el.innerHTML=v?'':'<div class="small muted mt">Chưa có mục nào để giao.</div>';return}
  const f=v&&fullById(v);
- el.innerHTML=f?`<div class="card mt" style="padding:12px 14px;box-shadow:none">${fullSummary(f)}<div class="row mt" style="gap:8px"><button class="btn sm ghost" onclick="asgRandFull()">Ghép ngẫu nhiên đề khác</button><button class="btn sm ghost" onclick="TFTAB='build';go('t-full')">Tự ghép đề</button></div></div>`
+ el.innerHTML=f?`<div class="card mt" style="padding:12px 14px;box-shadow:none">${fullSummary(f)}<div class="row mt" style="gap:8px"><button class="btn sm ghost" onclick="asgRandFull()">Ghép ngẫu nhiên đề khác</button><button class="btn sm ghost" onclick="TFTAB='build';go('t-full')">Tự ghép đề</button><button class="btn sm danger" style="margin-left:auto" onclick="asgDelFull('${f.id}')">Xóa đề này</button></div></div>`
   :`<div class="card mt" style="padding:14px;box-shadow:none;background:var(--accent-soft);border-color:transparent"><b class="small">Chưa có đề 4 kỹ năng nào để giao.</b><p class="small muted" style="margin:4px 0 10px">Ghép nhanh một đề ngẫu nhiên từ kho, hoặc tự tick chọn từng phần.</p><div class="row" style="gap:8px"><button class="btn sm pri" onclick="asgRandFull()">Ghép ngẫu nhiên 1 đề</button><button class="btn sm" onclick="TFTAB='build';go('t-full')">Tự ghép đề</button></div></div>`}
+function asgDelFull(id){const f=fullById(id);if(!f)return;const n=D.assignments.filter(a=>a.ref===id).length;
+ if(!confirm(`Xóa đề "${f.title}" khỏi danh sách đã lưu?${n?`\nĐề này đang được giao ${n} lần, các lần giao đó cũng sẽ bị gỡ.`:''}\nBài học viên đã làm vẫn được giữ.`))return;
+ D.fulls=D.fulls.filter(x=>x.id!==id);D.deleted=D.deleted||{};(D.deleted.fulls=D.deleted.fulls||[]).push(id);D.assignments=D.assignments.filter(a=>a.ref!==id);save();render();toast('Đã xóa đề')}
 function asgRandFull(){const keep=FB;FB={tab:'L',vol:{L:'all',R:'all'}};['L','R','W','S'].forEach(fbRand);
  if(!['L','R','W','S'].every(fbHas)){FB=keep;toast('Kho đề chưa đủ 4 kỹ năng để ghép');return}
  D.fulls=D.fulls||[];const n=D.fulls.filter(f=>f.by==='teacher').length+1;const f=fbObj('Đề 4 kỹ năng số '+n,'teacher');D.fulls.push(f);save();FB=keep;
