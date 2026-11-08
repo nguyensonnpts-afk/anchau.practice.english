@@ -26,7 +26,7 @@
 
  const isTeacher=()=>U&&U.role==='teacher';
  const tomb=()=>{D.deleted=D.deleted||{};return D.deleted};
- function classDoc(){return {settings:D.settings,teacherPin:D.teacherPin,sets:D.sets,tests:D.tests,assignments:D.assignments,wprompts:D.wprompts||[],sp1:D.sp1||[],sp2:D.sp2||[],fulls:(D.fulls||[]).filter(f=>f.by==='teacher'),deleted:D.deleted||{}}}
+ function classDoc(){return {settings:D.settings,teacherPin:D.teacherPin,sets:D.sets,tests:D.tests,assignments:D.assignments,wprompts:D.wprompts||[],wcat:D.wcat||{},sp1:D.sp1||[],sp2:D.sp2||[],fulls:(D.fulls||[]).filter(f=>f.by==='teacher'),deleted:D.deleted||{}}}
  function hvDoc(sid){return {student:D.students.find(s=>s.id===sid),progress:D.progress[sid]||null,fulls:(D.fulls||[]).filter(f=>f.by===sid)}}
 
  function write(key,ref,obj){
@@ -59,7 +59,7 @@
  function unionTombs(inc){const t=tomb();for(const k in (inc||{})){t[k]=[...new Set([...(t[k]||[]),...(inc[k]||[])])]}}
 
  function applyClass(x){
-  mergeData({app:'lopta',kind:'class-pack',settings:x.settings,sets:x.sets,tests:x.tests,assignments:x.assignments,wprompts:x.wprompts,sp1:x.sp1,sp2:x.sp2,fulls:x.fulls,deleted:x.deleted});
+  mergeData({app:'lopta',kind:'class-pack',settings:x.settings,sets:x.sets,tests:x.tests,assignments:x.assignments,wprompts:x.wprompts,wcat:x.wcat,sp1:x.sp1,sp2:x.sp2,fulls:x.fulls,deleted:x.deleted});
   if(x.settings)D.settings=Object.assign({},D.settings,x.settings);
   if(x.teacherPin)D.teacherPin=x.teacherPin;
   unionTombs(x.deleted);applyTombs();
