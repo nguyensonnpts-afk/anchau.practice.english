@@ -16,7 +16,7 @@
  let F=null,db=null,timer=null;const got={c:false,h:false};
  const last={};        // chuỗi JSON đã biết trên máy chủ, theo khóa 'c' hoặc 'h:'+id
  const rate={};        // chống ghi lặp vô hạn
- const BUSY=new Set(['test','exam','writing','speaking','flash','quiz','spell','match','review','fullrun','fullbuild']);
+ const BUSY=new Set(['t-review','test','exam','writing','speaking','flash','quiz','spell','match','review','fullrun','fullbuild']);
 
  // JSON chuẩn hóa: khóa xếp theo bảng chữ cái, mảng có id xếp theo id, để hai máy cùng nội dung ra cùng chuỗi
  const canon=o=>JSON.stringify(o,(k,v)=>{
