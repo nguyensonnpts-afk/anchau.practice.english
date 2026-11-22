@@ -232,6 +232,7 @@ hr{border:0;border-top:1px solid var(--line)}
 .qnav span.done{background:var(--ink);color:var(--bg)}
 .review .ok{color:var(--ok);font-weight:400}.review .bad{color:var(--bad);font-weight:400}
 .explain{margin-top:8px;padding:10px 14px;background:var(--warn-soft);border-radius:var(--r-sm);font-size:14px}
+.explain.ev{background:var(--brand-soft);font-family:var(--serif)}.explain.ev mark{background:color-mix(in srgb,var(--mark) 70%,transparent);color:inherit;border-radius:2px;padding:0 2px}.explain.ev .small{font-family:var(--sans);margin-top:4px}
 .big-score{font-family:var(--serif);font-size:64px;font-weight:400;color:var(--brand);line-height:1;letter-spacing:-.03em}
 .empty{text-align:center;color:var(--muted);padding:40px 10px;font-size:14.5px}
 .empty::before{content:"";display:block;width:44px;height:44px;margin:0 auto 12px;background:var(--line2);-webkit-mask:var(--empty-ico) center/contain no-repeat;mask:var(--empty-ico) center/contain no-repeat;opacity:.9}
@@ -250,6 +251,10 @@ hr{border:0;border-top:1px solid var(--line)}
 .heat i.l1{background:color-mix(in srgb,var(--brand) 30%,var(--bg2))}
 .heat i.l2{background:color-mix(in srgb,var(--brand) 62%,var(--bg2))}
 .heat i.l3{background:var(--brand)}
+.heatcal{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}.heatcal .hd{display:grid;grid-template-rows:repeat(7,16px);gap:4px;font-size:10.5px;color:var(--muted);line-height:1}.heatcal .hd span{display:flex;align-items:center}
+.heat.cal{grid-auto-flow:column;grid-template-rows:repeat(7,16px);grid-template-columns:none;grid-auto-columns:16px;gap:4px}.heat.cal i{width:16px;height:16px;aspect-ratio:auto}
+.heat.mini{display:inline-grid;grid-template-columns:repeat(14,9px);gap:2px;vertical-align:middle}.heat.mini i{width:9px;height:9px}
+.heat.lg{display:inline-grid;grid-template-columns:repeat(4,11px);gap:3px}.heat.lg i{width:11px;height:11px}
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:11px 20px;border-radius:999px;z-index:99;box-shadow:var(--shadow-lg);max-width:calc(100% - 32px);font-size:14px;animation:toastIn .45s var(--ease)}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,14px)}}
 .modal-bg{position:fixed;inset:0;background:rgba(15,16,17,.38);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);z-index:50;display:grid;place-items:center;padding:16px;animation:fade .3s ease}
@@ -396,6 +401,8 @@ footer.foot span{font-family:var(--serif);font-style:italic;white-space:nowrap}
 .rtools .btn.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 mark.hl{background:color-mix(in srgb,var(--mark) 70%,transparent);color:inherit;border-radius:2px;padding:0 1px;cursor:pointer}
 :root.hl-on .passage{cursor:text}
+.hltool{position:fixed;z-index:80;border:0;background:var(--ink);color:var(--bg);font:inherit;font-size:14px;padding:10px 16px;border-radius:12px;box-shadow:var(--shadow-lg);cursor:pointer;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+.hltool[hidden]{display:none}
 :root.focus{--hdr:0px!important}
 :root.focus header.top{display:none}
 :root.focus body{background:var(--card)}
@@ -733,9 +740,12 @@ function recentAdd(id){try{localStorage.setItem(RKEY,JSON.stringify([id,...recen
 function recentDel(id){try{localStorage.setItem(RKEY,JSON.stringify(recentIds().filter(x=>x!==id)))}catch(e){}render()}
 function setSession(s){if(s&&s.role==='student'&&s.id)recentAdd(s.id);try{s?localStorage.setItem(SKEY,JSON.stringify(s)):localStorage.removeItem(SKEY)}catch(e){}}
 
-const allSets=()=>[...SAMPLE_SETS,...D.sets];
+/* Bộ từ mẫu giáo viên đã ẩn (xóa) nằm trong settings.hideSets: đồng bộ cho cả lớp và khôi phục được */
+const hiddenSets=()=>new Set((D.settings&&D.settings.hideSets)||[]);
+const allSetsRaw=()=>[...SAMPLE_SETS,...D.sets];
+const allSets=()=>{const hd=hiddenSets();return allSetsRaw().filter(s=>!hd.has(s.id))};
 const allTests=()=>[...SAMPLE_TESTS,...D.tests];
-const setById=id=>(typeof id==='string'&&id.startsWith('my-'))?mySet(id.slice(3)):allSets().find(s=>s.id===id);
+const setById=id=>(typeof id==='string'&&id.startsWith('my-'))?mySet(id.slice(3)):allSetsRaw().find(s=>s.id===id);
 /* Từ của tôi: sổ từ riêng của từng học viên, lưu trong tiến độ (progress.my) nên đồng bộ cùng hồ sơ */
 const myWords=sid=>(P(sid).my||[]).filter(x=>!x.del);
 function mySet(sid){sid=sid||(U&&U.id);return {id:'my-'+sid,title:'Từ của tôi',cat:'Từ của tôi',my:true,words:myWords(sid)}}
@@ -762,9 +772,27 @@ const fdt=t=>new Date(t).toLocaleString('vi-VN',{hour:'2-digit',minute:'2-digit'
 function toast(m){document.querySelectorAll('.toast').forEach(x=>x.remove());const d=document.createElement('div');d.className='toast';d.textContent=m;document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
 function modal(html){$('#modal').innerHTML=html?`<div class="modal-bg" onclick="if(event.target===this)modal('')"><div class="modal">${html}</div></div>`:''}
 let voice=null;
-function pickVoice(){const v=speechSynthesis.getVoices();voice=v.find(x=>/en[-_]GB/i.test(x.lang))||v.find(x=>/^en/i.test(x.lang))||null}
+/* Chọn giọng đọc: tránh giọng trầm/giọng "vui" của iPhone, iPad (Daniel, Fred, Grandpa…), ưu tiên giọng nữ tự nhiên, rõ.
+   Học viên có thể tự chọn giọng khác (lưu trên máy). */
+const VOICE_BAD=/\b(albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|grandma|grandpa|eddy|flo|reed|rocko|sandy|shelley|daniel|arthur|oliver|rishi|gordon|aaron|tom|alex|george|ryan|guy|thomas)\b/i;
+const VOICE_GOOD=[/google uk english female/i,/(sonia|libby|maisie|ava|jenny|aria|emma|natasha).*natural/i,/\bserena\b/i,/\bkate\b/i,/\bmartha\b/i,/\bstephanie\b/i,/\bsamantha\b/i,/\bava\b/i,/\bkaren\b/i,/\bmoira\b/i,/\btessa\b/i,/\bhazel\b/i,/\bsusan\b/i,/\bzira\b/i,/google us english/i];
+function voiceScore(x){if(!/^en/i.test(x.lang))return -1e9;let s=0;const n=x.name||'';
+ const g=VOICE_GOOD.findIndex(r=>r.test(n));if(g>=0)s+=100-g*3;
+ if(VOICE_BAD.test(n))s-=200;
+ if(/premium|enhanced|natural|neural|online/i.test(n))s+=40;
+ if(/en[-_]GB/i.test(x.lang))s+=15;else if(/en[-_](US|AU|IE)/i.test(x.lang))s+=8;
+ return s}
+function enVoices(){return ('speechSynthesis' in window?speechSynthesis.getVoices():[]).filter(x=>/^en/i.test(x.lang)).sort((a,b)=>voiceScore(b)-voiceScore(a))}
+function pickVoice(){const v=enVoices();let want='';try{want=localStorage.getItem('voice')||''}catch(e){}voice=(want&&v.find(x=>x.voiceURI===want||x.name===want))||v[0]||null}
+function voicePick(){const v=enVoices();if(!v.length){toast('Máy này chưa có giọng đọc tiếng Anh');return}
+ modal(`<h2>Giọng đọc</h2><p class="small muted">Chọn giọng nghe rõ, dễ chịu nhất trên máy này (lưu riêng cho máy này).</p>
+ <select id="vsel" onchange="voiceSet(this.value);speak('Welcome! Let us practise English together.')">${v.map(x=>`<option value="${h(x.voiceURI)}" ${voice&&voice.voiceURI===x.voiceURI?'selected':''}>${h(x.name)} · ${h(x.lang)}</option>`).join('')}</select>
+ <label class="row mt" style="gap:8px;align-items:center;cursor:pointer"><input type="checkbox" style="width:auto" ${voiceRec()?'checked':''} onchange="try{localStorage.setItem('voiceRec',this.checked?'1':'0')}catch(e){}"> <span class="small">Dùng file phát âm thu sẵn (Wiktionary) cho từ trong Kho từ vựng. Bỏ chọn nếu thấy tiếng thu bị ồm, rè.</span></label>
+ <div class="row mt"><button class="btn" onclick="speak('Welcome! Let us practise English together.')">▶ Nghe thử</button><button class="btn ghost" onclick="voiceSet('');$('#vsel').value=voice?voice.voiceURI:'';speak('This is the default voice.')">Mặc định</button><button class="btn pri" onclick="modal('')">Xong</button></div>`)}
+function voiceRec(){try{return localStorage.getItem('voiceRec')==='1'}catch(e){return false}}
+function voiceSet(id){try{id?localStorage.setItem('voice',id):localStorage.removeItem('voice')}catch(e){}pickVoice()}
 if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
-function speak(t,rate=0.9){if(!('speechSynthesis' in window)){toast('Trình duyệt không hỗ trợ đọc');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';if(voice)u.voice=voice;u.rate=rate;speechSynthesis.speak(u)}
+function speak(t,rate=0.9){if(!('speechSynthesis' in window)){toast('Trình duyệt không hỗ trợ đọc');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);if(!voice)pickVoice();if(voice){u.voice=voice;u.lang=voice.lang}else u.lang='en-GB';u.rate=rate;u.pitch=1.05;speechSynthesis.speak(u)}
 function download(name,obj){const b=new Blob([JSON.stringify(obj,null,1)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
 function pickFile(cb){const i=document.createElement('input');i.type='file';i.accept='.json,application/json';i.onchange=()=>{const f=i.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{cb(JSON.parse(r.result))}catch(e){toast('File không hợp lệ')}};r.readAsText(f)};i.click()}
 
@@ -786,6 +814,33 @@ function wstatus(rec){if(!rec)return 'new';if(rec.iv>=7)return 'mastered';return
 function setStats(set,sid){const p=P(sid);let n=0,l=0,m=0,due=0;const now=Date.now();set.words.forEach(w=>{const r=p.words[wkey(set.id,w.w)];const s=wstatus(r);if(s==='new')n++;else if(s==='mastered')m++;else l++;if(r&&r.due<=now)due++});return{total:set.words.length,n,l,m,due,learned:l+m}}
 function dueList(sid){const p=P(sid),now=Date.now(),out=[];[...allSets(),mySet(sid)].forEach(s=>s.words.forEach(w=>{const r=p.words[wkey(s.id,w.w)];if(r&&r.due<=now)out.push({set:s,w})}));return out}
 function streak(sid){const a=P(sid).activity;let n=0;let d=new Date();if(!a[today()])d=new Date(Date.now()-DAY);while(a[d.toISOString().slice(0,10)]){n++;d=new Date(d.getTime()-DAY)}return n}
+/* Bảng chuỗi ngày học: lưới theo tuần (cột) × thứ (hàng), giống bảng ở trang chủ học viên nhưng dài hơn */
+const heatLv=n=>n===0?'':n<10?'l1':n<30?'l2':'l3';
+function bestStreak(sid){const ks=Object.keys(P(sid).activity).filter(k=>P(sid).activity[k]>0).sort();let best=0,cur=0,prev=null;ks.forEach(k=>{const t=Date.parse(k);cur=prev!=null&&Math.round((t-prev)/DAY)===1?cur+1:1;best=Math.max(best,cur);prev=t});return best}
+function heatCal(sid,weeks){weeks=weeks||12;const a=P(sid).activity;const end=new Date(today()+'T00:00:00Z');const dow=(end.getUTCDay()+6)%7;const start=end.getTime()-((weeks-1)*7+dow)*DAY;const cells=[];let act=0,cnt=0;
+ for(let t=start;t<=end.getTime();t+=DAY){const k=new Date(t).toISOString().slice(0,10);const n=a[k]||0;if(n){act++;cnt+=n}cells.push(`<i class="${heatLv(n)}" title="${new Date(t).toLocaleDateString('vi-VN',{timeZone:'UTC'})}: ${n?n+' lượt học':'không học'}"></i>`)}
+ return `<div class="row" style="gap:18px;margin-bottom:10px"><span class="small"><b>${streak(sid)}</b> ngày liên tiếp hiện tại</span><span class="small"><b>${bestStreak(sid)}</b> ngày dài nhất</span><span class="small"><b>${act}</b> ngày có học trong ${weeks} tuần</span></div>
+ <div class="heatcal"><div class="hd">${['T2','','T4','','T6','','CN'].map(x=>`<span>${x}</span>`).join('')}</div><div class="heat cal" style="--w:${weeks}">${cells.join('')}</div></div>
+ <div class="row small muted" style="gap:6px;margin-top:8px">Ít <span class="heat lg"><i></i><i class="l1"></i><i class="l2"></i><i class="l3"></i></span> Nhiều</div>`}
+function heatMini(sid,days){const a=P(sid).activity;let o='';for(let i=days-1;i>=0;i--){const k=new Date(Date.now()-i*DAY).toISOString().slice(0,10);const n=a[k]||0;o+=`<i class="${heatLv(n)}" title="${k}: ${n} lượt"></i>`}return `<span class="heat mini">${o}</span>`}
+/* Nhắc học từ: tạo sự kiện lặp lại hằng ngày có báo thức trong ứng dụng Lịch của điện thoại (không cần máy chủ) */
+function remindModal(){let tm='20:00';try{tm=localStorage.getItem('remindAt')||tm}catch(e){}
+ modal(`<h2>🔔 Nhắc học từ mỗi ngày</h2><p class="small muted">Điện thoại sẽ báo thức đúng giờ này mỗi ngày qua ứng dụng Lịch, kể cả khi không mở web. Bấm vào thông báo là mở lại trang học.</p>
+ <label class="f">Giờ nhắc</label><input type="time" id="rm-t" value="${h(tm)}" style="max-width:160px">
+ <div class="grid g2 mt" style="gap:10px"><button class="btn pri" onclick="remindIcs()">iPhone / iPad (Lịch Apple)</button><button class="btn" onclick="remindGcal()">Android (Google Calendar)</button></div>
+ <p class="small muted mt">iPhone/iPad: mở bằng Safari, bấm nút trên rồi chọn <b>Thêm tất cả</b>. Android: chọn tài khoản Google rồi bấm <b>Lưu</b>. Muốn tắt nhắc thì xóa sự kiện “Học từ vựng” trong Lịch.</p>
+ <div class="row mt"><button class="btn ghost" onclick="modal('')">Đóng</button></div>`)}
+function remindTime(){const v=($('#rm-t')&&$('#rm-t').value)||'20:00';try{localStorage.setItem('remindAt',v)}catch(e){}const[hh,mm]=v.split(':').map(Number);const d=new Date();d.setHours(hh||0,mm||0,0,0);if(d<new Date())d.setDate(d.getDate()+1);return d}
+const icsDate=d=>`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}T${String(d.getHours()).padStart(2,'0')}${String(d.getMinutes()).padStart(2,'0')}00`;
+const appUrl=()=>location.href.split('#')[0].split('?')[0];
+function remindIcs(){const d=remindTime(),e=new Date(d.getTime()+15*60000);const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'Asia/Ho_Chi_Minh';
+ const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//lopta//nhac-hoc//VI','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:lopta-remind-'+(U?U.id:'x')+'@lopta','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z',
+  'DTSTART;TZID='+tz+':'+icsDate(d),'DTEND;TZID='+tz+':'+icsDate(e),'RRULE:FREQ=DAILY','SUMMARY:📘 Học từ vựng','DESCRIPTION:Mở web để ôn từ hôm nay: '+appUrl(),'URL:'+appUrl(),
+  'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:Đến giờ học từ vựng rồi!','TRIGGER:PT0M','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+ const a=document.createElement('a');a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);a.download='nhac-hoc-tu.ics';document.body.appendChild(a);a.click();setTimeout(()=>a.remove(),500);toast('Đã tạo lịch nhắc. Chọn “Thêm” để lưu vào Lịch')}
+function remindGcal(){const d=remindTime(),e=new Date(d.getTime()+15*60000);
+ const u='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('📘 Học từ vựng')+'&details='+encodeURIComponent('Mở web để ôn từ hôm nay: '+appUrl())+'&dates='+icsDate(d)+'/'+icsDate(e)+'&ctz='+encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone||'Asia/Ho_Chi_Minh')+'&recur='+encodeURIComponent('RRULE:FREQ=DAILY');
+ window.open(u,'_blank','noopener')}
 function stuSummary(sid){const p=P(sid);const vals=Object.values(p.words);return{learned:vals.length,mastered:vals.filter(r=>r.iv>=7).length,due:dueList(sid).length,tests:p.results.length,streak:streak(sid),last:Math.max(0,...vals.map(r=>r.last||0),...p.results.map(r=>r.date))}}
 
 /* =========================================================
@@ -857,7 +912,7 @@ function header(){
  const tabs=U.role==='teacher'?tt:st;document.documentElement.classList.toggle('tch',U.role==='teacher');
  const cur=R.v;
  const fx=(typeof WR!=='undefined'&&WR&&WR.full)||(typeof SK!=='undefined'&&SK&&SK.full);
- const isOn=k=>R.from==='history'?k==='history':(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed','learn','dict'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student'&&!R.tf)||(k==='t-full'&&(cur==='t-fullrun'||!!R.tf))||(cur==='t-testedit'&&k===tTestBack())||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review'&&!R.tf);
+ const isOn=k=>R.from==='history'?k==='history':(cur===k&&!(fx&&(k==='writing'||k==='speaking')))||(k==='vocab'&&['set','flash','quiz','spell','match','review','mixed','learn','dict'].includes(cur))||(['reading','listening','exam'].includes(k)&&!R.full&&['test','result'].includes(cur)&&routeTestKey()===k)||(k==='full'&&(cur==='fullrun'||!!R.full||!!fx))||(k==='t-students'&&cur==='t-student'&&!R.tf)||(k==='t-full'&&(cur==='t-fullrun'||!!R.tf))||((cur==='t-testedit'||cur==='t-testview')&&k===tTestBack())||(k==='speaking'&&cur==='skres'&&!R.full)||(k==='writing'&&cur==='wres'&&!R.full)||(k==='t-grade'&&cur==='t-review'&&!R.tf);
  el.innerHTML=`<div class="wrap"><div class="logo" onclick="go('${tabs[0][0]}')"><b>A</b><span>${h(D.settings.className)}</span></div>
  <nav class="tabs">${tabs.map(([k,l])=>`<button class="${isOn(k)?'on':''}" data-sk="${k}" onclick="go('${k}')">${l}${k==='vocab'&&U.role==='student'?(()=>{try{const pl=todayPlan(U.id,'all'),n=pl.rev.length+pl.fresh.length;return n?`<span class="nb" title="${pl.rev.length} lượt ôn · ${pl.fresh.length} từ mới hôm nay">${n}</span>`:''}catch(e){return ''}})():''}${isOn(k)?'<i class="tl"></i>':''}</button>`).join('')}</nav>
  <div class="who">${U.role==='teacher'?'<span class="tag acc">Giáo viên</span>':`<span class="nm">${h(U.name)}</span><span class="tag gray">${h(U.code)}</span>`}${THM_BTN()}<button class="thm" onclick="logout()" title="Đăng xuất" aria-label="Đăng xuất"><svg viewBox="0 0 24 24"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4M14 8l4 4-4 4M18 12H8"/></svg></button></div></div>`;
@@ -1014,6 +1069,7 @@ VIEWS.home=()=>{
     ${(()=>{const pl=todayPlan(U.id,'all'),n=pl.rev.length+pl.fresh.length;return `<button class="btn ${n?'acc':''}" onclick="lsStart('all')" ${n?'':'disabled'}>${n?`Học từ vựng hôm nay<small>${pl.rev.length} lượt ôn · ${pl.fresh.length} từ mới</small>`:'Đã xong từ vựng hôm nay'}</button>`})()}
     <button class="btn" onclick="go('vocab')">Chọn bộ từ để học</button>
     <button class="btn" onclick="go('reading')">Làm một đề luyện</button>
+    <button class="btn" onclick="remindModal()">🔔 Nhắc học trên điện thoại</button>
    </div>
    <h3 class="mt2">Hoạt động 4 tuần qua</h3><div class="heat">${days.map((n,i)=>`<i class="${lv(n)}" style="--i:${i}" title="${n} lượt"></i>`).join('')}</div>
    ${lastRes.length?`<h3 class="mt2">Kết quả gần đây</h3>${lastRes.map(r=>{const t=testById(r.testId);return `<div class="list-item"><span class="small">${h(t?t.title:'(đề đã xóa)')}</span><span class="tag">${resultLabel(t,r)}</span></div>`}).join('')}`:''}
@@ -1030,7 +1086,7 @@ VIEWS.vocab=()=>{
  const sets=allSets().filter(s=>vocabCat==='all'||s.cat===vocabCat);
  const cats=['all',...new Set(allSets().map(s=>s.cat))];
  return `<div class="row between"><div><h1>Luyện từ</h1><p class="sub">Mỗi ngày bấm <b>Bắt đầu học</b>: ôn từ cũ trước, học từ mới sau. Chọn bộ từ bên dưới để thêm vào danh sách học.</p></div>
- <button class="btn" onclick="go('dict')">📖 Kho từ vựng</button></div>
+ <div class="row"><button class="btn" onclick="voicePick()" title="Đổi giọng máy đọc">🔊 Giọng đọc</button><button class="btn" onclick="go('dict')">📖 Kho từ vựng</button></div></div>
  <div class="grid vtop">${todayBox('all')}${weekChart(U.id)}</div>
  ${VGUIDE}
  <h2 class="mt2">Bộ từ</h2>
@@ -1096,7 +1152,7 @@ function myFilter(){const q=norm(MYF.q);document.querySelectorAll('.mytbl tbody 
 function myPut(o){const p=P();p.my=p.my||[];o.at=Date.now();const i=p.my.findIndex(x=>x.id===o.id);if(i>=0)p.my[i]=o;else p.my.push(o);save()}
 function myEdit(id){const w=id?myWords().find(x=>x.id===id):null;
  modal(`<h2>${w?'Sửa từ':'Thêm từ'}</h2>
- <label class="f">Từ / cụm từ tiếng Anh</label><div class="row" style="gap:8px;flex-wrap:nowrap"><input type="text" id="mw-w" value="${h(w?w.w:'')}" autocapitalize="off" spellcheck="false" placeholder="ví dụ: take into account"><button class="btn" type="button" onclick="myLookup()" title="Tự điền phiên âm, từ loại, ví dụ">Tra</button></div>
+ <label class="f">Từ / cụm từ tiếng Anh</label><div class="row" style="gap:8px;flex-wrap:nowrap"><input type="text" id="mw-w" value="${h(w?w.w:'')}" autocapitalize="off" spellcheck="false" placeholder="ví dụ: take into account"><button class="btn" type="button" onclick="myLookup()" title="Tự điền nghĩa tiếng Việt, phiên âm, từ loại, ví dụ">Tra</button></div>
  <label class="f">Nghĩa tiếng Việt</label><input type="text" id="mw-v" value="${h(w?w.vi:'')}" placeholder="ví dụ: tính đến, xem xét">
  <div class="grid g2" style="gap:10px"><div><label class="f">Từ loại</label><input type="text" id="mw-p" value="${h(w?w.pos||'':'')}" placeholder="n / v / adj / phr"></div><div><label class="f">Phiên âm</label><input type="text" id="mw-i" value="${h(w?w.ipa||'':'')}" placeholder="/…/"></div></div>
  <label class="f">Câu ví dụ</label><input type="text" id="mw-e" value="${h(w?w.ex||'':'')}">
@@ -1111,13 +1167,26 @@ function mySave(id,again){const w=$('#mw-w').value.trim(),vi=$('#mw-v').value.tr
 function myDel(id){const w=myWords().find(x=>x.id===id);if(!w||!confirm(`Xóa "${w.w}" khỏi Từ của tôi?`))return;myPut({id,del:true});render()}
 function myStar(setId,i){const w=setById(setId).words[i];const ex=myFind(w.w);
  if(ex){myPut({id:ex.id,del:true});toast('Đã bỏ khỏi Từ của tôi')}else{myPut({id:uid('mw'),w:w.w,vi:w.vi,pos:w.pos||'',ipa:w.ipa||'',ex:w.ex||'',src:setId,added:Date.now()});toast('Đã lưu vào Từ của tôi')}render()}
+/* Nghĩa tiếng Việt cho từ không có trong Kho: dịch tự động (Google Dịch, dự phòng MyMemory) */
+async function viLookup(w){const q=String(w||'').trim();if(!q)return '';const same=x=>norm(x)===norm(q);
+ try{const r=await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&dt=bd&q='+encodeURIComponent(q));if(r.ok){const j=await r.json();
+  const main=((j&&j[0])||[]).map(x=>x&&x[0]||'').join('').trim();const alt=(((j&&j[1])||[])[0]||[])[1]||[];
+  const out=[...new Set([main,...alt.slice(0,2)].map(x=>String(x||'').trim().toLowerCase()).filter(x=>x&&!same(x)))].join(', ');if(out)return out}}catch(e){}
+ try{const r=await fetch('https://api.mymemory.translated.net/get?langpair=en|vi&q='+encodeURIComponent(q));if(r.ok){const j=await r.json();const t=j&&j.responseData&&j.responseData.translatedText;if(t&&!same(t)&&!/MYMEMORY|QUOTA/i.test(t))return String(t).trim()}}catch(e){}
+ return ''}
 async function myLookup(){const w=$('#mw-w').value.trim();if(!w){toast('Nhập từ trước đã');return}
  const d=dictGet(w);if(d){[['#mw-v','vi'],['#mw-p','pos'],['#mw-i','ipa'],['#mw-e','ex']].forEach(([id,f])=>{if(d[f]&&!$(id).value)$(id).value=d[f]});toast('Đã điền từ Kho từ vựng');return}
- try{const r=await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(w.toLowerCase()));if(!r.ok)throw 0;const j=(await r.json())[0];
-  const ipa=j.phonetic||((j.phonetics||[]).find(x=>x.text)||{}).text||'';const m=(j.meanings||[])[0]||{};const ex=(j.meanings||[]).flatMap(x=>x.definitions||[]).find(d=>d.example);
-  const POS={noun:'n',verb:'v',adjective:'adj',adverb:'adv',preposition:'prep',conjunction:'conj',pronoun:'pron'};
-  if(ipa&&!$('#mw-i').value)$('#mw-i').value=ipa;if(m.partOfSpeech&&!$('#mw-p').value)$('#mw-p').value=POS[m.partOfSpeech]||m.partOfSpeech;if(ex&&!$('#mw-e').value)$('#mw-e').value=ex.example;
-  toast(ipa||ex?'Đã điền phiên âm, từ loại, ví dụ. Nghĩa tiếng Việt bạn tự ghi nhé':'Không tìm thấy thêm thông tin')}catch(e){toast('Không tra được từ này (cần mạng, và từ phải có trong từ điển)')}}
+ toast('Đang tra “'+w+'”…');
+ const POS={noun:'n',verb:'v',adjective:'adj',adverb:'adv',preposition:'prep',conjunction:'conj',pronoun:'pron'};
+ const en=fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+encodeURIComponent(w.toLowerCase())).then(r=>r.ok?r.json():null).then(x=>x&&x[0]).catch(()=>null);
+ const [j,vi]=await Promise.all([en,viLookup(w)]);
+ if(!$('#mw-w'))return;
+ let got=[];
+ if(vi&&!$('#mw-v').value){$('#mw-v').value=vi;got.push('nghĩa tiếng Việt')}
+ if(j){const ipa=j.phonetic||((j.phonetics||[]).find(x=>x.text)||{}).text||'';const m=(j.meanings||[])[0]||{};const ex=(j.meanings||[]).flatMap(x=>x.definitions||[]).find(d=>d.example);
+  if(ipa&&!$('#mw-i').value){$('#mw-i').value=ipa;got.push('phiên âm')}if(m.partOfSpeech&&!$('#mw-p').value){$('#mw-p').value=POS[m.partOfSpeech]||m.partOfSpeech;got.push('từ loại')}if(ex&&!$('#mw-e').value){$('#mw-e').value=ex.example;got.push('ví dụ')}}
+ if(got.length)toast('Đã điền '+got.join(', ')+(vi?'. Nghĩa là bản dịch tự động, bạn sửa lại nếu cần':''));
+ else if(!j&&!vi)toast('Không tra được từ này (cần mạng)');else toast('Không tìm thấy thêm thông tin')}
 function myBulk(){modal(`<h2>Thêm nhiều từ</h2><p class="small muted">Mỗi dòng một từ, dạng <b>từ - nghĩa</b> (hoặc dùng dấu <b>:</b> hay Tab). Có thể thêm phần thứ ba là câu ví dụ.</p>
  <textarea id="mw-b" rows="9" placeholder="sustainable - bền vững&#10;take into account - tính đến, xem xét&#10;ubiquitous : có mặt khắp nơi : Smartphones are ubiquitous."></textarea>
  <div class="row mt" style="justify-content:flex-end"><button class="btn" onclick="modal('')">Hủy</button><button class="btn pri" onclick="myBulkSave()">Thêm</button></div>`)}
@@ -1138,7 +1207,7 @@ const AU_BASE='https://api.dictionaryapi.dev/media/pronunciations/en/';
 function wInfo(w){const d=dictGet(w.w)||{};return {w:w.w,vi:w.vi||d.vi||'',pos:w.pos||d.pos||'',ipa:w.ipa||d.ipa||'',def:w.def||d.def||'',ex:w.ex||d.ex||'',au:w.au||d.au||''}}
 let curAudio=null;
 function sayWord(w,slow){const d=dictGet(w);if(curAudio){curAudio.pause();curAudio=null}
- if(d&&d.au&&!slow){try{if('speechSynthesis' in window)speechSynthesis.cancel();curAudio=new Audio(AU_BASE+d.au);curAudio.play().catch(()=>speak(w));return}catch(e){}}
+ if(d&&d.au&&!slow&&voiceRec()){try{if('speechSynthesis' in window)speechSynthesis.cancel();curAudio=new Audio(AU_BASE+d.au);curAudio.play().catch(()=>speak(w));return}catch(e){}}
  speak(w,slow?0.55:0.9)}
 const VDEF=10;
 function vcfg(setId,sid){const c=(P(sid).vcfg||{})[setId];return {n:c&&c.n!=null?c.n:VDEF,pause:!!(c&&c.pause),on:(!!c&&!c.off)||String(setId).startsWith('my-')}}
@@ -1469,7 +1538,7 @@ VIEWS.test=()=>{
  }
  const qs=flatQs(t);let n=0;
  const hasP=t.sections.some(x=>x.passage);
- return `<div class="exam-head"><div class="row between"><b style="flex:1;min-width:0">${h(t.title)}</b>${hasP?`<div class="rtools"><button class="btn ghost" title="Chữ nhỏ hơn" onclick="pfs(-1)">A−</button><button class="btn ghost" title="Chữ lớn hơn" onclick="pfs(1)">A+</button><button class="btn" id="hlbtn" title="Bôi vàng: chọn chữ trong bài đọc để đánh dấu, bấm vào chỗ đã bôi để bỏ" onclick="hlToggle()">Bút dạ</button><button class="btn" id="fcbtn" title="Ẩn menu để tập trung đọc" onclick="focusToggle()">Tập trung</button></div>`:''}<span class="timer" id="timer"></span><button class="btn pri" onclick="submitTest()">Nộp bài</button></div>
+ return `<div class="exam-head"><div class="row between"><b style="flex:1;min-width:0">${h(t.title)}</b>${hasP?`<div class="rtools"><button class="btn ghost" title="Chữ nhỏ hơn" onclick="pfs(-1)">A−</button><button class="btn ghost" title="Chữ lớn hơn" onclick="pfs(1)">A+</button><button class="btn" id="hlbtn" title="Bôi vàng: chọn chữ trong bài đọc để đánh dấu (trên iPad: chọn chữ rồi bấm nút Tô vàng), bấm vào chỗ đã bôi để bỏ" onclick="hlToggle()">Bút dạ</button><button class="btn" id="fcbtn" title="Ẩn menu để tập trung đọc" onclick="focusToggle()">Tập trung</button></div>`:''}<span class="timer" id="timer"></span><button class="btn pri" onclick="submitTest()">Nộp bài</button></div>
  <div class="qnav mt" id="qnav">${qs.map(q=>`<span id="nav${q.n}" onclick="document.getElementById('q${q.n}').scrollIntoView({behavior:'smooth',block:'center'})">${q.n}</span>`).join('')}</div></div>
  ${t.sections.map((s,si)=>`<h2 class="mt2">${h(s.title||('Phần '+(si+1)))}</h2>
   ${s.audioSrc?audioBox(s.audioSrc):''}${s.audio?`<div class="card mb row"><button class="btn acc" onclick="playAudio(${si})">▶ Phát bài nghe</button><button class="btn" onclick="speechSynthesis.cancel()">■ Dừng</button><span class="small muted" id="plays${si}">Đã phát ${EX.plays[si]||0} lần</span></div>`:''}
@@ -1489,7 +1558,16 @@ function pfs(d){const cur=parseFloat(getComputedStyle(document.documentElement).
 try{const v=localStorage.getItem('pfs');if(v)document.documentElement.style.setProperty('--pfs',v+'px')}catch(e){}
 function focusToggle(){const on=document.documentElement.classList.toggle('focus');$('#fcbtn')&&$('#fcbtn').classList.toggle('on',on);requestAnimationFrame(measureEH)}
 function hlToggle(){const on=document.documentElement.classList.toggle('hl-on');$('#hlbtn')&&$('#hlbtn').classList.toggle('on',on)}
-function hlApply(){if(!document.documentElement.classList.contains('hl-on'))return;const sel=getSelection();if(!sel.rangeCount||sel.isCollapsed)return;const rg=sel.getRangeAt(0);const pa=rg.commonAncestorContainer.nodeType===1?rg.commonAncestorContainer:rg.commonAncestorContainer.parentNode;if(!pa.closest('.passage'))return;const m=document.createElement('mark');m.className='hl';try{m.appendChild(rg.extractContents());rg.insertNode(m)}catch(e){}sel.removeAllRanges()}
+function hlApply(force){if(!force&&!document.documentElement.classList.contains('hl-on'))return;const sel=getSelection();let rg=sel.rangeCount&&!sel.isCollapsed?sel.getRangeAt(0):(force?HLR:null);HLR=null;if(!rg||rg.collapsed)return;const pa=rg.commonAncestorContainer.nodeType===1?rg.commonAncestorContainer:rg.commonAncestorContainer.parentNode;if(!pa.closest('.passage'))return;const m=document.createElement('mark');m.className='hl';try{m.appendChild(rg.extractContents());rg.insertNode(m)}catch(e){}sel.removeAllRanges()}
+/* iPad/iPhone: chọn chữ bằng ngón tay không phát sinh mouseup, nên hiện nút "Tô vàng" nổi ngay dưới vùng chọn */
+let HLR=null,hlT=0;
+function hlSel(){if(R.v!=='test')return null;const sel=getSelection();if(!sel.rangeCount||sel.isCollapsed)return null;const rg=sel.getRangeAt(0),n=rg.commonAncestorContainer,el=n.nodeType===1?n:n.parentNode;const pa=el&&el.closest&&el.closest('.passage');return pa&&!pa.classList.contains('anno')?rg:null}
+function hlTool(){let b=$('#hltool');const rg=hlSel();if(!rg){if(b)b.hidden=true;return}HLR=rg.cloneRange();
+ if(!b){b=document.createElement('button');b.id='hltool';b.className='hltool';b.type='button';b.innerHTML='🖍 Tô vàng';
+  const go_=e=>{e.preventDefault();hlApply(true);b.hidden=true};b.addEventListener('touchstart',go_,{passive:false});b.addEventListener('mousedown',go_);document.body.appendChild(b)}
+ b.hidden=false;const rc=rg.getBoundingClientRect();b.style.top=Math.max(8,Math.min(rc.bottom+12,innerHeight-60))+'px';b.style.left=Math.max(8,Math.min(rc.left+rc.width/2-b.offsetWidth/2,innerWidth-b.offsetWidth-8))+'px'}
+document.addEventListener('selectionchange',()=>{clearTimeout(hlT);hlT=setTimeout(hlTool,220)});
+document.addEventListener('scroll',()=>{const b=$('#hltool');if(b&&!b.hidden)hlTool()},true);
 function hlRemove(e){const m=e.target.closest&&e.target.closest('mark.hl');if(!m||!getSelection().isCollapsed)return;m.replaceWith(...m.childNodes)}
 AFTER.test=()=>{if(!R.running)return;measureEH();document.querySelectorAll('.player').forEach(initPlayer);clearInterval(timerH);const tick=()=>{const left=Math.max(0,EX.end-Date.now());const el=$('#timer');if(!el){clearInterval(timerH);return}const m=Math.floor(left/60000),s=Math.floor(left%60000/1000);el.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;el.classList.toggle('low',left<60000);if(left<=0){clearInterval(timerH);toast('Hết giờ! Bài đã được nộp.');submitTest(true)}};tick();timerH=setInterval(tick,1000)};
 function audioBox(src){const m=/drive\.google\.com\/(?:file\/d\/|uc\?[^"]*id=|open\?id=)([\w-]+)/.exec(src);
@@ -1567,9 +1645,65 @@ VIEWS.result=()=>{
  ${r.total?`<h2 class="mt2">Xem lại đáp án</h2><div class="card review">${qs.filter(q=>q.t!=='essay').map(q=>{const a=r.ans[q.n];const ok=isRight(q,a);
   const your=q.t==='mc'?(a!=null?`${optLetter(a)}. ${fmt(q.o[a])}`:'<i>bỏ trống</i>'):(a?h(a):'<i>bỏ trống</i>');
   const right=q.t==='mc'?`${optLetter(q.a)}. ${fmt(q.o[q.a])}`:h(q.a.join(' / '));
-  return `<div class="q"><div><span class="qn">${q.n}</span>${fmt(q.q)}</div><div class="mt small"><span class="${ok?'ok':'bad'}">${ok?'✓ Đúng':'✗ Sai'}</span> · Bạn chọn: ${your}${ok?'':` · Đáp án: <b>${right}</b>`}${U.role==='student'?` · <a href="#" class="rep-link" onclick="event.preventDefault();reportQ('${t.id}',${q.n})">${(P().reports||[]).some(x=>x.testId===t.id&&x.n===q.n)?'Đã báo lỗi':'Báo lỗi câu này'}</a>`:''}</div>${q.e?`<div class="explain">💡 ${fmt(q.e)}</div>`:''}</div>`}).join('')}</div>`:''}`;
+  return `<div class="q"><div><span class="qn">${q.n}</span>${fmt(q.q)}</div><div class="mt small"><span class="${ok?'ok':'bad'}">${ok?'✓ Đúng':'✗ Sai'}</span> · Bạn chọn: ${your}${ok?'':` · Đáp án: <b>${right}</b>`}${U.role==='student'?` · <a href="#" class="rep-link" onclick="event.preventDefault();reportQ('${t.id}',${q.n})">${(P().reports||[]).some(x=>x.testId===t.id&&x.n===q.n)?'Đã báo lỗi':'Báo lỗi câu này'}</a>`:''}</div>${qExplainHTML(t,q)}</div>`}).join('')}</div>`:''}`;
 };
 function saveGrade(sid,rid){const r=P(sid).results.find(x=>x.id===rid);const b=$('#eband').value;r.essay.band=b===''?null:+b;r.essay.comment=$('#ecom').value;r.essay.gradedAt=Date.now();save();toast('Đã lưu. Gửi lại gói dữ liệu cho học viên để họ thấy nhận xét.')}
+/* =========================================================
+   GIẢI THÍCH ĐÁP ÁN
+   - q.e: giải thích có sẵn trong đề
+   - D.qex[testId][n]: giải thích giáo viên viết thêm (đồng bộ cho cả lớp)
+   - Reading: tự tìm câu trong bài chứa/khớp đáp án để học viên biết căn cứ ở đâu
+   ========================================================= */
+const EV_STOP=new Set('the a an of to in on at for and or but is are was were be been being it its this that these those with by from as which who whom whose what when where why how not no do does did can could will would should may might must have has had their there they them he she his her we our you your about into than then so such also only more most other some any each all one two three four five very much many according writer passage text following statement statements information questions question answer answers write choose letter letters correct paragraph paragraphs below boxes box sheet true false given yes'.split(' '));
+const evStem=w=>w.length>5?w.replace(/(ings|ing|ed|es|s|ly)$/,''):w.length>3?w.replace(/s$/,''):w;
+const evToks=t=>[...new Set((String(t||'').toLowerCase().replace(/\{\{|\}\}/g,'').match(/[a-z0-9]+(?:['’-][a-z0-9]+)*/g)||[]).filter(w=>w.length>=3&&!EV_STOP.has(w)).map(evStem))];
+function evSents(text){const out=[];let lab='';String(text||'').split(/\n+/).forEach(par=>{const m=par.match(/^\s*(?:Paragraph\s+)?([A-L])[.)]\s/);lab=m?m[1]:(par.trim()?'':lab);(par.match(/[^.!?]+(?:[.!?]+["'’”)\]]*|$)/g)||[]).forEach(x=>{x=x.trim();if(x.length>3)out.push({s:x,p:lab,tk:evToks(x)})})});return out}
+const EV_CACHE=new Map();
+function evFor(t,si){const k=t.id+'#'+si;if(!EV_CACHE.has(k))EV_CACHE.set(k,evSents((t.sections[si]||{}).passage));return EV_CACHE.get(k)}
+const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function qStem(q){const ls=String(q.q||'').split('\n').map(x=>x.trim()).filter(Boolean);return (ls[ls.length-1]||'').replace(/_{2,}/g,' ')}
+function qEvidence(t,q){
+ if(!t||t.skill==='Listening')return null;const sec=t.sections[q.si];if(!sec||!sec.passage)return null;
+ const S=evFor(t,q.si);if(!S.length)return null;
+ const df={};S.forEach(x=>x.tk.forEach(w=>df[w]=(df[w]||0)+1));
+ const score=(x,keys)=>keys.reduce((a,w)=>a+(x.tk.includes(w)?1/Math.sqrt(df[w]||1):0),0);
+ const stem=evToks(qStem(q));
+ if(q.t==='fill'){
+  const alts=(q.a||[]).map(a=>String(a).trim()).filter(Boolean);
+  let best=null;S.forEach(x=>{const hit=alts.find(a=>new RegExp('(^|[^a-z0-9])'+reEsc(a.toLowerCase())+'([^a-z0-9]|$)').test(x.s.toLowerCase()));if(!hit)return;const sc=score(x,stem)+1;if(!best||sc>best.sc)best={x,sc,hit}});
+  if(!best)return null;return {x:best.x,mark:best.hit,sure:true}}
+ if(q.t!=='mc')return null;
+ const opt=String((q.o||[])[q.a]||'').replace(/^[A-Z]\.\s*/,'');
+ const tfng=/^(TRUE|FALSE|NOT GIVEN|YES|NO)$/i.test(opt);
+ const letterOnly=/^[A-L]$/.test(opt.trim());
+ let keys=stem;if(!tfng&&!letterOnly)keys=[...new Set([...stem,...evToks(opt)])];
+ let pool=S;if(letterOnly){const p=S.filter(x=>x.p===opt.trim());if(p.length)pool=p}
+ let best=null;pool.forEach(x=>{const sc=score(x,keys);if(!best||sc>best.sc)best={x,sc}});
+ const hits=best?keys.filter(w=>best.x.tk.includes(w)).length:0;
+ if(!best||hits<2)return null;return {x:best.x,sure:false,ng:/^NOT GIVEN$/i.test(opt)}}
+function evHTML(ev){if(!ev)return '';let txt=h(ev.x.s);if(ev.mark){txt=txt.replace(new RegExp('(^|[^A-Za-z0-9])('+reEsc(h(ev.mark))+')(?=[^A-Za-z0-9]|$)','i'),'$1<mark>$2</mark>')}
+ return `<div class="explain ev">📍 <b>${ev.sure?'Căn cứ trong bài':'Đoạn liên quan trong bài'}</b>${ev.x.p?` (đoạn ${ev.x.p})`:''}: “${txt}”${ev.ng?'<div class="small muted">Đáp án NOT GIVEN: bài có nhắc tới chủ đề này nhưng không nêu thông tin như câu hỏi.</div>':''}${ev.sure?'':'<div class="small muted">Máy tự tìm theo từ khóa, chỉ mang tính gợi ý.</div>'}</div>`}
+const qexGet=(tid,n)=>((D.qex||{})[tid]||{})[n]||'';
+function qExplainHTML(t,q){const te=qexGet(t.id,q.n);let out='';
+ if(q.e)out+=`<div class="explain">💡 ${fmt(q.e)}</div>`;
+ if(te)out+=`<div class="explain">💡 <b>Giải thích của giáo viên:</b> ${fmt(te)}</div>`;
+ out+=evHTML(qEvidence(t,q));
+ if(U&&U.role==='teacher')out+=`<div class="small"><a href="#" onclick="event.preventDefault();qexEdit('${t.id}',${q.n})">✎ ${te?'Sửa giải thích':'Viết giải thích cho câu này'}</a></div>`;
+ return out}
+function qexEdit(tid,n){const t=testById(tid);const q=t&&flatQs(t).find(x=>x.n===n);if(!q)return;
+ modal(`<h2>Giải thích câu ${n}</h2><p class="small muted">${h(t.title)}</p><div class="small" style="white-space:pre-wrap;margin-bottom:8px">${fmt(q.q)}</div><p class="small">Đáp án: <b>${q.t==='mc'?h(optLetter(q.a)+'. '+String(q.o[q.a]).replace(/^[A-Z]\.\s*/,'')):h((q.a||[]).join(' / '))}</b></p>
+ <label class="f">Giải thích (học viên thấy sau khi nộp bài)</label><textarea class="prose" id="qex-t" style="min-height:120px" placeholder="Ví dụ: Đoạn B dòng 3: “...” → đáp án là ... vì ...">${h(qexGet(tid,n))}</textarea>
+ <div class="row mt"><button class="btn pri" onclick="qexSave('${tid}',${n})">Lưu</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
+function qexSave(tid,n){D.qex=D.qex||{};D.qex[tid]=Object.assign({},D.qex[tid],{[n]:$('#qex-t').value.trim()});save();modal('');render();toast('Đã lưu giải thích')}
+
+/* --- Giáo viên xem nội dung đề --- */
+VIEWS['t-testview']=()=>{const t=testById(R.id);if(!t)return '<div class="empty">Không tìm thấy đề.</div>';const qs=flatQs(t);const back=tTestBack();
+ return `<div class="crumb" onclick="go('${back}')">← ${TBACKLAB[back]||'Đề thi'}</div><div class="row between"><div><h1>${h(t.title)}</h1><p class="sub">${qs.length} câu · ${t.minutes} phút · ${t.sections.length} phần${t.desc?' · '+h(t.desc):''}</p></div>
+ <div class="row">${t.builtin?'':`<button class="btn" onclick="go('t-testedit',{id:'${t.id}'})">Sửa đề</button>`}</div></div>
+ ${t.sections.map((s,si)=>{const sq=qs.filter(q=>q.si===si);const au=s.audioSrc||'';return `<div class="card mt"><h2>${h(s.title||'Phần '+(si+1))}</h2>
+  ${au?`<p class="small">🎧 Bài nghe: <a href="${h(au)}" target="_blank" rel="noopener">mở file audio</a></p>`:''}${s.audio?`<details class="mb"><summary class="small"><b>Nội dung bài nghe</b></summary><div class="passage mt" style="max-width:none">${fmt(s.audio)}</div></details>`:''}
+  ${s.passage?`<details class="mb"><summary class="small"><b>Bài đọc</b> (${wc(s.passage)} từ) · bấm để mở</summary><div class="passage mt" style="max-width:none;position:static;max-height:none">${fmt(s.passage).replace(/<br>/g,'\n')}</div></details>`:''}
+  <div class="review">${sq.map(q=>`<div class="q"><div><span class="qn">${q.n}</span>${fmt(q.q)}</div>${q.t==='mc'?`<div class="small mt">${q.o.map((o,i)=>`<div class="${i===q.a?'ok':''}">${i===q.a?'✓ ':''}${/^[A-Z]\./.test(o)?'':optLetter(i)+'. '}${fmt(o)}</div>`).join('')}</div>`:q.t==='fill'?`<div class="small mt">Đáp án: <b class="ok">${h(q.a.join(' / '))}</b></div>`:'<div class="small mt muted">Viết luận (giáo viên chấm)</div>'}${q.t==='essay'?'':qExplainHTML(t,q)}</div>`).join('')}</div></div>`}).join('')}`};
 
 /* =========================================================
    SPEAKING & WRITING
@@ -2191,7 +2325,8 @@ function mergeData(inc){
  upsert(D.sets,inc.sets);upsert(D.tests,inc.tests);upsert(D.assignments,inc.assignments);['wprompts','sp1','sp2','fulls'].forEach(k=>{D[k]=D[k]||[];upsert(D[k],inc[k])});
  if(inc.deleted){['sets','tests','assignments','wprompts','sp1','sp2','fulls'].forEach(k=>(inc.deleted[k]||[]).forEach(id=>{D[k]=(D[k]||[]).filter(x=>x.id!==id)}))}
  if(inc.wcat)D.wcat=Object.assign({},D.wcat,inc.wcat);
- if(inc.settings&&inc.kind==='class-pack'){D.settings.className=inc.settings.className||D.settings.className}
+ if(inc.qex){D.qex=D.qex||{};for(const tid in inc.qex)D.qex[tid]=Object.assign({},D.qex[tid],inc.qex[tid])}
+ if(inc.settings&&inc.kind==='class-pack'){D.settings.className=inc.settings.className||D.settings.className;if(Array.isArray(inc.settings.hideSets))D.settings.hideSets=inc.settings.hideSets}
  for(const sid in (inc.progress||{})){const a=P(sid),b=inc.progress[sid];
   for(const k in (b.words||{})){if(!a.words[k]||(b.words[k].last||0)>(a.words[k].last||0))a.words[k]=b.words[k]}
   (b.results||[]).forEach(r=>{const ex=a.results.find(x=>x.id===r.id);if(!ex){a.results.push(r);n.res++}else if(r.essay&&ex.essay&&(r.essay.gradedAt||0)>(ex.essay.gradedAt||0))ex.essay=r.essay});
@@ -2207,7 +2342,7 @@ function mergeData(inc){
  save();return n;
 }
 function importPack(){pickFile(x=>{try{const n=mergeData(x);toast(`Đã nhập dữ liệu${n.stu?` · ${n.stu} học viên mới`:''}${n.res?` · ${n.res} kết quả mới`:''}${n.rep?` · ${n.rep} báo lỗi mới`:''}`);render()}catch(e){toast('File không đúng định dạng của ứng dụng này')}})}
-function classPack(withProgress){return {kind:'class-pack',app:'lopta',date:Date.now(),settings:{className:D.settings.className},students:D.students,sets:D.sets,tests:D.tests,wprompts:D.wprompts||[],wcat:D.wcat||{},sp1:D.sp1||[],sp2:D.sp2||[],fulls:(D.fulls||[]).filter(f=>f.by==='teacher'),assignments:D.assignments,deleted:D.deleted||{},progress:withProgress?D.progress:undefined}}
+function classPack(withProgress){return {kind:'class-pack',app:'lopta',date:Date.now(),settings:{className:D.settings.className,hideSets:D.settings.hideSets||[]},students:D.students,sets:D.sets,tests:D.tests,wprompts:D.wprompts||[],wcat:D.wcat||{},sp1:D.sp1||[],sp2:D.sp2||[],fulls:(D.fulls||[]).filter(f=>f.by==='teacher'),qex:D.qex||{},assignments:D.assignments,deleted:D.deleted||{},progress:withProgress?D.progress:undefined}}
 
 /* =========================================================
    GIÁO VIÊN
@@ -2217,8 +2352,8 @@ VIEWS['t-students']=()=>{
  const pending=rows.reduce((a,r)=>a+P(r.s.id).results.filter(x=>x.essay&&(x.essay.band==null||x.essay.band==='')).length,0);
  return `<div class="row between"><div><h1>Học viên</h1><p class="sub">${D.students.length} học viên${pending?` · <b style="color:var(--accent)">${pending} bài viết chờ chấm</b>`:''}</p></div>
  <div class="row"><button class="btn" onclick="importPack()">Nhập kết quả học viên</button><button class="btn pri" onclick="addStudentModal()">+ Thêm học viên</button></div></div>
- <div class="card tbl">${rows.length?`<table><thead><tr><th>Học viên</th><th>Mã</th><th>Từ đã học</th><th>Đã thuộc</th><th>Bài làm</th><th>Bài giao</th><th>Hoạt động gần nhất</th></tr></thead><tbody>
- ${rows.map(({s,m,asg})=>{const done=asg.filter(a=>assignDone(a,s.id)).length;return `<tr style="cursor:pointer" onclick="go('t-student',{id:'${s.id}'})"><td><b>${h(s.name)}</b>${s.group?`<div class="small muted">${h(s.group)}</div>`:''}</td><td><span class="tag gray">${h(s.code)}</span></td><td>${m.learned}</td><td>${m.mastered}</td><td>${m.tests}</td><td>${asg.length?`${done}/${asg.length}`:'–'}</td><td class="small muted">${m.last?fdate(m.last):'Chưa học'}</td></tr>`}).join('')}
+ <div class="card tbl">${rows.length?`<table><thead><tr><th>Học viên</th><th>Mã</th><th>Từ đã học</th><th>Đã thuộc</th><th>Bài làm</th><th>Bài giao</th><th>Chuỗi ngày</th><th>14 ngày qua</th><th>Hoạt động gần nhất</th></tr></thead><tbody>
+ ${rows.map(({s,m,asg})=>{const done=asg.filter(a=>assignDone(a,s.id)).length;return `<tr style="cursor:pointer" onclick="go('t-student',{id:'${s.id}'})"><td><b>${h(s.name)}</b>${s.group?`<div class="small muted">${h(s.group)}</div>`:''}</td><td><span class="tag gray">${h(s.code)}</span></td><td>${m.learned}</td><td>${m.mastered}</td><td>${m.tests}</td><td>${asg.length?`${done}/${asg.length}`:'–'}</td><td>${m.streak?`🔥 ${m.streak}`:'0'}</td><td>${heatMini(s.id,14)}</td><td class="small muted">${m.last?fdate(m.last):'Chưa học'}</td></tr>`}).join('')}
  </tbody></table>`:'<div class="empty">Chưa có học viên. Bấm "Thêm học viên" để tạo mã cho từng em, hoặc để học viên tự tạo hồ sơ ở màn hình đăng nhập.</div>'}</div>`;
 };
 function addStudentModal(){modal(`<h2>Thêm học viên</h2><p class="small muted">Mỗi dòng một học viên. Có thể thêm nhóm/lớp sau dấu |, ví dụ: <code>Nguyễn Văn An | IELTS tối T3</code></p><textarea id="newstu" placeholder="Nguyễn Văn An&#10;Trần Thị Bình | Lớp 12A"></textarea><div class="row mt"><button class="btn pri" onclick="addStudents()">Tạo mã</button><button class="btn ghost" onclick="modal('')">Hủy</button></div>`)}
@@ -2233,6 +2368,7 @@ VIEWS['t-student']=()=>{
  <div class="row between"><div><h1>${h(s.name)}</h1><p class="sub">Mã <b>${h(s.code)}</b>${s.group?' · '+h(s.group):''} · tạo ngày ${fdate(s.created)}</p></div>
  <div class="row"><button class="btn" onclick="editStudent('${s.id}')">Sửa</button><button class="btn" onclick="go('t-assign',{pre:'${s.id}'})">Giao bài</button><button class="btn danger" onclick="delStudent('${s.id}')">Xóa</button></div></div>
  <div class="grid g4"><div class="card stat"><div class="n">${m.learned}</div><div class="l">Từ đã học</div></div><div class="card stat"><div class="n">${m.mastered}</div><div class="l">Đã thuộc</div></div><div class="card stat"><div class="n">${m.tests}</div><div class="l">Bài đã làm</div></div><div class="card stat"><div class="n">${m.streak}</div><div class="l">Chuỗi ngày</div></div></div>
+ <div class="card mt"><h2>Chuỗi ngày học</h2>${heatCal(s.id,16)}</div>
  ${s.note?`<div class="explain mt">📌 ${fmt(s.note)}</div>`:''}
  ${(p.fullruns||[]).length?`<div class="card mt"><h2>Thi 4 kỹ năng</h2>${myFullTable(s.id)}</div>`:''}
  <div class="grid g2 mt">
@@ -2248,9 +2384,18 @@ function saveStudent(id){const s=stuById(id);const c=$('#es-c').value.trim().toU
 function delStudent(id){const s=stuById(id);if(!confirm(`Xóa học viên ${s.name} và toàn bộ kết quả?`))return;D.students=D.students.filter(x=>x.id!==id);delete D.progress[id];if(window.SYNC)SYNC.del(id);D.assignments.forEach(a=>{if(Array.isArray(a.to))a.to=a.to.filter(x=>x!==id)});save();go('t-students')}
 
 /* --- Bộ từ --- */
-VIEWS['t-sets']=()=>`<div class="row between"><div><h1>Bộ từ vựng</h1><p class="sub">Bộ từ mẫu có sẵn và bộ từ bạn tự soạn.</p></div><button class="btn pri" onclick="setEditor()">+ Tạo bộ từ</button></div>
- <div class="card">${allSets().map(s=>`<div class="list-item"><div><b>${h(s.title)}</b> <span class="tag ${s.builtin?'gray':''}">${s.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${h(s.cat)} · ${h(s.level||'')} · ${s.words.length} từ</div></div>
- <div class="row">${s.builtin?`<button class="btn sm" onclick="setEditor('${s.id}',true)">Nhân bản để sửa</button>`:`<button class="btn sm" onclick="setEditor('${s.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sets','${s.id}')">Xóa</button>`}</div></div>`).join('')}</div>`;
+VIEWS['t-sets']=()=>{const hd=SAMPLE_SETS.filter(x=>hiddenSets().has(x.id));
+ return `<div class="row between"><div><h1>Bộ từ vựng</h1><p class="sub">Bộ từ mẫu có sẵn và bộ từ bạn tự soạn. Bấm <b>Xem</b> để xem danh sách từ.</p></div><button class="btn pri" onclick="setEditor()">+ Tạo bộ từ</button></div>
+ <div class="card">${allSets().map(s=>`<div class="list-item"><div style="cursor:pointer" onclick="setView('${s.id}')"><b>${h(s.title)}</b> <span class="tag ${s.builtin?'gray':''}">${s.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${h(s.cat)} · ${h(s.level||'')} · ${s.words.length} từ</div></div>
+ <div class="row"><button class="btn sm" onclick="setView('${s.id}')">Xem</button>${s.builtin?`<button class="btn sm" onclick="setEditor('${s.id}',true)">Nhân bản để sửa</button><button class="btn sm danger" onclick="setHide('${s.id}')">Xóa</button>`:`<button class="btn sm" onclick="setEditor('${s.id}')">Sửa</button><button class="btn sm danger" onclick="delItem('sets','${s.id}')">Xóa</button>`}</div></div>`).join('')||'<div class="empty">Chưa có bộ từ nào.</div>'}</div>
+ ${hd.length?`<h2 class="mt2">Bộ từ mẫu đã xóa</h2><p class="small muted">Học viên không còn thấy các bộ này. Có thể khôi phục bất cứ lúc nào.</p><div class="card">${hd.map(s=>`<div class="list-item"><div><b>${h(s.title)}</b><div class="small muted">${h(s.cat)} · ${s.words.length} từ</div></div><div class="row"><button class="btn sm" onclick="setView('${s.id}')">Xem</button><button class="btn sm" onclick="setUnhide('${s.id}')">Khôi phục</button></div></div>`).join('')}</div>`:''}`};
+function setView(id){const s=setById(id);if(!s)return;
+ modal(`<div class="row between" style="align-items:flex-start"><div><h2 style="margin-bottom:4px">${h(s.title)}</h2><p class="small muted" style="margin:0">${h(s.cat)}${s.level?' · '+h(s.level):''} · ${s.words.length} từ</p></div><button class="btn ghost sm" onclick="modal('')">Đóng</button></div>
+ <div class="tbl mt" style="max-height:62vh;overflow:auto"><table><thead><tr><th>#</th><th>Từ</th><th>Nghĩa</th><th>Ví dụ</th></tr></thead><tbody>${s.words.map((w,i)=>{const x=wInfo(w);return `<tr><td class="small muted">${i+1}</td><td><span style="white-space:nowrap"><b>${h(x.w)}</b> <button class="spk" onclick="sayWord('${jsq(x.w)}')" aria-label="Nghe">${SPK_ICO}</button></span><div class="small muted">${h(x.pos)} ${h(x.ipa)}</div></td><td>${h(x.vi)}</td><td class="small muted">${h(x.ex)}</td></tr>`}).join('')}</tbody></table></div>
+ <div class="row mt">${s.builtin?`<button class="btn" onclick="setEditor('${s.id}',true)">Nhân bản để sửa</button>`:s.my?'':`<button class="btn" onclick="setEditor('${s.id}')">Sửa</button>`}<button class="btn pri" onclick="modal('')">Xong</button></div>`)}
+function setHide(id){const s=setById(id);if(!s||!confirm(`Xóa bộ từ mẫu “${s.title}”? Học viên sẽ không thấy bộ này nữa (tiến độ đã học vẫn giữ). Có thể khôi phục ở cuối trang.`))return;
+ const a=new Set(D.settings.hideSets||[]);a.add(id);D.settings.hideSets=[...a];save();render();toast('Đã xóa bộ từ mẫu')}
+function setUnhide(id){D.settings.hideSets=(D.settings.hideSets||[]).filter(x=>x!==id);save();render();toast('Đã khôi phục bộ từ')}
 function setEditor(id,clone){
  const s=id?setById(id):null;
  const txt=s?s.words.map(w=>[w.w,w.vi,w.ex||'',w.ipa||'',w.pos||''].join(' | ').replace(/( \| )+$/,'')).join('\n'):'';
@@ -2278,8 +2423,8 @@ function delItem(k,id){if(!confirm('Xóa mục này?'))return;D[k]=(D[k]||[]).fi
 
 /* --- Đề thi --- */
 const TVOL={Reading:'all',Listening:'all'};
-function tTestRow(t){return `<div class="list-item"><div><b>${h(t.title)}</b> <span class="tag ${t.builtin?'gray':''}">${t.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${flatQs(t).length} câu · ${t.minutes} phút</div></div>
- <div class="row">${t.builtin?'':`<button class="btn sm" onclick="go('t-testedit',{id:'${t.id}'})">Sửa</button><button class="btn sm danger" onclick="delItem('tests','${t.id}')">Xóa</button>`}</div></div>`}
+function tTestRow(t){return `<div class="list-item"><div style="cursor:pointer" onclick="go('t-testview',{id:'${t.id}'})"><b>${h(t.title)}</b> <span class="tag ${t.builtin?'gray':''}">${t.builtin?'Mẫu':'Của tôi'}</span><div class="small muted">${flatQs(t).length} câu · ${t.minutes} phút</div></div>
+ <div class="row"><button class="btn sm" onclick="go('t-testview',{id:'${t.id}'})">Xem</button>${t.builtin?'':`<button class="btn sm" onclick="go('t-testedit',{id:'${t.id}'})">Sửa</button><button class="btn sm danger" onclick="delItem('tests','${t.id}')">Xóa</button>`}</div></div>`}
 function tSkillTests(sk){
  const all=allTests().filter(t=>t.type==='ielts'&&(t.skill||'Reading')===sk);
  const vols=[...new Set(all.map(t=>t.vol||'Đề của giáo viên'))].sort(volSort);
